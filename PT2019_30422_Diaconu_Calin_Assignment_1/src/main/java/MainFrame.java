@@ -3,6 +3,7 @@ import javax.swing.*;
 public class MainFrame extends JFrame{
 
     public MainFrame() {
+        //MainFrame parameters
         int w = 430;
         int h = 205;
 
@@ -13,6 +14,7 @@ public class MainFrame extends JFrame{
         setDefaultCloseOperation(EXIT_ON_CLOSE);
 
 
+        //textFields
         JTextField inputTextField1 = new JTextField(1);
         JTextField inputTextField2 = new JTextField(1);
         JTextField outputTextField = new JTextField(1);
@@ -41,6 +43,7 @@ public class MainFrame extends JFrame{
         add(outputFieldLabel);
 
 
+        //buttons
         JButton jButtonAdunare = new JButton("Adunare");
         JButton jButtonScadere = new JButton("Scadere");
         JButton jButtonInmultire = new JButton("Inmultire");
