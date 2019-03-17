@@ -41,6 +41,10 @@ public class MainFrame extends JFrame{
 
         while(matcher.find()) {
             String aux = matcher.group(1);
+
+            if(aux.contains("(") || aux.contains(")"))
+                return eroareInput();
+
             regexString = regexString.concat(aux);
 
             int constanta = 0;
@@ -269,15 +273,16 @@ public class MainFrame extends JFrame{
                     flag = true;
                 }
 
-                List<Polinom> polinomList = Polinom.impartire(p1, p2);
+                if(p1.getMonomList().get(0).getExponent() != -1 && p2.getMonomList().get(0).getExponent() != -1 && !flag) {
+                    List<Polinom> polinomList = Polinom.impartire(p1, p2);
 
-                String output = "Cat: ";
-                output = output.concat(polinomList.get(0).toString());
-                output = output.concat("   Rest: ");
-                output = output.concat(polinomList.get(1).toString());
+                    String output = "Cat: ";
+                    output = output.concat(polinomList.get(0).toString());
+                    output = output.concat("   Rest: ");
+                    output = output.concat(polinomList.get(1).toString());
 
-                if(p1.getMonomList().get(0).getExponent() != -1 && p2.getMonomList().get(0).getExponent() != -1 && !flag)
                     outputTextField.setText(output);
+                }
             }
         });
 
