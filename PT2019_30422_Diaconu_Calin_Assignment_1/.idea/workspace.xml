@@ -1,15 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="HW1:jar" />
+    </artifacts-to-build>
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="0906a13d-d7e9-47b2-882a-c94a0cd309b5" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/backEnd/Polynomial.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/jUnit/PolynomialTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/artifacts/Polynomial.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/META-INF/MANIFEST.MF" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/META-INF/MANIFEST.MF" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/backEnd/Monom.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/backEnd/Monomial.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/backEnd/Polinom.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/frontEnd/MainFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/frontEnd/MainFrame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/jUnit/MonomTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jUnit/MonomialTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/jUnit/PolinomTest.java" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -57,8 +58,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/frontEnd/MainFrame.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="445">
-              <caret line="218" column="54" selection-start-line="218" selection-start-column="54" selection-end-line="218" selection-end-column="54" />
+            <state relative-caret-position="71">
+              <caret line="200" column="16" selection-start-line="200" selection-start-column="16" selection-end-line="200" selection-end-column="16" />
               <folding>
                 <element signature="method#inputError#0;class#MainFrame#0" />
                 <element signature="method#removeSpaces#0;class#MainFrame#0" />
@@ -165,10 +166,10 @@
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-9" />
-    <option name="y" value="-9" />
-    <option name="width" value="2578" />
-    <option name="height" value="1458" />
+    <option name="x" value="-1374" />
+    <option name="y" value="663" />
+    <option name="width" value="1382" />
+    <option name="height" value="784" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -216,9 +217,13 @@
     <property name="GenerateAntBuildDialog.forceTargetJdk" value="true" />
     <property name="GenerateAntBuildDialog.outputFileNameProperty" value="pt2019_30422_diaconu_calin_assignment_1" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1552923861025" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1552924684489" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/src/main/java" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../30422_Betianu_Miruna_Diaconu_Calin/hwOOP/src/Classes/Tests/AllVehiclesTest.java" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="project.structure.last.edited" value="Artifacts" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RecentsManager">
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
@@ -313,7 +318,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1551796088130</updated>
-      <workItem from="1552770873087" duration="11836000" />
+      <workItem from="1552770873087" duration="12849000" />
     </task>
     <task id="LOCAL-00001" summary="HW1 - test commit">
       <created>1551796495415</created>
@@ -343,7 +348,14 @@
       <option name="project" value="LOCAL" />
       <updated>1552782076942</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Turned everything to English.">
+      <created>1552923900590</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1552923900590</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -379,7 +391,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="11836000" />
+    <option name="totallyTimeSpent" value="12849000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -391,12 +403,12 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="2062" height="1166" extended-state="6" />
+    <frame x="-1374" y="663" width="1382" height="784" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Image Layers" />
       <window_info id="Capture Tool" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.10739261" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.16263238" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Learn" order="2" />
       <window_info id="Designer" order="3" />
@@ -405,16 +417,16 @@
       <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" sideWeight="0.4985015" weight="0.327853" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.3791209" visible="true" weight="0.34235978" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.37367624" visible="true" weight="0.5437788" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.49948823" weight="0.3294347" />
       <window_info anchor="bottom" id="Educational.CheckDetails" order="7" />
       <window_info anchor="bottom" id="Terminal" order="8" sideWeight="0.49948823" weight="0.3294347" />
-      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.6208791" side_tool="true" visible="true" weight="0.34235978" />
+      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.62632376" side_tool="true" visible="true" weight="0.5437788" />
       <window_info anchor="bottom" id="Version Control" order="10" />
-      <window_info anchor="bottom" id="Messages" order="11" sideWeight="0.26373628" weight="0.32688588" />
+      <window_info anchor="bottom" id="Messages" order="11" sideWeight="0.25874126" weight="0.32688588" />
       <window_info anchor="right" id="Theme Preview" />
       <window_info anchor="right" id="Capture Analysis" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -433,7 +445,8 @@
     <MESSAGE value="HW1 - test commit 2" />
     <MESSAGE value="HW1 - implemented addition, subtraction, multiplication, derivation and integration" />
     <MESSAGE value="UnitTests" />
-    <option name="LAST_COMMIT_MESSAGE" value="UnitTests" />
+    <MESSAGE value="Turned everything to English." />
+    <option name="LAST_COMMIT_MESSAGE" value="Turned everything to English." />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/main/java/InputTextField.java" />
@@ -522,8 +535,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/frontEnd/MainFrame.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="445">
-          <caret line="218" column="54" selection-start-line="218" selection-start-column="54" selection-end-line="218" selection-end-column="54" />
+        <state relative-caret-position="71">
+          <caret line="200" column="16" selection-start-line="200" selection-start-column="16" selection-end-line="200" selection-end-column="16" />
           <folding>
             <element signature="method#inputError#0;class#MainFrame#0" />
             <element signature="method#removeSpaces#0;class#MainFrame#0" />
@@ -534,5 +547,83 @@
         </state>
       </provider>
     </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ArtifactsStructureConfigurable.UI">
+        <settings>
+          <artifact-editor />
+          <last-edited>HW1:jar</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+                <option value="0.5" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="FacetStructureConfigurable.UI">
+        <settings>
+          <last-edited>No facets are configured</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="GlobalLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="JdkListConfigurable.UI">
+        <settings>
+          <last-edited>11</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ModuleStructureConfigurable.UI">
+        <settings>
+          <last-edited>HW1</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+                <option value="0.6" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectLibrariesConfigurable.UI">
+        <settings>
+          <last-edited>Maven: junit:junit:4.13-beta-2</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
   </component>
 </project>
