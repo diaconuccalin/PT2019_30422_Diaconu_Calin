@@ -1,7 +1,8 @@
 package frontEnd;
 
-import backEnd.Monom;
-import backEnd.Polinom;
+import backEnd.Monomial;
+import backEnd.Polynomial;
+
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -10,11 +11,11 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class MainFrame extends JFrame{
-    private static Polinom eroareInput() {
-        Polinom polinom = new Polinom();
-        polinom.add(new Monom(1, -1));
+    private static Polynomial inputError() {
+        Polynomial polynomial = new Polynomial();
+        polynomial.add(new Monomial(1, -1));
         JOptionPane.showMessageDialog(null, "Incorrect input");
-        return polinom;
+        return polynomial;
     }
 
     private static String removeSpaces(String string) {
@@ -24,13 +25,13 @@ public class MainFrame extends JFrame{
         return string;
     }
 
-    private static Polinom getInput(JTextField jTextField) {
-        Polinom polinom = new Polinom();
+    private static Polynomial getInput(JTextField jTextField) {
+        Polynomial polynomial = new Polynomial();
 
         String string = jTextField.getText();
 
         if(string.length() == 0) {
-            return eroareInput();
+            return inputError();
         }
 
         Pattern pattern = Pattern.compile("([+-]?[^-+]+)");
@@ -43,11 +44,11 @@ public class MainFrame extends JFrame{
             String aux = matcher.group(1);
 
             if(aux.contains("(") || aux.contains(")"))
-                return eroareInput();
+                return inputError();
 
             regexString = regexString.concat(aux);
 
-            int constanta = 0;
+            int coefficient = 0;
             int exponent = 0;
 
             boolean isNegative = false;
@@ -68,14 +69,14 @@ public class MainFrame extends JFrame{
 
             //check if this is the variable (in the case where there is no explicit constant)
             if(aux.length() > 0 && (aux.charAt(0) < '0' || aux.charAt(0) > '9')) {
-                constanta = 1;
+                coefficient = 1;
 
                 if(variableName.equals("0")) {
                     variableName = String.valueOf(aux.charAt(0));
                 }
                 else {
                     if(variableName.compareTo(String.valueOf(aux.charAt(0))) != 0) {
-                        return eroareInput();
+                        return inputError();
                     }
                 }
             }
@@ -83,7 +84,7 @@ public class MainFrame extends JFrame{
 
             //get constant
             while (aux.length() > 0 && aux.charAt(0) >= '0' && aux.charAt(0) <= '9') {
-                constanta = constanta * 10 + aux.charAt(0) - '0';
+                coefficient = coefficient * 10 + aux.charAt(0) - '0';
                 if (aux.length() >= 2) {
                     aux = aux.substring(1);
                 } else {
@@ -97,7 +98,7 @@ public class MainFrame extends JFrame{
                 if(aux.length() >= 2) {
                     aux = aux.substring(1);
                 } else {
-                    return eroareInput();
+                    return inputError();
                 }
             }
             aux = removeSpaces(aux);
@@ -113,7 +114,7 @@ public class MainFrame extends JFrame{
                     variableName = String.valueOf(aux.charAt(0));
                 } else {
                     if(variableName.compareTo(String.valueOf(aux.charAt(0))) != 0) {
-                        return eroareInput();
+                        return inputError();
                     }
                 }
 
@@ -128,7 +129,7 @@ public class MainFrame extends JFrame{
                 if(aux.length() >= 2) {
                     aux = aux.substring(1);
                 } else {
-                    return eroareInput();
+                    return inputError();
                 }
             }
 
@@ -144,28 +145,28 @@ public class MainFrame extends JFrame{
             }
 
             if(isNegative) {
-                constanta = -constanta;
+                coefficient = -coefficient;
             }
 
-            Monom monom = new Monom(constanta, exponent);
-            polinom.add(monom);
+            Monomial monomial = new Monomial(coefficient, exponent);
+            polynomial.add(monomial);
         }
 
         if(regexString.compareTo(string) != 0) {
-            return eroareInput();
+            return inputError();
         }
 
-        return polinom;
+        return polynomial;
     }
 
     public MainFrame() {
         //MainFrame parameters
-        int w = 451;
+        int w = 575;
         int h = 205;
 
         setLayout(null);
         setSize(w, h);
-        setTitle("Polinoame");
+        setTitle("Polynomials");
         setLocationRelativeTo(null);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
 
@@ -175,9 +176,9 @@ public class MainFrame extends JFrame{
         final JTextField inputTextField2 = new JTextField(1);
         final JTextField outputTextField = new JTextField(1);
 
-        inputTextField1.setBounds(100, 15, 328, 20);
-        inputTextField2.setBounds(100, 40, 328, 20);
-        outputTextField.setBounds(100, 65, 328, 20);
+        inputTextField1.setBounds(100, 15, 445, 20);
+        inputTextField2.setBounds(100, 40, 445, 20);
+        outputTextField.setBounds(100, 65, 445, 20);
 
         outputTextField.setEditable(false);
 
@@ -187,9 +188,9 @@ public class MainFrame extends JFrame{
 
 
         //labels
-        JLabel inputFieldLabel1 = new JLabel("Polinom 1:");
-        JLabel inputFieldLabel2 = new JLabel("Polinom 2:");
-        JLabel outputFieldLabel = new JLabel("Rezultat:");
+        JLabel inputFieldLabel1 = new JLabel("Polynomial 1:");
+        JLabel inputFieldLabel2 = new JLabel("Polynomial 2:");
+        JLabel outputFieldLabel = new JLabel("Result:");
 
         inputFieldLabel1.setBounds(15, 15, 80, 20);
         inputFieldLabel2.setBounds(15, 40, 80, 20);
@@ -201,124 +202,124 @@ public class MainFrame extends JFrame{
 
 
         //buttons
-        JButton jButtonAdunare = new JButton("Adunare");
-        JButton jButtonScadere = new JButton("Scadere");
-        JButton jButtonInmultire = new JButton("Inmultire");
-        JButton jButtonImpartire = new JButton("Impartire");
-        JButton jButtonDerivare1 = new JButton("DerivareP1");
-        JButton jButtonIntegrare1 = new JButton("IntegrareP1");
-        JButton jButtonDerivare2 = new JButton("DerivareP2");
-        JButton jButtonIntegrare2 = new JButton("IntegrareP2");
+        JButton jButtonAddition = new JButton("Addition");
+        JButton jButtonSubtraction = new JButton("Subtraction");
+        JButton jButtonMultiplication = new JButton("Multiplication");
+        JButton jButtonDivision = new JButton("Division");
+        JButton jButtonDerivative1 = new JButton("DerivativeP1");
+        JButton jButtonAntiderivative1 = new JButton("AntiderivativeP1");
+        JButton jButtonDerivative2 = new JButton("DerivativeP2");
+        JButton jButtonAntiderivative2 = new JButton("AntiderivativeP2");
 
-        jButtonAdunare.setBounds(13, 100, 100, 20);
-        jButtonScadere.setBounds(118, 100, 100, 20);
-        jButtonInmultire.setBounds(224, 100, 100, 20);
-        jButtonImpartire.setBounds(328, 100, 100, 20);
-        jButtonDerivare1.setBounds(13, 130, 100, 20);
-        jButtonIntegrare1.setBounds(118, 130, 100, 20);
-        jButtonDerivare2.setBounds(224, 130, 100, 20);
-        jButtonIntegrare2.setBounds(328, 130, 100, 20);
+        jButtonAddition.setBounds(15, 100, 130, 20);
+        jButtonSubtraction.setBounds(150, 100, 130, 20);
+        jButtonMultiplication.setBounds(285, 100, 130, 20);
+        jButtonDivision.setBounds(420, 100, 130, 20);
+        jButtonDerivative1.setBounds(15, 130, 130, 20);
+        jButtonAntiderivative1.setBounds(150, 130, 130, 20);
+        jButtonDerivative2.setBounds(285, 130, 130, 20);
+        jButtonAntiderivative2.setBounds(420, 130, 130, 20);
 
-        add(jButtonAdunare);
-        add(jButtonScadere);
-        add(jButtonInmultire);
-        add(jButtonImpartire);
-        add(jButtonDerivare1);
-        add(jButtonIntegrare1);
-        add(jButtonDerivare2);
-        add(jButtonIntegrare2);
+        add(jButtonAddition);
+        add(jButtonSubtraction);
+        add(jButtonMultiplication);
+        add(jButtonDivision);
+        add(jButtonDerivative1);
+        add(jButtonAntiderivative1);
+        add(jButtonDerivative2);
+        add(jButtonAntiderivative2);
 
         //events
-        jButtonAdunare.addActionListener(new ActionListener() {
+        jButtonAddition.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                Polinom p1 = getInput(inputTextField1);
-                Polinom p2 = getInput(inputTextField2);
+                Polynomial p1 = getInput(inputTextField1);
+                Polynomial p2 = getInput(inputTextField2);
 
-                if(p1.getMonomList().get(0).getExponent() != -1 && p2.getMonomList().get(0).getExponent() != -1)
-                    outputTextField.setText(Polinom.adunare(p1, p2).toString());
+                if(p1.getMonomialList().get(0).getExponent() != -1 && p2.getMonomialList().get(0).getExponent() != -1)
+                    outputTextField.setText(Polynomial.addition(p1, p2).toString());
             }
         });
 
-        jButtonScadere.addActionListener(new ActionListener() {
+        jButtonSubtraction.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                Polinom p1 = getInput(inputTextField1);
-                Polinom p2 = getInput(inputTextField2);
+                Polynomial p1 = getInput(inputTextField1);
+                Polynomial p2 = getInput(inputTextField2);
 
-                if(p1.getMonomList().get(0).getExponent() != -1 && p2.getMonomList().get(0).getExponent() != -1)
-                    outputTextField.setText(Polinom.scadere(p1, p2).toString());
+                if(p1.getMonomialList().get(0).getExponent() != -1 && p2.getMonomialList().get(0).getExponent() != -1)
+                    outputTextField.setText(Polynomial.subtraction(p1, p2).toString());
             }
         });
 
-        jButtonInmultire.addActionListener(new ActionListener() {
+        jButtonMultiplication.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                Polinom p1 = getInput(inputTextField1);
-                Polinom p2 = getInput(inputTextField2);
+                Polynomial p1 = getInput(inputTextField1);
+                Polynomial p2 = getInput(inputTextField2);
 
-                if(p1.getMonomList().get(0).getExponent() != -1 && p2.getMonomList().get(0).getExponent() != -1)
-                    outputTextField.setText(Polinom.inmultire(p1, p2).toString());
+                if(p1.getMonomialList().get(0).getExponent() != -1 && p2.getMonomialList().get(0).getExponent() != -1)
+                    outputTextField.setText(Polynomial.multiplication(p1, p2).toString());
             }
         });
 
-        jButtonImpartire.addActionListener(new ActionListener() {
+        jButtonDivision.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                Polinom p1 = getInput(inputTextField1);
-                Polinom p2 = getInput(inputTextField2);
+                Polynomial p1 = getInput(inputTextField1);
+                Polynomial p2 = getInput(inputTextField2);
 
                 boolean flag = false;
 
-                for(Monom monom : p2.getMonomList()) {
-                    if(monom.getConstanta() != 0)
+                for(Monomial monomial : p2.getMonomialList()) {
+                    if(monomial.getCoefficient() != 0)
                         break;
-                    MainFrame.eroareInput();
+                    MainFrame.inputError();
                     flag = true;
                 }
 
-                if(p1.getMonomList().get(0).getExponent() != -1 && p2.getMonomList().get(0).getExponent() != -1 && !flag) {
-                    List<Polinom> polinomList = Polinom.impartire(p1, p2);
+                if(p1.getMonomialList().get(0).getExponent() != -1 && p2.getMonomialList().get(0).getExponent() != -1 && !flag) {
+                    List<Polynomial> polynomialList = Polynomial.division(p1, p2);
 
-                    String output = "Cat: ";
-                    output = output.concat(polinomList.get(0).toString());
-                    output = output.concat("   Rest: ");
-                    output = output.concat(polinomList.get(1).toString());
+                    String output = "Quotient: ";
+                    output = output.concat(polynomialList.get(0).toString());
+                    output = output.concat("   Remainder: ");
+                    output = output.concat(polynomialList.get(1).toString());
 
                     outputTextField.setText(output);
                 }
             }
         });
 
-        jButtonDerivare1.addActionListener(new ActionListener() {
+        jButtonDerivative1.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                Polinom polinom = getInput(inputTextField1);
+                Polynomial polynomial = getInput(inputTextField1);
 
-                if(polinom.getMonomList().get(0).getExponent() != -1)
-                    outputTextField.setText(Polinom.derivare(polinom).toString());
+                if(polynomial.getMonomialList().get(0).getExponent() != -1)
+                    outputTextField.setText(Polynomial.derivative(polynomial).toString());
             }
         });
 
-        jButtonIntegrare1.addActionListener(new ActionListener() {
+        jButtonAntiderivative1.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                Polinom polinom = getInput(inputTextField1);
+                Polynomial polynomial = getInput(inputTextField1);
 
-                if(polinom.getMonomList().get(0).getExponent() != -1)
-                    outputTextField.setText(Polinom.integrare(polinom).toString());
+                if(polynomial.getMonomialList().get(0).getExponent() != -1)
+                    outputTextField.setText(Polynomial.antiderivative(polynomial).toString());
             }
         });
 
-        jButtonDerivare2.addActionListener(new ActionListener() {
+        jButtonDerivative2.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                Polinom polinom = getInput(inputTextField2);
+                Polynomial polynomial = getInput(inputTextField2);
 
-                if(polinom.getMonomList().get(0).getExponent() != -1)
-                    outputTextField.setText(Polinom.derivare(polinom).toString());
+                if(polynomial.getMonomialList().get(0).getExponent() != -1)
+                    outputTextField.setText(Polynomial.derivative(polynomial).toString());
             }
         });
 
-        jButtonIntegrare2.addActionListener(new ActionListener() {
+        jButtonAntiderivative2.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                Polinom polinom = getInput(inputTextField2);
+                Polynomial polynomial = getInput(inputTextField2);
 
-                if(polinom.getMonomList().get(0).getExponent() != -1)
-                    outputTextField.setText(Polinom.integrare(polinom).toString());
+                if(polynomial.getMonomialList().get(0).getExponent() != -1)
+                    outputTextField.setText(Polynomial.antiderivative(polynomial).toString());
             }
         });
 
