@@ -2,15 +2,13 @@
 <project version="4">
   <component name="ArtifactsWorkspaceSettings">
     <artifacts-to-build>
-      <artifact name="HW1:jar" />
+      <artifact name="Polynomial" />
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0906a13d-d7e9-47b2-882a-c94a0cd309b5" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/artifacts/Polynomial.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/META-INF/MANIFEST.MF" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/META-INF/MANIFEST.MF" afterDir="false" />
+    <list default="true" id="0906a13d-d7e9-47b2-882a-c94a0cd309b5" name="Default Changelist" comment="Cleanup">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/frontEnd/MainFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/frontEnd/MainFrame.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -38,9 +36,10 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/backEnd/Polynomial.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="510">
+            <state relative-caret-position="527">
               <caret line="200" selection-start-line="200" selection-end-line="200" />
               <folding>
+                <element signature="imports" expanded="true" />
                 <element signature="method#add#0;class#Polinom#0" />
                 <element signature="method#sum#0;class#Polynomial#0" />
                 <element signature="method#subtraction#0;class#Polynomial#0" />
@@ -55,12 +54,13 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/frontEnd/MainFrame.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="71">
-              <caret line="200" column="16" selection-start-line="200" selection-start-column="16" selection-end-line="200" selection-end-column="16" />
+            <state relative-caret-position="391">
+              <caret line="210" column="61" selection-start-line="210" selection-start-column="61" selection-end-line="210" selection-end-column="61" />
               <folding>
+                <element signature="imports" expanded="true" />
                 <element signature="method#inputError#0;class#MainFrame#0" />
                 <element signature="method#removeSpaces#0;class#MainFrame#0" />
                 <element signature="method#getInput#0;class#MainFrame#0" />
@@ -71,10 +71,10 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/jUnit/MonomialTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="598">
+            <state relative-caret-position="884">
               <caret line="52" column="1" selection-start-line="52" selection-start-column="1" selection-end-line="52" selection-end-column="1" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -166,10 +166,10 @@
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-9" />
-    <option name="y" value="-9" />
-    <option name="width" value="2578" />
-    <option name="height" value="1458" />
+    <option name="x" value="957" />
+    <option name="y" value="-8" />
+    <option name="width" value="788" />
+    <option name="height" value="420" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -217,7 +217,7 @@
     <property name="GenerateAntBuildDialog.forceTargetJdk" value="true" />
     <property name="GenerateAntBuildDialog.outputFileNameProperty" value="pt2019_30422_diaconu_calin_assignment_1" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1552924826163" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1552935408276" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/src/main/java" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Artifacts" />
@@ -318,7 +318,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1551796088130</updated>
-      <workItem from="1552770873087" duration="12849000" />
+      <workItem from="1552770873087" duration="19224000" />
     </task>
     <task id="LOCAL-00001" summary="HW1 - test commit">
       <created>1551796495415</created>
@@ -355,7 +355,21 @@
       <option name="project" value="LOCAL" />
       <updated>1552923900590</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Generated JAR">
+      <created>1552924767566</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1552924767566</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Cleanup">
+      <created>1552924841162</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1552924841162</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -391,7 +405,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="12849000" />
+    <option name="totallyTimeSpent" value="19224000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -417,16 +431,16 @@
       <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" sideWeight="0.4985015" weight="0.327853" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.37367624" visible="true" weight="0.5437788" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.37291983" visible="true" weight="0.20122887" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.49948823" weight="0.3294347" />
       <window_info anchor="bottom" id="Educational.CheckDetails" order="7" />
       <window_info anchor="bottom" id="Terminal" order="8" sideWeight="0.49948823" weight="0.3294347" />
-      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.62632376" side_tool="true" visible="true" weight="0.5437788" />
+      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.6270802" side_tool="true" visible="true" weight="0.20122887" />
       <window_info anchor="bottom" id="Version Control" order="10" />
-      <window_info anchor="bottom" id="Messages" order="11" sideWeight="0.25874126" weight="0.32688588" />
+      <window_info anchor="bottom" id="Messages" order="11" sideWeight="0.2579425" weight="0.32565284" />
       <window_info anchor="right" id="Theme Preview" />
       <window_info anchor="right" id="Capture Analysis" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -446,7 +460,9 @@
     <MESSAGE value="HW1 - implemented addition, subtraction, multiplication, derivation and integration" />
     <MESSAGE value="UnitTests" />
     <MESSAGE value="Turned everything to English." />
-    <option name="LAST_COMMIT_MESSAGE" value="Turned everything to English." />
+    <MESSAGE value="Generated JAR" />
+    <MESSAGE value="Cleanup" />
+    <option name="LAST_COMMIT_MESSAGE" value="Cleanup" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/main/java/InputTextField.java" />
@@ -471,45 +487,6 @@
     <entry file="file://$PROJECT_DIR$/../../../30422_Betianu_Miruna_Diaconu_Calin/hwOOP/src/Classes/Tests/AllVehiclesTest.java">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/backEnd/Monomial.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="23" column="37" selection-start-line="23" selection-start-column="37" selection-end-line="23" selection-end-column="37" />
-          <folding>
-            <element signature="method#Monomial#0;class#Monomial#0" />
-            <element signature="method#compareTo#0;class#Monom#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/backEnd/Polynomial.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="200" selection-start-line="200" selection-end-line="200" />
-          <folding>
-            <element signature="method#add#0;class#Polinom#0" />
-            <element signature="method#sum#0;class#Polynomial#0" />
-            <element signature="method#subtraction#0;class#Polynomial#0" />
-            <element signature="method#multiplication#0;class#Polynomial#0" />
-            <element signature="method#division#0;class#Polynomial#0" />
-            <element signature="method#derivation#0;class#Polynomial#0" />
-            <element signature="method#antiderivative#0;class#Polynomial#0" />
-            <element signature="method#compareTo#0;class#Polinom#0" />
-            <element signature="method#toString#0;class#Polinom#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/jUnit/MonomialTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="598">
-          <caret line="52" column="1" selection-start-line="52" selection-start-column="1" selection-end-line="52" selection-end-column="1" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/jUnit/PolynomialTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
@@ -533,16 +510,57 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/backEnd/Monomial.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="23" column="37" selection-start-line="23" selection-start-column="37" selection-end-line="23" selection-end-column="37" />
+          <folding>
+            <element signature="method#Monomial#0;class#Monomial#0" />
+            <element signature="method#compareTo#0;class#Monom#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/backEnd/Polynomial.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="527">
+          <caret line="200" selection-start-line="200" selection-end-line="200" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#add#0;class#Polinom#0" />
+            <element signature="method#sum#0;class#Polynomial#0" />
+            <element signature="method#subtraction#0;class#Polynomial#0" />
+            <element signature="method#multiplication#0;class#Polynomial#0" />
+            <element signature="method#division#0;class#Polynomial#0" />
+            <element signature="method#derivation#0;class#Polynomial#0" />
+            <element signature="method#antiderivative#0;class#Polynomial#0" />
+            <element signature="method#compareTo#0;class#Polinom#0" />
+            <element signature="method#toString#0;class#Polinom#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/frontEnd/MainFrame.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="71">
-          <caret line="200" column="16" selection-start-line="200" selection-start-column="16" selection-end-line="200" selection-end-column="16" />
+        <state relative-caret-position="391">
+          <caret line="210" column="61" selection-start-line="210" selection-start-column="61" selection-end-line="210" selection-end-column="61" />
           <folding>
+            <element signature="imports" expanded="true" />
             <element signature="method#inputError#0;class#MainFrame#0" />
             <element signature="method#removeSpaces#0;class#MainFrame#0" />
             <element signature="method#getInput#0;class#MainFrame#0" />
             <element signature="e#8584#9596#0" expanded="true" />
             <element signature="e#9595#9596#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/jUnit/MonomialTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="884">
+          <caret line="52" column="1" selection-start-line="52" selection-start-column="1" selection-end-line="52" selection-end-column="1" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -553,7 +571,7 @@
       <state key="ArtifactsStructureConfigurable.UI">
         <settings>
           <artifact-editor />
-          <last-edited>HW1:jar</last-edited>
+          <last-edited>Polynomial</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>

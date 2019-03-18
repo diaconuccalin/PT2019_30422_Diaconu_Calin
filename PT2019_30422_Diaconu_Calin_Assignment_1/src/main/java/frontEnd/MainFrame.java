@@ -206,10 +206,10 @@ public class MainFrame extends JFrame{
         JButton jButtonSubtraction = new JButton("Subtraction");
         JButton jButtonMultiplication = new JButton("Multiplication");
         JButton jButtonDivision = new JButton("Division");
-        JButton jButtonDerivative1 = new JButton("DerivativeP1");
-        JButton jButtonAntiderivative1 = new JButton("AntiderivativeP1");
-        JButton jButtonDerivative2 = new JButton("DerivativeP2");
-        JButton jButtonAntiderivative2 = new JButton("AntiderivativeP2");
+        JButton jButtonDerivative1 = new JButton("Derivative P1");
+        JButton jButtonAntiderivative1 = new JButton("Antiderivative P1");
+        JButton jButtonDerivative2 = new JButton("Derivative P2");
+        JButton jButtonAntiderivative2 = new JButton("Antiderivative P2");
 
         jButtonAddition.setBounds(15, 100, 130, 20);
         jButtonSubtraction.setBounds(150, 100, 130, 20);
