@@ -8,7 +8,6 @@
   <component name="ChangeListManager">
     <list default="true" id="0906a13d-d7e9-47b2-882a-c94a0cd309b5" name="Default Changelist" comment="Cleanup">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/frontEnd/MainFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/frontEnd/MainFrame.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -27,7 +26,6 @@
               <caret line="23" column="37" selection-start-line="23" selection-start-column="37" selection-end-line="23" selection-end-column="37" />
               <folding>
                 <element signature="method#Monomial#0;class#Monomial#0" />
-                <element signature="method#compareTo#0;class#Monom#0" />
               </folding>
             </state>
           </provider>
@@ -36,45 +34,32 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/backEnd/Polynomial.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="527">
+            <state relative-caret-position="2278">
               <caret line="200" selection-start-line="200" selection-end-line="200" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="method#add#0;class#Polinom#0" />
-                <element signature="method#sum#0;class#Polynomial#0" />
                 <element signature="method#subtraction#0;class#Polynomial#0" />
                 <element signature="method#multiplication#0;class#Polynomial#0" />
                 <element signature="method#division#0;class#Polynomial#0" />
-                <element signature="method#derivation#0;class#Polynomial#0" />
                 <element signature="method#antiderivative#0;class#Polynomial#0" />
-                <element signature="method#compareTo#0;class#Polinom#0" />
-                <element signature="method#toString#0;class#Polinom#0" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/frontEnd/MainFrame.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="391">
-              <caret line="210" column="61" selection-start-line="210" selection-start-column="61" selection-end-line="210" selection-end-column="61" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="method#inputError#0;class#MainFrame#0" />
-                <element signature="method#removeSpaces#0;class#MainFrame#0" />
-                <element signature="method#getInput#0;class#MainFrame#0" />
-                <element signature="e#8584#9596#0" expanded="true" />
-                <element signature="e#9595#9596#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/frontEnd/MainFrame.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="3519">
+              <caret line="215" column="54" selection-start-line="215" selection-start-column="54" selection-end-line="215" selection-end-column="54" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/jUnit/MonomialTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="884">
+            <state relative-caret-position="867">
               <caret line="52" column="1" selection-start-line="52" selection-start-column="1" selection-end-line="52" selection-end-column="1" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -86,17 +71,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/jUnit/PolynomialTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
+            <state relative-caret-position="1887">
               <caret line="115" column="37" selection-start-line="115" selection-start-column="37" selection-end-line="115" selection-end-column="37" />
-              <folding>
-                <element signature="method#testAdunare#0;class#PolinomTest#0" />
-                <element signature="method#testScadere#0;class#PolinomTest#0" />
-                <element signature="method#testInmultire#0;class#PolinomTest#0" />
-                <element signature="method#testImpartire#0;class#PolinomTest#0" />
-                <element signature="method#testDerivare#0;class#PolinomTest#0" />
-                <element signature="method#testIntegrare#0;class#PolinomTest#0" />
-                <element signature="method#testCompareTo#0;class#PolinomTest#0" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -165,10 +141,10 @@
       </MavenImportingSettings>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="957" />
-    <option name="y" value="-8" />
-    <option name="width" value="788" />
+    <option name="y" value="-9" />
+    <option name="width" value="789" />
     <option name="height" value="420" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -177,7 +153,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -203,12 +178,36 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="PT2019_30422_Diaconu_Calin_Assignment_1" type="b2602c69:ProjectViewProjectNode" />
+              <item name="PT2019_30422_Diaconu_Calin_Assignment_1" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="PT2019_30422_Diaconu_Calin_Assignment_1" type="b2602c69:ProjectViewProjectNode" />
+              <item name="PT2019_30422_Diaconu_Calin_Assignment_1" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="PT2019_30422_Diaconu_Calin_Assignment_1" type="b2602c69:ProjectViewProjectNode" />
+              <item name="PT2019_30422_Diaconu_Calin_Assignment_1" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="META-INF" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="Course" />
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -247,8 +246,10 @@
   </component>
   <component name="RunManager" selected="Application.Main">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="ALTERNATIVE_JRE_PATH" value="11" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
       <option name="MAIN_CLASS_NAME" value="main.Main" />
-      <module name="HW1" />
+      <module name="PT2019_30422_Diaconu_Calin_Assignment_1" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -257,7 +258,6 @@
       <module name="HW1" />
       <option name="PACKAGE_NAME" value="jUnit" />
       <option name="MAIN_CLASS_NAME" value="jUnit.JavaTest" />
-      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -266,7 +266,6 @@
       <module name="HW1" />
       <option name="PACKAGE_NAME" value="jUnit" />
       <option name="MAIN_CLASS_NAME" value="jUnit.PolynomialTest" />
-      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -417,38 +416,37 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-1374" y="663" width="1382" height="784" extended-state="6" />
-    <editor active="true" />
+    <frame x="-7" y="-7" width="1295" height="695" extended-state="6" />
     <layout>
-      <window_info id="Image Layers" />
-      <window_info id="Capture Tool" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.16263238" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.16761133" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Learn" order="2" />
       <window_info id="Designer" order="3" />
       <window_info id="UI Designer" order="4" />
       <window_info id="Favorites" order="5" side_tool="true" />
-      <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
+      <window_info id="Image Layers" order="6" />
+      <window_info id="Capture Tool" order="7" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" sideWeight="0.4985015" weight="0.327853" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.37291983" visible="true" weight="0.20122887" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.37291983" weight="0.20122887" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.49948823" weight="0.3294347" />
       <window_info anchor="bottom" id="Educational.CheckDetails" order="7" />
       <window_info anchor="bottom" id="Terminal" order="8" sideWeight="0.49948823" weight="0.3294347" />
-      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.6270802" side_tool="true" visible="true" weight="0.20122887" />
+      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.62753034" side_tool="true" visible="true" weight="0.20071048" />
       <window_info anchor="bottom" id="Version Control" order="10" />
-      <window_info anchor="bottom" id="Messages" order="11" sideWeight="0.2579425" weight="0.32565284" />
-      <window_info anchor="right" id="Theme Preview" />
-      <window_info anchor="right" id="Capture Analysis" />
+      <window_info anchor="bottom" id="Messages" order="11" sideWeight="0.2574899" weight="0.3250444" />
+      <window_info anchor="bottom" id="Docker" order="12" show_stripe_button="false" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="right" id="Maven" order="4" />
       <window_info anchor="right" id="Palette&#9;" order="5" />
+      <window_info anchor="right" id="Theme Preview" order="6" />
+      <window_info anchor="right" id="Capture Analysis" order="7" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -477,29 +475,46 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/JavaTest.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/JavaTest.java" />
+    <entry file="file://$PROJECT_DIR$/../../../30422_Betianu_Miruna_Diaconu_Calin/hwOOP/src/Classes/Tests/AllVehiclesTest.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/backEnd/Monomial.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="5" lean-forward="true" selection-end-line="8" />
+        <state relative-caret-position="238">
+          <caret line="23" column="37" selection-start-line="23" selection-start-column="37" selection-end-line="23" selection-end-column="37" />
+          <folding>
+            <element signature="method#Monomial#0;class#Monomial#0" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../../../30422_Betianu_Miruna_Diaconu_Calin/hwOOP/src/Classes/Tests/AllVehiclesTest.java">
-      <provider selected="true" editor-type-id="text-editor" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/backEnd/Polynomial.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2278">
+          <caret line="200" selection-start-line="200" selection-end-line="200" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#subtraction#0;class#Polynomial#0" />
+            <element signature="method#multiplication#0;class#Polynomial#0" />
+            <element signature="method#division#0;class#Polynomial#0" />
+            <element signature="method#antiderivative#0;class#Polynomial#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/jUnit/MonomialTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="867">
+          <caret line="52" column="1" selection-start-line="52" selection-start-column="1" selection-end-line="52" selection-end-column="1" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/jUnit/PolynomialTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
+        <state relative-caret-position="1887">
           <caret line="115" column="37" selection-start-line="115" selection-start-column="37" selection-end-line="115" selection-end-column="37" />
-          <folding>
-            <element signature="method#testAdunare#0;class#PolinomTest#0" />
-            <element signature="method#testScadere#0;class#PolinomTest#0" />
-            <element signature="method#testInmultire#0;class#PolinomTest#0" />
-            <element signature="method#testImpartire#0;class#PolinomTest#0" />
-            <element signature="method#testDerivare#0;class#PolinomTest#0" />
-            <element signature="method#testIntegrare#0;class#PolinomTest#0" />
-            <element signature="method#testCompareTo#0;class#PolinomTest#0" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -510,58 +525,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/backEnd/Monomial.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="23" column="37" selection-start-line="23" selection-start-column="37" selection-end-line="23" selection-end-column="37" />
-          <folding>
-            <element signature="method#Monomial#0;class#Monomial#0" />
-            <element signature="method#compareTo#0;class#Monom#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/backEnd/Polynomial.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="527">
-          <caret line="200" selection-start-line="200" selection-end-line="200" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#add#0;class#Polinom#0" />
-            <element signature="method#sum#0;class#Polynomial#0" />
-            <element signature="method#subtraction#0;class#Polynomial#0" />
-            <element signature="method#multiplication#0;class#Polynomial#0" />
-            <element signature="method#division#0;class#Polynomial#0" />
-            <element signature="method#derivation#0;class#Polynomial#0" />
-            <element signature="method#antiderivative#0;class#Polynomial#0" />
-            <element signature="method#compareTo#0;class#Polinom#0" />
-            <element signature="method#toString#0;class#Polinom#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/frontEnd/MainFrame.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="210" column="61" selection-start-line="210" selection-start-column="61" selection-end-line="210" selection-end-column="61" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#inputError#0;class#MainFrame#0" />
-            <element signature="method#removeSpaces#0;class#MainFrame#0" />
-            <element signature="method#getInput#0;class#MainFrame#0" />
-            <element signature="e#8584#9596#0" expanded="true" />
-            <element signature="e#9595#9596#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/jUnit/MonomialTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="884">
-          <caret line="52" column="1" selection-start-line="52" selection-start-column="1" selection-end-line="52" selection-end-column="1" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="3519">
+          <caret line="215" column="54" selection-start-line="215" selection-start-column="54" selection-end-line="215" selection-end-column="54" />
         </state>
       </provider>
     </entry>
@@ -619,7 +586,7 @@
       </state>
       <state key="ModuleStructureConfigurable.UI">
         <settings>
-          <last-edited>HW1</last-edited>
+          <last-edited>PT2019_30422_Diaconu_Calin_Assignment_1</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
