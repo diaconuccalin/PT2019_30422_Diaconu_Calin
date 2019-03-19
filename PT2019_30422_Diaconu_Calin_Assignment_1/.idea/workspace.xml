@@ -7,7 +7,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0906a13d-d7e9-47b2-882a-c94a0cd309b5" name="Default Changelist" comment="Cleanup">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../PT2019_30422_Diaconu_Calin_Assignment_2/src/main/java/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PT2019_30422_Diaconu_Calin_Assignment_2/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../PT2019_30422_Diaconu_Calin_Assignment_2/.idea/workspace.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -416,7 +417,8 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1295" height="695" extended-state="6" />
+    <frame x="-7" y="-7" width="1295" height="695" extended-state="7" />
+    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.16761133" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
