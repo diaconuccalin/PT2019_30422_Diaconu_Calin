@@ -7,8 +7,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0906a13d-d7e9-47b2-882a-c94a0cd309b5" name="Default Changelist" comment="Cleanup">
-      <change afterPath="$PROJECT_DIR$/../PT2019_30422_Diaconu_Calin_Assignment_2/src/main/java/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../PT2019_30422_Diaconu_Calin_Assignment_2/src/main/java/MainFrame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../PT2019_30422_Diaconu_Calin_Assignment_2/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../PT2019_30422_Diaconu_Calin_Assignment_2/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PT2019_30422_Diaconu_Calin_Assignment_2/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../PT2019_30422_Diaconu_Calin_Assignment_2/src/main/java/Main.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -26,7 +28,12 @@
             <state relative-caret-position="238">
               <caret line="23" column="37" selection-start-line="23" selection-start-column="37" selection-end-line="23" selection-end-column="37" />
               <folding>
-                <element signature="method#Monomial#0;class#Monomial#0" />
+                <element signature="e#301#302#0" expanded="true" />
+                <element signature="e#335#336#0" expanded="true" />
+                <element signature="e#367#368#0" expanded="true" />
+                <element signature="e#398#399#0" expanded="true" />
+                <element signature="e#444#445#0" expanded="true" />
+                <element signature="e#490#491#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -35,23 +42,19 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/backEnd/Polynomial.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2278">
+            <state relative-caret-position="326">
               <caret line="200" selection-start-line="200" selection-end-line="200" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="method#subtraction#0;class#Polynomial#0" />
-                <element signature="method#multiplication#0;class#Polynomial#0" />
-                <element signature="method#division#0;class#Polynomial#0" />
-                <element signature="method#antiderivative#0;class#Polynomial#0" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/frontEnd/MainFrame.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3519">
+            <state relative-caret-position="1173">
               <caret line="215" column="54" selection-start-line="215" selection-start-column="54" selection-end-line="215" selection-end-column="54" />
             </state>
           </provider>
@@ -60,7 +63,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/jUnit/MonomialTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="867">
+            <state relative-caret-position="368">
               <caret line="52" column="1" selection-start-line="52" selection-start-column="1" selection-end-line="52" selection-end-column="1" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -69,10 +72,10 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/jUnit/PolynomialTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1887">
+            <state relative-caret-position="-1020">
               <caret line="115" column="37" selection-start-line="115" selection-start-column="37" selection-end-line="115" selection-end-column="37" />
             </state>
           </provider>
@@ -143,10 +146,10 @@
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="7">
-    <option name="x" value="957" />
-    <option name="y" value="-9" />
-    <option name="width" value="789" />
-    <option name="height" value="420" />
+    <option name="x" value="-11" />
+    <option name="y" value="-11" />
+    <option name="width" value="980" />
+    <option name="height" value="1031" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -178,6 +181,30 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="PT2019_30422_Diaconu_Calin_Assignment_1" type="b2602c69:ProjectViewProjectNode" />
+              <item name="PT2019_30422_Diaconu_Calin_Assignment_1" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="backEnd" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="PT2019_30422_Diaconu_Calin_Assignment_1" type="b2602c69:ProjectViewProjectNode" />
+              <item name="PT2019_30422_Diaconu_Calin_Assignment_1" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="frontEnd" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="PT2019_30422_Diaconu_Calin_Assignment_1" type="b2602c69:ProjectViewProjectNode" />
+              <item name="PT2019_30422_Diaconu_Calin_Assignment_1" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="jUnit" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="PT2019_30422_Diaconu_Calin_Assignment_1" type="b2602c69:ProjectViewProjectNode" />
@@ -418,7 +445,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1295" height="695" extended-state="7" />
-    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.16761133" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -430,7 +456,7 @@
       <window_info id="Capture Tool" order="7" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" sideWeight="0.4985015" weight="0.327853" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.37291983" weight="0.20122887" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.37246963" weight="0.20071048" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -479,33 +505,48 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/JavaTest.java" />
     <entry file="file://$PROJECT_DIR$/../../../30422_Betianu_Miruna_Diaconu_Calin/hwOOP/src/Classes/Tests/AllVehiclesTest.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/main/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="6" column="16" selection-start-line="6" selection-start-column="16" selection-end-line="6" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/backEnd/Monomial.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
           <caret line="23" column="37" selection-start-line="23" selection-start-column="37" selection-end-line="23" selection-end-column="37" />
           <folding>
-            <element signature="method#Monomial#0;class#Monomial#0" />
+            <element signature="e#301#302#0" expanded="true" />
+            <element signature="e#335#336#0" expanded="true" />
+            <element signature="e#367#368#0" expanded="true" />
+            <element signature="e#398#399#0" expanded="true" />
+            <element signature="e#444#445#0" expanded="true" />
+            <element signature="e#490#491#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/backEnd/Polynomial.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2278">
+        <state relative-caret-position="326">
           <caret line="200" selection-start-line="200" selection-end-line="200" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#subtraction#0;class#Polynomial#0" />
-            <element signature="method#multiplication#0;class#Polynomial#0" />
-            <element signature="method#division#0;class#Polynomial#0" />
-            <element signature="method#antiderivative#0;class#Polynomial#0" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/frontEnd/MainFrame.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1173">
+          <caret line="215" column="54" selection-start-line="215" selection-start-column="54" selection-end-line="215" selection-end-column="54" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/jUnit/MonomialTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="867">
+        <state relative-caret-position="368">
           <caret line="52" column="1" selection-start-line="52" selection-start-column="1" selection-end-line="52" selection-end-column="1" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -515,22 +556,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/jUnit/PolynomialTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1887">
+        <state relative-caret-position="-1020">
           <caret line="115" column="37" selection-start-line="115" selection-start-column="37" selection-end-line="115" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/main/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="6" column="16" selection-start-line="6" selection-start-column="16" selection-end-line="6" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/frontEnd/MainFrame.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3519">
-          <caret line="215" column="54" selection-start-line="215" selection-start-column="54" selection-end-line="215" selection-end-column="54" />
         </state>
       </provider>
     </entry>
