@@ -1,10 +1,14 @@
 import javax.swing.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class MainFrame extends JFrame {
+    long startingTime;
+
     public MainFrame() {
         //MainFrame initial conditions
         int w = 1210;
-        int h = 550;
+        int h = 600;
 
         setLayout(null);
         setSize(w, h);
@@ -35,6 +39,26 @@ public class MainFrame extends JFrame {
         informationPanel.setBounds(informationPanelPositionX, informationPanelPositionY, informationPanelWidth, informationPanelHeight);
 
         this.add(informationPanel);
+
+        //time control panel
+        TimeControlPanel timeControlPanel = new TimeControlPanel();
+
+        int timeControlPanelPositionX = 5;
+        int timeControlPanelPositionY = 510;
+        int timeControlPanelWidth = 1190;
+        int timeControlPanelHeight = 50;
+
+        timeControlPanel.setBounds(timeControlPanelPositionX, timeControlPanelPositionY, timeControlPanelWidth, timeControlPanelHeight);
+
+        this.add(timeControlPanel);
+
+        //action listeners
+        timeControlPanel.getStartButton().addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                startingTime = System.nanoTime();
+                System.out.println(startingTime);
+            }
+        });
 
         setVisible(true);
     }
