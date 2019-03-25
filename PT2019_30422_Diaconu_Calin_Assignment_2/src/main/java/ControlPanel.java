@@ -1,12 +1,17 @@
 import javax.swing.*;
 
 public class ControlPanel extends JPanel {
+    private TimeSlidersPanel intervalTime;
+    private TimeSlidersPanel serviceTime;
+    private TimeSlidersPanel infoTime;
+    private TimeSlidersPanel otherControls;
+
     public ControlPanel() {
         this.setBorder(UIElements.etchedTitleBorder("Control Panel"));
         this.setLayout(null);
 
         //interval time
-        TimeSlidersPanel intervalTime = new TimeSlidersPanel("Interval Time", "Min:", "Max:", 0, 50, 20, 100);
+        intervalTime = new TimeSlidersPanel("Interval Time", "Min (s):", "Max (s):", 0, 20, 30, 60);
 
         int intervalTimePositionX = 10;
         int intervalTimePositionY = 20;
@@ -19,7 +24,7 @@ public class ControlPanel extends JPanel {
 
 
         //service time
-        TimeSlidersPanel serviceTime = new TimeSlidersPanel("Service Time", "Min:", "Max:", 0, 50, 20, 100);
+        serviceTime = new TimeSlidersPanel("Service Time", "Min (s):", "Max (s):", 10, 20, 30, 60);
 
         int serviceTimePositionX = 10;
         int serviceTimePositionY = 140;
@@ -32,7 +37,7 @@ public class ControlPanel extends JPanel {
 
 
         //info time
-        TimeSlidersPanel infoTime = new TimeSlidersPanel("Information Time", "Min:", "Max:", 0, 50, 20, 100);
+        infoTime = new TimeSlidersPanel("Information Time", "Min (min):", "Max (min):", 0, 20, 10, 60);
 
         int infoTimePositionX = 10;
         int infoTimePositionY = 260;
@@ -44,7 +49,7 @@ public class ControlPanel extends JPanel {
         this.add(infoTime);
 
         //other controls
-        TimeSlidersPanel otherControls = new TimeSlidersPanel("Other Controls", "Sim time:", "Queue no:", 20, 100, 0, 30);
+        otherControls = new TimeSlidersPanel("Other Controls", "Sim time:", "Queue no:", 0, 60, 0, 30);
 
         int otherControlsPositionX = 10;
         int otherControlsPositionY = 380;
@@ -56,5 +61,26 @@ public class ControlPanel extends JPanel {
         this.add(otherControls);
 
         this.setVisible(true);
+    }
+
+    public int[] getValues() {
+        int[] result = new int[8];
+
+        int[] result1;
+        int[] result2;
+        int[] result3;
+        int[] result4;
+
+        result1 = intervalTime.getValues();
+        result2 = serviceTime.getValues();
+        result3 = infoTime.getValues();
+        result4 = otherControls.getValues();
+
+        System.arraycopy(result1, 0, result, 0, 2);
+        System.arraycopy(result2, 0, result, 2, 2);
+        System.arraycopy(result3, 0, result, 4, 2);
+        System.arraycopy(result4, 0, result, 6, 2);
+
+        return result;
     }
 }

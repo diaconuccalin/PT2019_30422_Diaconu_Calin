@@ -1,6 +1,9 @@
 import javax.swing.*;
 
 public class TimeSlidersPanel extends JPanel {
+    private JSlider minSlider;
+    private JSlider maxSlider;
+
     public TimeSlidersPanel(String title, String firstLabel, String secondLabel, int min1, int max1, int min2, int max2) {
         this.setBorder(UIElements.etchedTitleBorder(title));
         this.setLayout(null);
@@ -16,14 +19,23 @@ public class TimeSlidersPanel extends JPanel {
         this.add(maxLabel);
 
         //sliders
-        JSlider minSlider = UIElements.selectionSlider(min1, max1);
+        minSlider = UIElements.selectionSlider(min1, max1);
         minSlider.setBounds(60, 15, 210, 50);
         this.add(minSlider);
 
-        JSlider maxSlider = UIElements.selectionSlider(min2, max2);
+        maxSlider = UIElements.selectionSlider(min2, max2);
         maxSlider.setBounds(60, 65, 210, 50);
         this.add(maxSlider);
 
         this.setVisible(true);
+    }
+
+    public int[] getValues() {
+        int[] result = new int[2];
+
+        result[0] = minSlider.getValue();
+        result[1] = maxSlider.getValue();
+
+        return result;
     }
 }

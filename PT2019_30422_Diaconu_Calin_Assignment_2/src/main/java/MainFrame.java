@@ -1,10 +1,11 @@
 import javax.swing.*;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
+import java.util.List;
 
 public class MainFrame extends JFrame {
-    long startingTime;
-
     public MainFrame() {
         //MainFrame initial conditions
         int w = 1210;
@@ -17,7 +18,7 @@ public class MainFrame extends JFrame {
         setDefaultCloseOperation(EXIT_ON_CLOSE);
 
         //control panel
-        ControlPanel controlPanel = new ControlPanel();
+        final ControlPanel controlPanel = new ControlPanel();
 
         int controlPanelPositionX = 5;
         int controlPanelPositionY = 0;
@@ -55,8 +56,15 @@ public class MainFrame extends JFrame {
         //action listeners
         timeControlPanel.getStartButton().addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                startingTime = System.nanoTime();
-                System.out.println(startingTime);
+                int[] values = controlPanel.getValues();
+                List<Queue> queueList = new ArrayList<Queue>();
+
+                for(int i = 0; i < values[7]; i++) {
+                    Queue queue = new Queue();
+                    queueList.add(queue);
+                }
+
+                ClientGenerator clientGenerator = new ClientGenerator(values, queueList);
             }
         });
 

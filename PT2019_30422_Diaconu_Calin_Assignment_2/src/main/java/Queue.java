@@ -3,6 +3,11 @@ import java.util.List;
 
 public class Queue extends Thread {
     private List<Client> clientList = new ArrayList<Client>();
+    private long startTime;
+
+    public Queue() {
+        this.run();
+    }
 
     public void addClient(Client client) {
         clientList.add(client);
@@ -47,5 +52,9 @@ public class Queue extends Thread {
         }
 
         return result;
+    }
+
+    public void setStartTime(long startTime) {
+        this.startTime = startTime;
     }
 }

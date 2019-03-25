@@ -25,12 +25,12 @@ public class TextInfoPanel extends JPanel {
                 "\n    Service time: " + q1ST +
                 "\n    Empty queue time: " + q1EQT +
 
-                "\n Queue2:" +
+                "\n\n Queue2:" +
                 "\n    Average waiting time: " + q2AWT +
                 "\n    Service time: " + q2ST +
                 "\n    Empty queue time: " + q2EQT +
 
-                "\n Queue3:" +
+                "\n\n Queue3:" +
                 "\n    Average waiting time: " + q3AWT +
                 "\n    Service time: " + q3ST +
                 "\n    Empty queue time: " + q3EQT
