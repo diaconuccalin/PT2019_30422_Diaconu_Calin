@@ -6,6 +6,7 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="HW2" />
         <module name="PT2019_30422_Diaconu_Calin_Assignment_2" />
       </profile>
     </annotationProcessing>

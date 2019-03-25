@@ -23,4 +23,29 @@ public class Queue extends Thread {
             }
         }
     }
+
+    public int getTotalWaitingTime() {
+        int result = 0;
+
+        for(Client client : clientList) {
+            result += client.getServiceTime();
+        }
+
+        return result;
+    }
+
+    public static Queue bestQueue(List<Queue> queueList) {
+        Queue result = queueList.get(0);
+        int min = result.getTotalWaitingTime();
+
+        for(Queue queue : queueList) {
+            int totalWaitingTime = queue.getTotalWaitingTime();
+            if(totalWaitingTime < min) {
+                min = totalWaitingTime;
+                result = queue;
+            }
+        }
+
+        return result;
+    }
 }
