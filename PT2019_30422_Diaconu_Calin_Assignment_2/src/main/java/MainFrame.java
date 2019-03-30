@@ -5,6 +5,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MainFrame extends JFrame {
+    private Timer timer;
+    private List<Queue> queueList;
+
     public MainFrame() {
         //MainFrame initial conditions
         int w = 1210;
@@ -41,7 +44,7 @@ public class MainFrame extends JFrame {
         this.add(informationPanel);
 
         //time control panel
-        TimeControlPanel timeControlPanel = new TimeControlPanel();
+        final TimeControlPanel timeControlPanel = new TimeControlPanel();
 
         int timeControlPanelPositionX = 5;
         int timeControlPanelPositionY = 510;
@@ -53,18 +56,28 @@ public class MainFrame extends JFrame {
         this.add(timeControlPanel);
 
         //action listeners
+
         timeControlPanel.getStartButton().addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 int[] values = controlPanel.getValues();
-                List<Queue> queueList = new ArrayList<Queue>();
+                queueList = new ArrayList<Queue>();
 
                 for(int i = 0; i < values[7]; i++) {
-                    Queue queue = new Queue();
+                    Queue queue = new Queue(values[6]);
                     queueList.add(queue);
                 }
 
-
+                timer = new Timer(timeControlPanel.getTimer());
                 ClientGenerator clientGenerator = new ClientGenerator(values, queueList);
+            }
+        });
+
+        timeControlPanel.getStopButton().addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                timer.setRunnable(false);
+                for(Queue queue : queueList) {
+                    queue.setRunnable(false);
+                }
             }
         });
 

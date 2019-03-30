@@ -17,8 +17,8 @@ public class TimeControlPanel extends JPanel {
         stopButton.setBounds(120, 15, 100, 25);
         add(stopButton);
 
-        timer = new JLabel();
-        timer.setBounds(230, 15, 100, 25);
+        timer = new JLabel("Timer: 0 s");
+        timer.setBounds(1100, 15, 100, 25);
         add(timer);
 
         this.setVisible(true);

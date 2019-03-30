@@ -4,8 +4,12 @@ import java.util.List;
 public class Queue extends Thread {
     private List<Client> clientList = new ArrayList<Client>();
     private long startTime;
+    private boolean runnable;
+    private long runningTime;
 
-    public Queue() {
+    public Queue(long runningTime) {
+        this.runningTime = runningTime;
+        this.runnable = true;
         this.start();
     }
 
@@ -14,7 +18,7 @@ public class Queue extends Thread {
     }
 
     public void run() {
-        while(true) {
+        while(runnable) {
             if(!clientList.isEmpty()) {
                 Client currentClient = clientList.get(0);
 
@@ -25,6 +29,8 @@ public class Queue extends Thread {
                 }
 
                 clientList.remove(0);
+            } else if((System.currentTimeMillis() - startTime) / 1000 >= runningTime) {
+                runnable = false;
             }
         }
     }
@@ -56,5 +62,13 @@ public class Queue extends Thread {
 
     public void setStartTime(long startTime) {
         this.startTime = startTime;
+    }
+
+    public boolean isEmpty() {
+        return clientList.isEmpty();
+    }
+
+    public void setRunnable(boolean runnable) {
+        this.runnable = runnable;
     }
 }
