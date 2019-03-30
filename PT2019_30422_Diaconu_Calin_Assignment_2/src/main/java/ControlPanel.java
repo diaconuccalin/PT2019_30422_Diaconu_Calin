@@ -11,7 +11,7 @@ public class ControlPanel extends JPanel {
         this.setLayout(null);
 
         //interval time
-        intervalTime = new TimeSlidersPanel("Interval Time", "Min (s):", "Max (s):", 0, 20, 30, 60);
+        intervalTime = new TimeSlidersPanel("Interval Time", "Min (s):", "Max (s):", 0, 20, 10, 30);
 
         int intervalTimePositionX = 10;
         int intervalTimePositionY = 20;
@@ -24,7 +24,7 @@ public class ControlPanel extends JPanel {
 
 
         //service time
-        serviceTime = new TimeSlidersPanel("Service Time", "Min (s):", "Max (s):", 10, 20, 30, 60);
+        serviceTime = new TimeSlidersPanel("Service Time", "Min (s):", "Max (s):", 0, 20, 10, 30);
 
         int serviceTimePositionX = 10;
         int serviceTimePositionY = 140;
@@ -37,7 +37,7 @@ public class ControlPanel extends JPanel {
 
 
         //info time
-        infoTime = new TimeSlidersPanel("Information Time", "Min (min):", "Max (min):", 0, 20, 10, 60);
+        infoTime = new TimeSlidersPanel("Information Time", "Min (s):", "Max (s):", 0, 120, 0, 120);
 
         int infoTimePositionX = 10;
         int infoTimePositionY = 260;
@@ -49,7 +49,7 @@ public class ControlPanel extends JPanel {
         this.add(infoTime);
 
         //other controls
-        otherControls = new TimeSlidersPanel("Other Controls", "Sim time:", "Queue no:", 0, 60, 0, 30);
+        otherControls = new TimeSlidersPanel("Other Controls", "Sim time:", "Queue no:", 0, 120, 0, 10);
 
         int otherControlsPositionX = 10;
         int otherControlsPositionY = 380;

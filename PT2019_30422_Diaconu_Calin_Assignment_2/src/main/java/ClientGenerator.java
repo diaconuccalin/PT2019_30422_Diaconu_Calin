@@ -28,18 +28,20 @@ public class ClientGenerator extends Thread {
 
         this.simTime = values[6];
 
-        this.run();
+        this.start();
     }
 
     public void run() {
         long startTime = System.currentTimeMillis();
-        long stopTime = startTime + simTime * 60 * 1000;
+        long stopTime = startTime + simTime * 1000;
+
+        System.out.println("Start");
 
         while(System.currentTimeMillis() < stopTime) {
             long intervalTime = (long) (Math.random() * (maxIntervalTime - minIntervalTime) + minIntervalTime);
 
             try {
-                wait(intervalTime * 1000);
+                sleep(intervalTime * 1000);
             } catch (InterruptedException e) {
                 break;
             }
@@ -47,6 +49,8 @@ public class ClientGenerator extends Thread {
             Client client = new Client(minServiceTime, maxServiceTime);
             Queue.bestQueue(queueList).addClient(client);
         }
+
+        System.out.println("done");
 
         queueList.clear();
     }

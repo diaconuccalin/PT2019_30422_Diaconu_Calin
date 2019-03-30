@@ -6,7 +6,7 @@ public class Queue extends Thread {
     private long startTime;
 
     public Queue() {
-        this.run();
+        this.start();
     }
 
     public void addClient(Client client) {
@@ -19,7 +19,7 @@ public class Queue extends Thread {
                 Client currentClient = clientList.get(0);
 
                 try {
-                    wait(currentClient.getServiceTime() * 1000);
+                    sleep(currentClient.getServiceTime() * 1000);
                 } catch (InterruptedException e) {
                     break;
                 }

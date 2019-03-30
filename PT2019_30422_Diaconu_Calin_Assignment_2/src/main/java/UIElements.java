@@ -16,7 +16,7 @@ public class UIElements {
 
         jSlider.setSnapToTicks(true);
         jSlider.setMinorTickSpacing(1);
-        jSlider.setMajorTickSpacing(10);
+        jSlider.setMajorTickSpacing((max - min) / 5);
         jSlider.setPaintTicks(true);
         jSlider.setPaintLabels(true);
 

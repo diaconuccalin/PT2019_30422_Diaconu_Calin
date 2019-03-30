@@ -3,6 +3,7 @@ import javax.swing.*;
 public class TimeControlPanel extends JPanel {
     private JButton startButton;
     private JButton stopButton;
+    private JLabel timer;
 
     public TimeControlPanel() {
         this.setBorder(UIElements.etchedTitleBorder("Time Control"));
@@ -16,6 +17,10 @@ public class TimeControlPanel extends JPanel {
         stopButton.setBounds(120, 15, 100, 25);
         add(stopButton);
 
+        timer = new JLabel();
+        timer.setBounds(230, 15, 100, 25);
+        add(timer);
+
         this.setVisible(true);
     }
 
@@ -25,5 +30,9 @@ public class TimeControlPanel extends JPanel {
 
     public JButton getStopButton() {
         return stopButton;
+    }
+
+    public JLabel getTimer() {
+        return timer;
     }
 }
