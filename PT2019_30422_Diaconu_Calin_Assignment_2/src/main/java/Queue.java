@@ -8,6 +8,7 @@ public class Queue extends Thread {
     private long runningTime;
 
     public Queue(long runningTime) {
+        this.startTime = System.currentTimeMillis();
         this.runningTime = runningTime;
         this.runnable = true;
         this.start();
@@ -19,20 +20,20 @@ public class Queue extends Thread {
 
     public void run() {
         while(runnable) {
-            if(!clientList.isEmpty()) {
-                Client currentClient = clientList.get(0);
-
-                try {
+            try {
+                if (!clientList.isEmpty()) {
+                    Client currentClient = clientList.get(0);
                     sleep(currentClient.getServiceTime() * 1000);
-                } catch (InterruptedException e) {
-                    break;
+                    clientList.remove(0);
+                } else if ((System.currentTimeMillis() - startTime) / 1000 >= runningTime) {
+                    runnable = false;
                 }
-
-                clientList.remove(0);
-            } else if((System.currentTimeMillis() - startTime) / 1000 >= runningTime) {
-                runnable = false;
+            } catch (InterruptedException e) {
+                break;
             }
         }
+
+        clientList.removeAll(clientList);
     }
 
     public int getTotalWaitingTime() {
@@ -43,6 +44,14 @@ public class Queue extends Thread {
         }
 
         return result;
+    }
+
+    public static boolean allQueuesEmpty(List<Queue> queueList) {
+        for(Queue queue : queueList) {
+            if(!queue.isEmpty())
+                return false;
+        }
+        return true;
     }
 
     public static Queue bestQueue(List<Queue> queueList) {

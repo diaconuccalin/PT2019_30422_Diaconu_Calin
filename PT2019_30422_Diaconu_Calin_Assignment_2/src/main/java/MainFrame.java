@@ -5,8 +5,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MainFrame extends JFrame {
-    private Timer timer;
+    private ClientGenerator clientGenerator;
     private List<Queue> queueList;
+    private Timer timer;
 
     public MainFrame() {
         //MainFrame initial conditions
@@ -67,17 +68,21 @@ public class MainFrame extends JFrame {
                     queueList.add(queue);
                 }
 
-                timer = new Timer(timeControlPanel.getTimer());
-                ClientGenerator clientGenerator = new ClientGenerator(values, queueList);
+                timer = new Timer(timeControlPanel.getTimer(), queueList, values[6]);
+                clientGenerator = new ClientGenerator(values, queueList);
             }
         });
 
         timeControlPanel.getStopButton().addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                timer.setRunnable(false);
+                clientGenerator.interrupt();
+
                 for(Queue queue : queueList) {
-                    queue.setRunnable(false);
+                    queue.interrupt();
                 }
+                queueList.removeAll(queueList);
+
+                timer.setRunnable(false);
             }
         });
 
