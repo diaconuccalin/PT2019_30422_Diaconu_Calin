@@ -33,7 +33,7 @@ public class MainFrame extends JFrame {
         this.add(controlPanel);
 
         //information panel
-        InformationPanel informationPanel = new InformationPanel();
+        final InformationPanel informationPanel = new InformationPanel();
 
         int informationPanelPositionX = 310;
         int informationPanelPositionY = 0;
@@ -64,11 +64,11 @@ public class MainFrame extends JFrame {
                 queueList = new ArrayList<Queue>();
 
                 for(int i = 0; i < values[7]; i++) {
-                    Queue queue = new Queue(values[6]);
+                    Queue queue = new Queue(values[6], values[4], values[5]);
                     queueList.add(queue);
                 }
 
-                timer = new Timer(timeControlPanel.getTimer(), queueList, values[6]);
+                timer = new Timer(timeControlPanel.getTimer(), queueList, values[6], informationPanel);
                 clientGenerator = new ClientGenerator(values, queueList);
             }
         });

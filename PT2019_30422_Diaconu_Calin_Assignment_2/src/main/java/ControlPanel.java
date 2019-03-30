@@ -49,7 +49,7 @@ public class ControlPanel extends JPanel {
         this.add(infoTime);
 
         //other controls
-        otherControls = new TimeSlidersPanel("Other Controls", "Sim time:", "Queue no:", 0, 120, 0, 10);
+        otherControls = new TimeSlidersPanel("Other Controls", "Sim time:", "Queue no:", 0, 120, 3, 10);
 
         int otherControlsPositionX = 10;
         int otherControlsPositionY = 380;

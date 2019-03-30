@@ -1,39 +1,29 @@
 import javax.swing.*;
 
 public class TextInfoPanel extends JPanel {
+    private JTextArea informationText;
+
     public TextInfoPanel(String title) {
         this.setBorder(UIElements.etchedTitleBorder(title));
         this.setLayout(null);
 
-        int q1AWT = 0;
-        int q1ST = 0;
-        int q1EQT = 0;
-
-        int q2AWT = 0;
-        int q2ST = 0;
-        int q2EQT = 0;
-
-        int q3AWT = 0;
-        int q3ST = 0;
-        int q3EQT = 0;
-
-        JTextArea informationText = new JTextArea();
+        informationText = new JTextArea();
 
         informationText.setText(
                 " Queue 1:" +
-                "\n    Average waiting time: " + q1AWT +
-                "\n    Service time: " + q1ST +
-                "\n    Empty queue time: " + q1EQT +
+                "\n    Average waiting time: " + 0 +
+                "\n    Average service time: " + 0 +
+                "\n    Empty queue time: " + 0 +
 
                 "\n\n Queue2:" +
-                "\n    Average waiting time: " + q2AWT +
-                "\n    Service time: " + q2ST +
-                "\n    Empty queue time: " + q2EQT +
+                "\n    Average waiting time: " + 0 +
+                "\n    Average service time: " + 0 +
+                "\n    Empty queue time: " + 0 +
 
                 "\n\n Queue3:" +
-                "\n    Average waiting time: " + q3AWT +
-                "\n    Service time: " + q3ST +
-                "\n    Empty queue time: " + q3EQT
+                "\n    Average waiting time: " + 0 +
+                "\n    Average service time: " + 0 +
+                "\n    Empty queue time: " + 0
         );
 
         informationText.setBounds(10, 20, 280, 450);
@@ -42,5 +32,24 @@ public class TextInfoPanel extends JPanel {
         this.add(informationText);
 
         this.setVisible(true);
+    }
+
+    public void setValues(int[] values) {
+        informationText.setText(
+                " Queue 1:" +
+                        "\n    Average waiting time: " + values[0] +
+                        "\n    Average service time: " + values[1] +
+                        "\n    Empty queue time: " + values[2] +
+
+                        "\n\n Queue2:" +
+                        "\n    Average waiting time: " + values[3] +
+                        "\n    Average service time: " + values[4] +
+                        "\n    Empty queue time: " + values[5] +
+
+                        "\n\n Queue3:" +
+                        "\n    Average waiting time: " + values[6] +
+                        "\n    Average service time: " + values[7] +
+                        "\n    Empty queue time: " + values[8]
+        );
     }
 }
