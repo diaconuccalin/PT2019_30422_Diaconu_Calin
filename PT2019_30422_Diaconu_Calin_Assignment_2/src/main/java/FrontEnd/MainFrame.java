@@ -1,6 +1,15 @@
+package FrontEnd;
+
+import BackEnd.runnable.ClientGenerator;
+import BackEnd.runnable.Queue;
+import BackEnd.runnable.Timer;
+
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -10,7 +19,7 @@ public class MainFrame extends JFrame {
     private Timer timer;
 
     public MainFrame() {
-        //MainFrame initial conditions
+        //FrontEnd.MainFrame initial conditions
         int w = 1210;
         int h = 600;
 
@@ -62,14 +71,19 @@ public class MainFrame extends JFrame {
             public void actionPerformed(ActionEvent e) {
                 int[] values = controlPanel.getValues();
                 queueList = new ArrayList<Queue>();
+                BufferedWriter writer = null;
+                try {
+                    writer = new BufferedWriter(new BufferedWriter(new FileWriter("log.txt")));
+                } catch (IOException ignored) {
+                }
 
-                for(int i = 0; i < values[7]; i++) {
-                    Queue queue = new Queue(values[6], values[4], values[5]);
+                for (int i = 0; i < values[7]; i++) {
+                    Queue queue = new Queue(values[6], values[4], values[5], writer);
                     queueList.add(queue);
                 }
 
-                timer = new Timer(timeControlPanel.getTimer(), queueList, values[6], informationPanel);
-                clientGenerator = new ClientGenerator(values, queueList);
+                timer = new Timer(timeControlPanel.getTimer(), queueList, values[6], informationPanel, writer);
+                clientGenerator = new ClientGenerator(values, queueList, writer);
             }
         });
 
@@ -77,7 +91,7 @@ public class MainFrame extends JFrame {
             public void actionPerformed(ActionEvent e) {
                 clientGenerator.interrupt();
 
-                for(Queue queue : queueList) {
+                for (Queue queue : queueList) {
                     queue.interrupt();
                 }
                 queueList.removeAll(queueList);

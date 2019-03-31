@@ -1,10 +1,12 @@
+package FrontEnd;
+
 import javax.swing.*;
 
-public class AnimatedInfoPanel extends JPanel {
+class AnimatedInfoPanel extends JPanel {
     private JTextArea informationText;
 
-    public AnimatedInfoPanel() {
-        this.setBorder(UIElements.etchedTitleBorder("Queue evolution"));
+    AnimatedInfoPanel() {
+        this.setBorder(UIElements.etchedTitleBorder("BackEnd.runnable.Queue evolution"));
         this.setLayout(null);
 
         informationText = new JTextArea();
@@ -18,7 +20,7 @@ public class AnimatedInfoPanel extends JPanel {
         this.setVisible(true);
     }
 
-    public void setText(String text) {
+    void setText(String text) {
         informationText.setText(text);
     }
 }

@@ -1,11 +1,13 @@
+package FrontEnd;
+
 import javax.swing.*;
 
-public class TimeControlPanel extends JPanel {
+class TimeControlPanel extends JPanel {
     private JButton startButton;
     private JButton stopButton;
     private JLabel timer;
 
-    public TimeControlPanel() {
+    TimeControlPanel() {
         this.setBorder(UIElements.etchedTitleBorder("Time Control"));
         this.setLayout(null);
 
@@ -15,24 +17,24 @@ public class TimeControlPanel extends JPanel {
 
         stopButton = new JButton("STOP");
         stopButton.setBounds(120, 15, 100, 25);
-        add(stopButton);
+//        add(stopButton);
 
-        timer = new JLabel("Timer: 0 s");
+        timer = new JLabel("BackEnd.runnable.Timer: 0 s");
         timer.setBounds(1100, 15, 100, 25);
         add(timer);
 
         this.setVisible(true);
     }
 
-    public JButton getStartButton() {
+    JButton getStartButton() {
         return startButton;
     }
 
-    public JButton getStopButton() {
+    JButton getStopButton() {
         return stopButton;
     }
 
-    public JLabel getTimer() {
+    JLabel getTimer() {
         return timer;
     }
 }

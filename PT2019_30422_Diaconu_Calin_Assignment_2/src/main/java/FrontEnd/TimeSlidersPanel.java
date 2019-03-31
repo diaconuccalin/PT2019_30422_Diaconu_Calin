@@ -1,10 +1,12 @@
+package FrontEnd;
+
 import javax.swing.*;
 
-public class TimeSlidersPanel extends JPanel {
+class TimeSlidersPanel extends JPanel {
     private JSlider minSlider;
     private JSlider maxSlider;
 
-    public TimeSlidersPanel(String title, String firstLabel, String secondLabel, int min1, int max1, int min2, int max2) {
+    TimeSlidersPanel(String title, String firstLabel, String secondLabel, int min1, int max1, int min2, int max2) {
         this.setBorder(UIElements.etchedTitleBorder(title));
         this.setLayout(null);
 
@@ -30,7 +32,7 @@ public class TimeSlidersPanel extends JPanel {
         this.setVisible(true);
     }
 
-    public int[] getValues() {
+    int[] getValues() {
         int[] result = new int[2];
 
         result[0] = minSlider.getValue();

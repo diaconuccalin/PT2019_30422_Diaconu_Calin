@@ -1,3 +1,7 @@
+package FrontEnd;
+
+import BackEnd.runnable.Queue;
+
 import javax.swing.*;
 import java.util.List;
 
@@ -6,7 +10,7 @@ public class InformationPanel extends JPanel {
     private TextInfoPanel selectedTimeInfo;
     private AnimatedInfoPanel animatedInfoPanel;
 
-    public InformationPanel() {
+    InformationPanel() {
         this.setBorder(UIElements.etchedTitleBorder("Information Panel"));
         this.setLayout(null);
 
@@ -57,8 +61,8 @@ public class InformationPanel extends JPanel {
         int i1 = 0;
         int i2 = 0;
 
-        for(int i = 0; i < 18; i++) {
-            if(i % 6 < 3) {
+        for (int i = 0; i < 18; i++) {
+            if (i % 6 < 3) {
                 entireValues[i1] = values[i];
                 i1++;
             } else {
@@ -75,12 +79,12 @@ public class InformationPanel extends JPanel {
         String toDisplay = "";
         int queueNumber = 1;
 
-        for(Queue queue : queueList) {
+        for (Queue queue : queueList) {
             toDisplay = toDisplay.concat("Q" + queueNumber + ":");
             queueNumber++;
-            for(int i = 0; i < queue.getClientList().size(); i++) {
-                toDisplay = toDisplay.concat(" *");
-            }
+//            for(int i = 0; i < queue.getClientList().size(); i++) {
+//                toDisplay = toDisplay.concat(" *");
+//            }
             toDisplay = toDisplay.concat("\n");
         }
 

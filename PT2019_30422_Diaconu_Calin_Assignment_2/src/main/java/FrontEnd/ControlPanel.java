@@ -1,12 +1,14 @@
+package FrontEnd;
+
 import javax.swing.*;
 
-public class ControlPanel extends JPanel {
+class ControlPanel extends JPanel {
     private TimeSlidersPanel intervalTime;
     private TimeSlidersPanel serviceTime;
     private TimeSlidersPanel infoTime;
     private TimeSlidersPanel otherControls;
 
-    public ControlPanel() {
+    ControlPanel() {
         this.setBorder(UIElements.etchedTitleBorder("Control Panel"));
         this.setLayout(null);
 
@@ -49,7 +51,7 @@ public class ControlPanel extends JPanel {
         this.add(infoTime);
 
         //other controls
-        otherControls = new TimeSlidersPanel("Other Controls", "Sim time:", "Queue no:", 0, 120, 3, 10);
+        otherControls = new TimeSlidersPanel("Other Controls", "Sim time:", "BackEnd.runnable.Queue no:", 0, 120, 3, 10);
 
         int otherControlsPositionX = 10;
         int otherControlsPositionY = 380;
@@ -63,7 +65,7 @@ public class ControlPanel extends JPanel {
         this.setVisible(true);
     }
 
-    public int[] getValues() {
+    int[] getValues() {
         int[] result = new int[8];
 
         int[] result1;
