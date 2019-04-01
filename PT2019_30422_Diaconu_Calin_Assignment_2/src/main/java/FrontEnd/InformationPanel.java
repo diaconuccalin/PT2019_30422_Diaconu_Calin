@@ -82,9 +82,9 @@ public class InformationPanel extends JPanel {
         for (Queue queue : queueList) {
             toDisplay = toDisplay.concat("Q" + queueNumber + ":");
             queueNumber++;
-//            for(int i = 0; i < queue.getClientList().size(); i++) {
-//                toDisplay = toDisplay.concat(" *");
-//            }
+            for (int i = 0; i < queue.getClientList().size(); i++) {
+                toDisplay = toDisplay.concat(" *");
+            }
             toDisplay = toDisplay.concat("\n");
         }
 

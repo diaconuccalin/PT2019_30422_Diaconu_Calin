@@ -12,7 +12,7 @@ class TextInfoPanel extends JPanel {
         informationText = new JTextArea();
 
         informationText.setText(
-                " BackEnd.runnable.Queue 1:" +
+                " Queue 1:" +
                         "\n    Average waiting time: " + 0 +
                         "\n    Average service time: " + 0 +
                         "\n    Empty queue time: " + 0 +
@@ -38,7 +38,7 @@ class TextInfoPanel extends JPanel {
 
     void setValues(int[] values) {
         informationText.setText(
-                " BackEnd.runnable.Queue 1:" +
+                " Queue 1:" +
                         "\n    Average waiting time: " + values[0] +
                         "\n    Average service time: " + values[1] +
                         "\n    Empty queue time: " + values[2] +

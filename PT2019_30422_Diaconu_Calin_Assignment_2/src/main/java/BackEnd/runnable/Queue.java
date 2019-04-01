@@ -1,10 +1,9 @@
 package BackEnd.runnable;
 
 import BackEnd.nonRunnable.Client;
+import Main.Main;
 
 import java.io.BufferedWriter;
-import java.io.FileWriter;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -18,7 +17,6 @@ public class Queue extends Thread {
     private int averageWaitingTime;
     private int emptyQueueTime;
     private long emptyStart;
-
     private int intervalStart;
     private int intervalEnd;
     private int partialServiceTime;
@@ -26,7 +24,6 @@ public class Queue extends Thread {
     private int partialAverageWaitingTime;
     private int partialEmptyQueue;
     private long partialEmptyStart;
-
     private BufferedWriter writer;
 
     public Queue(int runningTime, int intervalStart, int intervalEnd, BufferedWriter writer) {
@@ -48,6 +45,7 @@ public class Queue extends Thread {
         this.partialAverageWaitingTime = 0;
         this.partialEmptyQueue = 0;
         this.partialEmptyStart = -1;
+
         this.start();
     }
 
@@ -58,75 +56,51 @@ public class Queue extends Thread {
 
     public void run() {
         while (runnable) {
+            System.out.print(""); //without this it wouldn't start immediately
             try {
                 if ((System.currentTimeMillis() - startTime) / 1000 > intervalEnd && partialEmptyStart != -1) {
                     partialEmptyQueue += (System.currentTimeMillis() - partialEmptyStart) / 1000;
                     partialEmptyStart = -1;
                 }
-
                 if (!clientList.isEmpty()) {
                     Client currentClient = clientList.get(0);
-
                     averageWaitingTime = (int) ((averageWaitingTime * totalClients) + ((System.currentTimeMillis() - currentClient.getBirthTime()) / 1000)) / (totalClients + 1);
                     totalClients++;
-
                     if (((System.currentTimeMillis() - startTime) / 1000 >= intervalStart) && ((System.currentTimeMillis() - startTime) / 1000 <= intervalEnd)) {
                         partialAverageWaitingTime = (int) ((partialAverageWaitingTime * partialClients) + ((System.currentTimeMillis() - currentClient.getBirthTime()) / 1000)) / (partialClients + 1);
                         partialServiceTime += currentClient.getServiceTime();
                         partialClients++;
                     }
-
-                    System.out.println("Processing client wt: " + currentClient.getServiceTime());
-                    try {
-                        writer.append("Processing client wt: ").append(String.valueOf(currentClient.getServiceTime()));
-                    } catch (IOException ignored) {
-                    }
+                    System.out.println(this.toString() + "Processing client wt: " + currentClient.getServiceTime());
+                    Main.writeToFile(this.toString() + "Processing client wt: " + currentClient.getServiceTime(), writer);
                     sleep(currentClient.getServiceTime() * 1000);
                     clientList.remove(0);
-
                     if (emptyStart != -1) {
                         emptyQueueTime += (int) (System.currentTimeMillis() - emptyStart) / 1000;
                         emptyStart = -1;
                     }
-                    if (partialEmptyStart != -1) {
-                        if (((System.currentTimeMillis() - startTime) / 1000 >= intervalStart) && ((System.currentTimeMillis() - startTime) / 1000 <= intervalEnd)) {
-                            partialEmptyQueue += (int) (System.currentTimeMillis() - partialEmptyStart) / 1000;
-                            partialEmptyStart = -1;
-                        }
+                    if (partialEmptyStart != -1 && (((System.currentTimeMillis() - startTime) / 1000 >= intervalStart) && ((System.currentTimeMillis() - startTime) / 1000 <= intervalEnd))) {
+                        partialEmptyQueue += (int) (System.currentTimeMillis() - partialEmptyStart) / 1000;
+                        partialEmptyStart = -1;
                     }
                 } else {
-                    if (emptyStart == -1) {
+                    if (emptyStart == -1)
                         emptyStart = System.currentTimeMillis();
-                    }
-                    if (partialEmptyStart == -1) {
-                        if (((System.currentTimeMillis() - startTime) / 1000 >= intervalStart) && ((System.currentTimeMillis() - startTime) / 1000 <= intervalEnd)) {
-                            partialEmptyStart = System.currentTimeMillis();
-                        }
-                    }
-
-                    if ((System.currentTimeMillis() - startTime) / 1000 >= runningTime) {
+                    if (partialEmptyStart == -1 && (((System.currentTimeMillis() - startTime) / 1000 >= intervalStart) && ((System.currentTimeMillis() - startTime) / 1000 <= intervalEnd)))
+                        partialEmptyStart = System.currentTimeMillis();
+                    if ((System.currentTimeMillis() - startTime) / 1000 >= runningTime)
                         runnable = false;
-                    }
                 }
             } catch (InterruptedException e) {
                 break;
             }
         }
-
-        if (emptyStart != -1) {
+        if (emptyStart != -1)
             emptyQueueTime += (int) (System.currentTimeMillis() - emptyStart) / 1000;
-        }
-        if (partialEmptyStart != -1) {
+        if (partialEmptyStart != -1)
             partialEmptyQueue += (int) (System.currentTimeMillis() - partialEmptyStart) / 1000;
-        }
-
-        System.out.println("DONE");
-        try {
-            writer.append("QUEUE DONE");
-        } catch (IOException ignored) {
-        }
-
-//        clientList.removeAll(clientList);
+        System.out.println(this.toString() + " QUEUE DONE");
+        Main.writeToFile(this.toString() + "QUEUE DONE", writer);
     }
 
     static Queue bestQueue(List<Queue> queueList) {
@@ -153,60 +127,50 @@ public class Queue extends Thread {
 
         return result;
     }
-//
-//    public static boolean allQueuesEmpty(List<BackEnd.runnable.Queue> queueList) {
-//        for(BackEnd.runnable.Queue queue : queueList) {
-//            if(!queue.isEmpty())
-//                return false;
-//        }
-//        return true;
-//    }
-//
 
-//
-//    public void setStartTime(long startTime) {
-//        this.startTime = startTime;
-//    }
-//
-//    public boolean isEmpty() {
-//        return clientList.isEmpty();
-//    }
-//
-//    public void setRunnable(boolean runnable) {
-//        this.runnable = runnable;
-//    }
+    static boolean allQueuesEmpty(List<BackEnd.runnable.Queue> queueList) {
+        for (BackEnd.runnable.Queue queue : queueList) {
+            if (!queue.isEmpty())
+                return false;
+        }
+        return true;
+    }
 
-//    public List<BackEnd.nonRunnable.Client> getClientList() {
-//        return clientList;
-//    }
+    private boolean isEmpty() {
+        return clientList.isEmpty();
+    }
 
-    public int getAverageWaitingTime() {
+    int getAverageWaitingTime() {
         return averageWaitingTime;
     }
 
-    public int getAverageServiceTime() {
+    int getAverageServiceTime() {
         if (totalClients == 0)
             return 0;
         else
             return totalServiceTime / totalClients;
     }
 
-    public int getEmptyQueueTime() {
+    int getEmptyQueueTime() {
         return emptyQueueTime;
     }
 
-    public int getPartialAWT() {
+    int getPartialAWT() {
         return partialAverageWaitingTime;
     }
 
-    public int getPartialAST() {
+    int getPartialAST() {
         if (partialClients == 0)
             return 0;
         else
             return partialServiceTime / partialClients;
     }
 
-    public int getPartialEQT() {
+    int getPartialEQT() {
         return partialEmptyQueue;
+    }
+
+    public List<BackEnd.nonRunnable.Client> getClientList() {
+        return clientList;
     }
 }

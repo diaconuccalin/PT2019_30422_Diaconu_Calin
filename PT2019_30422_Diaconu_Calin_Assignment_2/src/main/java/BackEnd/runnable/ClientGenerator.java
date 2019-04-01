@@ -1,11 +1,9 @@
 package BackEnd.runnable;
 
 import BackEnd.nonRunnable.Client;
+import Main.Main;
 
 import java.io.BufferedWriter;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.util.ArrayList;
 import java.util.List;
 
 public class ClientGenerator extends Thread {
@@ -48,42 +46,15 @@ public class ClientGenerator extends Thread {
                 if (System.currentTimeMillis() < stopTime) {
                     Client client = new Client(minServiceTime, maxServiceTime);
                     System.out.println(Queue.bestQueue(queueList));
-                    Queue.bestQueue(queueList).addClient(client);
                     System.out.println("Added client wt: " + client.getServiceTime());
-
-                    try {
-                        writer.append("Added client wt: ").append(String.valueOf(client.getServiceTime())).append("\n");
-                    } catch (IOException ignored) {
-                    }
+                    Main.writeToFile(Queue.bestQueue(queueList).toString() + "Added client wt: " + client.getServiceTime() + "\n", writer);
+                    Queue.bestQueue(queueList).addClient(client);
                 }
             } catch (InterruptedException e) {
                 break;
             }
         }
-
-        System.out.println("DONE ADDING\n");
-
-        try {
-            writer.append("DONE ADDING");
-        } catch (IOException ignored) {
-        }
-    }
-
-    public static void main(String[] args) {
-        List<Queue> queueList = new ArrayList<Queue>();
-        int simTime = 20;
-        int[] vals = {0, 5, 15, 20, 5, 5, simTime};
-        BufferedWriter writer = null;
-
-        try {
-            writer = new BufferedWriter(new FileWriter("log.txt"));
-        } catch (IOException ignored) {
-        }
-
-        queueList.add(new Queue(simTime, 0, 10, writer));
-        queueList.add(new Queue(simTime, 0, 10, writer));
-        queueList.add(new Queue(simTime, 0, 10, writer));
-
-        ClientGenerator clientGenerator = new ClientGenerator(vals, queueList, writer);
+        System.out.println("DONE ADDING");
+        Main.writeToFile("DONE ADDING", writer);
     }
 }

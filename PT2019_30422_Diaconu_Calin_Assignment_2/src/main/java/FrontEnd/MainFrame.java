@@ -14,9 +14,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MainFrame extends JFrame {
-    private ClientGenerator clientGenerator;
     private List<Queue> queueList;
     private Timer timer;
+    private ClientGenerator clientGenerator;
 
     public MainFrame() {
         //FrontEnd.MainFrame initial conditions
@@ -70,35 +70,42 @@ public class MainFrame extends JFrame {
         timeControlPanel.getStartButton().addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 int[] values = controlPanel.getValues();
-                queueList = new ArrayList<Queue>();
-                BufferedWriter writer = null;
-                try {
-                    writer = new BufferedWriter(new BufferedWriter(new FileWriter("log.txt")));
-                } catch (IOException ignored) {
-                }
 
-                for (int i = 0; i < values[7]; i++) {
-                    Queue queue = new Queue(values[6], values[4], values[5], writer);
-                    queueList.add(queue);
-                }
+                if (values[0] >= values[1] || values[2] >= values[3] || values[4] >= values[5]) {
+                    JOptionPane.showMessageDialog(null, "Incorrect input");
+                } else {
+                    queueList = new ArrayList<Queue>();
+                    BufferedWriter writer = null;
+                    try {
+                        writer = new BufferedWriter(new FileWriter("log.txt"));
+                    } catch (IOException ignored) {
+                    }
 
-                timer = new Timer(timeControlPanel.getTimer(), queueList, values[6], informationPanel, writer);
-                clientGenerator = new ClientGenerator(values, queueList, writer);
+
+                    for (int i = 0; i < values[7]; i++) {
+                        Queue queue = new Queue(values[6], values[4], values[5], writer);
+                        queueList.add(queue);
+                    }
+
+                    timer = new Timer(timeControlPanel.getTimer(), queueList, values[6], informationPanel, writer);
+                    clientGenerator = new ClientGenerator(values, queueList, writer);
+                }
             }
         });
 
-        timeControlPanel.getStopButton().addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                clientGenerator.interrupt();
-
-                for (Queue queue : queueList) {
-                    queue.interrupt();
-                }
-                queueList.removeAll(queueList);
-
-                timer.setRunnable(false);
-            }
-        });
+//        timeControlPanel.getStopButton().addActionListener(new ActionListener() {
+//            public void actionPerformed(ActionEvent e) {
+//                clientGenerator.interrupt();
+//
+//                for (Queue queue : queueList) {
+//                    queue.interrupt();
+//                }
+//                queueList.removeAll(queueList);
+//
+//                timer.setRunnable(false);
+//                writer.close();
+//            }
+//        });
 
         setVisible(true);
     }
