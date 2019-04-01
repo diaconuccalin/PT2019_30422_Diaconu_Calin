@@ -33,7 +33,7 @@ public class Timer extends Thread {
         int currentTime = 0;
         previousTime = System.currentTimeMillis();
 
-        jLabel.setText("BackEnd.runnable.Timer: " + currentTime + " s");
+        jLabel.setText("Timer: " + currentTime + " s");
 
         while (runnable) {
 //            if(BackEnd.runnable.Queue.allQueuesEmpty(queueList) && currentTime >= runningTime) {
@@ -57,7 +57,7 @@ public class Timer extends Thread {
             if (System.currentTimeMillis() - previousTime >= 1000) {
                 currentTime++;
                 previousTime = System.currentTimeMillis();
-                jLabel.setText("BackEnd.runnable.Timer: " + currentTime + " s");
+                jLabel.setText("Timer: " + currentTime + " s");
 
                 try {
                     writer.append("\n ").append(String.valueOf(currentTime)).append(": ");

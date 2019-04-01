@@ -6,7 +6,7 @@ class AnimatedInfoPanel extends JPanel {
     private JTextArea informationText;
 
     AnimatedInfoPanel() {
-        this.setBorder(UIElements.etchedTitleBorder("BackEnd.runnable.Queue evolution"));
+        this.setBorder(UIElements.etchedTitleBorder("Queue evolution"));
         this.setLayout(null);
 
         informationText = new JTextArea();
@@ -14,8 +14,6 @@ class AnimatedInfoPanel extends JPanel {
         informationText.setEditable(false);
 
         this.add(informationText);
-
-        this.setVisible(true);
 
         this.setVisible(true);
     }

@@ -1,3 +1,5 @@
+package Main;
+
 import FrontEnd.MainFrame;
 
 public class Main {
