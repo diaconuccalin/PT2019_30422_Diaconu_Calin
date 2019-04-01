@@ -1,13 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="20966f30-a8dd-4122-a05a-a849c3ff5d0c" name="Default Changelist" comment="HW2 - split into packages, still not working">
+    <list default="true" id="20966f30-a8dd-4122-a05a-a849c3ff5d0c" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/BackEnd/runnable/Timer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/BackEnd/runnable/Timer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/FrontEnd/AnimatedInfoPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/FrontEnd/AnimatedInfoPanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/FrontEnd/ControlPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/FrontEnd/ControlPanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/FrontEnd/TimeControlPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/FrontEnd/TimeControlPanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/BackEnd/runnable/Queue.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/BackEnd/runnable/Queue.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -22,8 +18,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/BackEnd/runnable/Queue.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2482">
-              <caret line="146" column="4" selection-start-line="146" selection-start-column="4" selection-end-line="146" selection-end-column="4" />
+            <state relative-caret-position="442">
+              <caret line="26" column="34" selection-start-line="26" selection-start-column="34" selection-end-line="26" selection-end-column="34" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -171,13 +167,13 @@
         <option value="$PROJECT_DIR$/src/main/java/FrontEnd/TimeSlidersPanel.java" />
         <option value="$PROJECT_DIR$/src/main/java/FrontEnd/UIElements.java" />
         <option value="$PROJECT_DIR$/src/main/java/FrontEnd/InformationPanel.java" />
-        <option value="$PROJECT_DIR$/src/main/java/BackEnd/runnable/Queue.java" />
         <option value="$PROJECT_DIR$/src/main/java/FrontEnd/MainFrame.java" />
         <option value="$PROJECT_DIR$/src/main/java/FrontEnd/ControlPanel.java" />
         <option value="$PROJECT_DIR$/src/main/java/FrontEnd/TimeControlPanel.java" />
         <option value="$PROJECT_DIR$/src/main/java/BackEnd/runnable/Timer.java" />
         <option value="$PROJECT_DIR$/src/main/java/FrontEnd/AnimatedInfoPanel.java" />
         <option value="$PROJECT_DIR$/src/main/java/BackEnd/runnable/ClientGenerator.java" />
+        <option value="$PROJECT_DIR$/src/main/java/BackEnd/runnable/Queue.java" />
       </list>
     </option>
   </component>
@@ -277,7 +273,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1554120437596" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1554120449167" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
@@ -359,7 +355,7 @@
       <updated>1553004581690</updated>
       <workItem from="1553442580558" duration="12671000" />
       <workItem from="1553997146054" duration="11744000" />
-      <workItem from="1554060687990" duration="10996000" />
+      <workItem from="1554060687990" duration="11630000" />
     </task>
     <task id="LOCAL-00001" summary="HW2 - Test commit">
       <created>1553005181712</created>
@@ -403,17 +399,24 @@
       <option name="project" value="LOCAL" />
       <updated>1554063668416</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="HW2 - small fixes, still not working">
+      <created>1554120463818</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1554120463818</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="53560000" />
+    <option name="totallyTimeSpent" value="54194000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="2062" height="1166" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.16233766" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.16233766" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Learn" order="2" />
       <window_info id="Designer" order="3" />
@@ -423,7 +426,7 @@
       <window_info id="Capture Tool" order="7" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32978722" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.327853" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.327853" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39941972" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -432,7 +435,7 @@
       <window_info anchor="bottom" id="Terminal" order="8" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="10" />
-      <window_info anchor="bottom" id="Messages" order="11" weight="0.32591876" />
+      <window_info active="true" anchor="bottom" id="Messages" order="11" visible="true" weight="0.15764023" />
       <window_info anchor="bottom" id="Docker" order="12" show_stripe_button="false" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -454,7 +457,8 @@
     <MESSAGE value="HW2 - Completed ending conditions" />
     <MESSAGE value="HW2 - Tentative - not working - information display" />
     <MESSAGE value="HW2 - split into packages, still not working" />
-    <option name="LAST_COMMIT_MESSAGE" value="HW2 - split into packages, still not working" />
+    <MESSAGE value="HW2 - small fixes, still not working" />
+    <option name="LAST_COMMIT_MESSAGE" value="HW2 - small fixes, still not working" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/pom.xml">
@@ -574,8 +578,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/BackEnd/runnable/Queue.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2482">
-          <caret line="146" column="4" selection-start-line="146" selection-start-column="4" selection-end-line="146" selection-end-column="4" />
+        <state relative-caret-position="442">
+          <caret line="26" column="34" selection-start-line="26" selection-start-column="34" selection-end-line="26" selection-end-column="34" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

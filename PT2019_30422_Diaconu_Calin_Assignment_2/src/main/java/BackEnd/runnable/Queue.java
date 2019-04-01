@@ -24,8 +24,8 @@ public class Queue extends Thread {
     private int partialServiceTime;
     private int partialClients;
     private int partialAverageWaitingTime;
-    private long partialEmptyStart;
     private int partialEmptyQueue;
+    private long partialEmptyStart;
 
     private BufferedWriter writer;
 
