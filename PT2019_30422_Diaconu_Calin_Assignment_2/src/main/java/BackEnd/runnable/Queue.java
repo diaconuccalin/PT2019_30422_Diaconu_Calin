@@ -72,7 +72,7 @@ public class Queue extends Thread {
                         partialClients++;
                     }
                     System.out.println(this.toString() + "Processing client wt: " + currentClient.getServiceTime());
-                    Main.writeToFile(this.toString() + "Processing client wt: " + currentClient.getServiceTime(), writer);
+                    Main.writeToFile(this.toString() + "Processing client wt: " + currentClient.getServiceTime() + "\n", writer);
                     sleep(currentClient.getServiceTime() * 1000);
                     clientList.remove(0);
                     if (emptyStart != -1) {
@@ -100,7 +100,7 @@ public class Queue extends Thread {
         if (partialEmptyStart != -1)
             partialEmptyQueue += (int) (System.currentTimeMillis() - partialEmptyStart) / 1000;
         System.out.println(this.toString() + " QUEUE DONE");
-        Main.writeToFile(this.toString() + "QUEUE DONE", writer);
+        Main.writeToFile(this.toString() + "QUEUE DONE\n", writer);
     }
 
     static Queue bestQueue(List<Queue> queueList) {

@@ -5,6 +5,7 @@ import Main.Main;
 
 import javax.swing.*;
 import java.io.BufferedWriter;
+import java.io.IOException;
 import java.util.List;
 
 public class Timer extends Thread {
@@ -45,7 +46,11 @@ public class Timer extends Thread {
             }
         }
         System.out.println("ALL DONE");
-        Main.writeToFile("ALL DONE", writer);
+        try {
+            writer.append("ALL DONE");
+            writer.close();
+        } catch (IOException ignored) {
+        }
         int[] values = new int[18];
         for (int i = 0; i < 3; i++) {
             values[i * 6] = queueList.get(i).getAverageWaitingTime();
