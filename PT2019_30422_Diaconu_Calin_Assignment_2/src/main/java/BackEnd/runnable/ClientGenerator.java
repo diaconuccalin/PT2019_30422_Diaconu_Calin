@@ -46,8 +46,8 @@ public class ClientGenerator extends Thread {
                 if (System.currentTimeMillis() < stopTime) {
                     Client client = new Client(minServiceTime, maxServiceTime);
                     System.out.println(Queue.bestQueue(queueList));
-                    System.out.println("Added client wt: " + client.getServiceTime());
-                    Main.writeToFile(Queue.bestQueue(queueList).toString() + "Added client wt: " + client.getServiceTime() + "\n", writer);
+                    System.out.println("Added client wt: " + client.getServiceTime() + " " + client.getName());
+                    Main.writeToFile(Queue.bestQueue(queueList).toString() + "Added client wt: " + client.getServiceTime() + " " + client.getName() + "\n", writer);
                     Queue.bestQueue(queueList).addClient(client);
                 }
             } catch (InterruptedException e) {

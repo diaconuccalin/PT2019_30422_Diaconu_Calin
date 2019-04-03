@@ -31,6 +31,8 @@ public class Timer extends Thread {
 
     public void run() {
         int currentTime = 0;
+        int peakHour = 0;
+        int peakHourClients = 0;
         previousTime = System.currentTimeMillis();
         jLabel.setText("Timer: " + currentTime + " s");
         while (runnable) {
@@ -38,6 +40,10 @@ public class Timer extends Thread {
                 break;
             if (System.currentTimeMillis() - previousTime >= 1000) {
                 currentTime++;
+                if(getTotalClients(queueList) > peakHourClients) {
+                    peakHour = currentTime;
+                    peakHourClients = getTotalClients(queueList);
+                }
                 previousTime = System.currentTimeMillis();
                 System.out.println(currentTime);
                 jLabel.setText("Timer: " + currentTime + " s");
@@ -47,7 +53,7 @@ public class Timer extends Thread {
         }
         System.out.println("ALL DONE");
         try {
-            writer.append("ALL DONE");
+            writer.append("ALL DONE\nPEAK HOUR: ").append(String.valueOf(peakHour)).append(" - ").append(String.valueOf(peakHourClients)).append(" clients");
             writer.close();
         } catch (IOException ignored) {
         }
@@ -62,6 +68,19 @@ public class Timer extends Thread {
         }
         informationPanel.setValues(values);
         informationPanel.updateAnimation(queueList);
+        //noinspection CollectionAddedToSelf
         queueList.removeAll(queueList);
     }
+
+
+    static private int getTotalClients(List<Queue> queueList) {
+        int result = 0;
+
+        for (Queue queue : queueList) {
+            result += queue.getClientList().size();
+        }
+
+        return result;
+    }
+
 }

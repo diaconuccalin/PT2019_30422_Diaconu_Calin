@@ -71,9 +71,11 @@ public class Queue extends Thread {
                         partialServiceTime += currentClient.getServiceTime();
                         partialClients++;
                     }
-                    System.out.println(this.toString() + "Processing client wt: " + currentClient.getServiceTime());
-                    Main.writeToFile(this.toString() + "Processing client wt: " + currentClient.getServiceTime() + "\n", writer);
+                    System.out.println(this.toString() + "Processing client wt: " + currentClient.getServiceTime() + " " + currentClient.getName());
+                    Main.writeToFile(this.toString() + "Processing client wt: " + currentClient.getServiceTime() + " " + currentClient.getName() + "\n", writer);
                     sleep(currentClient.getServiceTime() * 1000);
+                    System.out.println("DONE CLIENT " + currentClient.getName());
+                    Main.writeToFile("DONE CLIENT " + currentClient.getName() + "\n", writer);
                     clientList.remove(0);
                     if (emptyStart != -1) {
                         emptyQueueTime += (int) (System.currentTimeMillis() - emptyStart) / 1000;
