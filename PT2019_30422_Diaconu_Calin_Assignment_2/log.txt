@@ -1,0 +1,116 @@
+
+ 1: 
+ 2: 
+ 3: 
+ 4: 
+ 5: 
+ 6: 
+ 7: 
+ 8: Thread[Thread-0,6,main]Added client wt: 17 nbexqwajdh
+Thread[Thread-0,6,main]Processing client wt: 17 nbexqwajdh
+
+ 9: Thread[Thread-1,6,main]Added client wt: 13 fxnusiagij
+Thread[Thread-1,6,main]Processing client wt: 13 fxnusiagij
+
+ 10: Thread[Thread-2,6,main]Added client wt: 19 qscoqvsckw
+Thread[Thread-2,6,main]Processing client wt: 19 qscoqvsckw
+
+ 11: 
+ 12: 
+ 13: 
+ 14: 
+ 15: Thread[Thread-1,6,main]Added client wt: 10 gwtnyzqdie
+
+ 16: 
+ 17: 
+ 18: 
+ 19: 
+ 20: Thread[Thread-0,6,main]Added client wt: 12 smghlntmkc
+
+ 21: DONE CLIENT fxnusiagij
+Thread[Thread-1,6,main]Processing client wt: 10 gwtnyzqdie
+
+ 22: Thread[Thread-1,6,main]Added client wt: 12 syapuuleep
+
+ 23: 
+ 24: DONE CLIENT nbexqwajdh
+Thread[Thread-0,6,main]Processing client wt: 12 smghlntmkc
+
+ 25: 
+ 26: 
+ 27: Thread[Thread-0,6,main]Added client wt: 14 ifqqwmubih
+
+ 28: DONE CLIENT qscoqvsckw
+
+ 29: 
+ 30: 
+ 31: DONE CLIENT gwtnyzqdie
+Thread[Thread-1,6,main]Processing client wt: 12 syapuuleep
+
+ 32: 
+ 33: 
+ 34: Thread[Thread-2,6,main]Added client wt: 11 mzezhsxgwc
+Thread[Thread-2,6,main]Processing client wt: 11 mzezhsxgwc
+
+ 35: 
+ 36: DONE CLIENT smghlntmkc
+Thread[Thread-0,6,main]Processing client wt: 14 ifqqwmubih
+
+ 37: 
+ 38: 
+ 39: 
+ 40: Thread[Thread-2,6,main]Added client wt: 10 yjqvhzmqse
+
+ 41: 
+ 42: Thread[Thread-1,6,main]Added client wt: 11 tndfqjsvuu
+
+ 43: DONE CLIENT syapuuleep
+Thread[Thread-1,6,main]Processing client wt: 11 tndfqjsvuu
+
+ 44: 
+ 45: DONE CLIENT mzezhsxgwc
+Thread[Thread-2,6,main]Processing client wt: 10 yjqvhzmqse
+
+ 46: Thread[Thread-2,6,main]Added client wt: 10 egqqbngshl
+Thread[Thread-1,6,main]Added client wt: 18 gjfdbuxbro
+
+ 47: 
+ 48: 
+ 49: 
+ 50: DONE CLIENT ifqqwmubih
+
+ 51: 
+ 52: Thread[Thread-0,6,main]Added client wt: 16 iulimwmraq
+Thread[Thread-0,6,main]Processing client wt: 16 iulimwmraq
+
+ 53: 
+ 54: DONE CLIENT tndfqjsvuu
+Thread[Thread-1,6,main]Processing client wt: 18 gjfdbuxbro
+
+ 55: DONE CLIENT yjqvhzmqse
+Thread[Thread-2,6,main]Processing client wt: 10 egqqbngshl
+
+ 56: 
+ 57: 
+ 58: 
+ 59: 
+ 60: 
+ 61: DONE ADDING
+ 62: 
+ 63: 
+ 64: 
+ 65: DONE CLIENT egqqbngshl
+Thread[Thread-2,6,main]QUEUE DONE
+
+ 66: 
+ 67: 
+ 68: DONE CLIENT iulimwmraq
+Thread[Thread-0,6,main]QUEUE DONE
+
+ 69: 
+ 70: 
+ 71: 
+ 72: DONE CLIENT gjfdbuxbro
+Thread[Thread-1,6,main]QUEUE DONE
+ALL DONE
+PEAK HOUR: 21 - 5 clients
