@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class OperationsFrame extends JFrame {
-    public OperationsFrame(String title) {
+    public OperationsFrame(final String title) {
         int w = 800;
         int h = 600;
 
@@ -17,7 +17,7 @@ public class OperationsFrame extends JFrame {
         setDefaultCloseOperation(EXIT_ON_CLOSE);
 
         //Content table
-        JTable jTable = Main.createTable();
+        JTable jTable = Main.createTable(title);
         JScrollPane jScrollPane = new JScrollPane(jTable);
         jScrollPane.setBounds(10, 10, 600, 545);
 
@@ -45,6 +45,21 @@ public class OperationsFrame extends JFrame {
         controlPanel.add(deleteButton);
 
         //Action Listeners
+        addButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                AddClientFrame addClientFrame;
+                AddProductFrame addProductFrame;
+
+                if(title.compareTo("Clients") == 0)
+                    addClientFrame = new AddClientFrame();
+                else if(title.compareTo("Products") == 0)
+                    addProductFrame = new AddProductFrame();
+
+                dispose();
+            }
+        });
+
         backButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {

@@ -15,7 +15,7 @@ public class ConnectionFactory {
 
     private static final Logger LOGGER = Logger.getLogger(ConnectionFactory.class.getName());
     private static final String DRIVER = "com.mysql.cj.jdbc.Driver";
-    private static final String DBURL = "jdbc:mysql://localhost:3306/schooldb";
+    private static final String DBURL = "jdbc:mysql://localhost:3306/ordermanagement";
     private static final String USER = "root";
     private static final String PASS = "root";
 
@@ -77,21 +77,32 @@ public class ConnectionFactory {
     public static void main(String[] args) {
         Connection connection = ConnectionFactory.getConnection();
 
-        String findStatementString = "SELECT * FROM student";
+        String findStatementString = "SELECT * FROM client";
         PreparedStatement findStatement = null;
         ResultSet rs = null;
+        ResultSetMetaData rsmd = null;
 
         try {
             findStatement = connection.prepareStatement(findStatementString);
             rs = findStatement.executeQuery();
+            rsmd = rs.getMetaData();
+
+            for(int i = 1; i <= rsmd.getColumnCount(); i++) {
+                System.out.println(rsmd.getColumnName(i));
+            }
 
             while(rs.next()) {
-                int id = rs.getInt("id");
-                String name = rs.getString("name");
-
-                System.out.println(id);
-                System.out.println(name);
+//                int id = rs.getInt("idclient");
+//                String name = rs.getString("name");
+//                String address = rs.getString("address");
+//                String email = rs.getString("email");
+//                System.out.println(rs.getRow());
+//                rs.getRow();
+                for(int i = 1; i <= rsmd.getColumnCount(); i++) {
+                    System.out.print(rs.getObject(i).toString() + " | ");
+                }
                 System.out.println();
+                // System.out.println(id + " | " + name + " | " + address + " | " + email);
             }
         } catch (SQLException e) {
             System.out.println(e);
