@@ -2,13 +2,16 @@ import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class AddProductFrame extends JFrame {
-    public AddProductFrame() {
+public class AddEditProductFrame extends JFrame {
+    public AddEditProductFrame(final boolean add, final Product product) {
         int w = 400;
         int h = 220;
 
         setLayout(null);
-        setTitle("Add New Product");
+        if(add)
+            setTitle("Add New Product");
+        else
+            setTitle("Edit Product");
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setSize(w, h);
         setLocationRelativeTo(null);
@@ -49,8 +52,20 @@ public class AddProductFrame extends JFrame {
         priceField.setBounds(80, 115, 295, 25);
         add(priceField);
 
+        //Fill textFields
+        if(!add) {
+            nameField.setText(product.getName());
+            stockField.setText(product.getStock() + "");
+            distributorField.setText(product.getDistributor());
+            priceField.setText(product.getPrice() + "");
+        }
+
         //Buttons
-        JButton addButton = new JButton("Add");
+        JButton addButton = null;
+        if(add)
+            addButton = new JButton("Add");
+        else
+            addButton = new JButton("Submit");
         addButton.setBounds(70, 150, 120, 25);
         add(addButton);
 
@@ -63,7 +78,11 @@ public class AddProductFrame extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 try {
-                    Product.addProduct(new Product(nameField.getText(), Integer.parseInt(stockField.getText()), distributorField.getText(), Integer.parseInt(priceField.getText())));
+                    if(add) {
+                        Product.addProduct(new Product(nameField.getText(), Integer.parseInt(stockField.getText()), distributorField.getText(), Integer.parseInt(priceField.getText())));
+                    } else {
+                        Product.editProduct(new Product(product.getIdProduct(), nameField.getText(), Integer.parseInt(stockField.getText()), distributorField.getText(), Integer.parseInt(priceField.getText())));
+                    }
                     OperationsFrame operationsFrame = new OperationsFrame("Products");
                     dispose();
                 } catch (NumberFormatException e1) {

@@ -2,13 +2,16 @@ import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class AddClientFrame extends JFrame {
-    public AddClientFrame() {
+public class AddEditClientFrame extends JFrame {
+    public AddEditClientFrame(final boolean add, final Client client) {
         int w = 400;
         int h = 185;
 
         setLayout(null);
-        setTitle("Add New Client");
+        if(add)
+            setTitle("Add New Client");
+        else
+            setTitle("Edit Client");
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setSize(w, h);
         setLocationRelativeTo(null);
@@ -40,8 +43,19 @@ public class AddClientFrame extends JFrame {
         emailField.setBounds(80, 80, 295, 25);
         add(emailField);
 
+        //Fill textFields
+        if(!add) {
+            nameField.setText(client.getName());
+            addressField.setText(client.getAddress());
+            emailField.setText(client.getEmail());
+        }
+
         //Buttons
-        JButton addButton = new JButton("Add");
+        JButton addButton = null;
+        if(add)
+            addButton = new JButton("Add");
+        else
+            addButton = new JButton("Submit");
         addButton.setBounds(70, 115, 120, 25);
         add(addButton);
 
@@ -53,7 +67,11 @@ public class AddClientFrame extends JFrame {
         addButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                Client.addClient(new Client(nameField.getText(), addressField.getText(), emailField.getText()));
+                if(add) {
+                    Client.addClient(new Client(nameField.getText(), addressField.getText(), emailField.getText()));
+                } else {
+                    Client.editClient(new Client(client.getIdclient(), nameField.getText(), addressField.getText(), emailField.getText()));
+                }
                 OperationsFrame operationsFrame = new OperationsFrame("Clients");
                 dispose();
             }

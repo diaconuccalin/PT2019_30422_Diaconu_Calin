@@ -1,9 +1,6 @@
 import javax.swing.*;
-import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.ArrayList;
-import java.util.List;
 
 public class OperationsFrame extends JFrame {
     public OperationsFrame(final String title) {
@@ -17,7 +14,11 @@ public class OperationsFrame extends JFrame {
         setDefaultCloseOperation(EXIT_ON_CLOSE);
 
         //Content table
-        JTable jTable = Main.createTable(title);
+        final JTable jTable = Main.createTable(title);
+        jTable.getTableHeader().setReorderingAllowed(false);
+        jTable.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+        jTable.setRowSelectionInterval(0, 0);
+        jTable.setDefaultEditor(Object.class, null);
         JScrollPane jScrollPane = new JScrollPane(jTable);
         jScrollPane.setBounds(10, 10, 600, 545);
 
@@ -48,15 +49,39 @@ public class OperationsFrame extends JFrame {
         addButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                AddClientFrame addClientFrame;
-                AddProductFrame addProductFrame;
+                AddEditClientFrame addEditClientFrame;
+                AddEditProductFrame addEditProductFrame;
 
                 if(title.compareTo("Clients") == 0)
-                    addClientFrame = new AddClientFrame();
+                    addEditClientFrame = new AddEditClientFrame(true, null);
                 else if(title.compareTo("Products") == 0)
-                    addProductFrame = new AddProductFrame();
+                    addEditProductFrame = new AddEditProductFrame(true, null);
 
                 dispose();
+            }
+        });
+
+        editButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if(title.compareTo("Clients") == 0) {
+                    int id = Integer.parseInt(jTable.getValueAt(jTable.getSelectedRow(), 0).toString());
+                    String name = jTable.getValueAt(jTable.getSelectedRow(), 1).toString();
+                    String address = jTable.getValueAt(jTable.getSelectedRow(), 2).toString();
+                    String email = jTable.getValueAt(jTable.getSelectedRow(), 3).toString();
+
+                    AddEditClientFrame addEditClientFrame = new AddEditClientFrame(false, new Client(id, name, address, email));
+                    dispose();
+                } else if(title.compareTo("Products") == 0) {
+                    int id = Integer.parseInt(jTable.getValueAt(jTable.getSelectedRow(), 0).toString());
+                    String name = jTable.getValueAt(jTable.getSelectedRow(), 1).toString();
+                    int stock = Integer.parseInt(jTable.getValueAt(jTable.getSelectedRow(), 2).toString());
+                    String distributor = jTable.getValueAt(jTable.getSelectedRow(), 3).toString();
+                    int price = Integer.parseInt(jTable.getValueAt(jTable.getSelectedRow(), 4).toString());
+
+                    AddEditProductFrame addEditProductFrame = new AddEditProductFrame(false, new Product(id, name, stock, distributor, price));
+                    dispose();
+                }
             }
         });
 

@@ -71,7 +71,6 @@ public class Main {
             System.out.println(e);
         }
 
-        jTable.setRowSelectionInterval(0, 0);
         return jTable;
     }
 }

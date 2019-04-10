@@ -1,6 +1,5 @@
 import java.sql.Connection;
 import java.sql.PreparedStatement;
-import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class Client {
@@ -10,6 +9,13 @@ public class Client {
     private String email;
 
     public Client(String name, String address, String email) {
+        this.name = name;
+        this.address = address;
+        this.email = email;
+    }
+
+    public Client(int idclient, String name, String address, String email) {
+        this.idclient = idclient;
         this.name = name;
         this.address = address;
         this.email = email;
@@ -34,5 +40,44 @@ public class Client {
         } catch (SQLException e) {
             System.out.println(e);
         }
+    }
+
+    public static void editClient(Client client) {
+        Connection connection = ConnectionFactory.getConnection();
+
+        String statement = "UPDATE `ordermanagement`.`client` SET `name`='" +
+                client.name +
+                "', `address`='" +
+                client.address +
+                "', `email`='" +
+                client.email +
+                "' WHERE `idclient`='" +
+                client.idclient +
+                "';";
+
+        PreparedStatement preparedStatement = null;
+
+        try {
+            preparedStatement = connection.prepareStatement(statement);
+            preparedStatement.executeUpdate();
+        } catch (SQLException e) {
+            System.out.println(e);
+        }
+    }
+
+    public int getIdclient() {
+        return idclient;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public String getEmail() {
+        return email;
     }
 }
