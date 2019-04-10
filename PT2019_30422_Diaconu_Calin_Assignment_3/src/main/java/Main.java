@@ -73,4 +73,28 @@ public class Main {
 
         return jTable;
     }
+
+    public static void deleteElement(String table, int id) {
+        if(table.compareTo("Clients") == 0)
+            table = "client";
+        else if(table.compareTo("Products") == 0)
+            table = "product";
+
+        Connection connection = ConnectionFactory.getConnection();
+
+        String statement = "DELETE FROM `ordermanagement`.`" +
+                table +
+                "` WHERE `idclient`='" +
+                id +
+                "';";
+
+        PreparedStatement preparedStatement = null;
+
+        try {
+            preparedStatement = connection.prepareStatement(statement);
+            preparedStatement.executeUpdate();
+        } catch (SQLException e) {
+            System.out.println(e);
+        }
+    }
 }

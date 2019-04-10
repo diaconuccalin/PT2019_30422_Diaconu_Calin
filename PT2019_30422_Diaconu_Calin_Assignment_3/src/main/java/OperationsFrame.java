@@ -85,6 +85,15 @@ public class OperationsFrame extends JFrame {
             }
         });
 
+        deleteButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                Main.deleteElement(title, Integer.parseInt(jTable.getValueAt(jTable.getSelectedRow(), 0).toString()));
+                OperationsFrame operationsFrame = new OperationsFrame(title);
+                dispose();
+            }
+        });
+
         backButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
