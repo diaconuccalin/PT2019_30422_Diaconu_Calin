@@ -87,7 +87,7 @@ public class AddEditProductFrame extends JFrame {
                     if(add) {
                         ProductBLL.addProduct(new Product(nameField.getText(), Integer.parseInt(stockField.getText()), distributorField.getText(), Integer.parseInt(priceField.getText())));
                     } else {
-                        ProductBLL.editProduct(new Product(product.getIdProduct(), nameField.getText(), Integer.parseInt(stockField.getText()), distributorField.getText(), Integer.parseInt(priceField.getText())));
+                        ProductBLL.editProduct(new Product(product.getIdproduct(), nameField.getText(), Integer.parseInt(stockField.getText()), distributorField.getText(), Integer.parseInt(priceField.getText())));
                     }
                     OperationsFrame operationsFrame = new OperationsFrame("Products", bufferedWriter);
                     dispose();

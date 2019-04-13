@@ -8,29 +8,6 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class ClientDAO {
-    public static void editClient(Client client) {
-        Connection connection = ConnectionFactory.getConnection();
-
-        String statement = "UPDATE `ordermanagement`.`client` SET `name`='" +
-                client.getName() +
-                "', `address`='" +
-                client.getAddress() +
-                "', `email`='" +
-                client.getEmail() +
-                "' WHERE `idclient`='" +
-                client.getIdclient() +
-                "';";
-
-        PreparedStatement preparedStatement = null;
-
-        try {
-            preparedStatement = connection.prepareStatement(statement);
-            preparedStatement.executeUpdate();
-        } catch (SQLException e) {
-            System.out.println(e);
-        }
-    }
-
     public static Client getClient(int id) {
         Client client = null;
 

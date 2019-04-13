@@ -10,7 +10,7 @@ public class ProductBLL {
     }
 
     public static void editProduct(Product product) {
-        ProductDAO.editProduct(product);
+        ReflectionDAO.editElement(product);
     }
 
     public static Product getProduct(int id) {
