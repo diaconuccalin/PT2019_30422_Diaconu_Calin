@@ -1,9 +1,10 @@
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.BufferedWriter;
 
 public class OperationsFrame extends JFrame {
-    public OperationsFrame(final String title) {
+    public OperationsFrame(final String title, final BufferedWriter bufferedWriter) {
         int w = 800;
         int h = 600;
 
@@ -53,9 +54,9 @@ public class OperationsFrame extends JFrame {
                 AddEditProductFrame addEditProductFrame;
 
                 if(title.compareTo("Clients") == 0)
-                    addEditClientFrame = new AddEditClientFrame(true, null);
+                    addEditClientFrame = new AddEditClientFrame(true, null, bufferedWriter);
                 else if(title.compareTo("Products") == 0)
-                    addEditProductFrame = new AddEditProductFrame(true, null);
+                    addEditProductFrame = new AddEditProductFrame(true, null, bufferedWriter);
 
                 dispose();
             }
@@ -70,7 +71,7 @@ public class OperationsFrame extends JFrame {
                     String address = jTable.getValueAt(jTable.getSelectedRow(), 2).toString();
                     String email = jTable.getValueAt(jTable.getSelectedRow(), 3).toString();
 
-                    AddEditClientFrame addEditClientFrame = new AddEditClientFrame(false, new Client(id, name, address, email));
+                    AddEditClientFrame addEditClientFrame = new AddEditClientFrame(false, new Client(id, name, address, email), bufferedWriter);
                     dispose();
                 } else if(title.compareTo("Products") == 0) {
                     int id = Integer.parseInt(jTable.getValueAt(jTable.getSelectedRow(), 0).toString());
@@ -79,7 +80,7 @@ public class OperationsFrame extends JFrame {
                     String distributor = jTable.getValueAt(jTable.getSelectedRow(), 3).toString();
                     int price = Integer.parseInt(jTable.getValueAt(jTable.getSelectedRow(), 4).toString());
 
-                    AddEditProductFrame addEditProductFrame = new AddEditProductFrame(false, new Product(id, name, stock, distributor, price));
+                    AddEditProductFrame addEditProductFrame = new AddEditProductFrame(false, new Product(id, name, stock, distributor, price), bufferedWriter);
                     dispose();
                 }
             }
@@ -89,7 +90,7 @@ public class OperationsFrame extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 Main.deleteElement(title, Integer.parseInt(jTable.getValueAt(jTable.getSelectedRow(), 0).toString()));
-                OperationsFrame operationsFrame = new OperationsFrame(title);
+                OperationsFrame operationsFrame = new OperationsFrame(title, bufferedWriter);
                 dispose();
             }
         });
@@ -97,7 +98,7 @@ public class OperationsFrame extends JFrame {
         backButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                MainFrame mainFrame = new MainFrame();
+                MainFrame mainFrame = new MainFrame(bufferedWriter);
                 dispose();
             }
         });

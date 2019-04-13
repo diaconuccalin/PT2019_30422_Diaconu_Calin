@@ -1,6 +1,8 @@
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.BufferedWriter;
+import java.io.IOException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -9,7 +11,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class CreateOrderFrame extends JFrame {
-    public CreateOrderFrame() {
+
+    public CreateOrderFrame(final BufferedWriter bufferedWriter) {
         int w = 400;
         int h = 175;
 
@@ -133,12 +136,38 @@ public class CreateOrderFrame extends JFrame {
                         findStatement = connection.prepareStatement(statement);
                         findStatement.executeUpdate();
 
-                        MainFrame mainFrame = new MainFrame();
+                        Client client = Client.getClient(clientId);
+                        Product product = Product.getProduct(productId);
+
+                        String toPrint = "";
+                        toPrint = toPrint.concat("CLIENT: " +
+                                client.getName() +
+                                " - " +
+                                client.getAddress() +
+                                " - " +
+                                client.getEmail() +
+                                "\nPRODUCT: " +
+                                product.getName() +
+                                " - " +
+                                product.getDistributor() +
+                                " - " +
+                                product.getPrice() +
+                                "\nAmount: " +
+                                amount +
+                                "    Total price: " +
+                                (amount * rs.getInt("price")) +
+                                "\n-------------------------------------------------------------\n");
+
+                        bufferedWriter.append(toPrint);
+
+                        MainFrame mainFrame = new MainFrame(bufferedWriter);
                         dispose();
                     }
                 } catch (NumberFormatException e1) {
                     JOptionPane.showMessageDialog(null, "Incorrect input");
                 } catch (SQLException e1) {
+                    System.out.println(e1);
+                } catch (IOException e1) {
                     System.out.println(e1);
                 }
             }
@@ -147,7 +176,7 @@ public class CreateOrderFrame extends JFrame {
         backButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                MainFrame mainFrame = new MainFrame();
+                MainFrame mainFrame = new MainFrame(bufferedWriter);
                 dispose();
             }
         });

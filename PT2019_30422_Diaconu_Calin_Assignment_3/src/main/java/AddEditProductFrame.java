@@ -1,9 +1,10 @@
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.BufferedWriter;
 
 public class AddEditProductFrame extends JFrame {
-    public AddEditProductFrame(final boolean add, final Product product) {
+    public AddEditProductFrame(final boolean add, final Product product, final BufferedWriter bufferedWriter) {
         int w = 400;
         int h = 220;
 
@@ -83,7 +84,7 @@ public class AddEditProductFrame extends JFrame {
                     } else {
                         Product.editProduct(new Product(product.getIdProduct(), nameField.getText(), Integer.parseInt(stockField.getText()), distributorField.getText(), Integer.parseInt(priceField.getText())));
                     }
-                    OperationsFrame operationsFrame = new OperationsFrame("Products");
+                    OperationsFrame operationsFrame = new OperationsFrame("Products", bufferedWriter);
                     dispose();
                 } catch (NumberFormatException e1) {
                     JOptionPane.showMessageDialog(null, "Incorrect input");
@@ -94,7 +95,7 @@ public class AddEditProductFrame extends JFrame {
         backButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                OperationsFrame operationsFrame = new OperationsFrame("Products");
+                OperationsFrame operationsFrame = new OperationsFrame("Products", bufferedWriter);
                 dispose();
             }
         });

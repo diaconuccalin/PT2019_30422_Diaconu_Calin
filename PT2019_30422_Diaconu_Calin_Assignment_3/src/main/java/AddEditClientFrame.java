@@ -1,9 +1,10 @@
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.BufferedWriter;
 
 public class AddEditClientFrame extends JFrame {
-    public AddEditClientFrame(final boolean add, final Client client) {
+    public AddEditClientFrame(final boolean add, final Client client, final BufferedWriter bufferedWriter) {
         int w = 400;
         int h = 185;
 
@@ -72,7 +73,7 @@ public class AddEditClientFrame extends JFrame {
                 } else {
                     Client.editClient(new Client(client.getIdclient(), nameField.getText(), addressField.getText(), emailField.getText()));
                 }
-                OperationsFrame operationsFrame = new OperationsFrame("Clients");
+                OperationsFrame operationsFrame = new OperationsFrame("Clients", bufferedWriter);
                 dispose();
             }
         });
@@ -80,7 +81,7 @@ public class AddEditClientFrame extends JFrame {
         backButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                OperationsFrame operationsFrame = new OperationsFrame("Clients");
+                OperationsFrame operationsFrame = new OperationsFrame("Clients", bufferedWriter);
                 dispose();
             }
         });

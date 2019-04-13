@@ -1,27 +1,27 @@
 import javax.swing.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.sql.*;
 import java.util.ArrayList;
+import java.util.EventListener;
 
 public class Main {
+    static BufferedWriter bufferedWriter;
+
     public static void main(String[] args) {
-        MainFrame mainFrame = new MainFrame();
+        try {
+            bufferedWriter = new BufferedWriter(new FileWriter("orders.txt"));
+        } catch (IOException e) {
+            System.out.println(e);
+        }
 
-        ArrayList<ArrayList<Object>> objects = new ArrayList<ArrayList<Object>>();
+        Runtime runtime = Runtime.getRuntime();
+        runtime.addShutdownHook(new BeforeShutdown(bufferedWriter));
 
-        ArrayList<Object> l1 = new ArrayList<Object>();
-        String test1 = "test01";
-        String test2 = "test02";
-        l1.add(test1);
-        l1.add(test2);
-
-        ArrayList<Object> l2 = new ArrayList<Object>();
-        String test3 = "test03";
-        String test4 = "test04";
-        l2.add(test3);
-        l2.add(test4);
-
-        objects.add(l1);
-        objects.add(l2);
+        MainFrame mainFrame = new MainFrame(bufferedWriter);
     }
 
     public static JTable createTable(String table) {
@@ -84,7 +84,9 @@ public class Main {
 
         String statement = "DELETE FROM `ordermanagement`.`" +
                 table +
-                "` WHERE `idclient`='" +
+                "` WHERE `id" +
+                table +
+                "`='" +
                 id +
                 "';";
 

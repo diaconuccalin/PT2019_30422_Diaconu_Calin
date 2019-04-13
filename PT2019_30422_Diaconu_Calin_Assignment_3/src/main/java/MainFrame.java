@@ -1,9 +1,10 @@
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.BufferedWriter;
 
 public class MainFrame extends JFrame {
-    public MainFrame() {
+    public MainFrame(final BufferedWriter bufferedWriter) {
         int w = 250;
         int h = 200;
 
@@ -32,7 +33,7 @@ public class MainFrame extends JFrame {
         clientButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                OperationsFrame operationsFrame = new OperationsFrame("Clients");
+                OperationsFrame operationsFrame = new OperationsFrame("Clients", bufferedWriter);
                 dispose();
             }
         });
@@ -40,7 +41,7 @@ public class MainFrame extends JFrame {
         productButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                OperationsFrame operationsFrame = new OperationsFrame("Products");
+                OperationsFrame operationsFrame = new OperationsFrame("Products", bufferedWriter);
                 dispose();
             }
         });
@@ -48,7 +49,7 @@ public class MainFrame extends JFrame {
         createButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                CreateOrderFrame createOrderFrame = new CreateOrderFrame();
+                CreateOrderFrame createOrderFrame = new CreateOrderFrame(bufferedWriter);
                 dispose();
             }
         });
