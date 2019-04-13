@@ -10,7 +10,7 @@ public class ClientBLL {
     }
 
     public static void editClient(Client client) {
-        ClientDAO.editClient(client);
+        ReflectionDAO.editElement(client);
     }
 
     public static Client getClient(int id) {

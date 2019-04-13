@@ -1,4 +1,0 @@
-CLIENT: George Georgescu - Str. Java, nr. 12 - george@email.ro
-PRODUCT: Aur - Rosia Montana SRL - 145
-Amount: 4    Total price: 580 RON
--------------------------------------------------------------
