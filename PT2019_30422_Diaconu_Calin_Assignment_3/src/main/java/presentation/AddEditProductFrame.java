@@ -1,3 +1,8 @@
+package presentation;
+
+import business.ProductBLL;
+import model.Product;
+
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -10,9 +15,9 @@ public class AddEditProductFrame extends JFrame {
 
         setLayout(null);
         if(add)
-            setTitle("Add New Product");
+            setTitle("Add New model.Product");
         else
-            setTitle("Edit Product");
+            setTitle("Edit model.Product");
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setSize(w, h);
         setLocationRelativeTo(null);
@@ -80,9 +85,9 @@ public class AddEditProductFrame extends JFrame {
             public void actionPerformed(ActionEvent e) {
                 try {
                     if(add) {
-                        Product.addProduct(new Product(nameField.getText(), Integer.parseInt(stockField.getText()), distributorField.getText(), Integer.parseInt(priceField.getText())));
+                        ProductBLL.addProduct(new Product(nameField.getText(), Integer.parseInt(stockField.getText()), distributorField.getText(), Integer.parseInt(priceField.getText())));
                     } else {
-                        Product.editProduct(new Product(product.getIdProduct(), nameField.getText(), Integer.parseInt(stockField.getText()), distributorField.getText(), Integer.parseInt(priceField.getText())));
+                        ProductBLL.editProduct(new Product(product.getIdProduct(), nameField.getText(), Integer.parseInt(stockField.getText()), distributorField.getText(), Integer.parseInt(priceField.getText())));
                     }
                     OperationsFrame operationsFrame = new OperationsFrame("Products", bufferedWriter);
                     dispose();

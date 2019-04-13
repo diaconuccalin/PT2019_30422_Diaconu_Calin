@@ -1,3 +1,9 @@
+package presentation;
+
+import business.HelpingMethodsBLL;
+import model.Client;
+import model.Product;
+
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -15,7 +21,7 @@ public class OperationsFrame extends JFrame {
         setDefaultCloseOperation(EXIT_ON_CLOSE);
 
         //Content table
-        final JTable jTable = Main.createTable(title);
+        final JTable jTable = HelpingMethodsBLL.createTable(title);
         jTable.getTableHeader().setReorderingAllowed(false);
         jTable.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
         jTable.setRowSelectionInterval(0, 0);
@@ -89,7 +95,7 @@ public class OperationsFrame extends JFrame {
         deleteButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                Main.deleteElement(title, Integer.parseInt(jTable.getValueAt(jTable.getSelectedRow(), 0).toString()));
+                HelpingMethodsBLL.deleteElement(title, Integer.parseInt(jTable.getValueAt(jTable.getSelectedRow(), 0).toString()));
                 OperationsFrame operationsFrame = new OperationsFrame(title, bufferedWriter);
                 dispose();
             }

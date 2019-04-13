@@ -1,36 +1,22 @@
+package dataAccess;
+
+import model.Client;
+
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-public class Client {
-    private int idclient;
-    private String name;
-    private String address;
-    private String email;
-
-    public Client(String name, String address, String email) {
-        this.name = name;
-        this.address = address;
-        this.email = email;
-    }
-
-    public Client(int idclient, String name, String address, String email) {
-        this.idclient = idclient;
-        this.name = name;
-        this.address = address;
-        this.email = email;
-    }
-
+public class ClientDAO {
     public static void addClient(Client client) {
         Connection connection = ConnectionFactory.getConnection();
 
         String statement = "INSERT INTO `ordermanagement`.`client` (`name`, `address`, `email`) VALUES ('" +
-                client.name +
+                client.getName() +
                 "', '" +
-                client.address +
+                client.getAddress() +
                 "', '" +
-                client.email +
+                client.getEmail() +
                 "');";
 
         PreparedStatement preparedStatement = null;
@@ -47,13 +33,13 @@ public class Client {
         Connection connection = ConnectionFactory.getConnection();
 
         String statement = "UPDATE `ordermanagement`.`client` SET `name`='" +
-                client.name +
+                client.getName() +
                 "', `address`='" +
-                client.address +
+                client.getAddress() +
                 "', `email`='" +
-                client.email +
+                client.getEmail() +
                 "' WHERE `idclient`='" +
-                client.idclient +
+                client.getIdclient() +
                 "';";
 
         PreparedStatement preparedStatement = null;
@@ -90,21 +76,5 @@ public class Client {
         }
 
         return client;
-    }
-
-    public int getIdclient() {
-        return idclient;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public String getAddress() {
-        return address;
-    }
-
-    public String getEmail() {
-        return email;
     }
 }

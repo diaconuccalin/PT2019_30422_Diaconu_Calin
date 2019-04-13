@@ -1,7 +1,6 @@
+package dataAccess;
+
 import java.sql.*;
-import java.util.Map;
-import java.util.Properties;
-import java.util.concurrent.Executor;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -71,41 +70,6 @@ public class ConnectionFactory {
             } catch (SQLException e) {
                 LOGGER.log(Level.WARNING, "An error occured while trying to close the ResultSet");
             }
-        }
-    }
-
-    public static void main(String[] args) {
-        Connection connection = ConnectionFactory.getConnection();
-
-        String findStatementString = "SELECT * FROM client";
-        PreparedStatement findStatement = null;
-        ResultSet rs = null;
-        ResultSetMetaData rsmd = null;
-
-        try {
-            findStatement = connection.prepareStatement(findStatementString);
-            rs = findStatement.executeQuery();
-            rsmd = rs.getMetaData();
-
-            for(int i = 1; i <= rsmd.getColumnCount(); i++) {
-                System.out.println(rsmd.getColumnName(i));
-            }
-
-            while(rs.next()) {
-//                int id = rs.getInt("idclient");
-//                String name = rs.getString("name");
-//                String address = rs.getString("address");
-//                String email = rs.getString("email");
-//                System.out.println(rs.getRow());
-//                rs.getRow();
-                for(int i = 1; i <= rsmd.getColumnCount(); i++) {
-                    System.out.print(rs.getObject(i).toString() + " | ");
-                }
-                System.out.println();
-                // System.out.println(id + " | " + name + " | " + address + " | " + email);
-            }
-        } catch (SQLException e) {
-            System.out.println(e);
         }
     }
 }
