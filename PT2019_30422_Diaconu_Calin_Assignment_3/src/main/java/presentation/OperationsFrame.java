@@ -95,7 +95,13 @@ public class OperationsFrame extends JFrame {
         deleteButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                HelpingMethodsBLL.deleteElement(title, Integer.parseInt(jTable.getValueAt(jTable.getSelectedRow(), 0).toString()));
+                Object object = null;
+                if(title.compareTo("Clients") == 0)
+                    object = new Client(Integer.parseInt(jTable.getValueAt(jTable.getSelectedRow(), 0).toString()), "", "", "");
+                else if(title.compareTo("Products") == 0)
+                    object = new Product(Integer.parseInt(jTable.getValueAt(jTable.getSelectedRow(), 0).toString()), "", 0, "", 0);
+
+                HelpingMethodsBLL.deleteElement(object);
                 OperationsFrame operationsFrame = new OperationsFrame(title, bufferedWriter);
                 dispose();
             }
