@@ -1,24 +1,27 @@
+package presentation;
+
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.BufferedWriter;
 
 public class MainFrame extends JFrame {
-    public MainFrame() {
+    public MainFrame(final BufferedWriter bufferedWriter) {
         int w = 250;
         int h = 200;
 
         setLayout(null);
         setSize(w, h);
-        setTitle("Order Management");
+        setTitle("DB Management");
         setLocationRelativeTo(null);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
 
-        //Client operations button
+        //model.Client operations button
         JButton clientButton = new JButton("Client Operations");
         clientButton.setBounds(10, 10, 215, 40);
         add(clientButton);
 
-        //Product operations button
+        //model.Product operations button
         JButton productButton = new JButton("Product Operations");
         productButton.setBounds(10, 60, 215, 40);
         add(productButton);
@@ -32,7 +35,7 @@ public class MainFrame extends JFrame {
         clientButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                OperationsFrame operationsFrame = new OperationsFrame("Clients");
+                OperationsFrame operationsFrame = new OperationsFrame("Clients", bufferedWriter);
                 dispose();
             }
         });
@@ -40,7 +43,7 @@ public class MainFrame extends JFrame {
         productButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                OperationsFrame operationsFrame = new OperationsFrame("Products");
+                OperationsFrame operationsFrame = new OperationsFrame("Products", bufferedWriter);
                 dispose();
             }
         });
@@ -48,7 +51,7 @@ public class MainFrame extends JFrame {
         createButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                CreateOrderFrame createOrderFrame = new CreateOrderFrame();
+                CreateOrderFrame createOrderFrame = new CreateOrderFrame(bufferedWriter);
                 dispose();
             }
         });

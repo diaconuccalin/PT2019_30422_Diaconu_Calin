@@ -1,7 +1,6 @@
+package dataAccess;
+
 import java.sql.*;
-import java.util.Map;
-import java.util.Properties;
-import java.util.concurrent.Executor;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -15,7 +14,7 @@ public class ConnectionFactory {
 
     private static final Logger LOGGER = Logger.getLogger(ConnectionFactory.class.getName());
     private static final String DRIVER = "com.mysql.cj.jdbc.Driver";
-    private static final String DBURL = "jdbc:mysql://localhost:3306/schooldb";
+    private static final String DBURL = "jdbc:mysql://localhost:3306/ordermanagement";
     private static final String USER = "root";
     private static final String PASS = "root";
 
@@ -71,30 +70,6 @@ public class ConnectionFactory {
             } catch (SQLException e) {
                 LOGGER.log(Level.WARNING, "An error occured while trying to close the ResultSet");
             }
-        }
-    }
-
-    public static void main(String[] args) {
-        Connection connection = ConnectionFactory.getConnection();
-
-        String findStatementString = "SELECT * FROM student";
-        PreparedStatement findStatement = null;
-        ResultSet rs = null;
-
-        try {
-            findStatement = connection.prepareStatement(findStatementString);
-            rs = findStatement.executeQuery();
-
-            while(rs.next()) {
-                int id = rs.getInt("id");
-                String name = rs.getString("name");
-
-                System.out.println(id);
-                System.out.println(name);
-                System.out.println();
-            }
-        } catch (SQLException e) {
-            System.out.println(e);
         }
     }
 }
