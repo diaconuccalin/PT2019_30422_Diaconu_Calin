@@ -8,27 +8,6 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class ClientDAO {
-    public static void addClient(Client client) {
-        Connection connection = ConnectionFactory.getConnection();
-
-        String statement = "INSERT INTO `ordermanagement`.`client` (`name`, `address`, `email`) VALUES ('" +
-                client.getName() +
-                "', '" +
-                client.getAddress() +
-                "', '" +
-                client.getEmail() +
-                "');";
-
-        PreparedStatement preparedStatement = null;
-
-        try {
-            preparedStatement = connection.prepareStatement(statement);
-            preparedStatement.executeUpdate();
-        } catch (SQLException e) {
-            System.out.println(e);
-        }
-    }
-
     public static void editClient(Client client) {
         Connection connection = ConnectionFactory.getConnection();
 

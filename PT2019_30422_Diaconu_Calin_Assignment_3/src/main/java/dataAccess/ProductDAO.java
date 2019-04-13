@@ -8,29 +8,6 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class ProductDAO {
-    public static void addProduct(Product product) {
-        Connection connection = ConnectionFactory.getConnection();
-
-        String statement = "INSERT INTO `ordermanagement`.`product` (`name`, `stock`, `distributor`, `price`) VALUES ('" +
-                product.getName() +
-                "', '" +
-                product.getStock() +
-                "', '" +
-                product.getDistributor() +
-                "', '" +
-                product.getPrice() +
-                "');";
-
-        PreparedStatement preparedStatement = null;
-
-        try {
-            preparedStatement = connection.prepareStatement(statement);
-            preparedStatement.executeUpdate();
-        } catch (SQLException e) {
-            System.out.println(e);
-        }
-    }
-
     public static void editProduct(Product product) {
         Connection connection = ConnectionFactory.getConnection();
 

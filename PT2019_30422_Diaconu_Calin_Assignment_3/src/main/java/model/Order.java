@@ -29,4 +29,8 @@ public class Order {
     public int getProductid() {
         return productid;
     }
+
+    public int getIdorder() {
+        return idorder;
+    }
 }

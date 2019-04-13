@@ -1,11 +1,12 @@
 package business;
 
 import dataAccess.ClientDAO;
+import dataAccess.ReflectionDAO;
 import model.Client;
 
 public class ClientBLL {
     public static void addClient(Client client) {
-        ClientDAO.addClient(client);
+        ReflectionDAO.addElement(client);
     }
 
     public static void editClient(Client client) {
