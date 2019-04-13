@@ -85,9 +85,9 @@ public class HelpingMethodsDAO {
     }
 
     public static void deleteElement(String table, int id) {
-        if(table.compareTo("Clients") == 0)
+        if (table.compareTo("Clients") == 0)
             table = "client";
-        else if(table.compareTo("Products") == 0)
+        else if (table.compareTo("Products") == 0)
             table = "product";
 
         Connection connection = ConnectionFactory.getConnection();
@@ -105,6 +105,12 @@ public class HelpingMethodsDAO {
         try {
             preparedStatement = connection.prepareStatement(statement);
             preparedStatement.executeUpdate();
+        } catch (SQLIntegrityConstraintViolationException e) {
+            if (table.compareTo("client") == 0) {
+                JOptionPane.showMessageDialog(null, "Can not delete. Client has active order");
+            } else {
+                JOptionPane.showMessageDialog(null, "Can not delete. Product part of an order");
+            }
         } catch (SQLException e) {
             System.out.println(e);
         }
