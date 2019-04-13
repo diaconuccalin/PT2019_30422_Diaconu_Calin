@@ -1,6 +1,7 @@
 package business;
 
 import dataAccess.HelpingMethodsDAO;
+import dataAccess.ReflectionDAO;
 
 import javax.swing.*;
 import java.util.List;
@@ -26,7 +27,7 @@ public class HelpingMethodsBLL {
         return HelpingMethodsDAO.createTable(table);
     }
 
-    public static void deleteElement(String table, int id) {
-        HelpingMethodsDAO.deleteElement(table, id);
+    public static void deleteElement(Object object) {
+        ReflectionDAO.deleteElement(object);
     }
 }
