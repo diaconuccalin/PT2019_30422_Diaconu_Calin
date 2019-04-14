@@ -59,7 +59,6 @@ public class ReflectionDAO {
 
     public static void editElement(Object object) {
         Connection connection = ConnectionFactory.getConnection();
-
         String statement = "UPDATE `ordermanagement`.`" +
                 object.getClass().getSimpleName().toLowerCase() +
                 "` SET ";
@@ -106,7 +105,6 @@ public class ReflectionDAO {
 
     public static void deleteElement(Object object) {
         Connection connection = ConnectionFactory.getConnection();
-
         if(object.getClass().getSimpleName().toLowerCase().compareTo("order") == 0) {
             object = findElement(object);
             int productid;
@@ -126,13 +124,11 @@ public class ReflectionDAO {
                 System.out.println(e);
             }
         }
-
         String statement = "DELETE FROM `ordermanagement`.`" +
                 object.getClass().getSimpleName().toLowerCase() +
                 "` WHERE `id" +
                 object.getClass().getSimpleName().toLowerCase() +
                 "`='";
-
         String methodName = "getId" + object.getClass().getSimpleName().toLowerCase();
 
         try {
@@ -144,11 +140,8 @@ public class ReflectionDAO {
         } catch (InvocationTargetException e) {
             System.out.println(e);
         }
-
         statement = statement.concat("';");
-
         PreparedStatement preparedStatement = null;
-
         try {
             preparedStatement = connection.prepareStatement(statement);
             preparedStatement.executeUpdate();
@@ -165,13 +158,11 @@ public class ReflectionDAO {
 
     public static Object findElement(Object object) {
         Connection connection = ConnectionFactory.getConnection();
-
         String statement = "SELECT * FROM `ordermanagement`.`" +
                 object.getClass().getSimpleName().toLowerCase() +
                 "` WHERE `id" +
                 object.getClass().getSimpleName().toLowerCase() +
                 "`='";
-
         String methodName = "getId" + object.getClass().getSimpleName().toLowerCase();
         try {
             statement = statement.concat(object.getClass().getDeclaredMethod(methodName).invoke(object).toString());
@@ -182,20 +173,14 @@ public class ReflectionDAO {
         } catch (InvocationTargetException e) {
             System.out.println(e);
         }
-
         statement = statement.concat("';");
-
         PreparedStatement findStatement = null;
         ResultSet rs = null;
-
         try {
             findStatement = connection.prepareStatement(statement);
             rs = findStatement.executeQuery();
-
             rs.next();
-
             Field[] fields = object.getClass().getDeclaredFields();
-
             for(int i = 1; i < fields.length; i++) {
                 String field = fields[i].getName().substring(0, 1).toUpperCase() + fields[i].getName().substring(1);
                 object.getClass().getDeclaredMethod("set" + field, rs.getObject(i + 1).getClass()).invoke(object, rs.getObject(i + 1));
@@ -209,7 +194,6 @@ public class ReflectionDAO {
         } catch (InvocationTargetException e) {
             System.out.println(e);
         }
-
         return object;
     }
 }
