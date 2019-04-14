@@ -1,6 +1,6 @@
 package presentation;
 
-import business.ClientBLL;
+import business.ReflectionBLL;
 import model.Client;
 
 import javax.swing.*;
@@ -74,9 +74,9 @@ public class AddEditClientFrame extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 if(add) {
-                    ClientBLL.addClient(new Client(nameField.getText(), addressField.getText(), emailField.getText()));
+                    ReflectionBLL.addElement(new Client(nameField.getText(), addressField.getText(), emailField.getText()));
                 } else {
-                    ClientBLL.editClient(new Client(client.getIdclient(), nameField.getText(), addressField.getText(), emailField.getText()));
+                    ReflectionBLL.editElement(new Client(client.getIdclient(), nameField.getText(), addressField.getText(), emailField.getText()));
                 }
                 OperationsFrame operationsFrame = new OperationsFrame("Clients", bufferedWriter);
                 dispose();

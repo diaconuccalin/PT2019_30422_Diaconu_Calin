@@ -19,6 +19,10 @@ public class Client {
         this.email = email;
     }
 
+    public Client(int idclient) {
+        this.idclient = idclient;
+    }
+
     public int getIdclient() {
         return idclient;
     }
@@ -33,5 +37,21 @@ public class Client {
 
     public String getEmail() {
         return email;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public void setIdclient(int idclient) {
+        this.idclient = idclient;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 }
