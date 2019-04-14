@@ -54,11 +54,11 @@ public class Product {
         this.name = name;
     }
 
-    public void setDistributorid(int distributor) {
+    public void setDistributorid(Integer distributor) {
         this.distributorid = distributor;
     }
 
-    public void setIdproduct(int idproduct) {
+    public void setIdproduct(Integer idproduct) {
         this.idproduct = idproduct;
     }
 
