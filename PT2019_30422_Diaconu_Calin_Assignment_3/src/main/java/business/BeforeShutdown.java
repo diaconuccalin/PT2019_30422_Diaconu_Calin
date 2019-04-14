@@ -4,7 +4,7 @@ import java.io.BufferedWriter;
 import java.io.IOException;
 
 public class BeforeShutdown extends Thread {
-    BufferedWriter bufferedWriter;
+    private BufferedWriter bufferedWriter;
 
     public BeforeShutdown(BufferedWriter bufferedWriter) {
         this.bufferedWriter = bufferedWriter;
@@ -14,7 +14,7 @@ public class BeforeShutdown extends Thread {
         try {
             bufferedWriter.close();
         } catch (IOException e) {
-            System.out.println(e);
+            System.out.println(e.toString());
         }
     }
 }

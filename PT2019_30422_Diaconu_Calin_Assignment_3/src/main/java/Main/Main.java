@@ -8,18 +8,18 @@ import java.io.FileWriter;
 import java.io.IOException;
 
 public class Main {
-    static BufferedWriter bufferedWriter;
+    private static BufferedWriter bufferedWriter;
 
     public static void main(String[] args) {
         try {
             bufferedWriter = new BufferedWriter(new FileWriter("orders.txt"));
         } catch (IOException e) {
-            System.out.println(e);
+            System.out.println(e.toString());
         }
 
         Runtime runtime = Runtime.getRuntime();
         runtime.addShutdownHook(new BeforeShutdown(bufferedWriter));
 
-        MainFrame mainFrame = new MainFrame(bufferedWriter);
+        new MainFrame(bufferedWriter);
     }
 }

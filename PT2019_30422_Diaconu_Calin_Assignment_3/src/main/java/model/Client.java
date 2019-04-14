@@ -1,7 +1,7 @@
 package model;
 
 public class Client {
-    public int idclient;
+    private int idclient;
     private String name;
     private String address;
     private String email;

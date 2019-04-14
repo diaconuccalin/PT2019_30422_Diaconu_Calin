@@ -3,7 +3,6 @@ package dataAccess;
 import model.Product;
 
 import javax.swing.*;
-import java.lang.reflect.Constructor;
 import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
 import java.sql.*;
@@ -35,17 +34,13 @@ public class ReflectionDAO {
 
                 if (i != fields.length - 1)
                     statement = statement.concat("', '");
-            } catch (NoSuchMethodException e) {
-                System.out.println(e);
-            } catch (IllegalAccessException e) {
-                System.out.println(e);
-            } catch (InvocationTargetException e) {
-                System.out.println(e);
+            } catch (NoSuchMethodException | IllegalAccessException | InvocationTargetException e) {
+                System.out.println(e.toString());
             }
         }
         statement = statement.concat("');");
 
-        PreparedStatement preparedStatement = null;
+        PreparedStatement preparedStatement;
 
         try {
             preparedStatement = connection.prepareStatement(statement);
@@ -53,13 +48,12 @@ public class ReflectionDAO {
         } catch (SQLIntegrityConstraintViolationException e) {
             JOptionPane.showMessageDialog(null, "Incorrect input");
         } catch (SQLException e) {
-            System.out.println(e);
+            System.out.println(e.toString());
         }
     }
 
     public static void editElement(Object object) {
         Connection connection = ConnectionFactory.getConnection();
-
         String statement = "UPDATE `ordermanagement`.`" +
                 object.getClass().getSimpleName().toLowerCase() +
                 "` SET ";
@@ -82,15 +76,11 @@ public class ReflectionDAO {
 
             statement = statement.concat("' WHERE `id" + object.getClass().getSimpleName().toLowerCase() + "`='");
             statement = statement.concat(object.getClass().getDeclaredMethod("getId" + object.getClass().getSimpleName().toLowerCase()).invoke(object) + "';");
-        } catch (NoSuchMethodException e) {
-            System.out.println(e);
-        } catch (IllegalAccessException e) {
-            System.out.println(e);
-        } catch (InvocationTargetException e) {
-            System.out.println(e);
+        } catch (NoSuchMethodException | InvocationTargetException | IllegalAccessException e) {
+            System.out.println(e.toString());
         }
 
-        PreparedStatement preparedStatement = null;
+        PreparedStatement preparedStatement;
 
         try {
             preparedStatement = connection.prepareStatement(statement);
@@ -99,15 +89,13 @@ public class ReflectionDAO {
             System.out.println(statement);
             JOptionPane.showMessageDialog(null, "Incorrect input");
         } catch (SQLException e) {
-            System.out.println(statement);
-            System.out.println(e);
+            System.out.println(e.toString());
         }
     }
 
     public static void deleteElement(Object object) {
         Connection connection = ConnectionFactory.getConnection();
-
-        if(object.getClass().getSimpleName().toLowerCase().compareTo("order") == 0) {
+        if (object.getClass().getSimpleName().toLowerCase().compareTo("order") == 0) {
             object = findElement(object);
             int productid;
             int productamount;
@@ -118,37 +106,24 @@ public class ReflectionDAO {
                 Product product = (Product) findElement(new Product(productid));
                 product.setStock(product.getStock() + productamount);
                 editElement(product);
-            } catch (NoSuchMethodException e) {
-                System.out.println(e);
-            } catch (IllegalAccessException e) {
-                System.out.println(e);
-            } catch (InvocationTargetException e) {
-                System.out.println(e);
+            } catch (NoSuchMethodException | InvocationTargetException | IllegalAccessException e) {
+                System.out.println(e.toString());
             }
         }
-
         String statement = "DELETE FROM `ordermanagement`.`" +
                 object.getClass().getSimpleName().toLowerCase() +
                 "` WHERE `id" +
                 object.getClass().getSimpleName().toLowerCase() +
                 "`='";
-
         String methodName = "getId" + object.getClass().getSimpleName().toLowerCase();
 
         try {
             statement = statement.concat(object.getClass().getDeclaredMethod(methodName).invoke(object).toString());
-        } catch (NoSuchMethodException e) {
-            System.out.println(e);
-        } catch (IllegalAccessException e) {
-            System.out.println(e);
-        } catch (InvocationTargetException e) {
-            System.out.println(e);
+        } catch (NoSuchMethodException | InvocationTargetException | IllegalAccessException e) {
+            System.out.println(e.toString());
         }
-
         statement = statement.concat("';");
-
-        PreparedStatement preparedStatement = null;
-
+        PreparedStatement preparedStatement;
         try {
             preparedStatement = connection.prepareStatement(statement);
             preparedStatement.executeUpdate();
@@ -159,57 +134,38 @@ public class ReflectionDAO {
                 JOptionPane.showMessageDialog(null, "Can not delete. Product part of an order");
             }
         } catch (SQLException e) {
-            System.out.println(e);
+            System.out.println(e.toString());
         }
     }
 
     public static Object findElement(Object object) {
         Connection connection = ConnectionFactory.getConnection();
-
         String statement = "SELECT * FROM `ordermanagement`.`" +
                 object.getClass().getSimpleName().toLowerCase() +
                 "` WHERE `id" +
                 object.getClass().getSimpleName().toLowerCase() +
                 "`='";
-
         String methodName = "getId" + object.getClass().getSimpleName().toLowerCase();
         try {
             statement = statement.concat(object.getClass().getDeclaredMethod(methodName).invoke(object).toString());
-        } catch (NoSuchMethodException e) {
-            System.out.println(e);
-        } catch (IllegalAccessException e) {
-            System.out.println(e);
-        } catch (InvocationTargetException e) {
-            System.out.println(e);
+        } catch (NoSuchMethodException | IllegalAccessException | InvocationTargetException e) {
+            System.out.println(e.toString());
         }
-
         statement = statement.concat("';");
-
-        PreparedStatement findStatement = null;
-        ResultSet rs = null;
-
+        PreparedStatement findStatement;
+        ResultSet rs;
         try {
             findStatement = connection.prepareStatement(statement);
             rs = findStatement.executeQuery();
-
             rs.next();
-
             Field[] fields = object.getClass().getDeclaredFields();
-
-            for(int i = 1; i < fields.length; i++) {
+            for (int i = 1; i < fields.length; i++) {
                 String field = fields[i].getName().substring(0, 1).toUpperCase() + fields[i].getName().substring(1);
                 object.getClass().getDeclaredMethod("set" + field, rs.getObject(i + 1).getClass()).invoke(object, rs.getObject(i + 1));
             }
-        } catch (SQLException e) {
-            System.out.println(e);
-        } catch (NoSuchMethodException e) {
-            System.out.println(e);
-        } catch (IllegalAccessException e) {
-            System.out.println(e);
-        } catch (InvocationTargetException e) {
-            System.out.println(e);
+        } catch (SQLException | InvocationTargetException | IllegalAccessException | NoSuchMethodException e) {
+            System.out.println(e.toString());
         }
-
         return object;
     }
 }

@@ -4,17 +4,15 @@ import business.ReflectionBLL;
 import model.Client;
 
 import javax.swing.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.io.BufferedWriter;
 
-public class AddEditClientFrame extends JFrame {
-    public AddEditClientFrame(final boolean add, final Client client, final BufferedWriter bufferedWriter) {
+class AddEditClientFrame extends JFrame {
+    AddEditClientFrame(final boolean add, final Client client, final BufferedWriter bufferedWriter) {
         int w = 400;
         int h = 185;
 
         setLayout(null);
-        if(add)
+        if (add)
             setTitle("Add New Client");
         else
             setTitle("Edit Client");
@@ -50,15 +48,15 @@ public class AddEditClientFrame extends JFrame {
         add(emailField);
 
         //Fill textFields
-        if(!add) {
+        if (!add) {
             nameField.setText(client.getName());
             addressField.setText(client.getAddress());
             emailField.setText(client.getEmail());
         }
 
         //Buttons
-        JButton addButton = null;
-        if(add)
+        JButton addButton;
+        if (add)
             addButton = new JButton("Add");
         else
             addButton = new JButton("Submit");
@@ -70,25 +68,19 @@ public class AddEditClientFrame extends JFrame {
         add(backButton);
 
         //Action Listeners
-        addButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                if(add) {
-                    ReflectionBLL.addElement(new Client(nameField.getText(), addressField.getText(), emailField.getText()));
-                } else {
-                    ReflectionBLL.editElement(new Client(client.getIdclient(), nameField.getText(), addressField.getText(), emailField.getText()));
-                }
-                OperationsFrame operationsFrame = new OperationsFrame("Clients", bufferedWriter);
-                dispose();
+        addButton.addActionListener(e -> {
+            if (add) {
+                ReflectionBLL.addElement(new Client(nameField.getText(), addressField.getText(), emailField.getText()));
+            } else {
+                ReflectionBLL.editElement(new Client(client.getIdclient(), nameField.getText(), addressField.getText(), emailField.getText()));
             }
+            new OperationsFrame("Clients", bufferedWriter);
+            dispose();
         });
 
-        backButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                OperationsFrame operationsFrame = new OperationsFrame("Clients", bufferedWriter);
-                dispose();
-            }
+        backButton.addActionListener(e -> {
+            new OperationsFrame("Clients", bufferedWriter);
+            dispose();
         });
 
         setVisible(true);

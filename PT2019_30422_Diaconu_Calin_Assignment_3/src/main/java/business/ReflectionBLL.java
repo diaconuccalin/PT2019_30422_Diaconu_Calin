@@ -1,7 +1,6 @@
 package business;
 
 import dataAccess.ReflectionDAO;
-import model.Client;
 
 public class ReflectionBLL {
     public static void addElement(Object object) {
