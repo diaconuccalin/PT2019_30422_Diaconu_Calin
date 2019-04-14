@@ -1,9 +1,9 @@
 package model;
 
 public class Distributor {
-    int iddistributor;
-    String name;
-    String email;
+    private int iddistributor;
+    private String name;
+    private String email;
 
     public Distributor(String name, String email) {
         this.name = name;

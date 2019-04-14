@@ -7,12 +7,11 @@ import model.Order;
 import model.Product;
 
 import javax.swing.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
+import javax.swing.border.EtchedBorder;
 import java.io.BufferedWriter;
 
-public class OperationsFrame extends JFrame {
-    public OperationsFrame(final String title, final BufferedWriter bufferedWriter) {
+class OperationsFrame extends JFrame {
+    OperationsFrame(final String title, final BufferedWriter bufferedWriter) {
         int w = 800;
         int h = 600;
 
@@ -34,7 +33,7 @@ public class OperationsFrame extends JFrame {
         //Control panel
         JPanel controlPanel = new JPanel();
         controlPanel.setBounds(615, 5, 165, 552);
-        controlPanel.setBorder(UIElements.etchedTitleBorder("Operations"));
+        controlPanel.setBorder(BorderFactory.createTitledBorder(BorderFactory.createEtchedBorder(EtchedBorder.LOWERED), "Operations"));
         controlPanel.setLayout(null);
 
         //Control panel buttons
@@ -55,92 +54,75 @@ public class OperationsFrame extends JFrame {
         controlPanel.add(deleteButton);
 
         //Action Listeners
-        addButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                AddEditClientFrame addEditClientFrame;
-                AddEditProductFrame addEditProductFrame;
-                AddEditOrderFrame addEditOrderFrame;
-                AddEditDistributorFrame addEditDistributorFrame;
+        addButton.addActionListener(e -> {
+            if (title.compareTo("Clients") == 0)
+                new AddEditClientFrame(true, null, bufferedWriter);
+            else if (title.compareTo("Products") == 0)
+                new AddEditProductFrame(true, null, bufferedWriter);
+            else if (title.compareTo("Orders") == 0)
+                new AddEditOrderFrame(true, null, bufferedWriter);
+            else if (title.compareTo("Distributors") == 0)
+                new AddEditDistributorFrame(true, null, bufferedWriter);
 
-                if(title.compareTo("Clients") == 0)
-                    addEditClientFrame = new AddEditClientFrame(true, null, bufferedWriter);
-                else if(title.compareTo("Products") == 0)
-                    addEditProductFrame = new AddEditProductFrame(true, null, bufferedWriter);
-                else if(title.compareTo("Orders") == 0)
-                    addEditOrderFrame = new AddEditOrderFrame(true, null, bufferedWriter);
-                else if(title.compareTo("Distributors") == 0)
-                    addEditDistributorFrame = new AddEditDistributorFrame(true, null, bufferedWriter);
+            dispose();
+        });
 
+        editButton.addActionListener(e -> {
+            if (title.compareTo("Clients") == 0) {
+                int id = Integer.parseInt(jTable.getValueAt(jTable.getSelectedRow(), 0).toString());
+                String name = jTable.getValueAt(jTable.getSelectedRow(), 1).toString();
+                String address = jTable.getValueAt(jTable.getSelectedRow(), 2).toString();
+                String email = jTable.getValueAt(jTable.getSelectedRow(), 3).toString();
+
+                new AddEditClientFrame(false, new Client(id, name, address, email), bufferedWriter);
+                dispose();
+            } else if (title.compareTo("Products") == 0) {
+                int id = Integer.parseInt(jTable.getValueAt(jTable.getSelectedRow(), 0).toString());
+                String name = jTable.getValueAt(jTable.getSelectedRow(), 1).toString();
+                int stock = Integer.parseInt(jTable.getValueAt(jTable.getSelectedRow(), 2).toString());
+                int distributor = Integer.parseInt(jTable.getValueAt(jTable.getSelectedRow(), 3).toString());
+                int price = Integer.parseInt(jTable.getValueAt(jTable.getSelectedRow(), 4).toString());
+
+                new AddEditProductFrame(false, new Product(id, name, stock, distributor, price), bufferedWriter);
+                dispose();
+            } else if (title.compareTo("Orders") == 0) {
+                int idorder = Integer.parseInt(jTable.getValueAt(jTable.getSelectedRow(), 0).toString());
+                int clientid = Integer.parseInt(jTable.getValueAt(jTable.getSelectedRow(), 1).toString());
+                int productid = Integer.parseInt(jTable.getValueAt(jTable.getSelectedRow(), 2).toString());
+                int productamount = Integer.parseInt(jTable.getValueAt(jTable.getSelectedRow(), 3).toString());
+                int totalprice = Integer.parseInt(jTable.getValueAt(jTable.getSelectedRow(), 4).toString());
+
+                new AddEditOrderFrame(false, new Order(idorder, clientid, productid, productamount, totalprice), bufferedWriter);
+                dispose();
+            } else if (title.compareTo("Distributors") == 0) {
+                int iddistributor = Integer.parseInt(jTable.getValueAt(jTable.getSelectedRow(), 0).toString());
+                String name = jTable.getValueAt(jTable.getSelectedRow(), 1).toString();
+                String email = jTable.getValueAt(jTable.getSelectedRow(), 2).toString();
+
+                new AddEditDistributorFrame(false, new Distributor(iddistributor, name, email), bufferedWriter);
                 dispose();
             }
         });
 
-        editButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                if(title.compareTo("Clients") == 0) {
-                    int id = Integer.parseInt(jTable.getValueAt(jTable.getSelectedRow(), 0).toString());
-                    String name = jTable.getValueAt(jTable.getSelectedRow(), 1).toString();
-                    String address = jTable.getValueAt(jTable.getSelectedRow(), 2).toString();
-                    String email = jTable.getValueAt(jTable.getSelectedRow(), 3).toString();
+        deleteButton.addActionListener(e -> {
+            Object object = null;
+            if (title.compareTo("Clients") == 0)
+                object = new Client(Integer.parseInt(jTable.getValueAt(jTable.getSelectedRow(), 0).toString()));
+            else if (title.compareTo("Products") == 0)
+                object = new Product(Integer.parseInt(jTable.getValueAt(jTable.getSelectedRow(), 0).toString()));
+            else if (title.compareTo("Orders") == 0)
+                object = new Order(Integer.parseInt(jTable.getValueAt(jTable.getSelectedRow(), 0).toString()));
+            else if (title.compareTo("Distributors") == 0)
+                object = new Distributor(Integer.parseInt(jTable.getValueAt(jTable.getSelectedRow(), 0).toString()));
 
-                    AddEditClientFrame addEditClientFrame = new AddEditClientFrame(false, new Client(id, name, address, email), bufferedWriter);
-                    dispose();
-                } else if(title.compareTo("Products") == 0) {
-                    int id = Integer.parseInt(jTable.getValueAt(jTable.getSelectedRow(), 0).toString());
-                    String name = jTable.getValueAt(jTable.getSelectedRow(), 1).toString();
-                    int stock = Integer.parseInt(jTable.getValueAt(jTable.getSelectedRow(), 2).toString());
-                    int distributor = Integer.parseInt(jTable.getValueAt(jTable.getSelectedRow(), 3).toString());
-                    int price = Integer.parseInt(jTable.getValueAt(jTable.getSelectedRow(), 4).toString());
-
-                    AddEditProductFrame addEditProductFrame = new AddEditProductFrame(false, new Product(id, name, stock, distributor, price), bufferedWriter);
-                    dispose();
-                } else if(title.compareTo("Orders") == 0) {
-                    int idorder = Integer.parseInt(jTable.getValueAt(jTable.getSelectedRow(), 0).toString());
-                    int clientid = Integer.parseInt(jTable.getValueAt(jTable.getSelectedRow(), 1).toString());
-                    int productid = Integer.parseInt(jTable.getValueAt(jTable.getSelectedRow(), 2).toString());
-                    int productamount = Integer.parseInt(jTable.getValueAt(jTable.getSelectedRow(), 3).toString());
-                    int totalprice = Integer.parseInt(jTable.getValueAt(jTable.getSelectedRow(), 4).toString());
-
-                    AddEditOrderFrame addEditOrderFrame = new AddEditOrderFrame(false, new Order(idorder, clientid, productid, productamount, totalprice), bufferedWriter);
-                    dispose();
-                } else if(title.compareTo("Distributors") == 0) {
-                    int iddistributor = Integer.parseInt(jTable.getValueAt(jTable.getSelectedRow(), 0).toString());
-                    String name = jTable.getValueAt(jTable.getSelectedRow(), 1).toString();
-                    String email = jTable.getValueAt(jTable.getSelectedRow(), 2).toString();
-
-                    AddEditDistributorFrame addEditDistributorFrame = new AddEditDistributorFrame(false, new Distributor(iddistributor, name, email), bufferedWriter);
-                    dispose();
-                }
-            }
+            HelpingMethodsBLL.deleteElement(object);
+            new OperationsFrame(title, bufferedWriter);
+            dispose();
         });
 
-        deleteButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                Object object = null;
-                if(title.compareTo("Clients") == 0)
-                    object = new Client(Integer.parseInt(jTable.getValueAt(jTable.getSelectedRow(), 0).toString()));
-                else if(title.compareTo("Products") == 0)
-                    object = new Product(Integer.parseInt(jTable.getValueAt(jTable.getSelectedRow(), 0).toString()));
-                else if(title.compareTo("Orders") == 0)
-                    object = new Order(Integer.parseInt(jTable.getValueAt(jTable.getSelectedRow(), 0).toString()));
-                else if(title.compareTo("Distributors") == 0)
-                    object = new Distributor(Integer.parseInt(jTable.getValueAt(jTable.getSelectedRow(), 0).toString()));
-
-                HelpingMethodsBLL.deleteElement(object);
-                OperationsFrame operationsFrame = new OperationsFrame(title, bufferedWriter);
-                dispose();
-            }
-        });
-
-        backButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                MainFrame mainFrame = new MainFrame(bufferedWriter);
-                dispose();
-            }
+        backButton.addActionListener(e -> {
+            new MainFrame(bufferedWriter);
+            dispose();
         });
 
         add(controlPanel);

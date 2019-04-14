@@ -1,8 +1,6 @@
 package presentation;
 
 import javax.swing.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.io.BufferedWriter;
 
 public class MainFrame extends JFrame {
@@ -37,36 +35,24 @@ public class MainFrame extends JFrame {
         add(distributorButton);
 
         //Action listeners
-        clientButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                OperationsFrame operationsFrame = new OperationsFrame("Clients", bufferedWriter);
-                dispose();
-            }
+        clientButton.addActionListener(e -> {
+            new OperationsFrame("Clients", bufferedWriter);
+            dispose();
         });
 
-        productButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                OperationsFrame operationsFrame = new OperationsFrame("Products", bufferedWriter);
-                dispose();
-            }
+        productButton.addActionListener(e -> {
+            new OperationsFrame("Products", bufferedWriter);
+            dispose();
         });
 
-        createButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                OperationsFrame operationsFrame = new OperationsFrame("Orders", bufferedWriter);
-                dispose();
-            }
+        createButton.addActionListener(e -> {
+            new OperationsFrame("Orders", bufferedWriter);
+            dispose();
         });
 
-        distributorButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                OperationsFrame operationsFrame = new OperationsFrame("Distributors", bufferedWriter);
-                dispose();
-            }
+        distributorButton.addActionListener(e -> {
+            new OperationsFrame("Distributors", bufferedWriter);
+            dispose();
         });
 
         setVisible(true);

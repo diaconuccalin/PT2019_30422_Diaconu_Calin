@@ -11,7 +11,7 @@ public class HelpingMethodsBLL {
         int i = 0;
         int id = 0;
 
-        while(string.charAt(i) != '.') {
+        while (string.charAt(i) != '.') {
             id = id * 10 + string.charAt(i) - '0';
             i++;
         }

@@ -4,17 +4,15 @@ import business.ReflectionBLL;
 import model.Distributor;
 
 import javax.swing.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.io.BufferedWriter;
 
-public class AddEditDistributorFrame extends JFrame {
-    public AddEditDistributorFrame(final boolean add, final Distributor distributor, final BufferedWriter bufferedWriter) {
+class AddEditDistributorFrame extends JFrame {
+    AddEditDistributorFrame(final boolean add, final Distributor distributor, final BufferedWriter bufferedWriter) {
         int w = 400;
         int h = 150;
 
         setLayout(null);
-        if(add)
+        if (add)
             setTitle("Add New Distributor");
         else
             setTitle("Edit Distributor");
@@ -41,14 +39,14 @@ public class AddEditDistributorFrame extends JFrame {
         add(emailField);
 
         //Fill textFields
-        if(!add) {
+        if (!add) {
             nameField.setText(distributor.getName());
             emailField.setText(distributor.getEmail());
         }
 
         //Buttons
-        JButton addButton = null;
-        if(add)
+        JButton addButton;
+        if (add)
             addButton = new JButton("Add");
         else
             addButton = new JButton("Submit");
@@ -60,25 +58,19 @@ public class AddEditDistributorFrame extends JFrame {
         add(backButton);
 
         //Action listeners
-        addButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                if(add) {
-                    ReflectionBLL.addElement(new Distributor(nameField.getText(), emailField.getText()));
-                } else {
-                    ReflectionBLL.editElement(new Distributor(distributor.getIddistributor(), nameField.getText(), emailField.getText()));
-                }
-                OperationsFrame operationsFrame = new OperationsFrame("Distributors", bufferedWriter);
-                dispose();
+        addButton.addActionListener(e -> {
+            if (add) {
+                ReflectionBLL.addElement(new Distributor(nameField.getText(), emailField.getText()));
+            } else {
+                ReflectionBLL.editElement(new Distributor(distributor.getIddistributor(), nameField.getText(), emailField.getText()));
             }
+            new OperationsFrame("Distributors", bufferedWriter);
+            dispose();
         });
 
-        backButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                OperationsFrame operationsFrame = new OperationsFrame("Distributors", bufferedWriter);
-                dispose();
-            }
+        backButton.addActionListener(e -> {
+            new OperationsFrame("Distributors", bufferedWriter);
+            dispose();
         });
 
         setVisible(true);

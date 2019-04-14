@@ -4,17 +4,15 @@ import business.ReflectionBLL;
 import model.Product;
 
 import javax.swing.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.io.BufferedWriter;
 
-public class AddEditProductFrame extends JFrame {
-    public AddEditProductFrame(final boolean add, final Product product, final BufferedWriter bufferedWriter) {
+class AddEditProductFrame extends JFrame {
+    AddEditProductFrame(final boolean add, final Product product, final BufferedWriter bufferedWriter) {
         int w = 400;
         int h = 220;
 
         setLayout(null);
-        if(add)
+        if (add)
             setTitle("Add New model.Product");
         else
             setTitle("Edit model.Product");
@@ -59,7 +57,7 @@ public class AddEditProductFrame extends JFrame {
         add(priceField);
 
         //Fill textFields
-        if(!add) {
+        if (!add) {
             nameField.setText(product.getName());
             stockField.setText(product.getStock() + "");
             distributorField.setText(product.getDistributorid() + "");
@@ -67,8 +65,8 @@ public class AddEditProductFrame extends JFrame {
         }
 
         //Buttons
-        JButton addButton = null;
-        if(add)
+        JButton addButton;
+        if (add)
             addButton = new JButton("Add");
         else
             addButton = new JButton("Submit");
@@ -80,29 +78,23 @@ public class AddEditProductFrame extends JFrame {
         add(backButton);
 
         //Action Listeners
-        addButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                try {
-                    if(add) {
-                        ReflectionBLL.addElement(new Product(nameField.getText(), Integer.parseInt(stockField.getText()), Integer.parseInt(distributorField.getText()), Integer.parseInt(priceField.getText())));
-                    } else {
-                        ReflectionBLL.editElement(new Product(product.getIdproduct(), nameField.getText(), Integer.parseInt(stockField.getText()), Integer.parseInt(distributorField.getText()), Integer.parseInt(priceField.getText())));
-                    }
-                    OperationsFrame operationsFrame = new OperationsFrame("Products", bufferedWriter);
-                    dispose();
-                } catch (NumberFormatException e1) {
-                    JOptionPane.showMessageDialog(null, "Incorrect input");
+        addButton.addActionListener(e -> {
+            try {
+                if (add) {
+                    ReflectionBLL.addElement(new Product(nameField.getText(), Integer.parseInt(stockField.getText()), Integer.parseInt(distributorField.getText()), Integer.parseInt(priceField.getText())));
+                } else {
+                    ReflectionBLL.editElement(new Product(product.getIdproduct(), nameField.getText(), Integer.parseInt(stockField.getText()), Integer.parseInt(distributorField.getText()), Integer.parseInt(priceField.getText())));
                 }
+                new OperationsFrame("Products", bufferedWriter);
+                dispose();
+            } catch (NumberFormatException e1) {
+                JOptionPane.showMessageDialog(null, "Incorrect input");
             }
         });
 
-        backButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                OperationsFrame operationsFrame = new OperationsFrame("Products", bufferedWriter);
-                dispose();
-            }
+        backButton.addActionListener(e -> {
+            new OperationsFrame("Products", bufferedWriter);
+            dispose();
         });
 
         setVisible(true);
