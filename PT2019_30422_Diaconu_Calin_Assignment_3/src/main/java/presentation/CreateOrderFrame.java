@@ -1,9 +1,6 @@
 package presentation;
 
-import business.ClientBLL;
-import business.HelpingMethodsBLL;
-import business.OrderBLL;
-import business.ProductBLL;
+import business.*;
 import model.Client;
 import model.Order;
 import model.Product;
@@ -85,17 +82,17 @@ public class CreateOrderFrame extends JFrame {
                     int amount;
                     amount = Integer.parseInt(amountField.getText());
 
-                    Client client = ClientBLL.getClient(clientId);
-                    Product product = ProductBLL.getProduct(productId);
+                    Client client = (Client) ReflectionBLL.findElement(new Client(clientId));
+                    Product product = (Product) ReflectionBLL.findElement(new Product(productId));
                     int stock = product.getStock();
 
                     if(stock < amount) {
                         JOptionPane.showMessageDialog(null, "Not enough products in stock");
                     } else {
                         product.setStock(stock - amount);
-                        ProductBLL.editProduct(product);
+                        ReflectionBLL.editElement(product);
                         Order order = new Order(clientId, productId, amount, product.getPrice() * amount);
-                        OrderBLL.addOrder(order);
+                        ReflectionBLL.addElement(order);
                         printBill(client, product, order, bufferedWriter);
 
                         MainFrame mainFrame = new MainFrame(bufferedWriter);

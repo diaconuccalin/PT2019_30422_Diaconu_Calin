@@ -22,6 +22,10 @@ public class Product {
         this.price = price;
     }
 
+    public Product(int idproduct) {
+        this.idproduct = idproduct;
+    }
+
     public int getIdproduct() {
         return idproduct;
     }
@@ -42,7 +46,23 @@ public class Product {
         return price;
     }
 
-    public void setStock(int stock) {
+    public void setStock(Integer stock) {
         this.stock = stock;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setDistributor(String distributor) {
+        this.distributor = distributor;
+    }
+
+    public void setIdproduct(int idproduct) {
+        this.idproduct = idproduct;
+    }
+
+    public void setPrice(Integer price) {
+        this.price = price;
     }
 }

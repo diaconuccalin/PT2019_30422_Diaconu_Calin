@@ -1,0 +1,4 @@
+CLIENT: George Georgescu - Str. Java, nr. 13 - george@email.ro
+PRODUCT: Ambalaj gol - Ambalaje srl - 10
+Amount: 1    Total price: 10 RON
+-------------------------------------------------------------

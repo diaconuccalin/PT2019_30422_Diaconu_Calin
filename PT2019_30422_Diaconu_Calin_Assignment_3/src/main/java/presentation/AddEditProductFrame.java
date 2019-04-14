@@ -1,6 +1,6 @@
 package presentation;
 
-import business.ProductBLL;
+import business.ReflectionBLL;
 import model.Product;
 
 import javax.swing.*;
@@ -85,9 +85,9 @@ public class AddEditProductFrame extends JFrame {
             public void actionPerformed(ActionEvent e) {
                 try {
                     if(add) {
-                        ProductBLL.addProduct(new Product(nameField.getText(), Integer.parseInt(stockField.getText()), distributorField.getText(), Integer.parseInt(priceField.getText())));
+                        ReflectionBLL.addElement(new Product(nameField.getText(), Integer.parseInt(stockField.getText()), distributorField.getText(), Integer.parseInt(priceField.getText())));
                     } else {
-                        ProductBLL.editProduct(new Product(product.getIdproduct(), nameField.getText(), Integer.parseInt(stockField.getText()), distributorField.getText(), Integer.parseInt(priceField.getText())));
+                        ReflectionBLL.editElement(new Product(product.getIdproduct(), nameField.getText(), Integer.parseInt(stockField.getText()), distributorField.getText(), Integer.parseInt(priceField.getText())));
                     }
                     OperationsFrame operationsFrame = new OperationsFrame("Products", bufferedWriter);
                     dispose();

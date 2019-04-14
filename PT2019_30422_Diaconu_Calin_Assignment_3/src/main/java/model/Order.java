@@ -33,4 +33,24 @@ public class Order {
     public int getIdorder() {
         return idorder;
     }
+
+    public void setClientid(int clientid) {
+        this.clientid = clientid;
+    }
+
+    public void setIdorder(int idorder) {
+        this.idorder = idorder;
+    }
+
+    public void setProductamount(int productamount) {
+        this.productamount = productamount;
+    }
+
+    public void setProductid(int productid) {
+        this.productid = productid;
+    }
+
+    public void setTotalprice(int totalprice) {
+        this.totalprice = totalprice;
+    }
 }
