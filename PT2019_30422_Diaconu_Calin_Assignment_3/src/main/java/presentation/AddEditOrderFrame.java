@@ -12,15 +12,19 @@ import java.io.BufferedWriter;
 import java.io.IOException;
 import java.util.List;
 
-public class CreateOrderFrame extends JFrame {
+public class AddEditOrderFrame extends JFrame {
 
-    public CreateOrderFrame(final BufferedWriter bufferedWriter) {
+    public AddEditOrderFrame(final boolean add, final Order order, final BufferedWriter bufferedWriter) {
         int w = 400;
         int h = 175;
 
+        if(add)
+            setTitle("Create Order");
+        else
+            setTitle("Edit Order");
+
         setLayout(null);
         setSize(w, h);
-        setTitle("Create Order");
         setLocationRelativeTo(null);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
 
@@ -59,10 +63,18 @@ public class CreateOrderFrame extends JFrame {
 
         final JTextField amountField = new JTextField();
         amountField.setBounds(70, 70, 305, 25);
+
+        if(!add)
+            amountField.setText(order.getProductamount() + "");
+
         add(amountField);
 
         //Buttons
-        JButton createButton = new JButton("Create");
+        JButton createButton;
+        if(add)
+            createButton = new JButton("Create");
+        else
+            createButton = new JButton("Update");
         createButton.setBounds(70, 105, 120, 25);
         add(createButton);
 
@@ -75,7 +87,6 @@ public class CreateOrderFrame extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 try {
-
                     int clientId = HelpingMethodsBLL.extractId(clientComboBox.getItemAt(clientComboBox.getSelectedIndex()).toString());
                     int productId = HelpingMethodsBLL.extractId(productComboBox.getItemAt(productComboBox.getSelectedIndex()).toString());
 
@@ -84,6 +95,9 @@ public class CreateOrderFrame extends JFrame {
 
                     Client client = (Client) ReflectionBLL.findElement(new Client(clientId));
                     Product product = (Product) ReflectionBLL.findElement(new Product(productId));
+                    if(!add) {
+                        product.setStock(product.getStock() + order.getProductamount());
+                    }
                     int stock = product.getStock();
 
                     if(stock < amount) {
@@ -92,7 +106,10 @@ public class CreateOrderFrame extends JFrame {
                         product.setStock(stock - amount);
                         ReflectionBLL.editElement(product);
                         Order order = new Order(clientId, productId, amount, product.getPrice() * amount);
-                        ReflectionBLL.addElement(order);
+                        if(add)
+                            ReflectionBLL.addElement(order);
+                        else
+                            ReflectionBLL.editElement(order);
                         printBill(client, product, order, bufferedWriter);
 
                         MainFrame mainFrame = new MainFrame(bufferedWriter);

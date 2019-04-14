@@ -1,5 +1,7 @@
 package dataAccess;
 
+import model.Product;
+
 import javax.swing.*;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Field;
@@ -97,12 +99,33 @@ public class ReflectionDAO {
             System.out.println(statement);
             JOptionPane.showMessageDialog(null, "Incorrect input");
         } catch (SQLException e) {
+            System.out.println(statement);
             System.out.println(e);
         }
     }
 
     public static void deleteElement(Object object) {
         Connection connection = ConnectionFactory.getConnection();
+
+        if(object.getClass().getSimpleName().toLowerCase().compareTo("order") == 0) {
+            object = findElement(object);
+            int productid;
+            int productamount;
+
+            try {
+                productid = Integer.parseInt(object.getClass().getMethod("getProductid").invoke(object).toString());
+                productamount = Integer.parseInt(object.getClass().getMethod("getProductamount").invoke(object).toString());
+                Product product = (Product) findElement(new Product(productid));
+                product.setStock(product.getStock() + productamount);
+                editElement(product);
+            } catch (NoSuchMethodException e) {
+                System.out.println(e);
+            } catch (IllegalAccessException e) {
+                System.out.println(e);
+            } catch (InvocationTargetException e) {
+                System.out.println(e);
+            }
+        }
 
         String statement = "DELETE FROM `ordermanagement`.`" +
                 object.getClass().getSimpleName().toLowerCase() +

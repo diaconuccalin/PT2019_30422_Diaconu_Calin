@@ -14,6 +14,18 @@ public class Order {
         this.totalprice = totalprice;
     }
 
+    public Order(int idorder, int clientid, int productid, int productamount, int totalprice) {
+        this.idorder = idorder;
+        this.clientid = clientid;
+        this.productid = productid;
+        this.productamount = productamount;
+        this.totalprice = totalprice;
+    }
+
+    public Order(int idorder) {
+        this.idorder = idorder;
+    }
+
     public int getProductamount() {
         return productamount;
     }
@@ -34,23 +46,23 @@ public class Order {
         return idorder;
     }
 
-    public void setClientid(int clientid) {
+    public void setClientid(Integer clientid) {
         this.clientid = clientid;
     }
 
-    public void setIdorder(int idorder) {
+    public void setIdorder(Integer idorder) {
         this.idorder = idorder;
     }
 
-    public void setProductamount(int productamount) {
+    public void setProductamount(Integer productamount) {
         this.productamount = productamount;
     }
 
-    public void setProductid(int productid) {
+    public void setProductid(Integer productid) {
         this.productid = productid;
     }
 
-    public void setTotalprice(int totalprice) {
+    public void setTotalprice(Integer totalprice) {
         this.totalprice = totalprice;
     }
 }

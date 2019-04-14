@@ -8,7 +8,7 @@ import java.io.BufferedWriter;
 public class MainFrame extends JFrame {
     public MainFrame(final BufferedWriter bufferedWriter) {
         int w = 250;
-        int h = 200;
+        int h = 250;
 
         setLayout(null);
         setSize(w, h);
@@ -26,10 +26,15 @@ public class MainFrame extends JFrame {
         productButton.setBounds(10, 60, 215, 40);
         add(productButton);
 
-        //Create order button
-        JButton createButton = new JButton("Create Order");
+        //Order operations button
+        JButton createButton = new JButton("Order Operations");
         createButton.setBounds(10, 110, 215, 40);
         add(createButton);
+
+        //Distributor operations button
+        JButton distributorButton = new JButton("Distributor Operations");
+        distributorButton.setBounds(10, 160, 215, 40);
+        add(distributorButton);
 
         //Action listeners
         clientButton.addActionListener(new ActionListener() {
@@ -51,7 +56,15 @@ public class MainFrame extends JFrame {
         createButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                CreateOrderFrame createOrderFrame = new CreateOrderFrame(bufferedWriter);
+                OperationsFrame operationsFrame = new OperationsFrame("Orders", bufferedWriter);
+                dispose();
+            }
+        });
+
+        distributorButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                OperationsFrame operationsFrame = new OperationsFrame("Distributors", bufferedWriter);
                 dispose();
             }
         });

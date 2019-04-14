@@ -41,8 +41,12 @@ public class HelpingMethodsDAO {
             table = "client";
         else if(table.compareTo("Products") == 0)
             table = "product";
+        else if(table.compareTo("Orders") == 0)
+            table = "order";
+        else if(table.compareTo("Distributors") == 0)
+            table = "distributor";
 
-        String findStatementString = "SELECT * FROM " + table;
+        String findStatementString = "SELECT * FROM ordermanagement." + table;
         PreparedStatement findStatement = null;
         ResultSet rs = null;
         ResultSetMetaData rsmd = null;
@@ -78,6 +82,7 @@ public class HelpingMethodsDAO {
 
             jTable = new JTable(data, columnNames);
         } catch (SQLException e) {
+            System.out.println(findStatementString);
             System.out.println(e);
         }
 
