@@ -62,7 +62,7 @@ public class AddEditProductFrame extends JFrame {
         if(!add) {
             nameField.setText(product.getName());
             stockField.setText(product.getStock() + "");
-            distributorField.setText(product.getDistributor());
+            distributorField.setText(product.getDistributorid() + "");
             priceField.setText(product.getPrice() + "");
         }
 
@@ -85,9 +85,9 @@ public class AddEditProductFrame extends JFrame {
             public void actionPerformed(ActionEvent e) {
                 try {
                     if(add) {
-                        ReflectionBLL.addElement(new Product(nameField.getText(), Integer.parseInt(stockField.getText()), distributorField.getText(), Integer.parseInt(priceField.getText())));
+                        ReflectionBLL.addElement(new Product(nameField.getText(), Integer.parseInt(stockField.getText()), Integer.parseInt(distributorField.getText()), Integer.parseInt(priceField.getText())));
                     } else {
-                        ReflectionBLL.editElement(new Product(product.getIdproduct(), nameField.getText(), Integer.parseInt(stockField.getText()), distributorField.getText(), Integer.parseInt(priceField.getText())));
+                        ReflectionBLL.editElement(new Product(product.getIdproduct(), nameField.getText(), Integer.parseInt(stockField.getText()), Integer.parseInt(distributorField.getText()), Integer.parseInt(priceField.getText())));
                     }
                     OperationsFrame operationsFrame = new OperationsFrame("Products", bufferedWriter);
                     dispose();

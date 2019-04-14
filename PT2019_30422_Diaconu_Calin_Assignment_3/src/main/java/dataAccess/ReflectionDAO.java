@@ -48,6 +48,8 @@ public class ReflectionDAO {
         try {
             preparedStatement = connection.prepareStatement(statement);
             preparedStatement.executeUpdate();
+        } catch (SQLIntegrityConstraintViolationException e) {
+            JOptionPane.showMessageDialog(null, "Incorrect input");
         } catch (SQLException e) {
             System.out.println(e);
         }
@@ -91,6 +93,9 @@ public class ReflectionDAO {
         try {
             preparedStatement = connection.prepareStatement(statement);
             preparedStatement.executeUpdate();
+        } catch (SQLIntegrityConstraintViolationException e) {
+            System.out.println(statement);
+            JOptionPane.showMessageDialog(null, "Incorrect input");
         } catch (SQLException e) {
             System.out.println(e);
         }

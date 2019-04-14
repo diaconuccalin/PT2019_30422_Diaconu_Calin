@@ -83,7 +83,7 @@ public class OperationsFrame extends JFrame {
                     int id = Integer.parseInt(jTable.getValueAt(jTable.getSelectedRow(), 0).toString());
                     String name = jTable.getValueAt(jTable.getSelectedRow(), 1).toString();
                     int stock = Integer.parseInt(jTable.getValueAt(jTable.getSelectedRow(), 2).toString());
-                    String distributor = jTable.getValueAt(jTable.getSelectedRow(), 3).toString();
+                    int distributor = Integer.parseInt(jTable.getValueAt(jTable.getSelectedRow(), 3).toString());
                     int price = Integer.parseInt(jTable.getValueAt(jTable.getSelectedRow(), 4).toString());
 
                     AddEditProductFrame addEditProductFrame = new AddEditProductFrame(false, new Product(id, name, stock, distributor, price), bufferedWriter);
@@ -97,9 +97,9 @@ public class OperationsFrame extends JFrame {
             public void actionPerformed(ActionEvent e) {
                 Object object = null;
                 if(title.compareTo("Clients") == 0)
-                    object = new Client(Integer.parseInt(jTable.getValueAt(jTable.getSelectedRow(), 0).toString()), "", "", "");
+                    object = new Client(Integer.parseInt(jTable.getValueAt(jTable.getSelectedRow(), 0).toString()));
                 else if(title.compareTo("Products") == 0)
-                    object = new Product(Integer.parseInt(jTable.getValueAt(jTable.getSelectedRow(), 0).toString()), "", 0, "", 0);
+                    object = new Product(Integer.parseInt(jTable.getValueAt(jTable.getSelectedRow(), 0).toString()));
 
                 HelpingMethodsBLL.deleteElement(object);
                 OperationsFrame operationsFrame = new OperationsFrame(title, bufferedWriter);

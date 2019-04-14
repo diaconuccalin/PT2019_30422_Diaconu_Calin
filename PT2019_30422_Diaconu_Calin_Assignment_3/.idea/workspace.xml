@@ -2,46 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2800c85e-b32f-4ae1-a0ed-1f2de495b3f7" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/business/ReflectionBLL.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/model/Distributor.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/orders.txt" beforeDir="false" afterPath="$PROJECT_DIR$/orders.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/business/ClientBLL.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/business/ClientBLL.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/business/ProductBLL.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/business/ProductBLL.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dataAccess/ClientDAO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dataAccess/ProductDAO.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/dataAccess/ReflectionDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dataAccess/ReflectionDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Client.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Order.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/model/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Product.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/presentation/AddEditClientFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/presentation/AddEditClientFrame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/presentation/AddEditProductFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/presentation/AddEditProductFrame.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/presentation/CreateOrderFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/presentation/CreateOrderFrame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Main/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Main/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/business/BeforeShutdown.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/business/BeforeShutdown.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/dataAccess/ClientDAO.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/dataAccess/ConnectionFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/dataAccess/ConnectionFactory.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/dataAccess/ProductDAO.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/Client.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/Client.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/Order.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/Order.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/Product.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/Product.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/presentation/AddEditClientFrame$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/presentation/AddEditClientFrame$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/presentation/AddEditClientFrame$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/presentation/AddEditClientFrame$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/presentation/AddEditClientFrame.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/presentation/AddEditClientFrame.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/presentation/AddEditProductFrame$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/presentation/AddEditProductFrame$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/presentation/AddEditProductFrame$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/presentation/AddEditProductFrame$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/presentation/AddEditProductFrame.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/presentation/AddEditProductFrame.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/presentation/CreateOrderFrame$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/presentation/CreateOrderFrame$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/presentation/CreateOrderFrame$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/presentation/CreateOrderFrame$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/presentation/CreateOrderFrame.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/presentation/CreateOrderFrame.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/presentation/MainFrame$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/presentation/MainFrame$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/presentation/MainFrame$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/presentation/MainFrame$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/presentation/MainFrame$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/presentation/MainFrame$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/presentation/MainFrame.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/presentation/MainFrame.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/presentation/OperationsFrame$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/presentation/OperationsFrame$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/presentation/OperationsFrame$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/presentation/OperationsFrame$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/presentation/OperationsFrame$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/presentation/OperationsFrame$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/presentation/OperationsFrame$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/presentation/OperationsFrame$4.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/presentation/OperationsFrame.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/presentation/OperationsFrame.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/presentation/UIElements.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/presentation/UIElements.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/presentation/OperationsFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/presentation/OperationsFrame.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -54,50 +22,10 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/business/ProductBLL.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="15" column="59" selection-start-line="15" selection-start-column="59" selection-end-line="15" selection-end-column="59" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#384#385#0" expanded="true" />
-                <element signature="e#432#433#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/presentation/AddEditClientFrame.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="110">
-              <caret line="79" column="46" selection-start-line="79" selection-start-column="46" selection-end-line="79" selection-end-column="46" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/business/ClientBLL.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="194">
-              <caret line="16" column="5" lean-forward="true" selection-start-line="5" selection-start-column="24" selection-end-line="16" selection-end-column="5" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#371#372#0" expanded="true" />
-                <element signature="e#417#418#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/business/OrderBLL.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="7" column="40" selection-start-line="7" selection-start-column="40" selection-end-line="7" selection-end-column="40" />
+              <caret line="78" column="46" selection-start-line="78" selection-start-column="46" selection-end-line="78" selection-end-column="46" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -120,20 +48,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/presentation/CreateOrderFrame.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="110">
-              <caret line="84" column="71" selection-start-line="84" selection-start-column="71" selection-end-line="84" selection-end-column="71" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/dataAccess/HelpingMethodsDAO.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1428">
-              <caret line="84" column="5" selection-start-line="84" selection-start-column="5" selection-end-line="84" selection-end-column="5" />
+            <state relative-caret-position="1819">
+              <caret line="128" column="44" selection-start-line="128" selection-start-column="44" selection-end-line="128" selection-end-column="44" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -144,8 +60,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/dataAccess/ReflectionDAO.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="123">
-              <caret line="173" column="132" selection-start-line="173" selection-start-column="132" selection-end-line="173" selection-end-column="132" />
+            <state relative-caret-position="293">
+              <caret line="175" column="40" selection-start-line="175" selection-start-column="40" selection-end-line="175" selection-end-column="40" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -175,10 +91,76 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/model/Order.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="918">
+              <caret line="54" column="5" selection-start-line="54" selection-start-column="5" selection-end-line="54" selection-end-column="5" />
+              <folding>
+                <element signature="e#451#452#0" expanded="true" />
+                <element signature="e#487#488#0" expanded="true" />
+                <element signature="e#521#522#0" expanded="true" />
+                <element signature="e#554#555#0" expanded="true" />
+                <element signature="e#586#587#0" expanded="true" />
+                <element signature="e#617#618#0" expanded="true" />
+                <element signature="e#650#651#0" expanded="true" />
+                <element signature="e#682#683#0" expanded="true" />
+                <element signature="e#713#714#0" expanded="true" />
+                <element signature="e#743#744#0" expanded="true" />
+                <element signature="e#788#789#0" expanded="true" />
+                <element signature="e#828#829#0" expanded="true" />
+                <element signature="e#871#872#0" expanded="true" />
+                <element signature="e#909#910#0" expanded="true" />
+                <element signature="e#964#965#0" expanded="true" />
+                <element signature="e#1014#1015#0" expanded="true" />
+                <element signature="e#1061#1062#0" expanded="true" />
+                <element signature="e#1103#1104#0" expanded="true" />
+                <element signature="e#1152#1153#0" expanded="true" />
+                <element signature="e#1196#1197#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/model/Distributor.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="242">
+              <caret line="29" column="5" selection-start-line="29" selection-start-column="5" selection-end-line="29" selection-end-column="5" />
+              <folding>
+                <element signature="e#139#140#0" expanded="true" />
+                <element signature="e#171#172#0" expanded="true" />
+                <element signature="e#213#214#0" expanded="true" />
+                <element signature="e#247#248#0" expanded="true" />
+                <element signature="e#278#279#0" expanded="true" />
+                <element signature="e#305#306#0" expanded="true" />
+                <element signature="e#337#338#0" expanded="true" />
+                <element signature="e#365#366#0" expanded="true" />
+                <element signature="e#402#403#0" expanded="true" />
+                <element signature="e#438#439#0" expanded="true" />
+                <element signature="e#493#494#0" expanded="true" />
+                <element signature="e#543#544#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/presentation/OperationsFrame.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="206">
+              <caret line="99" column="114" selection-start-line="99" selection-start-column="114" selection-end-line="99" selection-end-column="114" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/model/Product.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="157">
-              <caret line="64" column="32" selection-start-line="64" selection-start-column="32" selection-end-line="64" selection-end-column="32" />
+            <state relative-caret-position="310">
+              <caret line="40" column="31" selection-start-line="40" selection-start-column="31" selection-end-line="40" selection-end-column="31" />
               <folding>
                 <element signature="e#669#670#0" expanded="true" />
                 <element signature="e#711#712#0" expanded="true" />
@@ -192,6 +174,18 @@
                 <element signature="e#1271#1272#0" expanded="true" />
                 <element signature="e#1310#1311#0" expanded="true" />
                 <element signature="e#1344#1345#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/presentation/AddEditProductFrame.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="113">
+              <caret line="64" column="61" selection-start-line="64" selection-start-column="61" selection-end-line="64" selection-end-column="61" />
+              <folding>
+                <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -252,19 +246,20 @@
         <option value="$PROJECT_DIR$/src/main/java/business/OrderBLL.java" />
         <option value="$PROJECT_DIR$/src/main/java/dataAccess/ClientDAO.java" />
         <option value="$PROJECT_DIR$/src/main/java/dataAccess/ProductDAO.java" />
-        <option value="$PROJECT_DIR$/src/main/java/presentation/AddEditProductFrame.java" />
         <option value="$PROJECT_DIR$/src/main/java/dataAccess/HelpingMethodsDAO.java" />
-        <option value="$PROJECT_DIR$/src/main/java/presentation/OperationsFrame.java" />
         <option value="$PROJECT_DIR$/src/main/java/business/HelpingMethodsBLL.java" />
         <option value="$PROJECT_DIR$/src/main/java/model/Order.java" />
         <option value="$PROJECT_DIR$/src/main/java/model/Client.java" />
         <option value="$PROJECT_DIR$/src/main/java/business/ClientBLL.java" />
         <option value="$PROJECT_DIR$/src/main/java/business/ProductBLL.java" />
         <option value="$PROJECT_DIR$/src/main/java/business/ReflectionBLL.java" />
-        <option value="$PROJECT_DIR$/src/main/java/dataAccess/ReflectionDAO.java" />
-        <option value="$PROJECT_DIR$/src/main/java/model/Product.java" />
         <option value="$PROJECT_DIR$/src/main/java/presentation/AddEditClientFrame.java" />
+        <option value="$PROJECT_DIR$/src/main/java/model/Distributor.java" />
+        <option value="$PROJECT_DIR$/src/main/java/presentation/OperationsFrame.java" />
+        <option value="$PROJECT_DIR$/src/main/java/model/Product.java" />
+        <option value="$PROJECT_DIR$/src/main/java/presentation/AddEditProductFrame.java" />
         <option value="$PROJECT_DIR$/src/main/java/presentation/CreateOrderFrame.java" />
+        <option value="$PROJECT_DIR$/src/main/java/dataAccess/ReflectionDAO.java" />
       </list>
     </option>
   </component>
@@ -530,7 +525,14 @@
       <option name="project" value="LOCAL" />
       <updated>1555195810831</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="HW3 - Reflection DONE">
+      <created>1555200819316</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1555200819316</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TodoView">
@@ -546,7 +548,7 @@
     <frame x="-7" y="-7" width="1295" height="695" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.17651822" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.17651822" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Learn" order="2" />
       <window_info id="Designer" order="3" />
@@ -554,7 +556,7 @@
       <window_info id="Favorites" order="5" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3285968" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49959514" visible="true" weight="0.3339254" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49959514" visible="true" weight="0.3339254" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -562,7 +564,7 @@
       <window_info anchor="bottom" id="Educational.CheckDetails" order="7" />
       <window_info anchor="bottom" id="Terminal" order="8" weight="0.3285968" />
       <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.50040483" side_tool="true" weight="0.3339254" />
-      <window_info anchor="bottom" id="Version Control" order="10" weight="0.22024867" />
+      <window_info anchor="bottom" id="Version Control" order="10" weight="0.14564832" />
       <window_info anchor="bottom" id="Messages" order="11" weight="0.31083483" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -621,7 +623,8 @@
     <MESSAGE value="HW3 - Reflection Add DONE" />
     <MESSAGE value="HW3 - Reflection Edit DONE" />
     <MESSAGE value="HW3 - Reflection Delete DONE" />
-    <option name="LAST_COMMIT_MESSAGE" value="HW3 - Reflection Delete DONE" />
+    <MESSAGE value="HW3 - Reflection DONE" />
+    <option name="LAST_COMMIT_MESSAGE" value="HW3 - Reflection DONE" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/main/java/Student.java" />
@@ -711,26 +714,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/presentation/AddEditProductFrame.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="139">
-          <caret line="89" column="73" selection-start-line="89" selection-start-column="73" selection-end-line="89" selection-end-column="73" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/presentation/OperationsFrame.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="102" selection-start-line="102" selection-end-line="102" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/business/HelpingMethodsBLL.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="379">
@@ -739,35 +722,6 @@
             <element signature="imports" expanded="true" />
             <element signature="e#660#661#0" expanded="true" />
             <element signature="e#718#719#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/model/Order.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="447">
-          <caret line="54" column="5" selection-start-line="54" selection-start-column="5" selection-end-line="54" selection-end-column="5" />
-          <folding>
-            <element signature="e#451#452#0" expanded="true" />
-            <element signature="e#487#488#0" expanded="true" />
-            <element signature="e#521#522#0" expanded="true" />
-            <element signature="e#554#555#0" expanded="true" />
-            <element signature="e#586#587#0" expanded="true" />
-            <element signature="e#617#618#0" expanded="true" />
-            <element signature="e#650#651#0" expanded="true" />
-            <element signature="e#682#683#0" expanded="true" />
-            <element signature="e#713#714#0" expanded="true" />
-            <element signature="e#743#744#0" expanded="true" />
-            <element signature="e#788#789#0" expanded="true" />
-            <element signature="e#828#829#0" expanded="true" />
-            <element signature="e#871#872#0" expanded="true" />
-            <element signature="e#909#910#0" expanded="true" />
-            <element signature="e#964#965#0" expanded="true" />
-            <element signature="e#1014#1015#0" expanded="true" />
-            <element signature="e#1061#1062#0" expanded="true" />
-            <element signature="e#1103#1104#0" expanded="true" />
-            <element signature="e#1152#1153#0" expanded="true" />
-            <element signature="e#1196#1197#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -809,6 +763,28 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/business/ReflectionBLL.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="15" column="47" selection-start-line="15" selection-start-column="47" selection-end-line="15" selection-end-column="47" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/business/ProductBLL.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="15" column="59" selection-start-line="15" selection-start-column="59" selection-end-line="15" selection-end-column="59" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#384#385#0" expanded="true" />
+            <element signature="e#432#433#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/business/OrderBLL.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
@@ -827,6 +803,37 @@
             <element signature="imports" expanded="true" />
             <element signature="e#371#372#0" expanded="true" />
             <element signature="e#417#418#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/presentation/AddEditClientFrame.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="110">
+          <caret line="78" column="46" selection-start-line="78" selection-start-column="46" selection-end-line="78" selection-end-column="46" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/model/Distributor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="242">
+          <caret line="29" column="5" selection-start-line="29" selection-start-column="5" selection-end-line="29" selection-end-column="5" />
+          <folding>
+            <element signature="e#139#140#0" expanded="true" />
+            <element signature="e#171#172#0" expanded="true" />
+            <element signature="e#213#214#0" expanded="true" />
+            <element signature="e#247#248#0" expanded="true" />
+            <element signature="e#278#279#0" expanded="true" />
+            <element signature="e#305#306#0" expanded="true" />
+            <element signature="e#337#338#0" expanded="true" />
+            <element signature="e#365#366#0" expanded="true" />
+            <element signature="e#402#403#0" expanded="true" />
+            <element signature="e#438#439#0" expanded="true" />
+            <element signature="e#493#494#0" expanded="true" />
+            <element signature="e#543#544#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -850,10 +857,49 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/model/Order.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="918">
+          <caret line="54" column="5" selection-start-line="54" selection-start-column="5" selection-end-line="54" selection-end-column="5" />
+          <folding>
+            <element signature="e#451#452#0" expanded="true" />
+            <element signature="e#487#488#0" expanded="true" />
+            <element signature="e#521#522#0" expanded="true" />
+            <element signature="e#554#555#0" expanded="true" />
+            <element signature="e#586#587#0" expanded="true" />
+            <element signature="e#617#618#0" expanded="true" />
+            <element signature="e#650#651#0" expanded="true" />
+            <element signature="e#682#683#0" expanded="true" />
+            <element signature="e#713#714#0" expanded="true" />
+            <element signature="e#743#744#0" expanded="true" />
+            <element signature="e#788#789#0" expanded="true" />
+            <element signature="e#828#829#0" expanded="true" />
+            <element signature="e#871#872#0" expanded="true" />
+            <element signature="e#909#910#0" expanded="true" />
+            <element signature="e#964#965#0" expanded="true" />
+            <element signature="e#1014#1015#0" expanded="true" />
+            <element signature="e#1061#1062#0" expanded="true" />
+            <element signature="e#1103#1104#0" expanded="true" />
+            <element signature="e#1152#1153#0" expanded="true" />
+            <element signature="e#1196#1197#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/presentation/OperationsFrame.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="206">
+          <caret line="99" column="114" selection-start-line="99" selection-start-column="114" selection-end-line="99" selection-end-column="114" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/model/Product.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="157">
-          <caret line="64" column="32" selection-start-line="64" selection-start-column="32" selection-end-line="64" selection-end-column="32" />
+        <state relative-caret-position="310">
+          <caret line="40" column="31" selection-start-line="40" selection-start-column="31" selection-end-line="40" selection-end-column="31" />
           <folding>
             <element signature="e#669#670#0" expanded="true" />
             <element signature="e#711#712#0" expanded="true" />
@@ -871,32 +917,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/business/ReflectionBLL.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/presentation/AddEditProductFrame.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="15" column="47" selection-start-line="15" selection-start-column="47" selection-end-line="15" selection-end-column="47" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/business/ProductBLL.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="15" column="59" selection-start-line="15" selection-start-column="59" selection-end-line="15" selection-end-column="59" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#384#385#0" expanded="true" />
-            <element signature="e#432#433#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/presentation/AddEditClientFrame.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="110">
-          <caret line="79" column="46" selection-start-line="79" selection-start-column="46" selection-end-line="79" selection-end-column="46" />
+        <state relative-caret-position="113">
+          <caret line="64" column="61" selection-start-line="64" selection-start-column="61" selection-end-line="64" selection-end-column="61" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -905,8 +929,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/presentation/CreateOrderFrame.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="110">
-          <caret line="84" column="71" selection-start-line="84" selection-start-column="71" selection-end-line="84" selection-end-column="71" />
+        <state relative-caret-position="1819">
+          <caret line="128" column="44" selection-start-line="128" selection-start-column="44" selection-end-line="128" selection-end-column="44" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -915,8 +939,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/dataAccess/ReflectionDAO.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="123">
-          <caret line="173" column="132" selection-start-line="173" selection-start-column="132" selection-end-line="173" selection-end-column="132" />
+        <state relative-caret-position="293">
+          <caret line="175" column="40" selection-start-line="175" selection-start-column="40" selection-end-line="175" selection-end-column="40" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

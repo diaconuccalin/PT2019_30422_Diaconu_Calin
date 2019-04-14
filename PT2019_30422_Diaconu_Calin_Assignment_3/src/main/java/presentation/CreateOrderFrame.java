@@ -126,7 +126,7 @@ public class CreateOrderFrame extends JFrame {
                     "\nPRODUCT: " +
                     product.getName() +
                     " - " +
-                    product.getDistributor() +
+                    product.getDistributorid() +
                     " - " +
                     product.getPrice() +
                     "\nAmount: " +
