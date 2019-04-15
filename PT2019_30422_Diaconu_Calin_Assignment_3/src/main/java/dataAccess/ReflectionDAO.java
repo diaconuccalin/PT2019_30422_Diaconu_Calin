@@ -130,8 +130,10 @@ public class ReflectionDAO {
         } catch (SQLIntegrityConstraintViolationException e) {
             if (object.getClass().getSimpleName().toLowerCase().compareTo("client") == 0) {
                 JOptionPane.showMessageDialog(null, "Can not delete. Client has active order");
-            } else {
+            } else if (object.getClass().getSimpleName().toLowerCase().compareTo("product") == 0){
                 JOptionPane.showMessageDialog(null, "Can not delete. Product part of an order");
+            } else {
+                JOptionPane.showMessageDialog(null, "Can not delete. Distributor of a product that is part of an order");
             }
         } catch (SQLException e) {
             System.out.println(e.toString());
