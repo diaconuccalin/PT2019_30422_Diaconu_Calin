@@ -11,6 +11,10 @@ public class ReflectionBLL {
         ReflectionDAO.editElement(object);
     }
 
+    public static void deleteElement(Object object) {
+        ReflectionDAO.deleteElement(object);
+    }
+
     public static Object findElement(Object object) {
         return ReflectionDAO.findElement(object);
     }
