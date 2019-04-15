@@ -26,8 +26,4 @@ public class HelpingMethodsBLL {
     public static JTable createTable(String table) {
         return HelpingMethodsDAO.createTable(table);
     }
-
-    public static void deleteElement(Object object) {
-        ReflectionDAO.deleteElement(object);
-    }
 }

@@ -3,18 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="2800c85e-b32f-4ae1-a0ed-1f2de495b3f7" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Main/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Main/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/presentation/AddEditClientFrame.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/presentation/AddEditClientFrame.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/presentation/AddEditProductFrame.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/presentation/AddEditProductFrame.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/presentation/MainFrame$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/presentation/MainFrame$2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/presentation/MainFrame$3.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/presentation/MainFrame.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/presentation/MainFrame.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/presentation/OperationsFrame$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/presentation/OperationsFrame$2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/presentation/OperationsFrame$3.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/presentation/OperationsFrame.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/presentation/OperationsFrame.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/presentation/UIElements.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/business/HelpingMethodsBLL.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/business/HelpingMethodsBLL.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/business/ReflectionBLL.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/business/ReflectionBLL.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -27,6 +17,22 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/dataAccess/ReflectionDAO.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="187">
+              <caret line="95" column="52" selection-start-line="95" selection-start-column="52" selection-end-line="95" selection-end-column="52" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="method#addElement#0;class#ReflectionDAO#0" />
+                <element signature="method#editElement#0;class#ReflectionDAO#0" />
+                <element signature="method#deleteElement#0;class#ReflectionDAO#0" />
+                <element signature="method#findElement#0;class#ReflectionDAO#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/dataAccess/HelpingMethodsDAO.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="230">
@@ -38,11 +44,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/presentation/OperationsFrame.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="765">
-              <caret line="45" column="36" lean-forward="true" selection-start-line="45" selection-start-column="36" selection-end-line="45" selection-end-column="36" />
+            <state relative-caret-position="-965">
+              <caret line="46" lean-forward="true" selection-start-line="46" selection-end-line="46" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -50,23 +56,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/dataAccess/ConnectionFactory.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1105">
-              <caret line="74" column="1" selection-start-line="74" selection-start-column="1" selection-end-line="74" selection-end-column="1" />
-              <folding>
-                <element signature="docComment;class#ConnectionFactory#0" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/business/ReflectionBLL.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="16" column="1" selection-start-line="16" selection-start-column="1" selection-end-line="16" selection-end-column="1" />
+            <state relative-caret-position="153">
+              <caret line="15" column="5" selection-start-line="15" selection-start-column="5" selection-end-line="15" selection-end-column="5" />
             </state>
           </provider>
         </entry>
@@ -74,8 +68,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/business/HelpingMethodsBLL.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="32" column="1" selection-start-line="32" selection-start-column="1" selection-end-line="32" selection-end-column="1" />
+            <state relative-caret-position="193">
+              <caret line="27" column="5" selection-start-line="27" selection-start-column="5" selection-end-line="27" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -207,12 +201,12 @@
         <option value="$PROJECT_DIR$/src/main/java/model/Distributor.java" />
         <option value="$PROJECT_DIR$/src/main/java/model/Client.java" />
         <option value="$PROJECT_DIR$/src/main/java/Main/Main.java" />
-        <option value="$PROJECT_DIR$/src/main/java/dataAccess/ReflectionDAO.java" />
         <option value="$PROJECT_DIR$/src/main/java/dataAccess/HelpingMethodsDAO.java" />
         <option value="$PROJECT_DIR$/src/main/java/dataAccess/ConnectionFactory.java" />
-        <option value="$PROJECT_DIR$/src/main/java/business/ReflectionBLL.java" />
-        <option value="$PROJECT_DIR$/src/main/java/business/HelpingMethodsBLL.java" />
         <option value="$PROJECT_DIR$/src/main/java/business/BeforeShutdown.java" />
+        <option value="$PROJECT_DIR$/src/main/java/dataAccess/ReflectionDAO.java" />
+        <option value="$PROJECT_DIR$/src/main/java/business/HelpingMethodsBLL.java" />
+        <option value="$PROJECT_DIR$/src/main/java/business/ReflectionBLL.java" />
       </list>
     </option>
   </component>
@@ -519,7 +513,14 @@
       <option name="project" value="LOCAL" />
       <updated>1555244482787</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="HW3 - DONE - correction on distributor error message">
+      <created>1555334054783</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1555334054783</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TodoView">
@@ -630,7 +631,8 @@
     <MESSAGE value="HW3 - Check barem" />
     <MESSAGE value="HW3 - Correct indentation" />
     <MESSAGE value="HW3 - Correct indentation + solved warnings" />
-    <option name="LAST_COMMIT_MESSAGE" value="HW3 - Correct indentation + solved warnings" />
+    <MESSAGE value="HW3 - DONE - correction on distributor error message" />
+    <option name="LAST_COMMIT_MESSAGE" value="HW3 - DONE - correction on distributor error message" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/main/java/Student.java" />
@@ -738,39 +740,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/dataAccess/ReflectionDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2805">
-          <caret line="170" column="1" selection-start-line="170" selection-start-column="1" selection-end-line="170" selection-end-column="1" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/dataAccess/ConnectionFactory.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1105">
           <caret line="74" column="1" selection-start-line="74" selection-start-column="1" selection-end-line="74" selection-end-column="1" />
           <folding>
             <element signature="docComment;class#ConnectionFactory#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/business/ReflectionBLL.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="16" column="1" selection-start-line="16" selection-start-column="1" selection-end-line="16" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/business/HelpingMethodsBLL.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="32" column="1" selection-start-line="32" selection-start-column="1" selection-end-line="32" selection-end-column="1" />
-          <folding>
-            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -836,11 +811,42 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/presentation/OperationsFrame.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="765">
-          <caret line="45" column="36" lean-forward="true" selection-start-line="45" selection-start-column="36" selection-end-line="45" selection-end-column="36" />
+        <state relative-caret-position="-965">
+          <caret line="46" lean-forward="true" selection-start-line="46" selection-end-line="46" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/dataAccess/ReflectionDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="95" column="52" selection-start-line="95" selection-start-column="52" selection-end-line="95" selection-end-column="52" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#addElement#0;class#ReflectionDAO#0" />
+            <element signature="method#editElement#0;class#ReflectionDAO#0" />
+            <element signature="method#deleteElement#0;class#ReflectionDAO#0" />
+            <element signature="method#findElement#0;class#ReflectionDAO#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/business/HelpingMethodsBLL.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="193">
+          <caret line="27" column="5" selection-start-line="27" selection-start-column="5" selection-end-line="27" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/business/ReflectionBLL.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="15" column="5" selection-start-line="15" selection-start-column="5" selection-end-line="15" selection-end-column="5" />
         </state>
       </provider>
     </entry>

@@ -1,6 +1,7 @@
 package presentation;
 
 import business.HelpingMethodsBLL;
+import business.ReflectionBLL;
 import model.Client;
 import model.Distributor;
 import model.Order;
@@ -115,7 +116,7 @@ class OperationsFrame extends JFrame {
             else if (title.compareTo("Distributors") == 0)
                 object = new Distributor(Integer.parseInt(jTable.getValueAt(jTable.getSelectedRow(), 0).toString()));
 
-            HelpingMethodsBLL.deleteElement(object);
+            ReflectionBLL.deleteElement(object);
             new OperationsFrame(title, bufferedWriter);
             dispose();
         });
