@@ -1,8 +1,8 @@
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-public class CompositeProduct implements MenuItem{
-    private int id;
+public class CompositeProduct implements MenuItem, Serializable {
     private String name;
     private int price;
 
@@ -22,6 +22,11 @@ public class CompositeProduct implements MenuItem{
         }
 
         return price;
+    }
+
+    @Override
+    public String getName() {
+        return name;
     }
 
     public void addIngredient(MenuItem ingredient) {

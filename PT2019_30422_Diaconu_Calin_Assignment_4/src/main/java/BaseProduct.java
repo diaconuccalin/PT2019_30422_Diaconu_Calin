@@ -1,5 +1,6 @@
-public class BaseProduct implements MenuItem {
-    private int id;
+import java.io.Serializable;
+
+public class BaseProduct implements MenuItem, Serializable {
     private String name;
     private int price;
 
@@ -11,5 +12,10 @@ public class BaseProduct implements MenuItem {
     @Override
     public int computePrice() {
         return price;
+    }
+
+    @Override
+    public String getName() {
+        return name;
     }
 }
