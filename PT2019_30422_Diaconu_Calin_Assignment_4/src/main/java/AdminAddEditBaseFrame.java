@@ -2,8 +2,8 @@ import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class AdminAddBaseFrame extends JFrame {
-    public AdminAddBaseFrame() {
+public class AdminAddEditBaseFrame extends JFrame {
+    public AdminAddEditBaseFrame(boolean edit, MenuItem menuItem) {
         int w = 350;
         int h = 150;
 
@@ -46,6 +46,8 @@ public class AdminAddBaseFrame extends JFrame {
             public void actionPerformed(ActionEvent e) {
                 try {
                     int price = Integer.parseInt(priceField.getText());
+                    if(edit)
+                        RestaurantSerializator.deleteItem(menuItem);
                     RestaurantSerializator.addBaseItem(new BaseProduct(nameField.getText(), price));
                     dispose();
                 } catch (NumberFormatException e1) {
@@ -60,6 +62,14 @@ public class AdminAddBaseFrame extends JFrame {
                 dispose();
             }
         });
+
+        //set fields
+        if(edit) {
+            nameField.setText(menuItem.getName());
+            priceField.setText(menuItem.computePrice() + "");
+            addButton.setText("OK");
+            setTitle("Edit Base Menu Item");
+        }
 
         setVisible(true);
     }

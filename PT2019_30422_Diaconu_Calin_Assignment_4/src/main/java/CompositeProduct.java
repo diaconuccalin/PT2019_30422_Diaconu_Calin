@@ -37,4 +37,8 @@ public class CompositeProduct implements MenuItem, Serializable {
     public void removeIngredient(MenuItem ingredient) {
         ingredients.remove(ingredient);
     }
+
+    public List<MenuItem> getIngredients() {
+        return ingredients;
+    }
 }

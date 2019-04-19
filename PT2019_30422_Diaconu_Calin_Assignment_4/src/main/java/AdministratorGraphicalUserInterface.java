@@ -3,7 +3,6 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
-import java.io.IOException;
 
 public class AdministratorGraphicalUserInterface extends JFrame {
     private JTable jTable;
@@ -53,8 +52,8 @@ public class AdministratorGraphicalUserInterface extends JFrame {
         addBaseButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                AdminAddBaseFrame adminAddBaseFrame = new AdminAddBaseFrame();
-                adminAddBaseFrame.addWindowListener(new WindowAdapter() {
+                AdminAddEditBaseFrame adminAddEditBaseFrame = new AdminAddEditBaseFrame(false, null);
+                adminAddEditBaseFrame.addWindowListener(new WindowAdapter() {
                     @Override
                     public void windowClosed(WindowEvent e) {
                         new FileWriter();
@@ -69,8 +68,8 @@ public class AdministratorGraphicalUserInterface extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 new FileWriter();
-                AdminAddCompositeFrame adminAddCompositeFrame = new AdminAddCompositeFrame();
-                adminAddCompositeFrame.addWindowListener(new WindowAdapter() {
+                AdminAddEditCompositeFrame adminAddEditCompositeFrame = new AdminAddEditCompositeFrame(false, null);
+                adminAddEditCompositeFrame.addWindowListener(new WindowAdapter() {
                     @Override
                     public void windowClosed(WindowEvent e) {
                         new FileWriter();
@@ -78,6 +77,36 @@ public class AdministratorGraphicalUserInterface extends JFrame {
                         dispose();
                     }
                 });
+            }
+        });
+
+        editButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                new FileWriter();
+                MenuItem menuItem = RestaurantSerializator.getItem(jTable.getValueAt(jTable.getSelectedRow(), 0).toString());
+
+                if(menuItem.getClass().getSimpleName().compareTo("BaseProduct") == 0) {
+                    AdminAddEditBaseFrame adminAddEditBaseFrame = new AdminAddEditBaseFrame(true, menuItem);
+                    adminAddEditBaseFrame.addWindowListener(new WindowAdapter() {
+                        @Override
+                        public void windowClosed(WindowEvent e) {
+                            new FileWriter();
+                            new AdministratorGraphicalUserInterface();
+                            dispose();
+                        }
+                    });
+                } else {
+                    AdminAddEditCompositeFrame adminAddEditCompositeFrame = new AdminAddEditCompositeFrame(true, menuItem);
+                    adminAddEditCompositeFrame.addWindowListener(new WindowAdapter() {
+                        @Override
+                        public void windowClosed(WindowEvent e) {
+                            new FileWriter();
+                            new AdministratorGraphicalUserInterface();
+                            dispose();
+                        }
+                    });
+                }
             }
         });
 

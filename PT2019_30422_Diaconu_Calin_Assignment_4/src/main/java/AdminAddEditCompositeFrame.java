@@ -8,8 +8,8 @@ import java.io.StreamCorruptedException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class AdminAddCompositeFrame extends JFrame {
-    public AdminAddCompositeFrame() {
+public class AdminAddEditCompositeFrame extends JFrame {
+    public AdminAddEditCompositeFrame(boolean edit, MenuItem menuItem) {
         int w = 350;
         int h = 450;
 
@@ -29,6 +29,7 @@ public class AdminAddCompositeFrame extends JFrame {
         add(nameField);
 
         //Ingredients
+        new FileWriter();
         JLabel ingredientsLabel = new JLabel("Ingredients:");
         ingredientsLabel.setBounds(15, 45, 100, 25);
         add(ingredientsLabel);
@@ -39,9 +40,9 @@ public class AdminAddCompositeFrame extends JFrame {
         List<MenuItem> menuItems = new ArrayList<MenuItem>();
         while (true) {
             try {
-                MenuItem menuItem = (MenuItem) FileWriter.getObjectInputStream().readObject();
-                if (menuItem.getClass().getSimpleName().compareTo("BaseProduct") == 0)
-                    menuItems.add(menuItem);
+                MenuItem menuItem1 = (MenuItem) FileWriter.getObjectInputStream().readObject();
+                if (menuItem1.getClass().getSimpleName().compareTo("BaseProduct") == 0)
+                    menuItems.add(menuItem1);
             } catch (StreamCorruptedException | EOFException e) {
                 break;
             } catch (IOException | ClassNotFoundException e) {
@@ -52,14 +53,14 @@ public class AdminAddCompositeFrame extends JFrame {
         List<JCheckBox> jCheckBoxes = new ArrayList<JCheckBox>();
         List<JLabel> jLabels = new ArrayList<JLabel>();
 
-        for (MenuItem menuItem : menuItems) {
-            int i = menuItems.indexOf(menuItem);
+        for (MenuItem menuItem1 : menuItems) {
+            int i = menuItems.indexOf(menuItem1);
 
             JCheckBox jCheckBox = new JCheckBox();
             jCheckBox.setBounds(5, 5 + i * 30, 25, 25);
             jPanel.add(jCheckBox);
 
-            JLabel jLabel = new JLabel(menuItem.getName() + " - " + menuItem.computePrice() + " RON");
+            JLabel jLabel = new JLabel(menuItem1.getName() + " - " + menuItem1.computePrice() + " RON");
             jLabel.setBounds(40, 5 + i * 30, 200, 25);
 
             jPanel.add(jLabel);
@@ -115,6 +116,8 @@ public class AdminAddCompositeFrame extends JFrame {
                         compositeProduct.addIngredient(new BaseProduct(ingredientName, ingredientPrice));
                     }
                 }
+                if(edit)
+                    RestaurantSerializator.deleteItem(menuItem);
                 RestaurantSerializator.addCompositeItem(compositeProduct);
                 dispose();
             }
@@ -126,5 +129,22 @@ public class AdminAddCompositeFrame extends JFrame {
                 dispose();
             }
         });
+
+        if(edit) {
+            nameField.setText(menuItem.getName());
+            addButton.setText("OK");
+            setTitle("Edit Base Menu Item");
+
+            CompositeProduct compositeProduct = (CompositeProduct) menuItem;
+            List<MenuItem> menuItemList = compositeProduct.getIngredients();
+
+            for(MenuItem menuItem1 : menuItemList) {
+                for(JLabel jLabel : jLabels) {
+                    if(jLabel.getText().compareTo(menuItem1.getName() + " - " + menuItem1.computePrice() + " RON") == 0) {
+                        jCheckBoxes.get(jLabels.indexOf(jLabel)).setSelected(true);
+                    }
+                }
+            }
+        }
     }
 }

@@ -50,6 +50,9 @@ public class RestaurantSerializator {
     }
 
     public static void deleteItem(MenuItem menuItem){
+        new FileWriter();
+
+        System.out.println(menuItem.getName());
         List<MenuItem> menuItems = new ArrayList<>();
 
         while(true) {
@@ -78,5 +81,22 @@ public class RestaurantSerializator {
         } catch (IOException e) {
             System.out.println(e);
         }
+    }
+
+    public static MenuItem getItem(String name) {
+        while(true) {
+            try {
+                MenuItem menuItem = (MenuItem) FileWriter.getObjectInputStream().readObject();
+                if(menuItem.getName().compareTo(name) == 0) {
+                    return menuItem;
+                }
+            } catch (StreamCorruptedException | EOFException e) {
+                break;
+            } catch (ClassNotFoundException | IOException e) {
+                System.out.println(e);
+            }
+        }
+        new FileWriter();
+        return null;
     }
 }
