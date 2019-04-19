@@ -1,4 +1,6 @@
 import javax.swing.*;
+import javax.swing.table.AbstractTableModel;
+import javax.swing.table.DefaultTableCellRenderer;
 import java.io.EOFException;
 import java.io.IOException;
 import java.io.StreamCorruptedException;
@@ -14,11 +16,19 @@ public class RestaurantSerializator {
         }
     }
 
+    public static void addCompositeItem(CompositeProduct compositeProduct) {
+        try {
+            FileWriter.getObjectOutputStream().writeObject(compositeProduct);
+        } catch (IOException e) {
+            System.out.println(e);
+        }
+    }
+
     public static JTable createTable() {
-        JTable jTable = new JTable();
+        JTable jTable;
         List<MenuItem> menuItems = new ArrayList<MenuItem>();
 
-        while(true) {
+        while (true) {
             try {
                 menuItems.add((MenuItem) FileWriter.getObjectInputStream().readObject());
             } catch (StreamCorruptedException | EOFException e) {
@@ -27,17 +37,19 @@ public class RestaurantSerializator {
                 System.out.println(e);
             }
         }
-
         String[] columnNames = {"Name", "Price", "Type"};
         Object[][] data = new Object[menuItems.size()][3];
 
-        for(int i = 0; i < menuItems.size(); i++) {
+        for (int i = 0; i < menuItems.size(); i++) {
             data[i][0] = menuItems.get(i).getName();
             data[i][1] = menuItems.get(i).computePrice();
             data[i][2] = menuItems.get(i).getClass().getSimpleName();
         }
 
         jTable = new JTable(data, columnNames);
+        jTable.setDefaultEditor(Object.class, null);
+
+
         return jTable;
     }
 }

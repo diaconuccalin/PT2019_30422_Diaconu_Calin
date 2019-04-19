@@ -44,7 +44,6 @@ public class AdministratorGraphicalUserInterface extends JFrame {
         jTable.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
         if(jTable.getRowCount() > 0)
             jTable.setRowSelectionInterval(0, 0);
-        jTable.setDefaultEditor(Object.class, null);
         JScrollPane jScrollPane = new JScrollPane(jTable);
         jScrollPane.setBounds(5, 125, 376, 484);
         add(jScrollPane);
@@ -55,6 +54,22 @@ public class AdministratorGraphicalUserInterface extends JFrame {
             public void actionPerformed(ActionEvent e) {
                 AdminAddBaseFrame adminAddBaseFrame = new AdminAddBaseFrame();
                 adminAddBaseFrame.addWindowListener(new WindowAdapter() {
+                    @Override
+                    public void windowClosed(WindowEvent e) {
+                        new FileWriter();
+                        new AdministratorGraphicalUserInterface();
+                        dispose();
+                    }
+                });
+            }
+        });
+
+        addCompositeButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                new FileWriter();
+                AdminAddCompositeFrame adminAddCompositeFrame = new AdminAddCompositeFrame();
+                adminAddCompositeFrame.addWindowListener(new WindowAdapter() {
                     @Override
                     public void windowClosed(WindowEvent e) {
                         new FileWriter();

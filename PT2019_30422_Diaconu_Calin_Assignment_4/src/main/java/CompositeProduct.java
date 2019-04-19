@@ -8,9 +8,9 @@ public class CompositeProduct implements MenuItem, Serializable {
 
     private List<MenuItem> ingredients = new ArrayList<MenuItem>();
 
-    public CompositeProduct(String name, int price) {
+    public CompositeProduct(String name) {
         this.name = name;
-        this.price = price;
+        this.price = computePrice();
     }
 
     @Override
@@ -31,6 +31,7 @@ public class CompositeProduct implements MenuItem, Serializable {
 
     public void addIngredient(MenuItem ingredient) {
         ingredients.add(ingredient);
+        this.price = computePrice();
     }
 
     public void removeIngredient(MenuItem ingredient) {
