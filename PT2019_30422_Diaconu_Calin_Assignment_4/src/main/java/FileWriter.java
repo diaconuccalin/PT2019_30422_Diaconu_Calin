@@ -86,4 +86,12 @@ public class FileWriter {
     public static ObjectInputStream getObjectInputStream() {
         return objectInputStream;
     }
+
+    public static FileInputStream getFileInputStream() {
+        return fileInputStream;
+    }
+
+    public static FileOutputStream getFileOutputStream() {
+        return fileOutputStream;
+    }
 }

@@ -1,9 +1,5 @@
 import javax.swing.*;
-import javax.swing.table.AbstractTableModel;
-import javax.swing.table.DefaultTableCellRenderer;
-import java.io.EOFException;
-import java.io.IOException;
-import java.io.StreamCorruptedException;
+import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -31,9 +27,9 @@ public class RestaurantSerializator {
         while (true) {
             try {
                 menuItems.add((MenuItem) FileWriter.getObjectInputStream().readObject());
-            } catch (StreamCorruptedException | EOFException e) {
+            } catch (IOException e) {
                 break;
-            } catch (IOException | ClassNotFoundException e) {
+            } catch (ClassNotFoundException e) {
                 System.out.println(e);
             }
         }
@@ -51,5 +47,36 @@ public class RestaurantSerializator {
 
 
         return jTable;
+    }
+
+    public static void deleteItem(MenuItem menuItem){
+        List<MenuItem> menuItems = new ArrayList<>();
+
+        while(true) {
+            try {
+                MenuItem menuItem1 = (MenuItem) FileWriter.getObjectInputStream().readObject();
+                if(menuItem1.getName().compareTo(menuItem.getName()) != 0) {
+                    menuItems.add(menuItem1);
+                }
+            } catch (StreamCorruptedException | EOFException e) {
+                break;
+            } catch (ClassNotFoundException | IOException e) {
+                System.out.println(e);
+            }
+        }
+
+        try {
+            File file = new File("menu.ser");
+            FileOutputStream fileOutputStream = new FileOutputStream(file, false);
+            ObjectOutputStream objectOutputStream = new ObjectOutputStream(fileOutputStream);
+
+            for(MenuItem menuItem1 : menuItems) {
+                objectOutputStream.writeObject(menuItem1);
+            }
+
+            new FileWriter();
+        } catch (IOException e) {
+            System.out.println(e);
+        }
     }
 }

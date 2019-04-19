@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c22314c2-8b7f-411d-9618-afc7dfa8c030" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/AdminAddCompositeFrame.java" afterDir="false" />
+    <list default="true" id="c22314c2-8b7f-411d-9618-afc7dfa8c030" name="Default Changelist" comment="HW4 - Working Add Composite Product">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/menu.ser" beforeDir="false" afterPath="$PROJECT_DIR$/menu.ser" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/AdministratorGraphicalUserInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/AdministratorGraphicalUserInterface.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/CompositeProduct.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/CompositeProduct.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/FileWriter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/FileWriter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/RestaurantSerializator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/RestaurantSerializator.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -22,13 +21,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/FileWriter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="49" column="67" selection-start-line="49" selection-start-column="67" selection-end-line="49" selection-end-column="67" />
+            <state relative-caret-position="296">
+              <caret line="94" column="8" selection-start-line="94" selection-start-column="8" selection-end-line="94" selection-end-column="32" />
               <folding>
                 <element signature="e#3300#3301#0" expanded="true" />
                 <element signature="e#3341#3342#0" expanded="true" />
                 <element signature="e#3403#3404#0" expanded="true" />
                 <element signature="e#3443#3444#0" expanded="true" />
+                <element signature="e#3495#3496#0" expanded="true" />
+                <element signature="e#3533#3534#0" expanded="true" />
+                <element signature="e#3593#3594#0" expanded="true" />
+                <element signature="e#3632#3633#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -79,8 +82,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/AdministratorGraphicalUserInterface.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="112">
-              <caret line="69" column="33" selection-start-line="69" selection-start-column="33" selection-end-line="69" selection-end-column="33" />
+            <state relative-caret-position="194">
+              <caret line="87" column="16" selection-start-line="87" selection-start-column="16" selection-end-line="87" selection-end-column="16" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#2050#2347#0" expanded="true" />
@@ -101,22 +104,19 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/RestaurantSerializator.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="296">
-              <caret line="22" column="34" selection-start-line="22" selection-start-column="34" selection-end-line="22" selection-end-column="34" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state>
+              <caret column="21" selection-start-column="21" selection-end-column="21" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/AdminAddCompositeFrame.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2006">
+            <state relative-caret-position="177">
               <caret line="118" column="26" selection-start-line="118" selection-start-column="26" selection-end-line="118" selection-end-column="26" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -178,11 +178,11 @@
         <option value="$PROJECT_DIR$/src/main/java/MenuItem.java" />
         <option value="$PROJECT_DIR$/src/main/java/Restaurant.java" />
         <option value="$PROJECT_DIR$/src/main/java/WaiterGraphicalUserInterface.java" />
+        <option value="$PROJECT_DIR$/src/main/java/CompositeProduct.java" />
+        <option value="$PROJECT_DIR$/src/main/java/AdminAddCompositeFrame.java" />
         <option value="$PROJECT_DIR$/src/main/java/FileWriter.java" />
         <option value="$PROJECT_DIR$/src/main/java/AdministratorGraphicalUserInterface.java" />
         <option value="$PROJECT_DIR$/src/main/java/RestaurantSerializator.java" />
-        <option value="$PROJECT_DIR$/src/main/java/CompositeProduct.java" />
-        <option value="$PROJECT_DIR$/src/main/java/AdminAddCompositeFrame.java" />
       </list>
     </option>
   </component>
@@ -324,7 +324,14 @@
       <option name="project" value="LOCAL" />
       <updated>1555653983473</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="HW4 - Working Add Composite Product">
+      <created>1555676068721</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1555676068721</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -360,7 +367,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="HW4 - Used given diagram, solved problem 1, prototype solution problem 2" />
     <MESSAGE value="HW4 - Created Add Base Item Frame, Tentative AdminGUI, Prototype ChefGUI, Working FileWriter, Working Add Base Product &amp; Create table, Prototype WaiterGUI" />
-    <option name="LAST_COMMIT_MESSAGE" value="HW4 - Created Add Base Item Frame, Tentative AdminGUI, Prototype ChefGUI, Working FileWriter, Working Add Base Product &amp; Create table, Prototype WaiterGUI" />
+    <MESSAGE value="HW4 - Working Add Composite Product" />
+    <option name="LAST_COMMIT_MESSAGE" value="HW4 - Working Add Composite Product" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/pom.xml">
@@ -545,33 +553,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/FileWriter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="49" column="67" selection-start-line="49" selection-start-column="67" selection-end-line="49" selection-end-column="67" />
-          <folding>
-            <element signature="e#3300#3301#0" expanded="true" />
-            <element signature="e#3341#3342#0" expanded="true" />
-            <element signature="e#3403#3404#0" expanded="true" />
-            <element signature="e#3443#3444#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/RestaurantProcessing.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
           <caret line="9" column="24" selection-start-line="9" selection-start-column="24" selection-end-line="9" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/RestaurantSerializator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="296">
-          <caret line="22" column="34" selection-start-line="22" selection-start-column="34" selection-end-line="22" selection-end-column="34" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -595,10 +580,41 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/AdminAddCompositeFrame.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="177">
+          <caret line="118" column="26" selection-start-line="118" selection-start-column="26" selection-end-line="118" selection-end-column="26" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1300#1310#0" expanded="true" />
+            <element signature="e#1865#1876#0" expanded="true" />
+            <element signature="e#1924#1932#0" expanded="true" />
+            <element signature="e#4443#4444#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/FileWriter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="296">
+          <caret line="94" column="8" selection-start-line="94" selection-start-column="8" selection-end-line="94" selection-end-column="32" />
+          <folding>
+            <element signature="e#3300#3301#0" expanded="true" />
+            <element signature="e#3341#3342#0" expanded="true" />
+            <element signature="e#3403#3404#0" expanded="true" />
+            <element signature="e#3443#3444#0" expanded="true" />
+            <element signature="e#3495#3496#0" expanded="true" />
+            <element signature="e#3533#3534#0" expanded="true" />
+            <element signature="e#3593#3594#0" expanded="true" />
+            <element signature="e#3632#3633#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/AdministratorGraphicalUserInterface.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="112">
-          <caret line="69" column="33" selection-start-line="69" selection-start-column="33" selection-end-line="69" selection-end-column="33" />
+        <state relative-caret-position="194">
+          <caret line="87" column="16" selection-start-line="87" selection-start-column="16" selection-end-line="87" selection-end-column="16" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#2050#2347#0" expanded="true" />
@@ -609,17 +625,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/AdminAddCompositeFrame.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/RestaurantSerializator.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2006">
-          <caret line="118" column="26" selection-start-line="118" selection-start-column="26" selection-end-line="118" selection-end-column="26" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1300#1310#0" expanded="true" />
-            <element signature="e#1865#1876#0" expanded="true" />
-            <element signature="e#1924#1932#0" expanded="true" />
-            <element signature="e#4443#4444#0" expanded="true" />
-          </folding>
+        <state>
+          <caret column="21" selection-start-column="21" selection-end-column="21" />
         </state>
       </provider>
     </entry>
