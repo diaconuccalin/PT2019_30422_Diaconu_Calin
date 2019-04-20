@@ -62,7 +62,6 @@ public class AdminAddEditCompositeFrame extends JFrame {
 
             JLabel jLabel = new JLabel(menuItem1.getName() + " - " + menuItem1.computePrice() + " RON");
             jLabel.setBounds(40, 5 + i * 30, 200, 25);
-
             jPanel.add(jLabel);
 
             jCheckBoxes.add(jCheckBox);

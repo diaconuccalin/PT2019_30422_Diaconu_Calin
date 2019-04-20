@@ -46,6 +46,12 @@ public class WaiterGraphicalUserInterface extends JFrame {
                     @Override
                     public void windowClosed(WindowEvent e) {
                         FileWriters.resetStreams();
+
+                        Main.getChefGraphicalUserInterface().dispose();
+                        Main.setChefGraphicalUserInterface(new ChefGraphicalUserInterface());
+
+                        NotificationFrame.newOrderNotify();
+
                         new WaiterGraphicalUserInterface();
                         dispose();
                     }
@@ -59,6 +65,9 @@ public class WaiterGraphicalUserInterface extends JFrame {
                 Order order = RestaurantSerializator.getOrder(Integer.parseInt(jTable.getValueAt(jTable.getSelectedRow(), 0).toString()));
                 JOptionPane.showMessageDialog(null, FileWriters.printBill(order));
                 RestaurantSerializator.deleteOrder(order);
+
+                Main.getChefGraphicalUserInterface().dispose();
+                Main.setChefGraphicalUserInterface(new ChefGraphicalUserInterface());
 
                 new WaiterGraphicalUserInterface();
                 dispose();

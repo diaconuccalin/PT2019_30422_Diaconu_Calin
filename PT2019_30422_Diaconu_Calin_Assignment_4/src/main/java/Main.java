@@ -29,4 +29,8 @@ public class Main {
     public static BufferedWriter getBufferedWriter() {
         return bufferedWriter;
     }
+
+    public static void setChefGraphicalUserInterface(ChefGraphicalUserInterface chefGraphicalUserInterface) {
+        Main.chefGraphicalUserInterface = chefGraphicalUserInterface;
+    }
 }

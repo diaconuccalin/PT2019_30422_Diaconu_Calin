@@ -8,6 +8,7 @@ public class Order implements Serializable {
     private LocalDate date;
     private int table;
     private List<String> menuItems;
+    private boolean done;
 
     public Order(int table, List<String> menuItems) {
         orderID = id;
@@ -15,7 +16,7 @@ public class Order implements Serializable {
         date = LocalDate.now();
         this.table = table;
         this.menuItems = menuItems;
-        Main.getChefGraphicalUserInterface().newOrderNotify();
+        done = false;
     }
 
     public Order(Order order) {
@@ -24,6 +25,7 @@ public class Order implements Serializable {
         date = order.getDate();
         table = order.getTable();
         menuItems = order.getMenuItems();
+        done = order.isDone();
     }
 
     public int hashCode() {
@@ -48,5 +50,13 @@ public class Order implements Serializable {
 
     public static void resetId() {
         id = 0;
+    }
+
+    public boolean isDone() {
+        return done;
+    }
+
+    public void setDone(boolean done) {
+        this.done = done;
     }
 }

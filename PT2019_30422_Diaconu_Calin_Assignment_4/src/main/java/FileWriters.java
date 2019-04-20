@@ -213,14 +213,6 @@ public class FileWriters {
         return objectInputStream;
     }
 
-    public static FileInputStream getFileInputStream() {
-        return fileInputStream;
-    }
-
-    public static FileOutputStream getFileOutputStream() {
-        return fileOutputStream;
-    }
-
     public static ObjectOutputStream getOrderObjectOutputStream() {
         return orderObjectOutputStream;
     }
