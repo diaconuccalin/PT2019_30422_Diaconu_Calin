@@ -56,7 +56,7 @@ public class AdministratorGraphicalUserInterface extends JFrame {
                 adminAddEditBaseFrame.addWindowListener(new WindowAdapter() {
                     @Override
                     public void windowClosed(WindowEvent e) {
-                        new FileWriter();
+                        FileWriter.resetStreams();
                         new AdministratorGraphicalUserInterface();
                         dispose();
                     }
@@ -67,12 +67,12 @@ public class AdministratorGraphicalUserInterface extends JFrame {
         addCompositeButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                new FileWriter();
+                FileWriter.resetStreams();
                 AdminAddEditCompositeFrame adminAddEditCompositeFrame = new AdminAddEditCompositeFrame(false, null);
                 adminAddEditCompositeFrame.addWindowListener(new WindowAdapter() {
                     @Override
                     public void windowClosed(WindowEvent e) {
-                        new FileWriter();
+                        FileWriter.resetStreams();
                         new AdministratorGraphicalUserInterface();
                         dispose();
                     }
@@ -83,7 +83,7 @@ public class AdministratorGraphicalUserInterface extends JFrame {
         editButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                new FileWriter();
+                FileWriter.resetStreams();
                 MenuItem menuItem = RestaurantSerializator.getItem(jTable.getValueAt(jTable.getSelectedRow(), 0).toString());
 
                 if(menuItem.getClass().getSimpleName().compareTo("BaseProduct") == 0) {
@@ -91,7 +91,7 @@ public class AdministratorGraphicalUserInterface extends JFrame {
                     adminAddEditBaseFrame.addWindowListener(new WindowAdapter() {
                         @Override
                         public void windowClosed(WindowEvent e) {
-                            new FileWriter();
+                            FileWriter.resetStreams();
                             new AdministratorGraphicalUserInterface();
                             dispose();
                         }
@@ -101,7 +101,7 @@ public class AdministratorGraphicalUserInterface extends JFrame {
                     adminAddEditCompositeFrame.addWindowListener(new WindowAdapter() {
                         @Override
                         public void windowClosed(WindowEvent e) {
-                            new FileWriter();
+                            FileWriter.resetStreams();
                             new AdministratorGraphicalUserInterface();
                             dispose();
                         }
@@ -113,7 +113,7 @@ public class AdministratorGraphicalUserInterface extends JFrame {
         deleteButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                new FileWriter();
+                FileWriter.resetStreams();
                 RestaurantSerializator.deleteItem(new CompositeProduct(jTable.getValueAt(jTable.getSelectedRow(), 0).toString()));
                 new AdministratorGraphicalUserInterface();
                 dispose();

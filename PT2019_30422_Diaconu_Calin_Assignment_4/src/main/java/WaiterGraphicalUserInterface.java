@@ -1,4 +1,8 @@
 import javax.swing.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 import java.util.List;
 
 public class WaiterGraphicalUserInterface extends JFrame {
@@ -25,19 +29,31 @@ public class WaiterGraphicalUserInterface extends JFrame {
         add(billButton);
 
         //Content table
-        jTable = RestaurantSerializator.createOrdersTable();
-        jTable.getTableHeader().setReorderingAllowed(false);
-        jTable.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
-        if(jTable.getRowCount() > 0)
-            jTable.setRowSelectionInterval(0, 0);
-        JScrollPane jScrollPane = new JScrollPane(jTable);
-        jScrollPane.setBounds(5, 65, 376, 544);
-        add(jScrollPane);
+//        jTable = RestaurantSerializator.createOrdersTable();
+//        jTable.getTableHeader().setReorderingAllowed(false);
+//        jTable.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+//        if(jTable.getRowCount() > 0)
+//            jTable.setRowSelectionInterval(0, 0);
+//        JScrollPane jScrollPane = new JScrollPane(jTable);
+//        jScrollPane.setBounds(5, 65, 376, 544);
+//        add(jScrollPane);
+
+        //Action listeners
+        addButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                AddOrderFrame addOrderFrame = new AddOrderFrame();
+                addOrderFrame.addWindowListener(new WindowAdapter() {
+                    @Override
+                    public void windowClosed(WindowEvent e) {
+                        FileWriter.resetStreams();
+                        new WaiterGraphicalUserInterface();
+                        dispose();
+                    }
+                });
+            }
+        });
 
         setVisible(true);
-    }
-
-    public static void main(String[] args) {
-        new WaiterGraphicalUserInterface();
     }
 }

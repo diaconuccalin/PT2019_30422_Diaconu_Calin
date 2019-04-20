@@ -1,5 +1,7 @@
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.io.EOFException;
 import java.io.IOException;
 import java.io.StreamCorruptedException;
@@ -27,7 +29,7 @@ public class AddOrderFrame extends JFrame {
         add(tableField);
 
         //Menu items
-        new FileWriter();
+        FileWriter.resetStreams();
         JPanel jPanel = new JPanel();
         jPanel.setLayout(null);
 
@@ -76,11 +78,26 @@ public class AddOrderFrame extends JFrame {
         add(backButton);
 
         //Action listeners
+        addButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                try {
+                    int table = Integer.parseInt(tableField.getText());
+
+                    List<MenuItem> orderItems = new ArrayList<>();
+                    for(MenuItem menuItem : menuItems) {
+                        for(int i = 0; i < (Integer.parseInt(jTextFields.get(i).getText())); i++) {
+                            orderItems.add(menuItem);
+                        }
+                    }
+                    RestaurantSerializator.addOrder(new Order(table, orderItems));
+                    dispose();
+                } catch (NumberFormatException e1) {
+                    JOptionPane.showMessageDialog(null, "Incorrect input");
+                }
+            }
+        });
 
         setVisible(true);
-    }
-
-    public static void main(String[] args) {
-        new AddOrderFrame();
     }
 }

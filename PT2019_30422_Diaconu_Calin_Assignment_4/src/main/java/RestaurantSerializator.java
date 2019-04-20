@@ -50,7 +50,7 @@ public class RestaurantSerializator {
     }
 
     public static void deleteItem(MenuItem menuItem){
-        new FileWriter();
+        FileWriter.resetStreams();
         List<MenuItem> menuItems = new ArrayList<>();
 
         while(true) {
@@ -75,7 +75,7 @@ public class RestaurantSerializator {
                 objectOutputStream.writeObject(menuItem1);
             }
 
-            new FileWriter();
+            FileWriter.resetStreams();
         } catch (IOException e) {
             System.out.println(e);
         }
@@ -94,8 +94,16 @@ public class RestaurantSerializator {
                 System.out.println(e);
             }
         }
-        new FileWriter();
+        FileWriter.resetStreams();
         return null;
+    }
+
+    public static void addOrder(Order order) {
+        try {
+            FileWriter.getOrderObjectOutputStream().writeObject(order);
+        } catch (IOException e) {
+            System.out.println(e);
+        }
     }
 
     public static JTable createOrdersTable() {

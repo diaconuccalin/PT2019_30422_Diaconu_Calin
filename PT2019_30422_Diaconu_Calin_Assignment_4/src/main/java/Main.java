@@ -1,8 +1,14 @@
 public class Main {
+    public static ChefGraphicalUserInterface chefGraphicalUserInterface;
+
     public static void main(String[] args) {
-        FileWriter fileWriter = new FileWriter();
+        FileWriter.resetStreams();
         new AdministratorGraphicalUserInterface();
-        new ChefGraphicalUserInterface();
+        chefGraphicalUserInterface =  new ChefGraphicalUserInterface();
         new WaiterGraphicalUserInterface();
+    }
+
+    public static ChefGraphicalUserInterface getChefGraphicalUserInterface() {
+        return chefGraphicalUserInterface;
     }
 }

@@ -8,10 +8,15 @@ public class Order implements Serializable {
     private int orderID;
     private LocalDate date;
     private int table;
-    private List<MenuItem> menuItems = new ArrayList<MenuItem>();
+    private List<MenuItem> menuItems;
 
-    public Order(ChefGraphicalUserInterface chefGUI) {
-        chefGUI.newOrderNotify();
+    public Order(int table, List<MenuItem> menuItems) {
+        orderID = id;
+        id++;
+        date = LocalDate.now();
+        this.table = table;
+        this.menuItems = menuItems;
+        Main.getChefGraphicalUserInterface().newOrderNotify();
     }
 
     public int hashCode() {
