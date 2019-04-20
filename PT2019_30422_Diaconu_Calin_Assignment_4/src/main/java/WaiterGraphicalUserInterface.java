@@ -29,14 +29,14 @@ public class WaiterGraphicalUserInterface extends JFrame {
         add(billButton);
 
         //Content table
-//        jTable = RestaurantSerializator.createOrdersTable();
-//        jTable.getTableHeader().setReorderingAllowed(false);
-//        jTable.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
-//        if(jTable.getRowCount() > 0)
-//            jTable.setRowSelectionInterval(0, 0);
-//        JScrollPane jScrollPane = new JScrollPane(jTable);
-//        jScrollPane.setBounds(5, 65, 376, 544);
-//        add(jScrollPane);
+        jTable = RestaurantSerializator.createOrdersTable();
+        jTable.getTableHeader().setReorderingAllowed(false);
+        jTable.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+        if(jTable.getRowCount() > 0)
+            jTable.setRowSelectionInterval(0, 0);
+        JScrollPane jScrollPane = new JScrollPane(jTable);
+        jScrollPane.setBounds(5, 65, 376, 544);
+        add(jScrollPane);
 
         //Action listeners
         addButton.addActionListener(new ActionListener() {

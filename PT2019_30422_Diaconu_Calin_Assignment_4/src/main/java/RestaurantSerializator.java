@@ -107,6 +107,31 @@ public class RestaurantSerializator {
     }
 
     public static JTable createOrdersTable() {
-        return null;
+        JTable jTable;
+        List<Order> orders = new ArrayList<>();
+
+        while (true) {
+            try {
+                orders.add((Order) FileWriter.getOrderObjectInputStream().readObject());
+            } catch (IOException e) {
+                break;
+            } catch (ClassNotFoundException e) {
+                System.out.println(e);
+            }
+        }
+        String[] columnNames = {"Id", "Table", "Date"};
+        Object[][] data = new Object[orders.size()][3];
+
+        for (int i = 0; i < orders.size(); i++) {
+            data[i][0] = orders.get(i).getOrderID();
+            data[i][1] = orders.get(i).getTable();
+            data[i][2] = orders.get(i).getDate();
+        }
+
+        jTable = new JTable(data, columnNames);
+        jTable.setDefaultEditor(Object.class, null);
+
+
+        return jTable;
     }
 }

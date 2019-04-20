@@ -177,4 +177,8 @@ public class FileWriter {
     public static ObjectOutputStream getOrderObjectOutputStream() {
         return orderObjectOutputStream;
     }
+
+    public static ObjectInputStream getOrderObjectInputStream() {
+        return orderObjectInputStream;
+    }
 }

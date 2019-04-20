@@ -1,6 +1,5 @@
 import java.io.Serializable;
 import java.time.LocalDate;
-import java.util.ArrayList;
 import java.util.List;
 
 public class Order implements Serializable {
@@ -25,5 +24,17 @@ public class Order implements Serializable {
 
     public void addMenuItem(MenuItem menuItem) {
         menuItems.add(menuItem);
+    }
+
+    public int getOrderID() {
+        return orderID;
+    }
+
+    public int getTable() {
+        return table;
+    }
+
+    public LocalDate getDate() {
+        return date;
     }
 }
