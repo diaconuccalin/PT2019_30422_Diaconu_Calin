@@ -3,7 +3,6 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.EOFException;
-import java.io.File;
 import java.io.IOException;
 import java.io.StreamCorruptedException;
 import java.util.ArrayList;
@@ -30,7 +29,7 @@ public class AdminAddEditCompositeFrame extends JFrame {
         add(nameField);
 
         //Ingredients
-        FileWriter.resetStreams();
+        FileWriters.resetStreams();
         JLabel ingredientsLabel = new JLabel("Ingredients:");
         ingredientsLabel.setBounds(15, 45, 100, 25);
         add(ingredientsLabel);
@@ -41,7 +40,7 @@ public class AdminAddEditCompositeFrame extends JFrame {
         List<MenuItem> menuItems = new ArrayList<MenuItem>();
         while (true) {
             try {
-                MenuItem menuItem1 = (MenuItem) FileWriter.getObjectInputStream().readObject();
+                MenuItem menuItem1 = (MenuItem) FileWriters.getObjectInputStream().readObject();
                 if (menuItem1.getClass().getSimpleName().compareTo("BaseProduct") == 0)
                     menuItems.add(menuItem1);
             } catch (StreamCorruptedException | EOFException e) {

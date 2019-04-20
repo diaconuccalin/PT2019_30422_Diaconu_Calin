@@ -2,7 +2,31 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2800c85e-b32f-4ae1-a0ed-1f2de495b3f7" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../PT2019_30422_Diaconu_Calin_Assignment_4/src/main/java/BeforeShutdown.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Main/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/business/BeforeShutdown.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/business/HelpingMethodsBLL.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/dataAccess/ConnectionFactory.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/dataAccess/HelpingMethodsDAO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/dataAccess/ReflectionDAO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/model/Client.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/model/Order.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/model/Product.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/presentation/AddEditClientFrame.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/presentation/AddEditProductFrame.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/presentation/MainFrame.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/presentation/OperationsFrame.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PT2019_30422_Diaconu_Calin_Assignment_4/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../PT2019_30422_Diaconu_Calin_Assignment_4/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PT2019_30422_Diaconu_Calin_Assignment_4/orders.ser" beforeDir="false" afterPath="$PROJECT_DIR$/../PT2019_30422_Diaconu_Calin_Assignment_4/orders.ser" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PT2019_30422_Diaconu_Calin_Assignment_4/src/main/java/AddOrderFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/../PT2019_30422_Diaconu_Calin_Assignment_4/src/main/java/AddOrderFrame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PT2019_30422_Diaconu_Calin_Assignment_4/src/main/java/AdminAddEditCompositeFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/../PT2019_30422_Diaconu_Calin_Assignment_4/src/main/java/AdminAddEditCompositeFrame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PT2019_30422_Diaconu_Calin_Assignment_4/src/main/java/AdministratorGraphicalUserInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/../PT2019_30422_Diaconu_Calin_Assignment_4/src/main/java/AdministratorGraphicalUserInterface.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PT2019_30422_Diaconu_Calin_Assignment_4/src/main/java/FileWriter.java" beforeDir="false" afterPath="$PROJECT_DIR$/../PT2019_30422_Diaconu_Calin_Assignment_4/src/main/java/FileWriters.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PT2019_30422_Diaconu_Calin_Assignment_4/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../PT2019_30422_Diaconu_Calin_Assignment_4/src/main/java/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PT2019_30422_Diaconu_Calin_Assignment_4/src/main/java/RestaurantSerializator.java" beforeDir="false" afterPath="$PROJECT_DIR$/../PT2019_30422_Diaconu_Calin_Assignment_4/src/main/java/RestaurantSerializator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PT2019_30422_Diaconu_Calin_Assignment_4/src/main/java/WaiterGraphicalUserInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/../PT2019_30422_Diaconu_Calin_Assignment_4/src/main/java/WaiterGraphicalUserInterface.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PT2019_30422_Diaconu_Calin_Assignment_4/target/classes/Main.class" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -15,63 +39,60 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/business/ReflectionBLL.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/presentation/MainFrame.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+            <state relative-caret-position="201">
+              <caret line="38" column="43" selection-start-line="38" selection-start-column="43" selection-end-line="38" selection-end-column="43" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/presentation/OperationsFrame.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="238">
+              <caret line="14" column="64" selection-start-line="14" selection-start-column="64" selection-end-line="14" selection-end-column="64" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/presentation/AddEditClientFrame.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1275">
+              <caret line="87" column="1" selection-start-line="87" selection-start-column="1" selection-end-line="87" selection-end-column="1" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/presentation/AddEditDistributorFrame.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="493">
+              <caret line="77" column="1" selection-start-line="77" selection-start-column="1" selection-end-line="77" selection-end-column="1" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/presentation/MainFrame.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/presentation/AddEditOrderFrame.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="867">
-              <caret line="59" column="1" selection-start-line="59" selection-start-column="1" selection-end-line="59" selection-end-column="1" />
+            <state relative-caret-position="388">
+              <caret line="142" column="90" selection-start-line="142" selection-start-column="25" selection-end-line="142" selection-end-column="90" />
               <folding>
                 <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/dataAccess/HelpingMethodsDAO.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="77" column="5" selection-start-line="77" selection-start-column="5" selection-end-line="77" selection-end-column="5" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="method#whatToList#0;class#HelpingMethodsDAO#0" />
-                <element signature="method#createTable#0;class#HelpingMethodsDAO#0" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/business/HelpingMethodsBLL.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/dataAccess/ReflectionDAO.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="141" selection-start-line="141" selection-end-line="141" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="method#addElement#0;class#ReflectionDAO#0" />
-                <element signature="method#editElement#0;class#ReflectionDAO#0" />
-                <element signature="method#deleteElement#0;class#ReflectionDAO#0" />
-                <element signature="method#findElement#0;class#ReflectionDAO#0" />
               </folding>
             </state>
           </provider>
@@ -80,7 +101,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/Main/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
+            <state relative-caret-position="374">
               <caret line="22" column="8" selection-start-line="22" selection-start-column="8" selection-end-line="22" selection-end-column="8" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -214,10 +235,10 @@
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-13" />
-    <option name="y" value="-13" />
-    <option name="width" value="1945" />
-    <option name="height" value="1045" />
+    <option name="x" value="-1374" />
+    <option name="y" value="663" />
+    <option name="width" value="1382" />
+    <option name="height" value="784" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -225,6 +246,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
       <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
@@ -300,13 +322,12 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
       <pane id="Course" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../PT2019_30422_Diaconu_Calin_Assignment_4" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -398,6 +419,7 @@
       <option name="presentableId" value="Default" />
       <updated>1554299012697</updated>
       <workItem from="1555676248482" duration="11000" />
+      <workItem from="1555760365105" duration="385000" />
     </task>
     <task id="LOCAL-00001" summary="HW3 - Initial Commit - prototype connection, UI: MainFrame, partial OperationsFrame">
       <created>1554838917277</created>
@@ -522,7 +544,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="12000" />
+    <option name="totallyTimeSpent" value="397000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -534,17 +556,17 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="2062" height="1166" extended-state="6" />
+    <frame x="-1374" y="663" width="1382" height="784" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info id="Image Layers" />
-      <window_info id="Capture Tool" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.16383617" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25037822" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Learn" order="2" />
       <window_info id="Designer" order="3" />
       <window_info id="UI Designer" order="4" />
       <window_info id="Favorites" order="5" side_tool="true" />
-      <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
+      <window_info id="Image Layers" order="6" />
+      <window_info id="Capture Tool" order="7" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3285968" />
       <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49959514" weight="0.3339254" />
@@ -557,14 +579,15 @@
       <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.50040483" side_tool="true" weight="0.3339254" />
       <window_info anchor="bottom" id="Version Control" order="10" weight="0.14564832" />
       <window_info anchor="bottom" id="Messages" order="11" weight="0.31083483" />
-      <window_info anchor="right" id="Theme Preview" />
-      <window_info anchor="right" id="Capture Analysis" />
+      <window_info anchor="bottom" id="Docker" order="12" show_stripe_button="false" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="right" id="Maven" order="4" />
       <window_info anchor="right" id="Palette&#9;" order="5" />
+      <window_info anchor="right" id="Theme Preview" order="6" />
+      <window_info anchor="right" id="Capture Analysis" order="7" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -669,36 +692,6 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/business/ClientBLL.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/presentation/AddEditFrame.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/presentation/UIElements.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/presentation/AddEditOrderFrame.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="149" column="1" selection-start-line="149" selection-start-column="1" selection-end-line="149" selection-end-column="1" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/presentation/AddEditDistributorFrame.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="207">
-          <caret line="77" column="1" selection-start-line="77" selection-start-column="1" selection-end-line="77" selection-end-column="1" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/presentation/AddEditClientFrame.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="207">
-          <caret line="87" column="1" selection-start-line="87" selection-start-column="1" selection-end-line="87" selection-end-column="1" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/model/Distributor.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="527">
@@ -710,16 +703,6 @@
             <element signature="e#655#656#0" expanded="true" />
             <element signature="e#901#902#0" expanded="true" />
             <element signature="e#951#952#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/presentation/OperationsFrame.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2006">
-          <caret line="118" column="24" selection-start-line="118" selection-start-column="24" selection-end-line="118" selection-end-column="24" />
-          <folding>
-            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -781,16 +764,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Main/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="22" column="8" selection-start-line="22" selection-start-column="8" selection-end-line="22" selection-end-column="8" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/model/Order.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="765">
@@ -826,10 +799,60 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Main/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="22" column="8" selection-start-line="22" selection-start-column="8" selection-end-line="22" selection-end-column="8" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/presentation/MainFrame.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="867">
-          <caret line="59" column="1" selection-start-line="59" selection-start-column="1" selection-end-line="59" selection-end-column="1" />
+        <state relative-caret-position="201">
+          <caret line="38" column="43" selection-start-line="38" selection-start-column="43" selection-end-line="38" selection-end-column="43" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/presentation/OperationsFrame.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="64" selection-start-line="14" selection-start-column="64" selection-end-line="14" selection-end-column="64" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/presentation/AddEditClientFrame.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1275">
+          <caret line="87" column="1" selection-start-line="87" selection-start-column="1" selection-end-line="87" selection-end-column="1" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/presentation/AddEditDistributorFrame.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="493">
+          <caret line="77" column="1" selection-start-line="77" selection-start-column="1" selection-end-line="77" selection-end-column="1" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/presentation/AddEditOrderFrame.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="388">
+          <caret line="142" column="90" selection-start-line="142" selection-start-column="25" selection-end-line="142" selection-end-column="90" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

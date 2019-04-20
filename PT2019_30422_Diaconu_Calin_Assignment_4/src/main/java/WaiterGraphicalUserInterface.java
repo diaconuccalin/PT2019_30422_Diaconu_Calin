@@ -3,7 +3,6 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
-import java.util.List;
 
 public class WaiterGraphicalUserInterface extends JFrame {
     private JTable jTable;
@@ -46,11 +45,23 @@ public class WaiterGraphicalUserInterface extends JFrame {
                 addOrderFrame.addWindowListener(new WindowAdapter() {
                     @Override
                     public void windowClosed(WindowEvent e) {
-                        FileWriter.resetStreams();
+                        FileWriters.resetStreams();
                         new WaiterGraphicalUserInterface();
                         dispose();
                     }
                 });
+            }
+        });
+
+        billButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                Order order = RestaurantSerializator.getOrder(Integer.parseInt(jTable.getValueAt(jTable.getSelectedRow(), 0).toString()));
+                JOptionPane.showMessageDialog(null, FileWriters.printBill(order));
+                RestaurantSerializator.deleteOrder(order);
+
+                new WaiterGraphicalUserInterface();
+                dispose();
             }
         });
 

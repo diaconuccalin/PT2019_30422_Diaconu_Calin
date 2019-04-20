@@ -1,6 +1,7 @@
 import java.io.*;
+import java.util.List;
 
-public class FileWriter {
+public class FileWriters {
     private static FileOutputStream fileOutputStream;
     private static ObjectOutputStream objectOutputStream;
 
@@ -13,7 +14,7 @@ public class FileWriter {
     private static FileInputStream orderFileInputStream;
     private static ObjectInputStream orderObjectInputStream;
 
-    public FileWriter(String string) {
+    public FileWriters(String string) {
     }
 
     public static void resetStreams() {
@@ -103,9 +104,10 @@ public class FileWriter {
 
                 //actual output
                 Order order;
+                Order.resetId();
                 while (true) {
                     try {
-                        order = (Order) orderObjectInputStream.readObject();
+                        order = new Order((Order) orderObjectInputStream.readObject());
                         objectOutputStream1.writeObject(order);
                     } catch (StreamCorruptedException | EOFException e) {
                         break;
@@ -156,6 +158,51 @@ public class FileWriter {
         } catch (IOException e) {
             System.out.println(e);
         }
+    }
+
+    public static String printBill(Order order) {
+        try {
+            FileWriters.resetStreams();
+            String toPrint = "ORDER " +
+                    order.getOrderID() +
+                    ":\n" +
+                    "Table: " +
+                    order.getTable() +
+                    "   -   " +
+                    order.getDate() +
+                    "\n";
+
+            List<String> menuItems = order.getMenuItems();
+            int total = 0;
+            for(int i = 0; i < menuItems.size(); i++) {
+                int quantity = 1;
+                while(i != menuItems.size() - 1 && menuItems.get(i).compareTo(menuItems.get(i+1)) == 0) {
+                    quantity++;
+                    i++;
+                }
+
+                MenuItem menuItem = RestaurantSerializator.getItem(menuItems.get(i));
+                toPrint = toPrint.concat(
+                        menuItem.getName() +
+                                " - " +
+                                menuItem.computePrice() +
+                                " RON x" +
+                                quantity +
+                                "\n");
+                total += menuItem.computePrice() * quantity;
+            }
+
+            toPrint = toPrint.concat("\nTOTAL: " +
+                    total +
+                    " RON\n-------------------------------------------------------------\n");
+
+            Main.getBufferedWriter().append(toPrint);
+            FileWriters.resetStreams();
+            return toPrint;
+        } catch (IOException e) {
+            System.out.println(e);
+        }
+        return null;
     }
 
     public static ObjectOutputStream getObjectOutputStream() {

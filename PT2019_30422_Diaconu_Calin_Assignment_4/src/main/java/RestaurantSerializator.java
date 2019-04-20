@@ -6,7 +6,7 @@ import java.util.List;
 public class RestaurantSerializator {
     public static void addBaseItem(BaseProduct baseProduct) {
         try {
-            FileWriter.getObjectOutputStream().writeObject(baseProduct);
+            FileWriters.getObjectOutputStream().writeObject(baseProduct);
         } catch (IOException e) {
             System.out.println(e);
         }
@@ -14,7 +14,7 @@ public class RestaurantSerializator {
 
     public static void addCompositeItem(CompositeProduct compositeProduct) {
         try {
-            FileWriter.getObjectOutputStream().writeObject(compositeProduct);
+            FileWriters.getObjectOutputStream().writeObject(compositeProduct);
         } catch (IOException e) {
             System.out.println(e);
         }
@@ -26,7 +26,7 @@ public class RestaurantSerializator {
 
         while (true) {
             try {
-                menuItems.add((MenuItem) FileWriter.getObjectInputStream().readObject());
+                menuItems.add((MenuItem) FileWriters.getObjectInputStream().readObject());
             } catch (IOException e) {
                 break;
             } catch (ClassNotFoundException e) {
@@ -50,12 +50,12 @@ public class RestaurantSerializator {
     }
 
     public static void deleteItem(MenuItem menuItem){
-        FileWriter.resetStreams();
+        FileWriters.resetStreams();
         List<MenuItem> menuItems = new ArrayList<>();
 
         while(true) {
             try {
-                MenuItem menuItem1 = (MenuItem) FileWriter.getObjectInputStream().readObject();
+                MenuItem menuItem1 = (MenuItem) FileWriters.getObjectInputStream().readObject();
                 if(menuItem1.getName().compareTo(menuItem.getName()) != 0) {
                     menuItems.add(menuItem1);
                 }
@@ -75,16 +75,17 @@ public class RestaurantSerializator {
                 objectOutputStream.writeObject(menuItem1);
             }
 
-            FileWriter.resetStreams();
+            FileWriters.resetStreams();
         } catch (IOException e) {
             System.out.println(e);
         }
     }
 
     public static MenuItem getItem(String name) {
+        FileWriters.resetStreams();
         while(true) {
             try {
-                MenuItem menuItem = (MenuItem) FileWriter.getObjectInputStream().readObject();
+                MenuItem menuItem = (MenuItem) FileWriters.getObjectInputStream().readObject();
                 if(menuItem.getName().compareTo(name) == 0) {
                     return menuItem;
                 }
@@ -94,25 +95,28 @@ public class RestaurantSerializator {
                 System.out.println(e);
             }
         }
-        FileWriter.resetStreams();
+        FileWriters.resetStreams();
         return null;
     }
 
     public static void addOrder(Order order) {
+        FileWriters.resetStreams();
         try {
-            FileWriter.getOrderObjectOutputStream().writeObject(order);
+            FileWriters.getOrderObjectOutputStream().writeObject(order);
         } catch (IOException e) {
             System.out.println(e);
         }
+        FileWriters.resetStreams();
     }
 
     public static JTable createOrdersTable() {
+        FileWriters.resetStreams();
         JTable jTable;
         List<Order> orders = new ArrayList<>();
 
         while (true) {
             try {
-                orders.add((Order) FileWriter.getOrderObjectInputStream().readObject());
+                orders.add((Order) FileWriters.getOrderObjectInputStream().readObject());
             } catch (IOException e) {
                 break;
             } catch (ClassNotFoundException e) {
@@ -131,7 +135,57 @@ public class RestaurantSerializator {
         jTable = new JTable(data, columnNames);
         jTable.setDefaultEditor(Object.class, null);
 
-
+        FileWriters.resetStreams();
         return jTable;
+    }
+
+    public static Order getOrder(int orderID) {
+        FileWriters.resetStreams();
+        while(true) {
+            try {
+                Order order = (Order) FileWriters.getOrderObjectInputStream().readObject();
+                if(order.getOrderID() == orderID) {
+                    return order;
+                }
+            } catch (StreamCorruptedException | EOFException e) {
+                break;
+            } catch (ClassNotFoundException | IOException e) {
+                System.out.println(e);
+            }
+        }
+        FileWriters.resetStreams();
+        return null;
+    }
+
+    public static void deleteOrder(Order order){
+        FileWriters.resetStreams();
+        List<Order> orders = new ArrayList<>();
+
+        while(true) {
+            try {
+                Order order1 = (Order) FileWriters.getOrderObjectInputStream().readObject();
+                if(order1.getOrderID() != order.getOrderID()) {
+                    orders.add(order1);
+                }
+            } catch (StreamCorruptedException | EOFException e) {
+                break;
+            } catch (ClassNotFoundException | IOException e) {
+                System.out.println(e);
+            }
+        }
+
+        try {
+            File file = new File("orders.ser");
+            FileOutputStream fileOutputStream = new FileOutputStream(file, false);
+            ObjectOutputStream objectOutputStream = new ObjectOutputStream(fileOutputStream);
+
+            for(Order order1 : orders) {
+                objectOutputStream.writeObject(order1);
+            }
+
+            FileWriters.resetStreams();
+        } catch (IOException e) {
+            System.out.println(e);
+        }
     }
 }

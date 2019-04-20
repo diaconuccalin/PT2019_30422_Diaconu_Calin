@@ -7,9 +7,9 @@ public class Order implements Serializable {
     private int orderID;
     private LocalDate date;
     private int table;
-    private List<MenuItem> menuItems;
+    private List<String> menuItems;
 
-    public Order(int table, List<MenuItem> menuItems) {
+    public Order(int table, List<String> menuItems) {
         orderID = id;
         id++;
         date = LocalDate.now();
@@ -18,12 +18,16 @@ public class Order implements Serializable {
         Main.getChefGraphicalUserInterface().newOrderNotify();
     }
 
-    public int hashCode() {
-        return -1;
+    public Order(Order order) {
+        orderID = id;
+        id++;
+        date = order.getDate();
+        table = order.getTable();
+        menuItems = order.getMenuItems();
     }
 
-    public void addMenuItem(MenuItem menuItem) {
-        menuItems.add(menuItem);
+    public int hashCode() {
+        return -1;
     }
 
     public int getOrderID() {
@@ -36,5 +40,13 @@ public class Order implements Serializable {
 
     public LocalDate getDate() {
         return date;
+    }
+
+    public List<String> getMenuItems() {
+        return menuItems;
+    }
+
+    public static void resetId() {
+        id = 0;
     }
 }

@@ -29,14 +29,14 @@ public class AddOrderFrame extends JFrame {
         add(tableField);
 
         //Menu items
-        FileWriter.resetStreams();
+        FileWriters.resetStreams();
         JPanel jPanel = new JPanel();
         jPanel.setLayout(null);
 
         List<MenuItem> menuItems = new ArrayList<>();
         while(true) {
             try {
-                menuItems.add((MenuItem) FileWriter.getObjectInputStream().readObject());
+                menuItems.add((MenuItem) FileWriters.getObjectInputStream().readObject());
             } catch (StreamCorruptedException | EOFException e) {
                 break;
             } catch (IOException | ClassNotFoundException e) {
@@ -84,10 +84,12 @@ public class AddOrderFrame extends JFrame {
                 try {
                     int table = Integer.parseInt(tableField.getText());
 
-                    List<MenuItem> orderItems = new ArrayList<>();
-                    for(MenuItem menuItem : menuItems) {
-                        for(int i = 0; i < (Integer.parseInt(jTextFields.get(i).getText())); i++) {
-                            orderItems.add(menuItem);
+                    List<String> orderItems = new ArrayList<>();
+                    for(JTextField jTextField : jTextFields) {
+                        int quantity = Integer.parseInt(jTextField.getText());
+                        while(quantity != 0) {
+                            orderItems.add(jLabels.get(jTextFields.indexOf(jTextField)).getText());
+                            quantity--;
                         }
                     }
                     RestaurantSerializator.addOrder(new Order(table, orderItems));
@@ -95,6 +97,13 @@ public class AddOrderFrame extends JFrame {
                 } catch (NumberFormatException e1) {
                     JOptionPane.showMessageDialog(null, "Incorrect input");
                 }
+            }
+        });
+
+        backButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                dispose();
             }
         });
 
