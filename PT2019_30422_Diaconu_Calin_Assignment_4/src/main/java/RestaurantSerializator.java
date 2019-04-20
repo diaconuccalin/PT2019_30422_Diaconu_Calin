@@ -51,8 +51,6 @@ public class RestaurantSerializator {
 
     public static void deleteItem(MenuItem menuItem){
         new FileWriter();
-
-        System.out.println(menuItem.getName());
         List<MenuItem> menuItems = new ArrayList<>();
 
         while(true) {
@@ -97,6 +95,10 @@ public class RestaurantSerializator {
             }
         }
         new FileWriter();
+        return null;
+    }
+
+    public static JTable createOrdersTable() {
         return null;
     }
 }
