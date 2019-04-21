@@ -1,3 +1,5 @@
+package BusinessLayer;
+
 import java.io.Serializable;
 
 public class BaseProduct implements MenuItem, Serializable {

@@ -1,9 +1,15 @@
+package PresentationLayer;
+
+import BusinessLayer.BaseProduct;
+import BusinessLayer.MenuItem;
+import BusinessLayer.Restaurant;
+
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class AdminAddEditBaseFrame extends JFrame {
-    public AdminAddEditBaseFrame(boolean edit, MenuItem menuItem) {
+class AdminAddEditBaseFrame extends JFrame {
+    AdminAddEditBaseFrame(boolean edit, MenuItem menuItem) {
         int w = 350;
         int h = 150;
 
@@ -45,7 +51,7 @@ public class AdminAddEditBaseFrame extends JFrame {
         backButtonActionListener(backButton);
 
         //set fields
-        if(edit) {
+        if (edit) {
             nameField.setText(menuItem.getName());
             priceField.setText(menuItem.computePrice() + "");
             addButton.setText("OK");
@@ -56,28 +62,20 @@ public class AdminAddEditBaseFrame extends JFrame {
     }
 
     private void addButtonActionListener(JButton addButton, JTextField priceField, boolean edit, MenuItem menuItem, JTextField nameField) {
-        addButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                try {
-                    int price = Integer.parseInt(priceField.getText());
-                    if(edit)
-                        RestaurantSerializator.deleteItem(menuItem);
-                    RestaurantSerializator.addBaseItem(new BaseProduct(nameField.getText(), price));
-                    dispose();
-                } catch (NumberFormatException e1) {
-                    JOptionPane.showMessageDialog(null, "Incorrect input");
-                }
+        addButton.addActionListener(e -> {
+            try {
+                int price = Integer.parseInt(priceField.getText());
+                if (edit)
+                    Restaurant.deleteItem(menuItem);
+                Restaurant.createItem(new BaseProduct(nameField.getText(), price));
+                dispose();
+            } catch (NumberFormatException e1) {
+                JOptionPane.showMessageDialog(null, "Incorrect input");
             }
         });
     }
 
     private void backButtonActionListener(JButton backButton) {
-        backButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                dispose();
-            }
-        });
+        backButton.addActionListener(e -> dispose());
     }
 }

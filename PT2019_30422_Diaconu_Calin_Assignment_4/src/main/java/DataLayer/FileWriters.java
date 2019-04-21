@@ -1,3 +1,10 @@
+package DataLayer;
+
+import BusinessLayer.BeforeShutdown;
+import BusinessLayer.MenuItem;
+import BusinessLayer.Order;
+import BusinessLayer.Restaurant;
+
 import java.io.*;
 import java.util.List;
 
@@ -14,8 +21,7 @@ public class FileWriters {
     private static FileInputStream orderFileInputStream;
     private static ObjectInputStream orderObjectInputStream;
 
-    public FileWriters(String string) {
-    }
+    private static BufferedWriter bufferedWriter;
 
     public static void resetStreams() {
         try {
@@ -41,7 +47,7 @@ public class FileWriters {
                     } catch (StreamCorruptedException | EOFException e) {
                         break;
                     } catch (ClassNotFoundException e) {
-                        System.out.println(e);
+                        System.out.println(e.toString());
                     }
                 }
 
@@ -66,7 +72,7 @@ public class FileWriters {
                     } catch (StreamCorruptedException | EOFException e) {
                         break;
                     } catch (ClassNotFoundException e) {
-                        System.out.println(e);
+                        System.out.println(e.toString());
                     }
                 }
 
@@ -85,7 +91,7 @@ public class FileWriters {
                 objectInputStream = new ObjectInputStream(fileInputStream);
             }
         } catch (IOException e) {
-            System.out.println(e);
+            System.out.println(e.toString());
         }
 
         try {
@@ -112,7 +118,7 @@ public class FileWriters {
                     } catch (StreamCorruptedException | EOFException e) {
                         break;
                     } catch (ClassNotFoundException e) {
-                        System.out.println(e);
+                        System.out.println(e.toString());
                     }
                 }
 
@@ -137,7 +143,7 @@ public class FileWriters {
                     } catch (StreamCorruptedException | EOFException e) {
                         break;
                     } catch (ClassNotFoundException e) {
-                        System.out.println(e);
+                        System.out.println(e.toString());
                     }
                 }
 
@@ -156,11 +162,27 @@ public class FileWriters {
                 orderObjectInputStream = new ObjectInputStream(orderFileInputStream);
             }
         } catch (IOException e) {
-            System.out.println(e);
+            System.out.println(e.toString());
         }
     }
 
-    public static String printBill(Order order) {
+    static ObjectOutputStream getObjectOutputStream() {
+        return objectOutputStream;
+    }
+
+    static ObjectInputStream getObjectInputStream() {
+        return objectInputStream;
+    }
+
+    static ObjectOutputStream getOrderObjectOutputStream() {
+        return orderObjectOutputStream;
+    }
+
+    static ObjectInputStream getOrderObjectInputStream() {
+        return orderObjectInputStream;
+    }
+
+    public static String generateBill(Order order) {
         try {
             FileWriters.resetStreams();
             String toPrint = "ORDER " +
@@ -174,14 +196,14 @@ public class FileWriters {
 
             List<String> menuItems = order.getMenuItems();
             int total = 0;
-            for(int i = 0; i < menuItems.size(); i++) {
+            for (int i = 0; i < menuItems.size(); i++) {
                 int quantity = 1;
-                while(i != menuItems.size() - 1 && menuItems.get(i).compareTo(menuItems.get(i+1)) == 0) {
+                while (i != menuItems.size() - 1 && menuItems.get(i).compareTo(menuItems.get(i + 1)) == 0) {
                     quantity++;
                     i++;
                 }
 
-                MenuItem menuItem = RestaurantSerializator.getItem(menuItems.get(i));
+                MenuItem menuItem = Restaurant.getItem(menuItems.get(i));
                 toPrint = toPrint.concat(
                         menuItem.getName() +
                                 " - " +
@@ -196,28 +218,23 @@ public class FileWriters {
                     total +
                     " RON\n-------------------------------------------------------------\n");
 
-            Main.getBufferedWriter().append(toPrint);
+            bufferedWriter.append(toPrint);
             FileWriters.resetStreams();
             return toPrint;
         } catch (IOException e) {
-            System.out.println(e);
+            System.out.println(e.toString());
         }
         return null;
     }
 
-    public static ObjectOutputStream getObjectOutputStream() {
-        return objectOutputStream;
-    }
+    public static void initializeBufferedWriter() {
+        try {
+            bufferedWriter = new BufferedWriter(new FileWriter("bills.txt"));
+        } catch (IOException e) {
+            System.out.println(e.toString());
+        }
 
-    public static ObjectInputStream getObjectInputStream() {
-        return objectInputStream;
-    }
-
-    public static ObjectOutputStream getOrderObjectOutputStream() {
-        return orderObjectOutputStream;
-    }
-
-    public static ObjectInputStream getOrderObjectInputStream() {
-        return orderObjectInputStream;
+        Runtime runtime = Runtime.getRuntime();
+        runtime.addShutdownHook(new BeforeShutdown(bufferedWriter));
     }
 }

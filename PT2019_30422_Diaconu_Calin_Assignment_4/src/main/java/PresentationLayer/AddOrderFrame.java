@@ -1,24 +1,26 @@
+package PresentationLayer;
+
+import BusinessLayer.Order;
+import BusinessLayer.Restaurant;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.io.EOFException;
-import java.io.IOException;
-import java.io.StreamCorruptedException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class AddOrderFrame extends JFrame {
+class AddOrderFrame extends JFrame {
     private List<JTextField> jTextFields;
     private List<JLabel> jLabels;
 
-    public AddOrderFrame() {
+    AddOrderFrame() {
         int w = 350;
         int h = 450;
 
         setLayout(null);
         setSize(w, h);
-        setTitle("New Order");
+        setTitle("New BusinessLayer.Order");
         setLocationRelativeTo(null);
         setDefaultCloseOperation(DISPOSE_ON_CLOSE);
 
@@ -51,49 +53,41 @@ public class AddOrderFrame extends JFrame {
     }
 
     private void addButtonActionListener(JButton addButton, JTextField tableField, List<JTextField> jTextFields, List<JLabel> jLabels) {
-        addButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                try {
-                    int table = Integer.parseInt(tableField.getText());
+        addButton.addActionListener(e -> {
+            try {
+                int table = Integer.parseInt(tableField.getText());
 
-                    List<String> orderItems = new ArrayList<>();
-                    for(JTextField jTextField : jTextFields) {
-                        int quantity = Integer.parseInt(jTextField.getText());
-                        while(quantity != 0) {
-                            orderItems.add(jLabels.get(jTextFields.indexOf(jTextField)).getText());
-                            quantity--;
-                        }
+                List<String> orderItems = new ArrayList<>();
+                for (JTextField jTextField : jTextFields) {
+                    int quantity = Integer.parseInt(jTextField.getText());
+                    while (quantity != 0) {
+                        orderItems.add(jLabels.get(jTextFields.indexOf(jTextField)).getText());
+                        quantity--;
                     }
-                    RestaurantSerializator.addOrder(new Order(table, orderItems));
-                    dispose();
-                } catch (NumberFormatException e1) {
-                    JOptionPane.showMessageDialog(null, "Incorrect input");
                 }
+                Restaurant.createOrder(new Order(table, orderItems));
+                dispose();
+            } catch (NumberFormatException e1) {
+                JOptionPane.showMessageDialog(null, "Incorrect input");
             }
         });
     }
 
     private void backButtonActionListener(JButton backButton) {
-        backButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                dispose();
-            }
-        });
+        backButton.addActionListener(e -> dispose());
     }
 
     private JScrollPane createJScrollPane() {
-        FileWriters.resetStreams();
+        Restaurant.resetStreams();
         JPanel jPanel = new JPanel();
         jPanel.setLayout(null);
 
-        List<MenuItem> menuItems = getMenuItems();
+        List<BusinessLayer.MenuItem> menuItems = Restaurant.getMenuItems();
 
         jTextFields = new ArrayList<>();
         jLabels = new ArrayList<>();
 
-        for(MenuItem menuItem : menuItems) {
+        for (BusinessLayer.MenuItem menuItem : menuItems) {
             int i = menuItems.indexOf(menuItem);
 
             JTextField jTextField = new JTextField();
@@ -114,20 +108,5 @@ public class AddOrderFrame extends JFrame {
         jScrollPane.setBounds(15, 40, 305, 330);
 
         return jScrollPane;
-    }
-
-    private List<MenuItem> getMenuItems() {
-        List<MenuItem> menuItems = new ArrayList<>();
-        while(true) {
-            try {
-                menuItems.add((MenuItem) FileWriters.getObjectInputStream().readObject());
-            } catch (StreamCorruptedException | EOFException e) {
-                break;
-            } catch (IOException | ClassNotFoundException e) {
-                System.out.println(e);
-            }
-        }
-
-        return menuItems;
     }
 }

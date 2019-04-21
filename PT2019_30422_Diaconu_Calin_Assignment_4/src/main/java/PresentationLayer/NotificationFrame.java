@@ -1,15 +1,17 @@
+package PresentationLayer;
+
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class NotificationFrame extends JFrame {
-    public NotificationFrame() {
+class NotificationFrame extends JFrame {
+    private NotificationFrame() {
         int w = 160;
         int h = 120;
 
         setLayout(null);
         setSize(w, h);
-        setTitle("New Order");
+        setTitle("New BusinessLayer.Order");
         setLocationRelativeTo(null);
         setDefaultCloseOperation(DISPOSE_ON_CLOSE);
         setLocation(this.getX() + 420, this.getY());
@@ -25,24 +27,16 @@ public class NotificationFrame extends JFrame {
         add(okButton);
 
         //Action Listener
-        okButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                dispose();
-            }
-        });
+        okButton.addActionListener(e -> dispose());
 
         setVisible(true);
     }
 
-    public static void newOrderNotify() {
+    static void newOrderNotify() {
         NotificationFrame notificationFrame = new NotificationFrame();
-        Timer timer = new Timer(2000, new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                notificationFrame.setVisible(false);
-                notificationFrame.dispose();
-            }
+        Timer timer = new Timer(2000, e -> {
+            notificationFrame.setVisible(false);
+            notificationFrame.dispose();
         });
         timer.setRepeats(false);
         timer.start();

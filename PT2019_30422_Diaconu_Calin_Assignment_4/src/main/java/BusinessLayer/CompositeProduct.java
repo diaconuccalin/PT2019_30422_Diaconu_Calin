@@ -1,3 +1,5 @@
+package BusinessLayer;
+
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
@@ -6,7 +8,7 @@ public class CompositeProduct implements MenuItem, Serializable {
     private String name;
     private int price;
 
-    private List<MenuItem> ingredients = new ArrayList<MenuItem>();
+    private List<MenuItem> ingredients = new ArrayList<>();
 
     public CompositeProduct(String name) {
         this.name = name;
@@ -17,7 +19,7 @@ public class CompositeProduct implements MenuItem, Serializable {
     public int computePrice() {
         price = 0;
 
-        for(MenuItem menuItem : ingredients) {
+        for (MenuItem menuItem : ingredients) {
             price += menuItem.computePrice();
         }
 
@@ -32,10 +34,6 @@ public class CompositeProduct implements MenuItem, Serializable {
     public void addIngredient(MenuItem ingredient) {
         ingredients.add(ingredient);
         this.price = computePrice();
-    }
-
-    public void removeIngredient(MenuItem ingredient) {
-        ingredients.remove(ingredient);
     }
 
     public List<MenuItem> getIngredients() {
