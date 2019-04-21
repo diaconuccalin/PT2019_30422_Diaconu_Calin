@@ -41,6 +41,21 @@ public class AdminAddEditBaseFrame extends JFrame {
         add(backButton);
 
         //ActionListeners
+        addButtonActionListener(addButton, priceField, edit, menuItem, nameField);
+        backButtonActionListener(backButton);
+
+        //set fields
+        if(edit) {
+            nameField.setText(menuItem.getName());
+            priceField.setText(menuItem.computePrice() + "");
+            addButton.setText("OK");
+            setTitle("Edit Base Menu Item");
+        }
+
+        setVisible(true);
+    }
+
+    private void addButtonActionListener(JButton addButton, JTextField priceField, boolean edit, MenuItem menuItem, JTextField nameField) {
         addButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -55,22 +70,14 @@ public class AdminAddEditBaseFrame extends JFrame {
                 }
             }
         });
+    }
 
+    private void backButtonActionListener(JButton backButton) {
         backButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 dispose();
             }
         });
-
-        //set fields
-        if(edit) {
-            nameField.setText(menuItem.getName());
-            priceField.setText(menuItem.computePrice() + "");
-            addButton.setText("OK");
-            setTitle("Edit Base Menu Item");
-        }
-
-        setVisible(true);
     }
 }

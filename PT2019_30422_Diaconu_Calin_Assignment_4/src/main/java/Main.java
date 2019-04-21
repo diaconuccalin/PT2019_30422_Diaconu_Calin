@@ -4,6 +4,7 @@ import java.io.IOException;
 
 public class Main {
     private static ChefGraphicalUserInterface chefGraphicalUserInterface;
+    private static WaiterGraphicalUserInterface waiterGraphicalUserInterface;
     private static BufferedWriter bufferedWriter;
 
     public static void main(String[] args) {
@@ -19,7 +20,7 @@ public class Main {
         FileWriters.resetStreams();
         new AdministratorGraphicalUserInterface();
         chefGraphicalUserInterface =  new ChefGraphicalUserInterface();
-        new WaiterGraphicalUserInterface();
+        waiterGraphicalUserInterface = new WaiterGraphicalUserInterface();
     }
 
     public static ChefGraphicalUserInterface getChefGraphicalUserInterface() {
@@ -32,5 +33,13 @@ public class Main {
 
     public static void setChefGraphicalUserInterface(ChefGraphicalUserInterface chefGraphicalUserInterface) {
         Main.chefGraphicalUserInterface = chefGraphicalUserInterface;
+    }
+
+    public static void setWaiterGraphicalUserInterface(WaiterGraphicalUserInterface waiterGraphicalUserInterface) {
+        Main.waiterGraphicalUserInterface = waiterGraphicalUserInterface;
+    }
+
+    public static WaiterGraphicalUserInterface getWaiterGraphicalUserInterface() {
+        return waiterGraphicalUserInterface;
     }
 }

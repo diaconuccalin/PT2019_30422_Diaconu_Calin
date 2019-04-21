@@ -9,6 +9,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class AddOrderFrame extends JFrame {
+    private List<JTextField> jTextFields;
+    private List<JLabel> jLabels;
+
     public AddOrderFrame() {
         int w = 350;
         int h = 450;
@@ -29,44 +32,7 @@ public class AddOrderFrame extends JFrame {
         add(tableField);
 
         //Menu items
-        FileWriters.resetStreams();
-        JPanel jPanel = new JPanel();
-        jPanel.setLayout(null);
-
-        List<MenuItem> menuItems = new ArrayList<>();
-        while(true) {
-            try {
-                menuItems.add((MenuItem) FileWriters.getObjectInputStream().readObject());
-            } catch (StreamCorruptedException | EOFException e) {
-                break;
-            } catch (IOException | ClassNotFoundException e) {
-                System.out.println(e);
-            }
-        }
-
-        List<JTextField> jTextFields = new ArrayList<>();
-        List<JLabel> jLabels = new ArrayList<>();
-
-        for(MenuItem menuItem : menuItems) {
-            int i = menuItems.indexOf(menuItem);
-
-            JTextField jTextField = new JTextField();
-            jTextField.setBounds(5, 5 + i * 30, 40, 25);
-            jTextField.setText("0");
-            jPanel.add(jTextField);
-
-            JLabel jLabel = new JLabel(menuItem.getName());
-            jLabel.setBounds(55, 5 + i * 30, 200, 25);
-            jPanel.add(jLabel);
-
-            jTextFields.add(jTextField);
-            jLabels.add(jLabel);
-        }
-
-        jPanel.setPreferredSize(new Dimension(280, 5 + 30 * menuItems.size()));
-        JScrollPane jScrollPane = new JScrollPane(jPanel);
-        jScrollPane.setBounds(15, 40, 305, 330);
-        add(jScrollPane);
+        add(createJScrollPane());
 
         //Buttons
         JButton addButton = new JButton("Add");
@@ -78,6 +44,13 @@ public class AddOrderFrame extends JFrame {
         add(backButton);
 
         //Action listeners
+        addButtonActionListener(addButton, tableField, jTextFields, jLabels);
+        backButtonActionListener(backButton);
+
+        setVisible(true);
+    }
+
+    private void addButtonActionListener(JButton addButton, JTextField tableField, List<JTextField> jTextFields, List<JLabel> jLabels) {
         addButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -99,14 +72,62 @@ public class AddOrderFrame extends JFrame {
                 }
             }
         });
+    }
 
+    private void backButtonActionListener(JButton backButton) {
         backButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 dispose();
             }
         });
+    }
 
-        setVisible(true);
+    private JScrollPane createJScrollPane() {
+        FileWriters.resetStreams();
+        JPanel jPanel = new JPanel();
+        jPanel.setLayout(null);
+
+        List<MenuItem> menuItems = getMenuItems();
+
+        jTextFields = new ArrayList<>();
+        jLabels = new ArrayList<>();
+
+        for(MenuItem menuItem : menuItems) {
+            int i = menuItems.indexOf(menuItem);
+
+            JTextField jTextField = new JTextField();
+            jTextField.setBounds(5, 5 + i * 30, 40, 25);
+            jTextField.setText("0");
+            jPanel.add(jTextField);
+
+            JLabel jLabel = new JLabel(menuItem.getName());
+            jLabel.setBounds(55, 5 + i * 30, 200, 25);
+            jPanel.add(jLabel);
+
+            jTextFields.add(jTextField);
+            jLabels.add(jLabel);
+        }
+
+        jPanel.setPreferredSize(new Dimension(280, 5 + 30 * menuItems.size()));
+        JScrollPane jScrollPane = new JScrollPane(jPanel);
+        jScrollPane.setBounds(15, 40, 305, 330);
+
+        return jScrollPane;
+    }
+
+    private List<MenuItem> getMenuItems() {
+        List<MenuItem> menuItems = new ArrayList<>();
+        while(true) {
+            try {
+                menuItems.add((MenuItem) FileWriters.getObjectInputStream().readObject());
+            } catch (StreamCorruptedException | EOFException e) {
+                break;
+            } catch (IOException | ClassNotFoundException e) {
+                System.out.println(e);
+            }
+        }
+
+        return menuItems;
     }
 }

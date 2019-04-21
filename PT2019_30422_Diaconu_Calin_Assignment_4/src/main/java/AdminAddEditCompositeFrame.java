@@ -9,6 +9,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class AdminAddEditCompositeFrame extends JFrame {
+    private List<JCheckBox> jCheckBoxes;
+    private List<JLabel> jLabels;
+
     public AdminAddEditCompositeFrame(boolean edit, MenuItem menuItem) {
         int w = 350;
         int h = 450;
@@ -33,25 +36,32 @@ public class AdminAddEditCompositeFrame extends JFrame {
         JLabel ingredientsLabel = new JLabel("Ingredients:");
         ingredientsLabel.setBounds(15, 45, 100, 25);
         add(ingredientsLabel);
+        add(createJScrollPane());
 
+        //Buttons
+        JButton addButton = new JButton("Add");
+        addButton.setBounds(80, 380, 80, 25);
+        add(addButton);
+
+        JButton backButton = new JButton("Back");
+        backButton.setBounds(180, 380, 80, 25);
+        add(backButton);
+
+        //Action listeners
+        addButtonActionListener(addButton, nameField, edit, menuItem);
+        backButtonActionListener(backButton);
+
+        editCase(edit, nameField, menuItem, addButton);
+        setVisible(true);
+    }
+
+    private JScrollPane createJScrollPane() {
         JPanel jPanel = new JPanel();
         jPanel.setLayout(null);
 
-        List<MenuItem> menuItems = new ArrayList<MenuItem>();
-        while (true) {
-            try {
-                MenuItem menuItem1 = (MenuItem) FileWriters.getObjectInputStream().readObject();
-                if (menuItem1.getClass().getSimpleName().compareTo("BaseProduct") == 0)
-                    menuItems.add(menuItem1);
-            } catch (StreamCorruptedException | EOFException e) {
-                break;
-            } catch (IOException | ClassNotFoundException e) {
-                System.out.println(e);
-            }
-        }
-
-        List<JCheckBox> jCheckBoxes = new ArrayList<JCheckBox>();
-        List<JLabel> jLabels = new ArrayList<JLabel>();
+        List<MenuItem> menuItems = getBaseMenuItems();
+        jCheckBoxes = new ArrayList<JCheckBox>();
+        jLabels = new ArrayList<JLabel>();
 
         for (MenuItem menuItem1 : menuItems) {
             int i = menuItems.indexOf(menuItem1);
@@ -74,20 +84,10 @@ public class AdminAddEditCompositeFrame extends JFrame {
 
         jScrollPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED);
 
-        add(jScrollPane);
+        return jScrollPane;
+    }
 
-        setVisible(true);
-
-        //Buttons
-        JButton addButton = new JButton("Add");
-        addButton.setBounds(80, 380, 80, 25);
-        add(addButton);
-
-        JButton backButton = new JButton("Back");
-        backButton.setBounds(180, 380, 80, 25);
-        add(backButton);
-
-        //Action listeners
+    private void addButtonActionListener(JButton addButton, JTextField nameField, boolean edit, MenuItem menuItem) {
         addButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -121,14 +121,18 @@ public class AdminAddEditCompositeFrame extends JFrame {
                 dispose();
             }
         });
+    }
 
+    private void backButtonActionListener(JButton backButton) {
         backButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 dispose();
             }
         });
+    }
 
+    private void editCase(boolean edit, JTextField nameField, MenuItem menuItem, JButton addButton) {
         if(edit) {
             nameField.setText(menuItem.getName());
             addButton.setText("OK");
@@ -145,5 +149,22 @@ public class AdminAddEditCompositeFrame extends JFrame {
                 }
             }
         }
+    }
+
+    private List<MenuItem> getBaseMenuItems() {
+        List<MenuItem> menuItems = new ArrayList<MenuItem>();
+        while (true) {
+            try {
+                MenuItem menuItem1 = (MenuItem) FileWriters.getObjectInputStream().readObject();
+                if (menuItem1.getClass().getSimpleName().compareTo("BaseProduct") == 0)
+                    menuItems.add(menuItem1);
+            } catch (StreamCorruptedException | EOFException e) {
+                break;
+            } catch (IOException | ClassNotFoundException e) {
+                System.out.println(e);
+            }
+        }
+
+        return menuItems;
     }
 }

@@ -39,6 +39,18 @@ public class AdministratorGraphicalUserInterface extends JFrame {
         add(deleteButton);
 
         //Content table
+        add(createJScrollPane());
+
+        //Action Listeners
+        addBaseButtonActionListener(addBaseButton);
+        addCompositeButtonActionListener(addCompositeButton);
+        editButtonActionListener(editButton);
+        deleteButtonActionListener(deleteButton);
+
+        setVisible(true);
+    }
+
+    private JScrollPane createJScrollPane() {
         jTable = RestaurantSerializator.createTable();
         jTable.getTableHeader().setReorderingAllowed(false);
         jTable.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
@@ -46,9 +58,11 @@ public class AdministratorGraphicalUserInterface extends JFrame {
             jTable.setRowSelectionInterval(0, 0);
         JScrollPane jScrollPane = new JScrollPane(jTable);
         jScrollPane.setBounds(5, 125, 376, 484);
-        add(jScrollPane);
 
-        //Action Listeners
+        return jScrollPane;
+    }
+
+    private void addBaseButtonActionListener(JButton addBaseButton) {
         addBaseButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -63,7 +77,9 @@ public class AdministratorGraphicalUserInterface extends JFrame {
                 });
             }
         });
+    }
 
+    private void addCompositeButtonActionListener(JButton addCompositeButton) {
         addCompositeButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -79,7 +95,9 @@ public class AdministratorGraphicalUserInterface extends JFrame {
                 });
             }
         });
+    }
 
+    private void editButtonActionListener(JButton editButton) {
         editButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -109,7 +127,9 @@ public class AdministratorGraphicalUserInterface extends JFrame {
                 }
             }
         });
+    }
 
+    private void deleteButtonActionListener(JButton deleteButton) {
         deleteButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -119,7 +139,5 @@ public class AdministratorGraphicalUserInterface extends JFrame {
                 dispose();
             }
         });
-
-        setVisible(true);
     }
 }

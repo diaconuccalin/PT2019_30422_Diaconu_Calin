@@ -2,11 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c22314c2-8b7f-411d-9618-afc7dfa8c030" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PT2019_30422_Diaconu_Calin_Assignment_3/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../PT2019_30422_Diaconu_Calin_Assignment_3/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Restaurant.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Restaurant.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/RestaurantProcessing.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/RestaurantProcessing.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/menu.ser" beforeDir="false" afterPath="$PROJECT_DIR$/menu.ser" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orders.ser" beforeDir="false" afterPath="$PROJECT_DIR$/orders.ser" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/AddOrderFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/AddOrderFrame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/AdminAddEditBaseFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/AdminAddEditBaseFrame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/AdminAddEditCompositeFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/AdminAddEditCompositeFrame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/AdministratorGraphicalUserInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/AdministratorGraphicalUserInterface.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ChefGraphicalUserInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ChefGraphicalUserInterface.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/WaiterGraphicalUserInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/WaiterGraphicalUserInterface.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Main.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -16,104 +22,35 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="DockManager">
-    <window id="3">
-      <content type="file-editors">
-        <state>
-          <leaf>
-            <file pinned="false" current-in-tab="true">
-              <entry file="file://$PROJECT_DIR$/src/main/java/RestaurantProcessing.java">
-                <provider selected="true" editor-type-id="text-editor">
-                  <state relative-caret-position="17">
-                    <caret line="4" column="28" lean-forward="true" selection-start-line="4" selection-start-column="28" selection-end-line="4" selection-end-column="28" />
-                  </state>
-                </provider>
-              </entry>
-            </file>
-          </leaf>
-        </state>
-      </content>
-    </window>
-  </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/WaiterGraphicalUserInterface.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="425">
-              <caret line="51" selection-start-line="51" selection-end-line="51" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/Restaurant.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="1" column="72" selection-start-line="1" selection-start-column="72" selection-end-line="1" selection-end-column="72" />
+            <state relative-caret-position="85">
+              <caret line="9" column="42" selection-start-line="9" selection-start-column="42" selection-end-line="9" selection-end-column="42" />
               <folding>
-                <element signature="e#304#305#0" expanded="true" />
-                <element signature="e#329#330#0" expanded="true" />
+                <element signature="method#WaiterGraphicalUserInterface#0;class#WaiterGraphicalUserInterface#0" />
+                <element signature="method#createJScrollPane#0;class#WaiterGraphicalUserInterface#0" />
+                <element signature="method#AddButtonActionListener#0;class#WaiterGraphicalUserInterface#0" />
+                <element signature="method#billButtonActionListener#0;class#WaiterGraphicalUserInterface#0" />
+                <element signature="method#actionPerformed#0;class#2476:3147" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/AddOrderFrame.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="460">
-              <caret line="99" column="13" selection-start-line="99" selection-start-column="13" selection-end-line="99" selection-end-column="13" />
+            <state relative-caret-position="221">
+              <caret line="29" selection-start-line="29" selection-end-line="29" />
               <folding>
                 <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/RestaurantSerializator.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1428">
-              <caret line="84" column="35" selection-start-line="84" selection-start-column="35" selection-end-line="84" selection-end-column="35" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/AdministratorGraphicalUserInterface.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="528">
-              <caret line="115" column="43" selection-start-line="115" selection-start-column="43" selection-end-line="115" selection-end-column="43" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/AdminAddEditBaseFrame.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="483">
-              <caret line="53" column="75" selection-start-line="53" selection-start-column="20" selection-end-line="53" selection-end-column="75" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/ChefGraphicalUserInterface.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1020">
-              <caret line="60" selection-start-line="60" selection-end-line="60" />
-              <folding>
-                <element signature="imports" expanded="true" />
+                <element signature="method#main#0;class#Main#0" />
+                <element signature="method#setChefGraphicalUserInterface#0;class#Main#0" />
+                <element signature="method#setWaiterGraphicalUserInterface#0;class#Main#0" />
+                <element signature="method#getWaiterGraphicalUserInterface#0;class#Main#0" />
               </folding>
             </state>
           </provider>
@@ -131,13 +68,22 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/NotificationFrame.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="527">
-              <caret line="47" column="22" selection-start-line="47" selection-start-column="22" selection-end-line="47" selection-end-column="22" />
+            <state relative-caret-position="119">
+              <caret line="37" column="40" selection-start-line="37" selection-start-column="40" selection-end-line="37" selection-end-column="40" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#873#874#0" expanded="true" />
-                <element signature="e#914#915#0" expanded="true" />
+                <element signature="method#NotificationFrame#0;class#NotificationFrame#0" />
+                <element signature="method#newOrderNotify#0;class#NotificationFrame#0" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/Observable.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret column="23" selection-start-column="23" selection-end-column="23" />
             </state>
           </provider>
         </entry>
@@ -145,14 +91,75 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/Order.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="748">
+            <state relative-caret-position="523">
               <caret line="59" column="8" selection-start-line="59" selection-start-column="8" selection-end-line="59" selection-end-column="25" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#1150#1151#0" expanded="true" />
-                <element signature="e#1177#1178#0" expanded="true" />
+                <element signature="method#Order#0;class#Order#0" />
+                <element signature="method#Order#1;class#Order#0" />
                 <element signature="e#1186#1187#0" expanded="true" />
                 <element signature="e#1218#1219#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/RestaurantSerializator.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="238">
+              <caret line="83" column="48" selection-start-line="83" selection-start-column="48" selection-end-line="83" selection-end-column="48" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="method#addBaseItem#0;class#RestaurantSerializator#0" />
+                <element signature="method#addCompositeItem#0;class#RestaurantSerializator#0" />
+                <element signature="method#createTable#0;class#RestaurantSerializator#0" />
+                <element signature="method#deleteItem#0;class#RestaurantSerializator#0" />
+                <element signature="method#getItem#0;class#RestaurantSerializator#0" />
+                <element signature="method#addOrder#0;class#RestaurantSerializator#0" />
+                <element signature="method#createOrdersTable#0;class#RestaurantSerializator#0" />
+                <element signature="method#getOrder#0;class#RestaurantSerializator#0" />
+                <element signature="method#deleteOrder#0;class#RestaurantSerializator#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/Restaurant.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="17">
+              <caret line="1" column="72" selection-start-line="1" selection-start-column="72" selection-end-line="1" selection-end-column="72" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/RestaurantProcessing.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="17">
+              <caret line="4" column="28" lean-forward="true" selection-start-line="4" selection-start-column="28" selection-end-line="4" selection-end-column="28" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/FileWriters.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="511">
+              <caret line="221" column="5" selection-start-line="221" selection-start-column="5" selection-end-line="221" selection-end-column="5" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="method#resetStreams#0;class#FileWriters#0" />
+                <element signature="method#printBill#0;class#FileWriters#0" />
+                <element signature="e#8287#8288#0" expanded="true" />
+                <element signature="e#8328#8329#0" expanded="true" />
+                <element signature="e#8390#8391#0" expanded="true" />
+                <element signature="e#8430#8431#0" expanded="true" />
+                <element signature="e#8499#8500#0" expanded="true" />
+                <element signature="e#8545#8546#0" expanded="true" />
+                <element signature="e#8612#8613#0" expanded="true" />
+                <element signature="e#8657#8658#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -193,21 +200,21 @@
         <option value="$PROJECT_DIR$/src/main/java/MenuItem.java" />
         <option value="$PROJECT_DIR$/src/main/java/AdminAddCompositeFrame.java" />
         <option value="$PROJECT_DIR$/src/main/java/CompositeProduct.java" />
-        <option value="$PROJECT_DIR$/src/main/java/AdminAddEditBaseFrame.java" />
-        <option value="$PROJECT_DIR$/src/main/java/AdministratorGraphicalUserInterface.java" />
         <option value="$PROJECT_DIR$/src/main/java/FileWriter.java" />
         <option value="$PROJECT_DIR$/src/main/java/BeforeShutdown.java" />
-        <option value="$PROJECT_DIR$/src/main/java/AddOrderFrame.java" />
         <option value="$PROJECT_DIR$/src/main/java/RestaurantSerializator.java" />
-        <option value="$PROJECT_DIR$/src/main/java/FileWriters.java" />
-        <option value="$PROJECT_DIR$/src/main/java/AdminAddEditCompositeFrame.java" />
-        <option value="$PROJECT_DIR$/src/main/java/Main.java" />
         <option value="$PROJECT_DIR$/src/main/java/NotificationFrame.java" />
-        <option value="$PROJECT_DIR$/src/main/java/WaiterGraphicalUserInterface.java" />
         <option value="$PROJECT_DIR$/src/main/java/Order.java" />
-        <option value="$PROJECT_DIR$/src/main/java/ChefGraphicalUserInterface.java" />
         <option value="$PROJECT_DIR$/src/main/java/RestaurantProcessing.java" />
         <option value="$PROJECT_DIR$/src/main/java/Restaurant.java" />
+        <option value="$PROJECT_DIR$/src/main/java/AddOrderFrame.java" />
+        <option value="$PROJECT_DIR$/src/main/java/AdminAddEditBaseFrame.java" />
+        <option value="$PROJECT_DIR$/src/main/java/AdminAddEditCompositeFrame.java" />
+        <option value="$PROJECT_DIR$/src/main/java/AdministratorGraphicalUserInterface.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Main.java" />
+        <option value="$PROJECT_DIR$/src/main/java/ChefGraphicalUserInterface.java" />
+        <option value="$PROJECT_DIR$/src/main/java/FileWriters.java" />
+        <option value="$PROJECT_DIR$/src/main/java/WaiterGraphicalUserInterface.java" />
       </list>
     </option>
   </component>
@@ -268,6 +275,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1555760172275" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../PT2019_30422_Diaconu_Calin_Assignment_3" />
+    <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
@@ -339,7 +347,7 @@
       <updated>1555364660967</updated>
       <workItem from="1555760233735" duration="3095000" />
       <workItem from="1555763371641" duration="3425000" />
-      <workItem from="1555766839928" duration="10761000" />
+      <workItem from="1555766839928" duration="17498000" />
     </task>
     <task id="LOCAL-00001" summary="HW4 - Used given diagram, solved problem 1, prototype solution problem 2">
       <created>1555508622998</created>
@@ -404,11 +412,18 @@
       <option name="project" value="LOCAL" />
       <updated>1555803440901</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="HW4 - Implemented design by contract">
+      <created>1555842852775</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1555842852775</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="22709000" />
+    <option name="totallyTimeSpent" value="29446000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -423,7 +438,7 @@
     <frame x="-7" y="-7" width="2062" height="1166" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.17932068" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.17932068" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Learn" order="2" />
       <window_info id="Designer" order="3" />
@@ -431,7 +446,7 @@
       <window_info id="Favorites" order="5" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.327853" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.327853" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39941972" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -503,7 +518,8 @@
     <MESSAGE value="HW4 - Working View Table of Orders" />
     <MESSAGE value="HW4 - Working Bill Order" />
     <MESSAGE value="HW4 - Working Chef GUI + notification" />
-    <option name="LAST_COMMIT_MESSAGE" value="HW4 - Working Chef GUI + notification" />
+    <MESSAGE value="HW4 - Implemented design by contract" />
+    <option name="LAST_COMMIT_MESSAGE" value="HW4 - Implemented design by contract" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/pom.xml">
@@ -532,20 +548,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
           <caret line="112" column="71" selection-start-line="112" selection-start-column="16" selection-end-line="112" selection-end-column="71" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Observable.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="23" selection-start-column="23" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/BaseProduct.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="59" selection-start-line="2" selection-start-column="59" selection-end-line="2" selection-end-column="59" />
         </state>
       </provider>
     </entry>
@@ -580,90 +582,155 @@
     <entry file="file://$PROJECT_DIR$/orders.ser">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/BeforeShutdown.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="17" column="1" selection-start-line="17" selection-start-column="1" selection-end-line="17" selection-end-column="1" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/menu.ser">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/orders.txt">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/CompositeProduct.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/AddOrderFrame.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="493">
-          <caret line="33" column="36" selection-start-line="33" selection-start-column="36" selection-end-line="33" selection-end-column="36" />
+        <state relative-caret-position="340">
+          <caret line="85" column="44" selection-start-line="85" selection-start-column="44" selection-end-line="85" selection-end-column="44" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="method#AddOrderFrame#0;class#AddOrderFrame#0" />
+            <element signature="method#addButtonActionListener#0;class#AddOrderFrame#0" />
+            <element signature="method#backButtonActionListener#0;class#AddOrderFrame#0" />
+            <element signature="e#2699#2700#0" expanded="true" />
+            <element signature="e#2740#2741#0" expanded="true" />
+            <element signature="method#createJScrollPane#0;class#AddOrderFrame#0" />
+            <element signature="method#getMenuItems#0;class#AddOrderFrame#0" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/FileWriters.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/AdminAddEditBaseFrame.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="566">
-          <caret line="213" column="5" selection-start-line="213" selection-start-column="5" selection-end-line="213" selection-end-column="5" />
+        <state relative-caret-position="290">
+          <caret line="46" column="20" lean-forward="true" selection-start-line="46" selection-start-column="20" selection-end-line="46" selection-end-column="20" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#8287#8288#0" expanded="true" />
-            <element signature="e#8328#8329#0" expanded="true" />
-            <element signature="e#8390#8391#0" expanded="true" />
-            <element signature="e#8430#8431#0" expanded="true" />
-            <element signature="e#8694#8695#0" expanded="true" />
-            <element signature="e#8740#8741#0" expanded="true" />
-            <element signature="e#8807#8808#0" expanded="true" />
-            <element signature="e#8852#8853#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="527">
-          <caret line="33" column="8" selection-start-line="33" selection-start-column="8" selection-end-line="33" selection-end-column="69" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#960#961#0" expanded="true" />
-            <element signature="e#997#998#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/NotificationFrame.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="527">
-          <caret line="47" column="22" selection-start-line="47" selection-start-column="22" selection-end-line="47" selection-end-column="22" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#873#874#0" expanded="true" />
-            <element signature="e#914#915#0" expanded="true" />
+            <element signature="method#addButtonActionListener#0;class#AdminAddEditBaseFrame#0" />
+            <element signature="method#backButtonActionListener#0;class#AdminAddEditBaseFrame#0" />
+            <element signature="e#2578#2579#0" expanded="true" />
+            <element signature="e#2619#2620#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/AdminAddEditCompositeFrame.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="63" column="54" selection-start-line="63" selection-start-column="54" selection-end-line="63" selection-end-column="54" />
+        <state relative-caret-position="272">
+          <caret line="57" column="44" selection-start-line="57" selection-start-column="44" selection-end-line="57" selection-end-column="44" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="method#AdminAddEditCompositeFrame#0;class#AdminAddEditCompositeFrame#0" />
+            <element signature="method#createJScrollPane#0;class#AdminAddEditCompositeFrame#0" />
+            <element signature="method#addButtonActionListener#0;class#AdminAddEditCompositeFrame#0" />
+            <element signature="method#backButtonActionListener#0;class#AdminAddEditCompositeFrame#0" />
+            <element signature="e#4563#4564#0" expanded="true" />
+            <element signature="e#4604#4605#0" expanded="true" />
+            <element signature="method#editCase#0;class#AdminAddEditCompositeFrame#0" />
+            <element signature="method#getBaseMenuItems#0;class#AdminAddEditCompositeFrame#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/AdministratorGraphicalUserInterface.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="49" selection-start-line="9" selection-start-column="49" selection-end-line="9" selection-end-column="49" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#AdministratorGraphicalUserInterface#0;class#AdministratorGraphicalUserInterface#0" />
+            <element signature="method#createJScrollPane#0;class#AdministratorGraphicalUserInterface#0" />
+            <element signature="method#addBaseButtonActionListener#0;class#AdministratorGraphicalUserInterface#0" />
+            <element signature="method#addCompositeButtonActionListener#0;class#AdministratorGraphicalUserInterface#0" />
+            <element signature="method#editButtonActionListener#0;class#AdministratorGraphicalUserInterface#0" />
+            <element signature="method#backButtonActionListener#0;class#AdministratorGraphicalUserInterface#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/BaseProduct.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="59" selection-start-line="2" selection-start-column="59" selection-end-line="2" selection-end-column="59" />
+          <folding>
+            <element signature="method#BaseProduct#0;class#BaseProduct#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/BeforeShutdown.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="17" column="1" selection-start-line="17" selection-start-column="1" selection-end-line="17" selection-end-column="1" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#run#0;class#BeforeShutdown#0" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/ChefGraphicalUserInterface.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1020">
-          <caret line="60" selection-start-line="60" selection-end-line="60" />
+        <state relative-caret-position="289">
+          <caret line="72" column="68" selection-start-line="72" selection-start-column="68" selection-end-line="72" selection-end-column="68" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="method#ChefGraphicalUserInterface#0;class#ChefGraphicalUserInterface#0" />
+            <element signature="method#createJScrollPane#0;class#ChefGraphicalUserInterface#0" />
+            <element signature="method#createOrderList#0;class#ChefGraphicalUserInterface#0" />
+            <element signature="method#buttonActionListener#0;class#ChefGraphicalUserInterface#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/CompositeProduct.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="31" column="51" selection-start-line="31" selection-start-column="51" selection-end-line="31" selection-end-column="51" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#CompositeProduct#0;class#CompositeProduct#0" />
+            <element signature="method#computePrice#0;class#CompositeProduct#0" />
+            <element signature="method#addIngredient#0;class#CompositeProduct#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/FileWriters.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="511">
+          <caret line="221" column="5" selection-start-line="221" selection-start-column="5" selection-end-line="221" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#resetStreams#0;class#FileWriters#0" />
+            <element signature="method#printBill#0;class#FileWriters#0" />
+            <element signature="e#8287#8288#0" expanded="true" />
+            <element signature="e#8328#8329#0" expanded="true" />
+            <element signature="e#8390#8391#0" expanded="true" />
+            <element signature="e#8430#8431#0" expanded="true" />
+            <element signature="e#8499#8500#0" expanded="true" />
+            <element signature="e#8545#8546#0" expanded="true" />
+            <element signature="e#8612#8613#0" expanded="true" />
+            <element signature="e#8657#8658#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="29" selection-start-line="29" selection-end-line="29" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#main#0;class#Main#0" />
+            <element signature="method#setChefGraphicalUserInterface#0;class#Main#0" />
+            <element signature="method#setWaiterGraphicalUserInterface#0;class#Main#0" />
+            <element signature="method#getWaiterGraphicalUserInterface#0;class#Main#0" />
           </folding>
         </state>
       </provider>
@@ -675,68 +742,33 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/RestaurantSerializator.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/NotificationFrame.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1428">
-          <caret line="84" column="35" selection-start-line="84" selection-start-column="35" selection-end-line="84" selection-end-column="35" />
+        <state relative-caret-position="119">
+          <caret line="37" column="40" selection-start-line="37" selection-start-column="40" selection-end-line="37" selection-end-column="40" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="method#NotificationFrame#0;class#NotificationFrame#0" />
+            <element signature="method#newOrderNotify#0;class#NotificationFrame#0" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/AdministratorGraphicalUserInterface.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/Observable.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="528">
-          <caret line="115" column="43" selection-start-line="115" selection-start-column="43" selection-end-line="115" selection-end-column="43" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/AdminAddEditBaseFrame.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="483">
-          <caret line="53" column="75" selection-start-line="53" selection-start-column="20" selection-end-line="53" selection-end-column="75" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/AddOrderFrame.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="460">
-          <caret line="99" column="13" selection-start-line="99" selection-start-column="13" selection-end-line="99" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/WaiterGraphicalUserInterface.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="51" selection-start-line="51" selection-end-line="51" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/RestaurantProcessing.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="4" column="28" lean-forward="true" selection-start-line="4" selection-start-column="28" selection-end-line="4" selection-end-column="28" />
+        <state>
+          <caret column="23" selection-start-column="23" selection-end-column="23" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Order.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="748">
+        <state relative-caret-position="523">
           <caret line="59" column="8" selection-start-line="59" selection-start-column="8" selection-end-line="59" selection-end-column="25" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1150#1151#0" expanded="true" />
-            <element signature="e#1177#1178#0" expanded="true" />
+            <element signature="method#Order#0;class#Order#0" />
+            <element signature="method#Order#1;class#Order#0" />
             <element signature="e#1186#1187#0" expanded="true" />
             <element signature="e#1218#1219#0" expanded="true" />
           </folding>
@@ -747,9 +779,45 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
           <caret line="1" column="72" selection-start-line="1" selection-start-column="72" selection-end-line="1" selection-end-column="72" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/RestaurantProcessing.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="4" column="28" lean-forward="true" selection-start-line="4" selection-start-column="28" selection-end-line="4" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/RestaurantSerializator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="83" column="48" selection-start-line="83" selection-start-column="48" selection-end-line="83" selection-end-column="48" />
           <folding>
-            <element signature="e#304#305#0" expanded="true" />
-            <element signature="e#329#330#0" expanded="true" />
+            <element signature="imports" expanded="true" />
+            <element signature="method#addBaseItem#0;class#RestaurantSerializator#0" />
+            <element signature="method#addCompositeItem#0;class#RestaurantSerializator#0" />
+            <element signature="method#createTable#0;class#RestaurantSerializator#0" />
+            <element signature="method#deleteItem#0;class#RestaurantSerializator#0" />
+            <element signature="method#getItem#0;class#RestaurantSerializator#0" />
+            <element signature="method#addOrder#0;class#RestaurantSerializator#0" />
+            <element signature="method#createOrdersTable#0;class#RestaurantSerializator#0" />
+            <element signature="method#getOrder#0;class#RestaurantSerializator#0" />
+            <element signature="method#deleteOrder#0;class#RestaurantSerializator#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/WaiterGraphicalUserInterface.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="9" column="42" selection-start-line="9" selection-start-column="42" selection-end-line="9" selection-end-column="42" />
+          <folding>
+            <element signature="method#WaiterGraphicalUserInterface#0;class#WaiterGraphicalUserInterface#0" />
+            <element signature="method#createJScrollPane#0;class#WaiterGraphicalUserInterface#0" />
+            <element signature="method#AddButtonActionListener#0;class#WaiterGraphicalUserInterface#0" />
+            <element signature="method#billButtonActionListener#0;class#WaiterGraphicalUserInterface#0" />
+            <element signature="method#actionPerformed#0;class#2476:3147" />
           </folding>
         </state>
       </provider>

@@ -28,6 +28,16 @@ public class WaiterGraphicalUserInterface extends JFrame {
         add(billButton);
 
         //Content table
+        add(createJScrollPane());
+
+        //Action listeners
+        addButtonActionListener(addButton);
+        billButtonActionListener(billButton);
+
+        setVisible(true);
+    }
+
+    private JScrollPane createJScrollPane() {
         jTable = RestaurantSerializator.createOrdersTable();
         jTable.getTableHeader().setReorderingAllowed(false);
         jTable.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
@@ -35,9 +45,11 @@ public class WaiterGraphicalUserInterface extends JFrame {
             jTable.setRowSelectionInterval(0, 0);
         JScrollPane jScrollPane = new JScrollPane(jTable);
         jScrollPane.setBounds(5, 65, 376, 544);
-        add(jScrollPane);
 
-        //Action listeners
+        return jScrollPane;
+    }
+
+    private void addButtonActionListener(JButton addButton) {
         addButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -52,13 +64,15 @@ public class WaiterGraphicalUserInterface extends JFrame {
 
                         NotificationFrame.newOrderNotify();
 
-                        new WaiterGraphicalUserInterface();
+                        Main.setWaiterGraphicalUserInterface(new WaiterGraphicalUserInterface());
                         dispose();
                     }
                 });
             }
         });
+    }
 
+    private void billButtonActionListener(JButton billButton) {
         billButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -69,11 +83,9 @@ public class WaiterGraphicalUserInterface extends JFrame {
                 Main.getChefGraphicalUserInterface().dispose();
                 Main.setChefGraphicalUserInterface(new ChefGraphicalUserInterface());
 
-                new WaiterGraphicalUserInterface();
+                Main.setWaiterGraphicalUserInterface(new WaiterGraphicalUserInterface());
                 dispose();
             }
         });
-
-        setVisible(true);
     }
 }
