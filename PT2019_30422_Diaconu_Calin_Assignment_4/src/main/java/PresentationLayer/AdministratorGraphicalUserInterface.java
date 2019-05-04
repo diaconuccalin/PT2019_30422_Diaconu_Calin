@@ -120,9 +120,13 @@ public class AdministratorGraphicalUserInterface extends JFrame {
 
     private void deleteButtonActionListener(JButton deleteButton) {
         deleteButton.addActionListener(e -> {
-            Restaurant.deleteItem(new CompositeProduct(jTable.getValueAt(jTable.getSelectedRow(), 0).toString()));
-            new AdministratorGraphicalUserInterface();
-            dispose();
+            if (Restaurant.canBeDeleted(jTable.getValueAt(jTable.getSelectedRow(), 0).toString())) {
+                Restaurant.deleteItem(new CompositeProduct(jTable.getValueAt(jTable.getSelectedRow(), 0).toString()));
+                new AdministratorGraphicalUserInterface();
+                dispose();
+            } else {
+                JOptionPane.showMessageDialog(null, "Can not delete (part of a composite product)");
+            }
         });
     }
 }

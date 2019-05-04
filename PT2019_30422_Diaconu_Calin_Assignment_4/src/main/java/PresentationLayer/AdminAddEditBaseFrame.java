@@ -66,9 +66,8 @@ class AdminAddEditBaseFrame extends JFrame {
                 if (edit) {
                     Restaurant.editItem(menuItem, nameField.getText(), price);
                     Restaurant.updatePrices();
-                }
-                else
-                   Restaurant.createItem(new BaseProduct(nameField.getText(), price));
+                } else
+                    Restaurant.createItem(new BaseProduct(nameField.getText(), price));
                 dispose();
             } catch (NumberFormatException e1) {
                 JOptionPane.showMessageDialog(null, "Incorrect input");

@@ -7,8 +7,8 @@ import java.util.*;
 import java.util.List;
 
 public class Restaurant implements RestaurantProcessing {
-    static Map<Order, Collection<MenuItem>> orders = new Hashtable<>();
-    static List<MenuItem> menu = new ArrayList<>();
+    private static Map<Order, Collection<MenuItem>> orders = new Hashtable<>();
+    private static List<MenuItem> menu = new ArrayList<>();
 
     public static void createItem(MenuItem menuItem) {
         menu.add(menuItem);
@@ -48,8 +48,8 @@ public class Restaurant implements RestaurantProcessing {
     public static Order getOrder(int orderID) {
         List<Order> orderList = createOrderList();
 
-        for(Order order : orderList) {
-            if(order.getOrderID() == orderID)
+        for (Order order : orderList) {
+            if (order.getOrderID() == orderID)
                 return order;
         }
 
@@ -57,8 +57,7 @@ public class Restaurant implements RestaurantProcessing {
     }
 
     public static void deleteOrder(Order order) {
-        Order toDelete = getOrder(order.getOrderID());
-        orders.remove(toDelete);
+        orders.remove(getOrder(order.getOrderID()));
     }
 
     public static JTable createTable() {
@@ -76,13 +75,12 @@ public class Restaurant implements RestaurantProcessing {
         jTable = new JTable(data, columnNames);
         jTable.setDefaultEditor(Object.class, null);
 
-
         return jTable;
     }
 
     public static MenuItem getItem(String name) {
-        for(MenuItem menuItem : menu) {
-            if(menuItem.getName().compareTo(name) == 0)
+        for (MenuItem menuItem : menu) {
+            if (menuItem.getName().compareTo(name) == 0)
                 return menuItem;
         }
 
@@ -96,8 +94,8 @@ public class Restaurant implements RestaurantProcessing {
     public static List<MenuItem> getBaseMenuItems() {
         List<MenuItem> toReturn = new ArrayList<>();
 
-        for(MenuItem menuItem : menu) {
-            if(menuItem.getClass().getSimpleName().compareTo("BaseProduct") == 0)
+        for (MenuItem menuItem : menu) {
+            if (menuItem.getClass().getSimpleName().compareTo("BaseProduct") == 0)
                 toReturn.add(menuItem);
         }
         return toReturn;
@@ -112,8 +110,8 @@ public class Restaurant implements RestaurantProcessing {
     }
 
     public static void editItem(MenuItem menuItem, String newName, int newPrice) {
-        for(MenuItem menuItem1 : menu) {
-            if(menuItem1.getName().compareTo(menuItem.getName()) == 0) {
+        for (MenuItem menuItem1 : menu) {
+            if (menuItem1.getName().compareTo(menuItem.getName()) == 0) {
                 menuItem1.setName(newName);
                 menuItem1.setPrice(newPrice);
                 break;
@@ -122,8 +120,26 @@ public class Restaurant implements RestaurantProcessing {
     }
 
     public static void updatePrices() {
-        for(MenuItem menuItem : menu) {
+        for (MenuItem menuItem : menu) {
             menuItem.computePrice();
         }
+    }
+
+    public static boolean canBeDeleted(String name) {
+        if (getItem(name).getClass().getSimpleName().compareTo("CompositeProduct") == 0)
+            return true;
+
+        for (MenuItem menuItem : menu) {
+            if (menuItem.getClass().getSimpleName().compareTo("CompositeProduct") == 0) {
+                CompositeProduct compositeProduct = (CompositeProduct) menuItem;
+
+                List<MenuItem> ingredients = compositeProduct.getIngredients();
+                for (MenuItem menuItem1 : ingredients) {
+                    if (name.compareTo(menuItem1.getName()) == 0)
+                        return false;
+                }
+            }
+        }
+        return true;
     }
 }

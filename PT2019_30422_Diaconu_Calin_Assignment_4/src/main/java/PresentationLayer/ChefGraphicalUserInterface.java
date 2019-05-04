@@ -32,7 +32,7 @@ public class ChefGraphicalUserInterface extends JFrame implements Observer {
         jPanel.setLayout(null);
 
         for (Order order : orders) {
-            if(!order.isDone()) {
+            if (!order.isDone()) {
                 int i = orders.indexOf(order);
 
                 JLabel jLabel = new JLabel("Order: " + order.getOrderID());
@@ -58,7 +58,7 @@ public class ChefGraphicalUserInterface extends JFrame implements Observer {
         jButton.addActionListener(e -> {
             Restaurant.getOrder(order.getOrderID()).setDone(true);
 
-            Main.getWaiterGraphicalUserInterface().getjFrame().dispose();
+            Main.getWaiterGraphicalUserInterface().getJFrame().dispose();
             Main.setWaiterGraphicalUserInterface(new WaiterGraphicalUserInterface());
 
             ChefGraphicalUserInterface chefGraphicalUserInterface = new ChefGraphicalUserInterface();

@@ -23,15 +23,6 @@ public class Order implements Serializable, Comparable<Order> {
         done = false;
     }
 
-    public Order(Order order) {
-        orderID = id;
-        id++;
-        date = order.getDate();
-        table = order.getTable();
-        menuItems = order.getMenuItems();
-        done = order.isDone();
-    }
-
     public int hashCode() {
         return orderID;
     }
@@ -48,7 +39,7 @@ public class Order implements Serializable, Comparable<Order> {
         return date;
     }
 
-    public Collection<MenuItem> getMenuItems() {
+    Collection<MenuItem> getMenuItems() {
         return menuItems;
     }
 

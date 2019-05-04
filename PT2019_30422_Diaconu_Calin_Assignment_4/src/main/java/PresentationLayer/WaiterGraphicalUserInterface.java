@@ -94,7 +94,7 @@ public class WaiterGraphicalUserInterface extends Observable {
         });
     }
 
-    JFrame getjFrame() {
+    JFrame getJFrame() {
         return jFrame;
     }
 }

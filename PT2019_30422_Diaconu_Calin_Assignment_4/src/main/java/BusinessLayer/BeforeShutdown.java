@@ -1,6 +1,6 @@
 package BusinessLayer;
 
-import DataLayer.FileWriters;
+import DataLayer.RestaurantSerializer;
 
 import java.io.BufferedWriter;
 import java.io.IOException;
@@ -13,7 +13,7 @@ public class BeforeShutdown extends Thread {
     }
 
     public void run() {
-        FileWriters.exportMenu();
+        RestaurantSerializer.exportMenu();
 
         try {
             bufferedWriter.close();

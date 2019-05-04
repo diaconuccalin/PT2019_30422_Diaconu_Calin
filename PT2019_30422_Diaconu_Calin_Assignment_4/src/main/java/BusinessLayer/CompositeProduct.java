@@ -20,8 +20,7 @@ public class CompositeProduct implements MenuItem, Serializable {
         price = 0;
 
         for (MenuItem menuItem : ingredients) {
-            MenuItem menuItem1 = Restaurant.getItem(menuItem.getName());
-            menuItem.setPrice(menuItem1.computePrice());
+            menuItem.setPrice(Restaurant.getItem(menuItem.getName()).computePrice());
             price += menuItem.computePrice();
         }
 

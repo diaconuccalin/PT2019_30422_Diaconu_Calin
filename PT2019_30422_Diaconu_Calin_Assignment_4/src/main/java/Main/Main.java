@@ -1,6 +1,7 @@
 package Main;
 
 import DataLayer.FileWriters;
+import DataLayer.RestaurantSerializer;
 import PresentationLayer.AdministratorGraphicalUserInterface;
 import PresentationLayer.ChefGraphicalUserInterface;
 import PresentationLayer.WaiterGraphicalUserInterface;
@@ -11,7 +12,7 @@ public class Main {
 
     public static void main(String[] args) {
         FileWriters.initializeBufferedWriter();
-        FileWriters.importMenu();
+        RestaurantSerializer.importMenu();
         new AdministratorGraphicalUserInterface();
         chefGraphicalUserInterface = new ChefGraphicalUserInterface();
         waiterGraphicalUserInterface = new WaiterGraphicalUserInterface();

@@ -9,24 +9,11 @@ import java.io.*;
 import java.util.List;
 
 public class FileWriters {
-    private static FileOutputStream fileOutputStream;
-    private static ObjectOutputStream objectOutputStream;
-
-    private static FileInputStream fileInputStream;
-    private static ObjectInputStream objectInputStream;
-
     private static BufferedWriter bufferedWriter;
 
     public static String generateBill(Order order) {
         try {
-            String toPrint = "ORDER " +
-                    order.getOrderID() +
-                    ":\n" +
-                    "Table: " +
-                    order.getTable() +
-                    "   -   " +
-                    order.getDate() +
-                    "\n";
+            String toPrint = "ORDER " + order.getOrderID() + ":\nTable: " + order.getTable() + "   -   " + order.getDate() + "\n";
 
             List<MenuItem> menuItems = order.getListOfItems();
             int total = 0;
@@ -39,18 +26,11 @@ public class FileWriters {
 
                 MenuItem menuItem = Restaurant.getItem(menuItems.get(i).getName());
                 toPrint = toPrint.concat(
-                        menuItem.getName() +
-                                " - " +
-                                menuItem.computePrice() +
-                                " RON x" +
-                                quantity +
-                                "\n");
+                        menuItem.getName() + " - " + menuItem.computePrice() + " RON x" + quantity + "\n");
                 total += menuItem.computePrice() * quantity;
             }
 
-            toPrint = toPrint.concat("\nTOTAL: " +
-                    total +
-                    " RON\n-------------------------------------------------------------\n");
+            toPrint = toPrint.concat("\nTOTAL: " + total + " RON\n-------------------------------------------------------------\n");
 
             bufferedWriter.append(toPrint);
             return toPrint;
@@ -71,13 +51,13 @@ public class FileWriters {
         runtime.addShutdownHook(new BeforeShutdown(bufferedWriter));
     }
 
-    public static void importMenu() {
+    static void importMenu() {
         try {
             File file = new File("menu.ser");
             if (!file.createNewFile() && file.length() != 0) {
                 //old menu for input
-                fileInputStream = new FileInputStream(file);
-                objectInputStream = new ObjectInputStream(fileInputStream);
+                FileInputStream fileInputStream = new FileInputStream(file);
+                ObjectInputStream objectInputStream = new ObjectInputStream(fileInputStream);
 
                 //fill hashTable
                 while (true) {
@@ -100,7 +80,7 @@ public class FileWriters {
         }
     }
 
-    public static void exportMenu() {
+    static void exportMenu() {
         File file = new File("menu.ser");
 
         try {
@@ -108,15 +88,13 @@ public class FileWriters {
             file.createNewFile();
 
             //output to new file
-            fileOutputStream = new FileOutputStream(file, false);
-            objectOutputStream = new ObjectOutputStream(fileOutputStream);
+            FileOutputStream fileOutputStream = new FileOutputStream(file, false);
+            ObjectOutputStream objectOutputStream = new ObjectOutputStream(fileOutputStream);
 
             List<MenuItem> menuItems = Restaurant.getMenuItems();
-            for(MenuItem menuItem : menuItems) {
+            for (MenuItem menuItem : menuItems) {
                 objectOutputStream.writeObject(menuItem);
             }
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
         }

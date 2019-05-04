@@ -2,31 +2,21 @@ package BusinessLayer;
 
 public interface RestaurantProcessing {
     //Administrator
-
-    /**
-     * @pre menuItem != null
-     * @post menuItem.getName().compareTo(menuItem @ pre.getName ()) == 0
-     */
     static void createItem(MenuItem menuItem) {
+
     }
 
-    /**
-     * @pre menuItem != null
-     */
     static void deleteItem(MenuItem menuItem) {
     }
 
-    //Waiter
+    static void editItem(MenuItem menuItem, String newName, int newPrice) {
 
-    /**
-     * @pre order != null
-     */
+    }
+
+    //Waiter
     static void createOrder(Order order) {
     }
 
-    /**
-     * @pre order != null
-     */
     static String generateBill(Order order) {
         return "";
     }
