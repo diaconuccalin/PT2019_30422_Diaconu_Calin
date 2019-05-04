@@ -7,7 +7,7 @@ import java.util.*;
 import java.util.List;
 
 public class Restaurant implements RestaurantProcessing {
-    private static Map<Order, Collection<MenuItem>> orders = new Hashtable<>();
+    private static Map<Order, Collection<MenuItem>> orders = new HashMap<>();
     private static List<MenuItem> menu = new ArrayList<>();
 
     public static void createItem(MenuItem menuItem) {
