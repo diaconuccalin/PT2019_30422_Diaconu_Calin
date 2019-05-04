@@ -1,5 +1,7 @@
 package BusinessLayer;
 
+import DataLayer.FileWriters;
+
 import java.io.BufferedWriter;
 import java.io.IOException;
 
@@ -11,6 +13,8 @@ public class BeforeShutdown extends Thread {
     }
 
     public void run() {
+        FileWriters.exportMenu();
+
         try {
             bufferedWriter.close();
         } catch (IOException e) {

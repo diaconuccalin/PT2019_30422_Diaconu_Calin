@@ -5,8 +5,6 @@ import BusinessLayer.MenuItem;
 import BusinessLayer.Restaurant;
 
 import javax.swing.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
 class AdminAddEditBaseFrame extends JFrame {
     AdminAddEditBaseFrame(boolean edit, MenuItem menuItem) {

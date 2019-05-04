@@ -1,10 +1,8 @@
 package BusinessLayer;
 
 import DataLayer.FileWriters;
-import DataLayer.RestaurantSerializer;
 
 import javax.swing.*;
-import java.awt.*;
 import java.util.*;
 import java.util.List;
 
@@ -44,7 +42,6 @@ public class Restaurant implements RestaurantProcessing {
         jTable = new JTable(data, columnNames);
         jTable.setDefaultEditor(Object.class, null);
 
-        FileWriters.resetStreams();
         return jTable;
     }
 

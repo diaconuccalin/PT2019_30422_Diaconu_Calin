@@ -1,8 +1,6 @@
 package PresentationLayer;
 
 import javax.swing.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
 class NotificationFrame extends JFrame {
     private NotificationFrame() {

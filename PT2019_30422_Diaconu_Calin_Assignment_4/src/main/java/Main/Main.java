@@ -11,7 +11,7 @@ public class Main {
 
     public static void main(String[] args) {
         FileWriters.initializeBufferedWriter();
-        FileWriters.resetStreams();
+        FileWriters.importMenu();
         new AdministratorGraphicalUserInterface();
         chefGraphicalUserInterface = new ChefGraphicalUserInterface();
         waiterGraphicalUserInterface = new WaiterGraphicalUserInterface();

@@ -6,8 +6,6 @@ import Main.Main;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.util.List;
 
 public class ChefGraphicalUserInterface extends JFrame implements Observer {
