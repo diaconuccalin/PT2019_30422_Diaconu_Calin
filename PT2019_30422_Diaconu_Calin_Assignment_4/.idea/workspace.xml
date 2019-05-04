@@ -15,35 +15,6 @@
   <component name="FileEditorManager">
     <leaf>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/DataLayer/RestaurantSerializer.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="10" column="1" selection-start-line="10" selection-start-column="1" selection-end-line="10" selection-end-column="1" />
-              <folding>
-                <element signature="e#92#93#0" expanded="true" />
-                <element signature="e#132#133#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/Main/Main.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="212">
-              <caret line="37" column="1" selection-start-line="37" selection-start-column="1" selection-end-line="37" selection-end-column="1" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="method#main#0;class#Main#0" />
-                <element signature="method#setChefGraphicalUserInterface#0;class#Main#0" />
-                <element signature="method#setWaiterGraphicalUserInterface#0;class#Main#0" />
-                <element signature="method#getWaiterGraphicalUserInterface#0;class#Main#0" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/PresentationLayer/AddOrderFrame.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="198">
@@ -130,13 +101,45 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/PresentationLayer/WaiterGraphicalUserInterface.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
+            <state relative-caret-position="782">
               <caret line="99" column="1" selection-start-line="99" selection-start-column="1" selection-end-line="99" selection-end-column="1" />
               <folding>
                 <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/BusinessLayer/Restaurant.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="153">
+              <caret line="9" column="77" lean-forward="true" selection-start-line="9" selection-start-column="77" selection-end-line="9" selection-end-column="77" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="method#createOrdersTable#0;class#Restaurant#0" />
+                <element signature="method#getOrder#0;class#Restaurant#0" />
+                <element signature="method#createTable#0;class#Restaurant#0" />
+                <element signature="method#getItem#0;class#Restaurant#0" />
+                <element signature="method#getBaseMenuItems#0;class#Restaurant#0" />
+                <element signature="method#createOrderList#0;class#Restaurant#0" />
+                <element signature="method#editItem#0;class#Restaurant#0" />
+                <element signature="method#updatePrices#0;class#Restaurant#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/BusinessLayer/BaseProduct.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="357">
+              <caret line="32" column="1" selection-start-line="32" selection-start-column="1" selection-end-line="32" selection-end-column="1" />
+              <folding>
+                <element signature="method#BaseProduct#0;class#BaseProduct#0" />
               </folding>
             </state>
           </provider>
@@ -204,7 +207,6 @@
         <option value="$PROJECT_DIR$/src/main/java/BusinessLayer/MenuItem.java" />
         <option value="$PROJECT_DIR$/src/main/java/BusinessLayer/Observable.java" />
         <option value="$PROJECT_DIR$/src/main/java/BusinessLayer/Order.java" />
-        <option value="$PROJECT_DIR$/src/main/java/BusinessLayer/Restaurant.java" />
         <option value="$PROJECT_DIR$/src/main/java/BusinessLayer/RestaurantProcessing.java" />
         <option value="$PROJECT_DIR$/src/main/java/DataLayer/FileWriters.java" />
         <option value="$PROJECT_DIR$/src/main/java/DataLayer/RestaurantSerializer.java" />
@@ -217,6 +219,7 @@
         <option value="$PROJECT_DIR$/src/main/java/PresentationLayer/NotificationFrame.java" />
         <option value="$PROJECT_DIR$/src/main/java/PresentationLayer/Observer.java" />
         <option value="$PROJECT_DIR$/src/main/java/PresentationLayer/WaiterGraphicalUserInterface.java" />
+        <option value="$PROJECT_DIR$/src/main/java/BusinessLayer/Restaurant.java" />
       </list>
     </option>
   </component>
@@ -494,7 +497,14 @@
       <option name="project" value="LOCAL" />
       <updated>1556983919511</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="HW4 - hashMap instead of hashtable">
+      <created>1556985623937</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1556985623937</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -511,8 +521,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="0" width="653" height="687" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.3693086" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.3693086" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Learn" order="2" />
       <window_info id="Designer" order="3" />
@@ -520,7 +531,7 @@
       <window_info id="Favorites" order="5" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32978722" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.3268206" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.33153152" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39941972" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -529,7 +540,7 @@
       <window_info anchor="bottom" id="Terminal" order="8" weight="0.15957446" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="10" weight="0.14506769" />
-      <window_info active="true" anchor="bottom" id="Messages" order="11" visible="true" weight="0.33153152" />
+      <window_info anchor="bottom" id="Messages" order="11" weight="0.3268206" />
       <window_info anchor="bottom" id="Docker" order="12" show_stripe_button="false" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -598,7 +609,8 @@
     <MESSAGE value="HW4 - Fixed internal structure for storing menu items and orders" />
     <MESSAGE value="HW4 - Serial input and output only at start and end" />
     <MESSAGE value="HW4 - final clean up" />
-    <option name="LAST_COMMIT_MESSAGE" value="HW4 - final clean up" />
+    <MESSAGE value="HW4 - hashMap instead of hashtable" />
+    <option name="LAST_COMMIT_MESSAGE" value="HW4 - hashMap instead of hashtable" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/pom.xml">
@@ -672,16 +684,6 @@
     <entry file="file://$PROJECT_DIR$/bills.txt">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/BusinessLayer/BaseProduct.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="212">
-          <caret line="32" column="1" selection-start-line="32" selection-start-column="1" selection-end-line="32" selection-end-column="1" />
-          <folding>
-            <element signature="method#BaseProduct#0;class#BaseProduct#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/BusinessLayer/BeforeShutdown.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
@@ -732,24 +734,6 @@
             <element signature="imports" expanded="true" />
             <element signature="method#Order#0;class#Order#0" />
             <element signature="method#compareTo#0;class#Order#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/BusinessLayer/Restaurant.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="212">
-          <caret line="144" column="1" selection-start-line="144" selection-start-column="1" selection-end-line="144" selection-end-column="1" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#createOrdersTable#0;class#Restaurant#0" />
-            <element signature="method#getOrder#0;class#Restaurant#0" />
-            <element signature="method#createTable#0;class#Restaurant#0" />
-            <element signature="method#getItem#0;class#Restaurant#0" />
-            <element signature="method#getBaseMenuItems#0;class#Restaurant#0" />
-            <element signature="method#createOrderList#0;class#Restaurant#0" />
-            <element signature="method#editItem#0;class#Restaurant#0" />
-            <element signature="method#updatePrices#0;class#Restaurant#0" />
           </folding>
         </state>
       </provider>
@@ -881,10 +865,38 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/PresentationLayer/WaiterGraphicalUserInterface.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
+        <state relative-caret-position="782">
           <caret line="99" column="1" selection-start-line="99" selection-start-column="1" selection-end-line="99" selection-end-column="1" />
           <folding>
             <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/BusinessLayer/Restaurant.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="77" lean-forward="true" selection-start-line="9" selection-start-column="77" selection-end-line="9" selection-end-column="77" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#createOrdersTable#0;class#Restaurant#0" />
+            <element signature="method#getOrder#0;class#Restaurant#0" />
+            <element signature="method#createTable#0;class#Restaurant#0" />
+            <element signature="method#getItem#0;class#Restaurant#0" />
+            <element signature="method#getBaseMenuItems#0;class#Restaurant#0" />
+            <element signature="method#createOrderList#0;class#Restaurant#0" />
+            <element signature="method#editItem#0;class#Restaurant#0" />
+            <element signature="method#updatePrices#0;class#Restaurant#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/BusinessLayer/BaseProduct.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="32" column="1" selection-start-line="32" selection-start-column="1" selection-end-line="32" selection-end-column="1" />
+          <folding>
+            <element signature="method#BaseProduct#0;class#BaseProduct#0" />
           </folding>
         </state>
       </provider>
