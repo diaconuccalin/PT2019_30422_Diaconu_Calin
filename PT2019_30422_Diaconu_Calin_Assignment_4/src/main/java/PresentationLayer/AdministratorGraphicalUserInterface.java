@@ -74,7 +74,6 @@ public class AdministratorGraphicalUserInterface extends JFrame {
             adminAddEditBaseFrame.addWindowListener(new WindowAdapter() {
                 @Override
                 public void windowClosed(WindowEvent e) {
-                    Restaurant.resetStreams();
                     new AdministratorGraphicalUserInterface();
                     dispose();
                 }
@@ -84,12 +83,10 @@ public class AdministratorGraphicalUserInterface extends JFrame {
 
     private void addCompositeButtonActionListener(JButton addCompositeButton) {
         addCompositeButton.addActionListener(e -> {
-            Restaurant.resetStreams();
             AdminAddEditCompositeFrame adminAddEditCompositeFrame = new AdminAddEditCompositeFrame(false, null);
             adminAddEditCompositeFrame.addWindowListener(new WindowAdapter() {
                 @Override
                 public void windowClosed(WindowEvent e) {
-                    Restaurant.resetStreams();
                     new AdministratorGraphicalUserInterface();
                     dispose();
                 }
@@ -99,7 +96,6 @@ public class AdministratorGraphicalUserInterface extends JFrame {
 
     private void editButtonActionListener(JButton editButton) {
         editButton.addActionListener(e -> {
-            Restaurant.resetStreams();
             MenuItem menuItem = Restaurant.getItem(jTable.getValueAt(jTable.getSelectedRow(), 0).toString());
 
             if (menuItem.getClass().getSimpleName().compareTo("BaseProduct") == 0) {
@@ -107,7 +103,6 @@ public class AdministratorGraphicalUserInterface extends JFrame {
                 adminAddEditBaseFrame.addWindowListener(new WindowAdapter() {
                     @Override
                     public void windowClosed(WindowEvent e) {
-                        Restaurant.resetStreams();
                         new AdministratorGraphicalUserInterface();
                         dispose();
                     }
@@ -117,7 +112,6 @@ public class AdministratorGraphicalUserInterface extends JFrame {
                 adminAddEditCompositeFrame.addWindowListener(new WindowAdapter() {
                     @Override
                     public void windowClosed(WindowEvent e) {
-                        Restaurant.resetStreams();
                         new AdministratorGraphicalUserInterface();
                         dispose();
                     }
@@ -128,7 +122,6 @@ public class AdministratorGraphicalUserInterface extends JFrame {
 
     private void deleteButtonActionListener(JButton deleteButton) {
         deleteButton.addActionListener(e -> {
-            Restaurant.resetStreams();
             Restaurant.deleteItem(new CompositeProduct(jTable.getValueAt(jTable.getSelectedRow(), 0).toString()));
             new AdministratorGraphicalUserInterface();
             dispose();

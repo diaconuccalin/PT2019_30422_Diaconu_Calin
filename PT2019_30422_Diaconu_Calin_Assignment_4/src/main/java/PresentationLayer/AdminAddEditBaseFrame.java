@@ -42,7 +42,7 @@ class AdminAddEditBaseFrame extends JFrame {
         addButton.setBounds(80, 75, 80, 25);
         add(addButton);
 
-        JButton backButton = new JButton("Back");
+        JButton backButton = new JButton("Cancel");
         backButton.setBounds(180, 75, 80, 25);
         add(backButton);
 
@@ -65,9 +65,12 @@ class AdminAddEditBaseFrame extends JFrame {
         addButton.addActionListener(e -> {
             try {
                 int price = Integer.parseInt(priceField.getText());
-                if (edit)
-                    Restaurant.deleteItem(menuItem);
-                Restaurant.createItem(new BaseProduct(nameField.getText(), price));
+                if (edit) {
+                    Restaurant.editItem(menuItem, nameField.getText(), price);
+                    Restaurant.updatePrices();
+                }
+                else
+                   Restaurant.createItem(new BaseProduct(nameField.getText(), price));
                 dispose();
             } catch (NumberFormatException e1) {
                 JOptionPane.showMessageDialog(null, "Incorrect input");

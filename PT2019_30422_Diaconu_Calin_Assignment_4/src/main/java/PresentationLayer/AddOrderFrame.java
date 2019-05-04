@@ -2,11 +2,10 @@ package PresentationLayer;
 
 import BusinessLayer.Order;
 import BusinessLayer.Restaurant;
+import BusinessLayer.MenuItem;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -41,7 +40,7 @@ class AddOrderFrame extends JFrame {
         addButton.setBounds(80, 380, 80, 25);
         add(addButton);
 
-        JButton backButton = new JButton("Back");
+        JButton backButton = new JButton("Cancel");
         backButton.setBounds(180, 380, 80, 25);
         add(backButton);
 
@@ -57,11 +56,11 @@ class AddOrderFrame extends JFrame {
             try {
                 int table = Integer.parseInt(tableField.getText());
 
-                List<String> orderItems = new ArrayList<>();
+                List<MenuItem> orderItems = new ArrayList<>();
                 for (JTextField jTextField : jTextFields) {
                     int quantity = Integer.parseInt(jTextField.getText());
                     while (quantity != 0) {
-                        orderItems.add(jLabels.get(jTextFields.indexOf(jTextField)).getText());
+                        orderItems.add(Restaurant.getItem(jLabels.get(jTextFields.indexOf(jTextField)).getText()));
                         quantity--;
                     }
                 }
@@ -78,7 +77,6 @@ class AddOrderFrame extends JFrame {
     }
 
     private JScrollPane createJScrollPane() {
-        Restaurant.resetStreams();
         JPanel jPanel = new JPanel();
         jPanel.setLayout(null);
 

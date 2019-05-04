@@ -1,28 +1,27 @@
 package BusinessLayer;
 
 import DataLayer.FileWriters;
-import DataLayer.RestaurantSerializator;
+import DataLayer.RestaurantSerializer;
 
 import javax.swing.*;
+import java.awt.*;
+import java.util.*;
 import java.util.List;
 
-/**
- * @inv order.getMenuItems() != 0 in computePrice() | computePrice() > 0
- */
 public class Restaurant implements RestaurantProcessing {
+    static Map<Order, Collection<MenuItem>> orders = new Hashtable<>();
+    static List<MenuItem> menu = new ArrayList<>();
+
     public static void createItem(MenuItem menuItem) {
-        if (menuItem.getClass().getSimpleName().compareTo("BaseProduct") == 0)
-            RestaurantSerializator.addBaseItem((BaseProduct) menuItem);
-        else
-            RestaurantSerializator.addCompositeItem((CompositeProduct) menuItem);
+        menu.add(menuItem);
     }
 
     public static void deleteItem(MenuItem menuItem) {
-        RestaurantSerializator.deleteItem(menuItem);
+        menu.remove(getItem(menuItem.getName()));
     }
 
     public static void createOrder(Order order) {
-        RestaurantSerializator.createOrder(order);
+        orders.put(order, order.getMenuItems());
     }
 
     public static String generateBill(Order order) {
@@ -30,38 +29,104 @@ public class Restaurant implements RestaurantProcessing {
     }
 
     public static JTable createOrdersTable() {
-        return RestaurantSerializator.createOrdersTable();
+        List<Order> orderList = createOrderList();
+
+        JTable jTable;
+        String[] columnNames = {"Id", "Table", "Date"};
+        Object[][] data = new Object[orderList.size()][3];
+
+        for (int i = 0; i < orderList.size(); i++) {
+            data[i][0] = orderList.get(i).getOrderID();
+            data[i][1] = orderList.get(i).getTable();
+            data[i][2] = orderList.get(i).getDate();
+        }
+
+        jTable = new JTable(data, columnNames);
+        jTable.setDefaultEditor(Object.class, null);
+
+        FileWriters.resetStreams();
+        return jTable;
     }
 
     public static Order getOrder(int orderID) {
-        return RestaurantSerializator.getOrder(orderID);
+        List<Order> orderList = createOrderList();
+
+        for(Order order : orderList) {
+            if(order.getOrderID() == orderID)
+                return order;
+        }
+
+        return null;
     }
 
     public static void deleteOrder(Order order) {
-        RestaurantSerializator.deleteOrder(order);
+        Order toDelete = getOrder(order.getOrderID());
+        orders.remove(toDelete);
     }
 
     public static JTable createTable() {
-        return RestaurantSerializator.createTable();
-    }
+        JTable jTable;
 
-    public static void resetStreams() {
-        FileWriters.resetStreams();
+        String[] columnNames = {"Name", "Price", "Type"};
+        Object[][] data = new Object[menu.size()][3];
+
+        for (int i = 0; i < menu.size(); i++) {
+            data[i][0] = menu.get(i).getName();
+            data[i][1] = menu.get(i).computePrice();
+            data[i][2] = menu.get(i).getClass().getSimpleName();
+        }
+
+        jTable = new JTable(data, columnNames);
+        jTable.setDefaultEditor(Object.class, null);
+
+
+        return jTable;
     }
 
     public static MenuItem getItem(String name) {
-        return RestaurantSerializator.getItem(name);
+        for(MenuItem menuItem : menu) {
+            if(menuItem.getName().compareTo(name) == 0)
+                return menuItem;
+        }
+
+        return null;
     }
 
-    public static List<BusinessLayer.MenuItem> getMenuItems() {
-        return RestaurantSerializator.getMenuItems();
+    public static List<MenuItem> getMenuItems() {
+        return menu;
     }
 
-    public static List<BusinessLayer.MenuItem> getBaseMenuItems() {
-        return RestaurantSerializator.getBaseMenuItems();
+    public static List<MenuItem> getBaseMenuItems() {
+        List<MenuItem> toReturn = new ArrayList<>();
+
+        for(MenuItem menuItem : menu) {
+            if(menuItem.getClass().getSimpleName().compareTo("BaseProduct") == 0)
+                toReturn.add(menuItem);
+        }
+        return toReturn;
     }
 
     public static List<Order> createOrderList() {
-        return RestaurantSerializator.createOrderList();
+        Set<Order> orderSet = orders.keySet();
+        List<Order> orderList = new ArrayList<>(orderSet);
+        Collections.sort(orderList);
+
+        return orderList;
+    }
+
+    public static void editItem(MenuItem menuItem, String newName, int newPrice) {
+        for(MenuItem menuItem1 : menu) {
+            if(menuItem1.getName().compareTo(menuItem.getName()) == 0) {
+                menuItem1.setName(newName);
+                menuItem1.setPrice(newPrice);
+                break;
+            }
+        }
+    }
+
+    public static void updatePrices() {
+        for(MenuItem menuItem : menu) {
+            menuItem.computePrice();
+        }
     }
 }

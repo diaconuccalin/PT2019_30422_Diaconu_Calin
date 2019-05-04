@@ -2,17 +2,19 @@ package BusinessLayer;
 
 import java.io.Serializable;
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 
-public class Order implements Serializable {
+public class Order implements Serializable, Comparable<Order> {
     private static int id = 0;
     private int orderID;
     private LocalDate date;
     private int table;
-    private List<String> menuItems;
+    private Collection<MenuItem> menuItems;
     private boolean done;
 
-    public Order(int table, List<String> menuItems) {
+    public Order(int table, List<MenuItem> menuItems) {
         orderID = id;
         id++;
         date = LocalDate.now();
@@ -31,7 +33,7 @@ public class Order implements Serializable {
     }
 
     public int hashCode() {
-        return -1;
+        return orderID;
     }
 
     public int getOrderID() {
@@ -46,12 +48,12 @@ public class Order implements Serializable {
         return date;
     }
 
-    public List<String> getMenuItems() {
+    public Collection<MenuItem> getMenuItems() {
         return menuItems;
     }
 
-    public static void resetId() {
-        id = 0;
+    public List<MenuItem> getListOfItems() {
+        return new ArrayList<>(menuItems);
     }
 
     public boolean isDone() {
@@ -60,5 +62,13 @@ public class Order implements Serializable {
 
     public void setDone(boolean done) {
         this.done = done;
+    }
+
+    @Override
+    public int compareTo(Order o) {
+        Integer id1 = this.getOrderID();
+        Integer id2 = o.getOrderID();
+
+        return id1.compareTo(id2);
     }
 }

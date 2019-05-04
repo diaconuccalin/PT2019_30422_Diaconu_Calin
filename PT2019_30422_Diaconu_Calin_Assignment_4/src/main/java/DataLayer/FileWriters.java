@@ -5,7 +5,9 @@ import BusinessLayer.MenuItem;
 import BusinessLayer.Order;
 import BusinessLayer.Restaurant;
 
+import java.awt.*;
 import java.io.*;
+import java.util.ArrayList;
 import java.util.List;
 
 public class FileWriters {
@@ -110,7 +112,6 @@ public class FileWriters {
 
                 //actual output
                 Order order;
-                Order.resetId();
                 while (true) {
                     try {
                         order = new Order((Order) orderObjectInputStream.readObject());
@@ -194,16 +195,16 @@ public class FileWriters {
                     order.getDate() +
                     "\n";
 
-            List<String> menuItems = order.getMenuItems();
+            List<MenuItem> menuItems = order.getListOfItems();
             int total = 0;
             for (int i = 0; i < menuItems.size(); i++) {
                 int quantity = 1;
-                while (i != menuItems.size() - 1 && menuItems.get(i).compareTo(menuItems.get(i + 1)) == 0) {
+                while (i != menuItems.size() - 1 && menuItems.get(i).getName().compareTo(menuItems.get(i + 1).getName()) == 0) {
                     quantity++;
                     i++;
                 }
 
-                MenuItem menuItem = Restaurant.getItem(menuItems.get(i));
+                MenuItem menuItem = Restaurant.getItem(menuItems.get(i).getName());
                 toPrint = toPrint.concat(
                         menuItem.getName() +
                                 " - " +

@@ -23,13 +23,10 @@ public class ChefGraphicalUserInterface extends JFrame implements Observer {
         setLocation(this.getX() + 420, this.getY());
 
         //Content
-        Restaurant.resetStreams();
         List<Order> orders = Restaurant.createOrderList();
         add(createJScrollPane(orders));
 
         setVisible(true);
-
-        Restaurant.resetStreams();
     }
 
     private JScrollPane createJScrollPane(List<Order> orders) {
@@ -37,16 +34,18 @@ public class ChefGraphicalUserInterface extends JFrame implements Observer {
         jPanel.setLayout(null);
 
         for (Order order : orders) {
-            int i = orders.indexOf(order);
+            if(!order.isDone()) {
+                int i = orders.indexOf(order);
 
-            JLabel jLabel = new JLabel("Order: " + order.getOrderID());
-            jLabel.setBounds(15, 10 + i * 40, 200, 25);
-            jPanel.add(jLabel);
+                JLabel jLabel = new JLabel("Order: " + order.getOrderID());
+                jLabel.setBounds(15, 10 + i * 40, 200, 25);
+                jPanel.add(jLabel);
 
-            JButton jButton = new JButton("Done");
-            jButton.setBounds(255, 10 + i * 40, 80, 25);
-            buttonActionListener(jButton, order);
-            jPanel.add(jButton);
+                JButton jButton = new JButton("Done");
+                jButton.setBounds(255, 10 + i * 40, 80, 25);
+                buttonActionListener(jButton, order);
+                jPanel.add(jButton);
+            }
         }
 
         jPanel.setPreferredSize(new Dimension(280, 15 + 40 * orders.size()));
@@ -59,10 +58,7 @@ public class ChefGraphicalUserInterface extends JFrame implements Observer {
 
     private void buttonActionListener(JButton jButton, Order order) {
         jButton.addActionListener(e -> {
-            Order order1 = Restaurant.getOrder(order.getOrderID());
-            Restaurant.deleteOrder(order1);
-            order1.setDone(true);
-            Restaurant.createOrder(order1);
+            Restaurant.getOrder(order.getOrderID()).setDone(true);
 
             Main.getWaiterGraphicalUserInterface().getjFrame().dispose();
             Main.setWaiterGraphicalUserInterface(new WaiterGraphicalUserInterface());

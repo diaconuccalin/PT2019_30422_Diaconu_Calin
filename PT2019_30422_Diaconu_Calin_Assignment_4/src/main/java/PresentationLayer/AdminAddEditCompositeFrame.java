@@ -35,7 +35,6 @@ class AdminAddEditCompositeFrame extends JFrame {
         add(nameField);
 
         //Ingredients
-        Restaurant.resetStreams();
         JLabel ingredientsLabel = new JLabel("Ingredients:");
         ingredientsLabel.setBounds(15, 45, 100, 25);
         add(ingredientsLabel);
@@ -46,7 +45,7 @@ class AdminAddEditCompositeFrame extends JFrame {
         addButton.setBounds(80, 380, 80, 25);
         add(addButton);
 
-        JButton backButton = new JButton("Back");
+        JButton backButton = new JButton("Cancel");
         backButton.setBounds(180, 380, 80, 25);
         add(backButton);
 

@@ -20,6 +20,8 @@ public class CompositeProduct implements MenuItem, Serializable {
         price = 0;
 
         for (MenuItem menuItem : ingredients) {
+            MenuItem menuItem1 = Restaurant.getItem(menuItem.getName());
+            menuItem.setPrice(menuItem1.computePrice());
             price += menuItem.computePrice();
         }
 
@@ -38,5 +40,15 @@ public class CompositeProduct implements MenuItem, Serializable {
 
     public List<MenuItem> getIngredients() {
         return ingredients;
+    }
+
+    @Override
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    @Override
+    public void setPrice(int price) {
+        this.price = price;
     }
 }

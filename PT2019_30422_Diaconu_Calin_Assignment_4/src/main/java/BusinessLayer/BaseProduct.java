@@ -20,4 +20,14 @@ public class BaseProduct implements MenuItem, Serializable {
     public String getName() {
         return name;
     }
+
+    @Override
+    public void setPrice(int price) {
+        this.price = price;
+    }
+
+    @Override
+    public void setName(String name) {
+        this.name = name;
+    }
 }

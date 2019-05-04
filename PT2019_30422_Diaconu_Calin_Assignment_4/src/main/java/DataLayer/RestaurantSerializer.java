@@ -10,7 +10,7 @@ import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class RestaurantSerializator {
+public class RestaurantSerializer {
     public static void addBaseItem(BaseProduct baseProduct) {
         try {
             FileWriters.getObjectOutputStream().writeObject(baseProduct);
