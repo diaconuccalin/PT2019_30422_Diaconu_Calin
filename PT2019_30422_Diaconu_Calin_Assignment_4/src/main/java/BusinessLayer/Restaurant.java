@@ -3,6 +3,7 @@ package BusinessLayer;
 import DataLayer.FileWriters;
 
 import javax.swing.*;
+import java.awt.*;
 import java.util.*;
 import java.util.List;
 
@@ -11,18 +12,32 @@ public class Restaurant implements RestaurantProcessing {
     private static List<MenuItem> menu = new ArrayList<>();
 
     public static void createItem(MenuItem menuItem) {
+        assert menuItem != null;
+        assert menu != null;
+
         menu.add(menuItem);
+
+        assert menu.size() > 0;
     }
 
     public static void deleteItem(MenuItem menuItem) {
+        assert menuItem != null;
+        assert menu != null;
+
         menu.remove(getItem(menuItem.getName()));
     }
 
     public static void createOrder(Order order) {
+        assert order != null;
+
         orders.put(order, order.getMenuItems());
+
+        assert orders.size() > 0;
     }
 
     public static String generateBill(Order order) {
+        assert order != null;
+
         return FileWriters.generateBill(order);
     }
 
@@ -110,6 +125,10 @@ public class Restaurant implements RestaurantProcessing {
     }
 
     public static void editItem(MenuItem menuItem, String newName, int newPrice) {
+        assert menuItem != null;
+        assert newPrice >= 0;
+        int oldSize = menu.size();
+
         for (MenuItem menuItem1 : menu) {
             if (menuItem1.getName().compareTo(menuItem.getName()) == 0) {
                 menuItem1.setName(newName);
@@ -117,6 +136,8 @@ public class Restaurant implements RestaurantProcessing {
                 break;
             }
         }
+
+        assert oldSize == menu.size();
     }
 
     public static void updatePrices() {
@@ -138,6 +159,14 @@ public class Restaurant implements RestaurantProcessing {
                     if (name.compareTo(menuItem1.getName()) == 0)
                         return false;
                 }
+            }
+        }
+
+        List<Order> orderList = createOrderList();
+        for(Order order : orderList) {
+            for(MenuItem menuItem : order.getListOfItems()) {
+                if(menuItem.getName().compareTo(name) == 0)
+                    return false;
             }
         }
         return true;

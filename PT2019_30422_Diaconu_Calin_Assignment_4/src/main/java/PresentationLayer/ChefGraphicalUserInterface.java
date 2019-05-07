@@ -31,22 +31,24 @@ public class ChefGraphicalUserInterface extends JFrame implements Observer {
         JPanel jPanel = new JPanel();
         jPanel.setLayout(null);
 
+        int ordersSoFar = 0;
+
         for (Order order : orders) {
             if (!order.isDone()) {
-                int i = orders.indexOf(order);
-
                 JLabel jLabel = new JLabel("Order: " + order.getOrderID());
-                jLabel.setBounds(15, 10 + i * 40, 200, 25);
+                jLabel.setBounds(15, 10 + ordersSoFar * 40, 200, 25);
                 jPanel.add(jLabel);
 
                 JButton jButton = new JButton("Done");
-                jButton.setBounds(255, 10 + i * 40, 80, 25);
+                jButton.setBounds(255, 10 + ordersSoFar * 40, 80, 25);
                 buttonActionListener(jButton, order);
                 jPanel.add(jButton);
+
+                ordersSoFar++;
             }
         }
 
-        jPanel.setPreferredSize(new Dimension(280, 15 + 40 * orders.size()));
+        jPanel.setPreferredSize(new Dimension(280, 15 + 40 * ordersSoFar));
         JScrollPane jScrollPane = new JScrollPane(jPanel);
         jScrollPane.setBounds(10, 10, 367, 595);
         jScrollPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED);

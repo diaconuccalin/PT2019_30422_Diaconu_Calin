@@ -125,7 +125,7 @@ public class AdministratorGraphicalUserInterface extends JFrame {
                 new AdministratorGraphicalUserInterface();
                 dispose();
             } else {
-                JOptionPane.showMessageDialog(null, "Can not delete (part of a composite product)");
+                JOptionPane.showMessageDialog(null, "Can not delete");
             }
         });
     }
