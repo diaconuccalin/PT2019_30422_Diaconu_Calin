@@ -1,3 +1,6 @@
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 import java.util.regex.Pattern;
 
 public class HelpingMethods {
@@ -29,5 +32,21 @@ public class HelpingMethods {
         }
 
         return true;
+    }
+
+    public static Map<String, Integer> generateOccurrenceMap(List<MonitoredData> monitoredDataList) {
+        Map<String, Integer> occurrenceMap = new HashMap<>();
+
+        for(MonitoredData monitoredData : monitoredDataList) {
+            String activity = monitoredData.getActivity();
+
+            if(occurrenceMap.containsKey(activity)) {
+                int old = occurrenceMap.get(activity);
+                occurrenceMap.replace(activity, old, old + 1);
+            } else
+                occurrenceMap.put(activity, 1);
+        }
+
+        return occurrenceMap;
     }
 }

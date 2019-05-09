@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -12,6 +13,9 @@ public class Main {
 
         //Task2
         task2(monitoredDataList);
+
+        //Task3
+        task3(monitoredDataList);
     }
 
     private static List<MonitoredData> task0() {
@@ -44,20 +48,32 @@ public class Main {
     }
 
     private static Map<String, Integer> task2(List<MonitoredData> monitoredDataList) {
-        Map<String, Integer> occurrenceMap = new HashMap<>();
+        Map<String, Integer> occurrenceMap = HelpingMethods.generateOccurrenceMap(monitoredDataList);
+        FileManager.printMap2(occurrenceMap);
+        return occurrenceMap;
+    }
+
+    private static Map<Integer, Map<String, Integer>> task3(List<MonitoredData> monitoredDataList) {
+        Map<Integer, Map<String, Integer>> occurrenceMap = new HashMap<>();
+        Map<String, Integer> dayMap;
+        List<MonitoredData> dayList = new ArrayList<>();
+
+        int day = 1;
 
         for(MonitoredData monitoredData : monitoredDataList) {
-            String activity = monitoredData.getActivity();
+            int currentIndex = monitoredDataList.indexOf(monitoredData);
 
-            if(occurrenceMap.containsKey(activity)) {
-                int old = occurrenceMap.get(activity);
-                occurrenceMap.replace(activity, old, old + 1);
-            } else
-                occurrenceMap.put(activity, 1);
+            if(currentIndex > 0 && monitoredData.getStartDate().compareTo(monitoredDataList.get(currentIndex - 1).getStartDate()) != 0) {
+                dayMap = HelpingMethods.generateOccurrenceMap(dayList);
+                dayList = new ArrayList<>();
+                occurrenceMap.put(day, dayMap);
+                day++;
+            }
+
+            dayList.add(monitoredData);
         }
 
-        FileManager.printMap(occurrenceMap);
-
+        FileManager.printMap3(occurrenceMap);
         return occurrenceMap;
     }
 

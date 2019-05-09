@@ -31,7 +31,7 @@ public class FileManager {
         return toReturn;
     }
 
-    public static void printMap(Map<String, Integer> map) {
+    public static void printMap2(Map<String, Integer> map) {
         Set<Map.Entry<String, Integer>> entrySet = map.entrySet();
 
         try {
@@ -39,6 +39,29 @@ public class FileManager {
 
             for(Map.Entry<String, Integer> entry : entrySet)
                 bufferedWriter.append(entry.getKey()).append(" - ").append(String.valueOf(entry.getValue())).append("\n");
+
+            bufferedWriter.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public static void printMap3(Map<Integer, Map<String, Integer>> map) {
+        Set<Map.Entry<Integer, Map<String, Integer>>> entrySet = map.entrySet();
+
+        try {
+            BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter("task3.txt"));
+
+            for(Map.Entry<Integer, Map<String, Integer>> entry : entrySet) {
+                bufferedWriter.append("Day ").append(String.valueOf(entry.getKey())).append(":\n");
+
+                Set<Map.Entry<String, Integer>> entrySet1 = entry.getValue().entrySet();
+
+                for(Map.Entry<String, Integer> entry1 : entrySet1)
+                    bufferedWriter.append(entry1.getKey()).append(" - ").append(String.valueOf(entry1.getValue())).append("\n");
+
+                bufferedWriter.append("\n");
+            }
 
             bufferedWriter.close();
         } catch (IOException e) {

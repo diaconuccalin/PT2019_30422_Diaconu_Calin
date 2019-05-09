@@ -1,0 +1,131 @@
+Day 1:
+Breakfast - 1
+Toileting - 3
+Grooming - 2
+Sleeping - 1
+Leaving - 1
+Spare_Time/TV - 4
+Showering - 1
+Snack - 1
+Lunch - 1
+
+Day 2:
+Breakfast - 1
+Toileting - 4
+Grooming - 3
+Sleeping - 1
+Leaving - 1
+Spare_Time/TV - 6
+Showering - 1
+Snack - 1
+Lunch - 1
+
+Day 3:
+Breakfast - 1
+Toileting - 6
+Grooming - 2
+Sleeping - 1
+Leaving - 1
+Spare_Time/TV - 8
+Showering - 1
+Snack - 2
+Lunch - 1
+
+Day 4:
+Breakfast - 1
+Grooming - 3
+Toileting - 2
+Sleeping - 1
+Leaving - 1
+Spare_Time/TV - 6
+Showering - 1
+Lunch - 1
+
+Day 5:
+Breakfast - 1
+Grooming - 4
+Toileting - 3
+Sleeping - 1
+Spare_Time/TV - 7
+Showering - 1
+Snack - 1
+Lunch - 1
+
+Day 6:
+Breakfast - 1
+Toileting - 2
+Grooming - 3
+Sleeping - 1
+Leaving - 1
+Spare_Time/TV - 4
+Showering - 1
+
+Day 7:
+Breakfast - 1
+Toileting - 4
+Grooming - 2
+Sleeping - 1
+Leaving - 1
+Spare_Time/TV - 6
+Showering - 1
+Snack - 2
+
+Day 8:
+Breakfast - 1
+Grooming - 6
+Toileting - 5
+Sleeping - 1
+Leaving - 2
+Spare_Time/TV - 7
+Showering - 1
+Snack - 1
+Lunch - 1
+
+Day 9:
+Breakfast - 1
+Toileting - 3
+Grooming - 4
+Sleeping - 1
+Spare_Time/TV - 5
+Showering - 1
+Snack - 1
+Lunch - 1
+
+Day 10:
+Breakfast - 1
+Grooming - 5
+Toileting - 6
+Sleeping - 1
+Leaving - 1
+Spare_Time/TV - 8
+Showering - 1
+Snack - 2
+Lunch - 1
+
+Day 11:
+Breakfast - 1
+Grooming - 5
+Toileting - 1
+Sleeping - 1
+Leaving - 1
+Spare_Time/TV - 4
+Showering - 1
+
+Day 12:
+Breakfast - 1
+Grooming - 5
+Toileting - 2
+Sleeping - 1
+Leaving - 2
+Spare_Time/TV - 6
+Showering - 1
+
+Day 13:
+Breakfast - 1
+Grooming - 4
+Toileting - 1
+Sleeping - 1
+Leaving - 2
+Spare_Time/TV - 3
+Showering - 1
+
