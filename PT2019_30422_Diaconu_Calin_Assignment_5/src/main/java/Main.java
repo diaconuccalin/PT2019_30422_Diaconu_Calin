@@ -1,7 +1,9 @@
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.temporal.ChronoUnit;
+import java.time.temporal.TemporalField;
+import java.time.temporal.TemporalUnit;
+import java.util.*;
 
 public class Main {
     public Main() {
@@ -16,6 +18,9 @@ public class Main {
 
         //Task3
         task3(monitoredDataList);
+
+        //Task4
+        task4(monitoredDataList);
     }
 
     private static List<MonitoredData> task0() {
@@ -75,6 +80,24 @@ public class Main {
 
         FileManager.printMap3(occurrenceMap);
         return occurrenceMap;
+    }
+
+    private static Map<String, LocalDateTime> task4(List<MonitoredData> monitoredDataList) {
+        Map<String, LocalDateTime> durationMap = new HashMap<>();
+
+        for(MonitoredData monitoredData : monitoredDataList) {
+            String activity = monitoredData.getActivity();
+
+            if(durationMap.containsKey(activity)) {
+                LocalDateTime old = durationMap.get(activity);
+                durationMap.replace(activity, old, old.plusSeconds(monitoredData.getDurationSeconds()));
+            } else
+                durationMap.put(activity, HelpingMethods.absolute.plusSeconds(monitoredData.getDurationSeconds()));
+        }
+
+        FileManager.printMap4(durationMap);
+
+        return durationMap;
     }
 
     public static void main(String[] args) {

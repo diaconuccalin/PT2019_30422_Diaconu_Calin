@@ -1,9 +1,12 @@
+import java.time.LocalDateTime;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.regex.Pattern;
 
 public class HelpingMethods {
+    public static LocalDateTime absolute = LocalDateTime.parse("0000-01-01T00:00:00");
+
     public static SplitText splitLine = (initial) -> {
         String delimiter = "\t\t";
         Pattern pattern = Pattern.compile(delimiter, Pattern.CASE_INSENSITIVE);
@@ -48,5 +51,15 @@ public class HelpingMethods {
         }
 
         return occurrenceMap;
+    }
+
+    public static boolean check4(LocalDateTime value) {
+        if(value.getYear() > 0)
+            return true;
+        if(value.getMonth().getValue() > 1)
+            return true;
+        if(value.getDayOfMonth() > 1)
+            return true;
+        return value.getHour() >= 10;
     }
 }

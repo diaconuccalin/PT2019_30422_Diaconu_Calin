@@ -1,6 +1,7 @@
 import java.io.*;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -61,6 +62,32 @@ public class FileManager {
                     bufferedWriter.append(entry1.getKey()).append(" - ").append(String.valueOf(entry1.getValue())).append("\n");
 
                 bufferedWriter.append("\n");
+            }
+
+            bufferedWriter.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public static void printMap4(Map<String, LocalDateTime> map) {
+        Set<Map.Entry<String, LocalDateTime>> entrySet = map.entrySet();
+        try {
+            BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter("task4.txt"));
+
+            for(Map.Entry<String, LocalDateTime> entry : entrySet) {
+                if(HelpingMethods.check4(entry.getValue())) {
+                    bufferedWriter.append(entry.getKey()).append(" - ");
+                    LocalDateTime value = entry.getValue();
+                    if(value.getYear() > 0)
+                        bufferedWriter.append(String.valueOf(value.getYear())).append(" years ").append(String.valueOf(value.getMonth().getValue() - 1)).append(" months ").append(String.valueOf(value.getDayOfMonth() - 1)).append(" days ").append(String.valueOf(value.getHour())).append(" hours ").append(String.valueOf(value.getMinute())).append(" minutes ").append(String.valueOf(value.getSecond())).append(" seconds\n");
+                    else if(value.getMonth().getValue() > 1)
+                        bufferedWriter.append(String.valueOf(value.getMonth().getValue() - 1)).append(" months ").append(String.valueOf(value.getDayOfMonth() - 1)).append(" days ").append(String.valueOf(value.getHour())).append(" hours ").append(String.valueOf(value.getMinute())).append(" minutes ").append(String.valueOf(value.getSecond())).append(" seconds\n");
+                    else if(value.getDayOfMonth() > 1)
+                        bufferedWriter.append(String.valueOf(value.getDayOfMonth() - 1)).append(" days ").append(String.valueOf(value.getHour())).append(" hours ").append(String.valueOf(value.getMinute())).append(" minutes ").append(String.valueOf(value.getSecond())).append(" seconds\n");
+                    else
+                        bufferedWriter.append(String.valueOf(value.getHour())).append(" hours ").append(String.valueOf(value.getMinute())).append(" minutes ").append(String.valueOf(value.getSecond())).append(" seconds\n");
+                }
             }
 
             bufferedWriter.close();

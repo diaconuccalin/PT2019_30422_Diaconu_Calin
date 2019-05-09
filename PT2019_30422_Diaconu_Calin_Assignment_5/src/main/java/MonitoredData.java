@@ -1,3 +1,7 @@
+import java.time.Duration;
+import java.time.LocalDateTime;
+import java.time.temporal.ChronoUnit;
+
 public class MonitoredData {
     private String startTime;
     private String endTime;
@@ -24,5 +28,15 @@ public class MonitoredData {
 
     public String getActivity() {
         return activity;
+    }
+
+    public long getDurationSeconds() {
+        String s = startTime.replace(' ', 'T');
+        String e = endTime.replace(' ', 'T');
+
+        LocalDateTime startLDT = LocalDateTime.parse(s);
+        LocalDateTime endLDT = LocalDateTime.parse(e);
+
+        return ChronoUnit.SECONDS.between(startLDT, endLDT);
     }
 }
