@@ -1,3 +1,8 @@
+package DataLayer;
+
+import BusinessLayer.HelpingMethods;
+import Structure.MonitoredData;
+
 import java.io.*;
 import java.nio.file.Files;
 import java.nio.file.Paths;
@@ -20,7 +25,7 @@ public class FileManager {
             for (String line : lines) {
                 String[] splitLine = HelpingMethods.splitLine.result(line);
 
-                if(splitLine[2].charAt(splitLine[2].length() - 1) == '\t')
+                if (splitLine[2].charAt(splitLine[2].length() - 1) == '\t')
                     splitLine[2] = splitLine[2].substring(0, splitLine[2].length() - 1);
 
                 toReturn.add(new MonitoredData(splitLine[0], splitLine[1], splitLine[2]));
@@ -38,7 +43,7 @@ public class FileManager {
         try {
             BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter("task2.txt"));
 
-            for(Map.Entry<String, Integer> entry : entrySet)
+            for (Map.Entry<String, Integer> entry : entrySet)
                 bufferedWriter.append(entry.getKey()).append(" - ").append(String.valueOf(entry.getValue())).append("\n");
 
             bufferedWriter.close();
@@ -53,12 +58,12 @@ public class FileManager {
         try {
             BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter("task3.txt"));
 
-            for(Map.Entry<Integer, Map<String, Integer>> entry : entrySet) {
+            for (Map.Entry<Integer, Map<String, Integer>> entry : entrySet) {
                 bufferedWriter.append("Day ").append(String.valueOf(entry.getKey())).append(":\n");
 
                 Set<Map.Entry<String, Integer>> entrySet1 = entry.getValue().entrySet();
 
-                for(Map.Entry<String, Integer> entry1 : entrySet1)
+                for (Map.Entry<String, Integer> entry1 : entrySet1)
                     bufferedWriter.append(entry1.getKey()).append(" - ").append(String.valueOf(entry1.getValue())).append("\n");
 
                 bufferedWriter.append("\n");
@@ -75,19 +80,33 @@ public class FileManager {
         try {
             BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter("task4.txt"));
 
-            for(Map.Entry<String, LocalDateTime> entry : entrySet) {
-                if(HelpingMethods.check4(entry.getValue())) {
+            for (Map.Entry<String, LocalDateTime> entry : entrySet) {
+                if (HelpingMethods.check4(entry.getValue())) {
                     bufferedWriter.append(entry.getKey()).append(" - ");
                     LocalDateTime value = entry.getValue();
-                    if(value.getYear() > 0)
+                    if (value.getYear() > 0)
                         bufferedWriter.append(String.valueOf(value.getYear())).append(" years ").append(String.valueOf(value.getMonth().getValue() - 1)).append(" months ").append(String.valueOf(value.getDayOfMonth() - 1)).append(" days ").append(String.valueOf(value.getHour())).append(" hours ").append(String.valueOf(value.getMinute())).append(" minutes ").append(String.valueOf(value.getSecond())).append(" seconds\n");
-                    else if(value.getMonth().getValue() > 1)
+                    else if (value.getMonth().getValue() > 1)
                         bufferedWriter.append(String.valueOf(value.getMonth().getValue() - 1)).append(" months ").append(String.valueOf(value.getDayOfMonth() - 1)).append(" days ").append(String.valueOf(value.getHour())).append(" hours ").append(String.valueOf(value.getMinute())).append(" minutes ").append(String.valueOf(value.getSecond())).append(" seconds\n");
-                    else if(value.getDayOfMonth() > 1)
+                    else if (value.getDayOfMonth() > 1)
                         bufferedWriter.append(String.valueOf(value.getDayOfMonth() - 1)).append(" days ").append(String.valueOf(value.getHour())).append(" hours ").append(String.valueOf(value.getMinute())).append(" minutes ").append(String.valueOf(value.getSecond())).append(" seconds\n");
                     else
                         bufferedWriter.append(String.valueOf(value.getHour())).append(" hours ").append(String.valueOf(value.getMinute())).append(" minutes ").append(String.valueOf(value.getSecond())).append(" seconds\n");
                 }
+            }
+
+            bufferedWriter.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public static void printTask5(List<String> list) {
+        try {
+            BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter("task5.txt"));
+
+            for (String string : list) {
+                bufferedWriter.append(string).append("\n");
             }
 
             bufferedWriter.close();

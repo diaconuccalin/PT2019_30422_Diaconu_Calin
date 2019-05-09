@@ -1,4 +1,7 @@
-import java.time.Duration;
+package Structure;
+
+import BusinessLayer.HelpingMethods;
+
 import java.time.LocalDateTime;
 import java.time.temporal.ChronoUnit;
 

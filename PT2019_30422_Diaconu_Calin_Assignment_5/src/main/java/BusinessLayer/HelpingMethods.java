@@ -1,3 +1,7 @@
+package BusinessLayer;
+
+import Structure.MonitoredData;
+
 import java.time.LocalDateTime;
 import java.util.HashMap;
 import java.util.List;
@@ -19,31 +23,31 @@ public class HelpingMethods {
         return pattern.split(initial);
     };
 
-    public static SplitText splitDate = (initial) -> {
+    private static SplitText splitDate = (initial) -> {
         String delimiter = "-";
         Pattern pattern = Pattern.compile(delimiter, Pattern.CASE_INSENSITIVE);
         return pattern.split(initial);
     };
 
-    public static boolean sameDay(String date1, String date2) {
+    public static boolean notSameDay(String date1, String date2) {
         String[] day1 = splitDate.result(date1);
         String[] day2 = splitDate.result(date2);
 
-        for(int i = 0; i < 3; i++) {
-            if(day1[i].compareTo(day2[i]) != 0)
-                return false;
+        for (int i = 0; i < 3; i++) {
+            if (day1[i].compareTo(day2[i]) != 0)
+                return true;
         }
 
-        return true;
+        return false;
     }
 
     public static Map<String, Integer> generateOccurrenceMap(List<MonitoredData> monitoredDataList) {
         Map<String, Integer> occurrenceMap = new HashMap<>();
 
-        for(MonitoredData monitoredData : monitoredDataList) {
+        for (MonitoredData monitoredData : monitoredDataList) {
             String activity = monitoredData.getActivity();
 
-            if(occurrenceMap.containsKey(activity)) {
+            if (occurrenceMap.containsKey(activity)) {
                 int old = occurrenceMap.get(activity);
                 occurrenceMap.replace(activity, old, old + 1);
             } else
@@ -54,11 +58,11 @@ public class HelpingMethods {
     }
 
     public static boolean check4(LocalDateTime value) {
-        if(value.getYear() > 0)
+        if (value.getYear() > 0)
             return true;
-        if(value.getMonth().getValue() > 1)
+        if (value.getMonth().getValue() > 1)
             return true;
-        if(value.getDayOfMonth() > 1)
+        if (value.getDayOfMonth() > 1)
             return true;
         return value.getHour() >= 10;
     }

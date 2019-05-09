@@ -1,12 +1,14 @@
-import java.time.LocalDate;
+package Main;
+
+import BusinessLayer.HelpingMethods;
+import DataLayer.FileManager;
+import Structure.MonitoredData;
+
 import java.time.LocalDateTime;
-import java.time.temporal.ChronoUnit;
-import java.time.temporal.TemporalField;
-import java.time.temporal.TemporalUnit;
 import java.util.*;
 
 public class Main {
-    public Main() {
+    private Main() {
         //Task 0
         List<MonitoredData> monitoredDataList = task0();
 
@@ -21,6 +23,9 @@ public class Main {
 
         //Task4
         task4(monitoredDataList);
+
+        //Task5
+        task5(monitoredDataList);
     }
 
     private static List<MonitoredData> task0() {
@@ -33,18 +38,18 @@ public class Main {
         String date1;
         String date2;
 
-        for(MonitoredData monitoredData : monitoredDataList) {
+        for (MonitoredData monitoredData : monitoredDataList) {
             date1 = monitoredData.getStartDate();
             date2 = monitoredData.getEndDate();
 
-            if(!HelpingMethods.sameDay(date1, date2))
+            if (HelpingMethods.notSameDay(date1, date2))
                 days++;
 
-            if(monitoredDataList.indexOf(monitoredData) != monitoredDataList.size() - 1) {
+            if (monitoredDataList.indexOf(monitoredData) != monitoredDataList.size() - 1) {
                 date1 = date2;
                 date2 = monitoredDataList.get(monitoredDataList.indexOf(monitoredData) + 1).getStartDate();
 
-                if(!HelpingMethods.sameDay(date1, date2))
+                if (HelpingMethods.notSameDay(date1, date2))
                     days++;
             }
         }
@@ -65,10 +70,10 @@ public class Main {
 
         int day = 1;
 
-        for(MonitoredData monitoredData : monitoredDataList) {
+        for (MonitoredData monitoredData : monitoredDataList) {
             int currentIndex = monitoredDataList.indexOf(monitoredData);
 
-            if(currentIndex > 0 && monitoredData.getStartDate().compareTo(monitoredDataList.get(currentIndex - 1).getStartDate()) != 0) {
+            if (currentIndex > 0 && monitoredData.getStartDate().compareTo(monitoredDataList.get(currentIndex - 1).getStartDate()) != 0) {
                 dayMap = HelpingMethods.generateOccurrenceMap(dayList);
                 dayList = new ArrayList<>();
                 occurrenceMap.put(day, dayMap);
@@ -85,10 +90,10 @@ public class Main {
     private static Map<String, LocalDateTime> task4(List<MonitoredData> monitoredDataList) {
         Map<String, LocalDateTime> durationMap = new HashMap<>();
 
-        for(MonitoredData monitoredData : monitoredDataList) {
+        for (MonitoredData monitoredData : monitoredDataList) {
             String activity = monitoredData.getActivity();
 
-            if(durationMap.containsKey(activity)) {
+            if (durationMap.containsKey(activity)) {
                 LocalDateTime old = durationMap.get(activity);
                 durationMap.replace(activity, old, old.plusSeconds(monitoredData.getDurationSeconds()));
             } else
@@ -98,6 +103,44 @@ public class Main {
         FileManager.printMap4(durationMap);
 
         return durationMap;
+    }
+
+    private static List<String> task5(List<MonitoredData> monitoredDataList) {
+        List<String> toReturn = new ArrayList<>();
+
+        Map<String, Integer> totalMap = new HashMap<>();
+        Map<String, Integer> selectionMap = new HashMap<>();
+
+        for (MonitoredData monitoredData : monitoredDataList) {
+            String activity = monitoredData.getActivity();
+
+            if (totalMap.containsKey(activity)) {
+                int old = totalMap.get(activity);
+                totalMap.replace(activity, old, old + 1);
+            } else
+                totalMap.put(activity, 1);
+
+            if (monitoredData.getDurationSeconds() < 300) {
+                if (selectionMap.containsKey(activity)) {
+                    int old = selectionMap.get(activity);
+                    selectionMap.replace(activity, old, old + 1);
+                } else
+                    selectionMap.put(activity, 1);
+            }
+        }
+
+        Set<Map.Entry<String, Integer>> entrySet = selectionMap.entrySet();
+        for (Map.Entry<String, Integer> entry : entrySet) {
+            int selection = entry.getValue();
+            int total = totalMap.get(entry.getKey());
+
+            if ((selection * 100) / total >= 90)
+                toReturn.add(entry.getKey());
+        }
+
+        FileManager.printTask5(toReturn);
+
+        return toReturn;
     }
 
     public static void main(String[] args) {
