@@ -14,12 +14,8 @@ public class FileManager {
             bufferedReader = new BufferedReader(new FileReader(file));
 
             String line;
-
-            String delimiter = "\t\t";
-            Pattern pattern = Pattern.compile(delimiter, Pattern.CASE_INSENSITIVE);
-
             while((line = bufferedReader.readLine()) != null) {
-                String[] result = pattern.split(line);
+                String[] result = HelpingMethods.splitLine.result(line);
                 toReturn.add(new MonitoredData(result[0], result[1], result[2]));
             }
         } catch (IOException e) {

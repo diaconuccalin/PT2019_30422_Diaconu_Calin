@@ -13,4 +13,12 @@ public class MonitoredData {
     public String toString() {
         return startTime + "\t\t" + endTime + "\t\t" + activity;
     }
+
+    public String getStartDate() {
+        return HelpingMethods.splitTime.result(startTime)[0];
+    }
+
+    public String getEndDate() {
+        return HelpingMethods.splitTime.result(startTime)[0];
+    }
 }
