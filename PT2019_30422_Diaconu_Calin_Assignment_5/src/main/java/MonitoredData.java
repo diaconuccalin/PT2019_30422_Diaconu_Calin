@@ -21,4 +21,8 @@ public class MonitoredData {
     public String getEndDate() {
         return HelpingMethods.splitTime.result(startTime)[0];
     }
+
+    public String getActivity() {
+        return activity;
+    }
 }
