@@ -13,7 +13,7 @@ public class Main {
         List<MonitoredData> monitoredDataList = task0();
 
         //Task 1
-        System.out.println(task1(monitoredDataList));
+        System.out.println("Task 1: " + task1(monitoredDataList) + " monitored days.");
 
         //Task2
         task2(monitoredDataList);
@@ -82,6 +82,9 @@ public class Main {
 
             dayList.add(monitoredData);
         }
+
+        dayMap = HelpingMethods.generateOccurrenceMap(dayList);
+        occurrenceMap.put(day, dayMap);
 
         FileManager.printMap3(occurrenceMap);
         return occurrenceMap;

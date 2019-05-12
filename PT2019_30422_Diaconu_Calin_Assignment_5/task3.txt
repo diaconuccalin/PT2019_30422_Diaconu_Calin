@@ -129,3 +129,12 @@ Leaving - 2
 Spare_Time/TV - 3
 Showering - 1
 
+Day 14:
+Breakfast - 1
+Grooming - 3
+Toileting - 2
+Sleeping - 1
+Spare_Time/TV - 3
+Showering - 1
+Lunch - 1
+
